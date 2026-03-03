@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Mi Hub de Herramientas">
+  <h1 class="text-4xl font-black text-center my-12 text-slate-800">Herramientas <span class="text-blue-600">SEO & Finanzas</span></h1>
+  
+  <div class="grid md:grid-cols-2 gap-8 px-4">
+    <a href="/calculadoras/tools/iva" class="p-8 border-2 rounded-3xl hover:border-blue-500 hover:shadow-2xl transition group bg-white block shadow-sm">
+      <h2 class="text-2xl font-bold mb-2 group-hover:text-blue-600 text-slate-800">📊 Calculadora IVA</h2>
+      <p class="text-slate-500 font-medium">Calculá impuestos rápido.</p>
+    </a>
+
+    <a href="/calculadoras/tools/descuento" class="p-8 border-2 rounded-3xl hover:border-blue-500 hover:shadow-2xl transition group bg-white block shadow-sm">
+      <h2 class="text-2xl font-bold mb-2 group-hover:text-blue-600 text-slate-800">💸 Descuentos</h2>
+      <p class="text-slate-500 font-medium">Ideal para ofertas.</p>
+    </a>
+
+    </div>
+</Layout>
