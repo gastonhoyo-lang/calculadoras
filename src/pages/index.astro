@@ -1,6 +1,14 @@
----
-import Layout from "../layouts/Layout.astro";
----
+<a href="/porcentaje" class="..."> <a href="/prestamo" class="...">    ```
+
+```javascript
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+
+export default defineConfig({
+  site: 'https://chieffin.com',
+  base: '/', // <--- REVISA QUE ESTÉ ASÍ
+  integrations: [tailwind()],
+});
 
 <Layout title="Mi Hub de Herramientas">
   <h1 class="text-4xl font-black text-center my-12 text-slate-800">

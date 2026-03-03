@@ -1,51 +1,66 @@
 ---
 // src/layouts/Layout.astro
-const { title, description = "Calculadoras gratuitas..." } = Astro.props;
-// Esto detecta automáticamente si estás en local o en GitHub
-const base = import.meta.env.BASE_URL; 
+const { title, description = "Calculadoras gratuitas para SEO y Finanzas" } =
+  Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>{title} | SEO Tools Hub</title>
+    <title>{title} | Chieffin</title>
     <meta name="description" content={description} />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <style is:global>
-        body { font-family: 'Inter', sans-serif; }
+      body {
+        font-family: "Inter", sans-serif;
+      }
     </style>
-</head>
-<body class="bg-slate-50 text-slate-900">
+  </head>
+  <body class="bg-slate-50 text-slate-900">
     <nav class="bg-white border-b border-slate-200 py-4 px-6 sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-  <a href={base} class="text-2xl font-black text-blue-600 tracking-tighter">
-    SEO<span class="text-slate-800">HUB</span>
-</a>
-<div class="hidden md:flex gap-6 font-medium text-sm">
-    <a href={base} class="hover:text-blue-600 transition">Inicio</a>
-    <a href={`${base}/tools/iva`} class="hover:text-blue-600 transition">IVA</a>
-    <a href={`${base}/tools/descuento`} class="hover:text-blue-600 transition">Descuento</a>
-</div>
+      <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <a
+          href={base}
+          class="text-2xl font-black text-blue-600 tracking-tighter"
+        >
+          CHIEFFIN<span class="text-slate-800">.COM</span>
+        </a>
+        <div class="hidden md:flex gap-6 font-medium text-sm">
+          <a href={base} class="hover:text-blue-600 transition">Inicio</a>
+          <a href={`${base}porcentaje`} class="hover:text-blue-600 transition"
+            >Porcentaje</a
+          >
+          <a href={`${base}prestamo`} class="hover:text-blue-600 transition"
+            >Préstamo</a
+          >
+        </div>
+      </div>
     </nav>
-
     <main class="max-w-4xl mx-auto my-10 px-4">
-        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100">
-            <slot /> </div>
+      <div
+        class="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100"
+      >
+        <slot />
+      </div>
     </main>
 
     <footer class="max-w-4xl mx-auto mb-20 px-4 text-center">
-        <div class="bg-slate-200 h-32 flex items-center justify-center rounded-2xl mb-8 text-slate-400 text-xs font-bold uppercase tracking-widest">
-            Espacio para Google AdSense
-        </div>
-        <p class="text-slate-400 text-sm font-medium">
-            &copy; 2026 SEO Tools Hub - Hecho con Astro
-        </p>
+      <div
+        class="bg-slate-200 h-32 flex items-center justify-center rounded-2xl mb-8 text-slate-400 text-xs font-bold uppercase tracking-widest"
+      >
+        Espacio para Google AdSense
+      </div>
+      <p class="text-slate-400 text-sm font-medium">
+        &copy; 2026 Chieffin - Potenciado por Astro
+      </p>
     </footer>
-</body>
+  </body>
 </html>
