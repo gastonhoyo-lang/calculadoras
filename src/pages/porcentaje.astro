@@ -1,25 +1,47 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
+
 <Layout title="Calculadora de Porcentaje">
-  <h1 class="text-3xl font-bold mb-4 text-slate-800">Calculadora de Porcentaje</h1>
+  <h1 class="text-3xl font-bold mb-4 text-slate-800">
+    Calculadora de Porcentaje
+  </h1>
   <div class="space-y-4">
-    <p class="text-slate-600 font-medium">¿Cuánto es el <input type="number" id="porc" class="border-b-2 border-blue-500 w-16 text-center outline-none" placeholder="10">% de <input type="number" id="num" class="border-b-2 border-blue-500 w-24 text-center outline-none" placeholder="500">?</p>
-    
-    <button onclick="calcPorc()" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition">Calcular</button>
-    
-    <div id="resP" class="hidden p-4 bg-blue-50 rounded-lg text-2xl font-black text-blue-700">
+    <p class="text-slate-600 font-medium">
+      ¿Cuánto es el <input
+        type="number"
+        id="porc"
+        class="border-b-2 border-blue-500 w-16 text-center outline-none"
+        placeholder="10"
+      />% de <input
+        type="number"
+        id="num"
+        class="border-b-2 border-blue-500 w-24 text-center outline-none"
+        placeholder="500"
+      />?
+    </p>
+
+    <button
+      onclick="calcPorc()"
+      class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition"
+      >Calcular</button
+    >
+
+    <div
+      id="resP"
+      class="hidden p-4 bg-blue-50 rounded-lg text-2xl font-black text-blue-700"
+    >
       Resultado: <span id="valP"></span>
     </div>
   </div>
 
   <script is:inline>
     function calcPorc() {
-      const p = document.getElementById('porc').value;
-      const n = document.getElementById('num').value;
+      const p = document.getElementById("porc").value;
+      const n = document.getElementById("num").value;
       const res = (p * n) / 100;
-      document.getElementById('valP').innerText = res;
-      document.getElementById('resP').classList.remove('hidden');
+      document.getElementById("valP").innerText = res;
+      document.getElementById("resP").classList.remove("hidden");
     }
   </script>
 </Layout>
