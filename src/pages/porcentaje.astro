@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Simulador de Préstamo">
+  <h1 class="text-3xl font-bold mb-6 text-slate-800">Simulador de Préstamo</h1>
+  <div class="grid gap-4">
+    <input
+      type="number"
+      id="monto"
+      placeholder="Monto total ($)"
+      class="p-3 border rounded-xl"
+    />
+    <input
+      type="number"
+      id="cuotas"
+      placeholder="Cantidad de cuotas"
+      class="p-3 border rounded-xl"
+    />
+    <input
+      type="number"
+      id="interes"
+      placeholder="% Interés Anual"
+      class="p-3 border rounded-xl"
+    />
+
+    <button
+      onclick="calcPrestamo()"
+      class="bg-indigo-600 text-white p-4 rounded-xl font-bold hover:bg-indigo-700"
+      >Simular Cuotas</button
+    >
+
+    <div
+      id="resL"
+      class="hidden p-6 bg-slate-100 rounded-xl border-l-4 border-indigo-600"
+    >
+      <p class="text-slate-600">Tu cuota mensual será de:</p>
+      <h2 id="cuotaVal" class="text-4xl font-black text-indigo-700"></h2>
+    </div>
+  </div>
+
+  <script is:inline>
+    function calcPrestamo() {
+      const m = parseFloat(document.getElementById("monto").value);
+      const c = parseInt(document.getElementById("cuotas").value);
+      const i = parseFloat(document.getElementById("interes").value) / 100 / 12;
+
+      const cuota = (m * i) / (1 - Math.pow(1 + i, -c));
+      document.getElementById("cuotaVal").innerText = "$" + cuota.toFixed(2);
+      document.getElementById("resL").classList.remove("hidden");
+    }
+  </script>
+</Layout>
