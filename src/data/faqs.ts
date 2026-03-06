@@ -48,5 +48,36 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Asado", link: "/utiles/asado" }
     ]
-  }
+     },
+  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
+
+  "aguinaldo": {
+    faqs: [
+      { 
+        q: "¿Cuándo se cobra el aguinaldo en Argentina?", 
+        a: "El Sueldo Anual Complementario (SAC) se abona en dos cuotas: la primera con vencimiento el 30 de junio y la segunda con vencimiento el 18 de diciembre." 
+      },
+      { 
+        q: "¿Cómo se calcula el aguinaldo si trabajé menos de seis meses?", 
+        a: "En ese caso se realiza un cálculo proporcional. Debés dividir el 50% de tu mejor sueldo por 180 y multiplicarlo por la cantidad de días corridos trabajados en el semestre." 
+      },
+      { 
+        q: "¿Qué conceptos se incluyen en el cálculo del SAC?", 
+        a: "Se deben incluir todos los conceptos remunerativos: sueldo básico, horas extra, comisiones, gratificaciones y adicionales por convenio (antigüedad, título, etc.). No se incluyen conceptos no remunerativos." 
+      },
+      { 
+        q: "¿El aguinaldo paga impuesto a las ganancias?", 
+        a: "Depende de la legislación vigente y el piso salarial del momento. Generalmente, si el promedio de la remuneración no supera cierto tope fijado por AFIP, el aguinaldo queda exento." 
+      },
+      { 
+        q: "¿Qué sucede con las inasistencias injustificadas?", 
+        a: "Las inasistencias injustificadas se restan de los días trabajados en el semestre, por lo que el monto final del aguinaldo será levemente menor al ser un cálculo proporcional por días." 
+      }
+    ],
+    relacionados: [
+      { nombre: "Calculadora de Indemnización", link: "/finanzas/indemnizacion" },
+      { nombre: "Simulador de Préstamos", link: "/finanzas/prestamo" },
+      { nombre: "Calculadora de IVA", link: "/finanzas/porcentaje" }
+    ]
+    },
 };
