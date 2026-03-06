@@ -733,7 +733,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   },
   // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
-  "calculadora-ladrillos": {
+  "ladrillos": {
     faqs: [
       { 
         q: "¿Cuántos ladrillos entran en un metro cuadrado?", 
