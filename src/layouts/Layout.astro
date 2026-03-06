@@ -48,6 +48,10 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
       rel="stylesheet"
     />
 
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -60,17 +64,16 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
           "query-input": "required name=search_term_string"
         }
       }
-    <link rel="manifest" href="/manifest.json" />
-<meta name="theme-color" content="#2563eb" />
-<link rel="apple-touch-icon" href="/icon-192.png" />
+    </script>
 
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js');
-    });
-  }
-</script>
+    <script>
+      // Registro del Service Worker para PWA
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
+        });
+      }
+    </script>
   </head>
 
   <body class="bg-slate-50 text-slate-900 font-sans antialiased">
@@ -143,9 +146,10 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
         </div>
 
         <button
-          class="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-800 transition"
+          id="favBtn"
+          class="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-800 transition flex items-center gap-2"
         >
-          Favoritos
+          <span id="favIcon">⭐</span> Favoritos
         </button>
       </nav>
     </header>
@@ -202,5 +206,39 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
         &copy; {new Date().getFullYear()} Chieffin.com - Herramientas gratuitas para
         uso cotidiano.
       </div>
-    </footer></body>
+    </footer>
+
+    <script>
+      // Lógica del botón Favoritos e Instalación PWA
+      let deferredPrompt: any;
+      const favBtn = document.getElementById("favBtn");
+      const favIcon = document.getElementById("favIcon");
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        if (favBtn && favIcon) {
+          favIcon.textContent = "📲";
+          favBtn.lastChild!.textContent = " Instalar App";
+          favBtn.classList.replace("bg-slate-900", "bg-blue-600");
+        }
+      });
+
+      favBtn?.addEventListener("click", async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          if (outcome === "accepted") {
+            deferredPrompt = null;
+          }
+        } else {
+          const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+          const key = isMac ? "Cmd + D" : "Ctrl + D";
+          alert(
+            `¡Guardanos en tus favoritos!\n\nPresioná ${key} para tener estas herramientas siempre a mano.`,
+          );
+        }
+      });
+    </script>
+  </body>
 </html>
