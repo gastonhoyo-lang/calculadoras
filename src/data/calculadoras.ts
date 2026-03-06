@@ -23,3 +23,17 @@ export const calculadoras = [
   },
   // Cuando quieras subir la número 50, solo agregás un bloque acá.
 ];
+{
+    titulo: "Pintura",
+    descripcion: "¿Cuántos litros necesitás para renovar tus paredes?",
+    link: "/hogar/pintura",
+    icon: "🎨",
+    color: "blue" // o el color que prefieras
+  },
+  {
+    titulo: "Edad Exacta",
+    descripcion: "Descubrí cuántos días, horas y minutos viviste.",
+    link: "/varios/edad",
+    icon: "⏳",
+    color: "emerald"
+  },
