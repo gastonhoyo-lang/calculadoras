@@ -18,125 +18,80 @@ import Layout from "../layouts/Layout.astro";
     </p>
   </div>
 
-  <div
-    class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-6xl mx-auto mb-20"
+  <div class="grid md:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto mb-20">
     <a
-    href="/finanzas/porcentaje"
-    class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-200 hover:border-blue-500/50 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
-  >
-    <div
-      class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-6xl mx-auto mb-20"
+      href="/finanzas/porcentaje"
+      class="group p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300"
     >
-      <a
-        href="/finanzas/porcentaje"
-        class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-200 hover:border-blue-500/50 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+      <div
+        class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors"
       >
-        <div
-          class="absolute top-0 right-0 p-8 text-6xl opacity-10 group-hover:opacity-20 transition-opacity"
-        >
-          📊
-        </div>
+        <span class="font-bold text-xl">%</span>
+      </div>
+      <h3 class="text-xl font-bold text-slate-800 mb-2">Porcentajes</h3>
+      <p class="text-slate-500 text-sm leading-relaxed">
+        Calculá IVA, descuentos y variaciones de forma rápida.
+      </p>
+    </a>
 
-        <div class="relative z-10">
-          <span
-            class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300"
-          >
-            %
-          </span>
-          <h2
-            class="text-2xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors"
-          >
-            Porcentajes
-          </h2>
-          <p class="text-slate-500 leading-relaxed">
-            Calculá incrementos, variaciones relativas y descuentos de forma
-            instantánea.
-          </p>
-        </div>
-      </a>
-      <a
-        href="/finanzas/prestamo"
-        class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-200 hover:border-blue-600/50 shadow-sm hover:shadow-2xl hover:shadow-blue-600/10 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+    <a
+      href="/finanzas/prestamo"
+      class="group p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-indigo-500 transition-all duration-300"
+    >
+      <div
+        class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors"
       >
-        <div
-          class="absolute top-0 right-0 p-8 text-6xl opacity-10 group-hover:opacity-20 transition-opacity"
-        >
-          💸
-        </div>
+        <span class="font-bold text-xl">$</span>
+      </div>
+      <h3 class="text-xl font-bold text-slate-800 mb-2">
+        Simulador de Préstamos
+      </h3>
+      <p class="text-slate-500 text-sm leading-relaxed">
+        Calculá cuotas mensuales y el costo total de tu crédito.
+      </p>
+    </a>
 
-        <div class="relative z-10">
-          <span
-            class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300"
-          >
-            $
-          </span>
-          <h2
-            class="text-2xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors"
-          >
-            Simulador de Préstamos
-          </h2>
-          <p class="text-slate-500 leading-relaxed">
-            Simulá cuotas fijas, intereses y plazos para tus proyectos o
-            inversiones personales.
-          </p>
-        </div>
-      </a>
-
-      <a
-        href="/finanzas/interescompuesto"
-        class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-200 hover:border-emerald-500/50 shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+    <a
+      href="/finanzas/interescompuesto"
+      class="group p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-emerald-500 transition-all duration-300"
+    >
+      <div
+        class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors"
       >
-        <div
-          class="absolute top-0 right-0 p-8 text-6xl opacity-10 group-hover:opacity-20 transition-opacity"
-        >
-          📈
-        </div>
+        <span class="font-bold text-xl">🚀</span>
+      </div>
+      <h3 class="text-xl font-bold text-slate-800 mb-2">Interés Compuesto</h3>
+      <p class="text-slate-500 text-sm leading-relaxed">
+        Proyectá tus ahorros e inversiones a largo plazo.
+      </p>
+    </a>
+  </div>
+</Layout>
 
-        <div class="relative z-10">
-          <span
-            class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300"
-          >
-            🚀
-          </span>
-          <h2
-            class="text-2xl font-bold text-slate-800 mb-3 group-hover:text-emerald-600 transition-colors"
-          >
-            Interés Compuesto
-          </h2>
-          <p class="text-slate-500 leading-relaxed">
-            Proyectá el crecimiento de tu capital a largo plazo con interés
-            compuesto y aportes mensuales.
-          </p>
-        </div>
-      </a>
-    </div>
+<a
+  href="/finanzas/prestamo"
+  class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-200 hover:border-blue-600/50 shadow-sm hover:shadow-2xl hover:shadow-blue-600/10 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+>
+  <div
+    class="absolute top-0 right-0 p-8 text-6xl opacity-10 group-hover:opacity-20 transition-opacity"
+  >
+    💸
   </div>
 
-  <a
-    href="/finanzas/prestamo"
-    class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-200 hover:border-blue-600/50 shadow-sm hover:shadow-2xl hover:shadow-blue-600/10 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
-  >
-    <div
-      class="absolute top-0 right-0 p-8 text-6xl opacity-10 group-hover:opacity-20 transition-opacity"
+  <div class="relative z-10">
+    <span
+      class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300"
     >
-      💸
-    </div>
-
-    <div class="relative z-10">
-      <span
-        class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300"
-      >
-        $
-      </span>
-      <h2
-        class="text-2xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors"
-      >
-        Simulador de Préstamos
-      </h2>
-      <p class="text-slate-500 leading-relaxed">
-        Simulá cuotas fijas, intereses y plazos para tus proyectos o inversiones
-        personales.
-      </p>
-    </div>
-  </a>
-</Layout>
+      $
+    </span>
+    <h2
+      class="text-2xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors"
+    >
+      Simulador de Préstamos
+    </h2>
+    <p class="text-slate-500 leading-relaxed">
+      Simulá cuotas fijas, intereses y plazos para tus proyectos o inversiones
+      personales.
+    </p>
+  </div>
+</a>
