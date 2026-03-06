@@ -36,4 +36,39 @@ export const calculadoras = [
     icon: "⏳",
     color: "emerald"
   },
-  ];
+{
+    titulo: "Luz y Consumo",
+    descripcion: "Calculá el consumo de tus aparatos y ahorrá en tu factura.",
+    link: "/hogar/luz",
+    icon: "⚡",
+    color: "blue"
+  }, 
+{
+    titulo: "Agua Diaria",
+    descripcion: "Calculá cuánta agua necesitás según tu peso y actividad.",
+    link: "/salud/agua",
+    icon: "💧",
+    color: "blue"
+  },
+{
+    titulo: "Passwords",
+    descripcion: "Generá contraseñas ultra seguras y aleatorias.",
+    link: "/utiles/password",
+    icon: "🔑",
+    color: "indigo"
+  },
+  {
+    titulo: "Contador de Texto",
+    descripcion: "Contá palabras y caracteres en tiempo real.",
+    link: "/utiles/texto",
+    icon: "📝",
+    color: "blue"
+  },
+  {
+    titulo: "Regla de Tres",
+    descripcion: "Resolvé proporciones matemáticas fácilmente.",
+    link: "/matematica/regla-de-tres",
+    icon: "✖️",
+    color: "emerald"
+  },
+];
