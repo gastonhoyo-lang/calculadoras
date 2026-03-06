@@ -161,8 +161,8 @@ export const calculadoras = [
     link: "/finanzas/inflacion",
     icon: "📉",
     color: "red"
-  }
-{
+  }   
+  {
     titulo: "Calculadora de IMC",
     descripcion: "Descubrí si estás en tu peso ideal en segundos.",
     link: "/salud/imc",
