@@ -65,10 +65,59 @@ export const calculadoras = [
     color: "blue"
   },
 {
-    titulo: "Conversor de Minutos",
-    descripcion: "Pasá minutos a horas y decimales de forma instantánea.",
-    link: "/utiles/minutos",
-    icon: "⌛",
+    titulo: "Círculo",
+    descripcion: "Calculá área y perímetro de un círculo fácilmente.",
+    link: "/matematica/circulo",
+    icon: "⭕",
+    color: "orange"
+  },
+  {
+    titulo: "Pitágoras",
+    descripcion: "Hallá la hipotenusa de un triángulo rectángulo.",
+    link: "/matematica/pitagoras",
+    icon: "📐",
+    color: "blue"
+  },
+  {
+    titulo: "Área Triángulo",
+    descripcion: "Calculá la superficie de cualquier triángulo.",
+    link: "/matematica/triangulo",
+    icon: "🔺",
+    color: "orange"
+  },
+  {
+    titulo: "Punto de Equilibrio",
+    descripcion: "Calculá cuántas ventas necesitás para cubrir tus gastos.",
+    link: "/negocios/punto-equilibrio",
+    icon: "⚖️",
     color: "indigo"
+  },
+  {
+    titulo: "Margen de Ganancia",
+    descripcion: "Descubrí qué porcentaje de cada venta es utilidad real.",
+    link: "/negocios/margen",
+    icon: "📈",
+    color: "emerald"
+  },
+  {
+    titulo: "Precio de Venta",
+    descripcion: "Calculá cuánto cobrar tus productos según tus costos.",
+    link: "/negocios/precio-venta",
+    icon: "💰",
+    color: "blue"
+  },
+  {
+    titulo: "ROI (Retorno)",
+    descripcion: "Medí la rentabilidad de tus inversiones y negocios.",
+    link: "/negocios/roi",
+    icon: "🔄",
+    color: "indigo"
+  },
+  {
+    titulo: "Interés Simple",
+    descripcion: "Calculá el interés de préstamos y ahorros básicos.",
+    link: "/finanzas/interes-simple",
+    icon: "📉",
+    color: "blue"
   },
 ];
