@@ -22,7 +22,6 @@ export const calculadoras = [
     color: "indigo"
   },
   // Cuando quieras subir la número 50, solo agregás un bloque acá.
-];
 {
     titulo: "Pintura",
     descripcion: "¿Cuántos litros necesitás para renovar tus paredes?",
@@ -37,3 +36,4 @@ export const calculadoras = [
     icon: "⏳",
     color: "emerald"
   },
+  ];
