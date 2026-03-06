@@ -50,25 +50,25 @@ export const calculadoras = [
     icon: "💧",
     color: "blue"
   },
-{
-    titulo: "Passwords",
-    descripcion: "Generá contraseñas ultra seguras y aleatorias.",
-    link: "/utiles/password",
-    icon: "🔑",
-    color: "indigo"
-  },
-  {
-    titulo: "Contador de Texto",
-    descripcion: "Contá palabras y caracteres en tiempo real.",
-    link: "/utiles/texto",
-    icon: "📝",
-    color: "blue"
-  },
   {
     titulo: "Regla de Tres",
     descripcion: "Resolvé proporciones matemáticas fácilmente.",
     link: "/matematica/regla-de-tres",
     icon: "✖️",
     color: "emerald"
+  },
+{
+    titulo: "Diferencia de Horas",
+    descripcion: "Calculá el tiempo exacto entre dos horas y su valor decimal.",
+    link: "/utiles/horas",
+    icon: "⏱️",
+    color: "blue"
+  },
+{
+    titulo: "Conversor de Minutos",
+    descripcion: "Pasá minutos a horas y decimales de forma instantánea.",
+    link: "/utiles/minutos",
+    icon: "⌛",
+    color: "indigo"
   },
 ];

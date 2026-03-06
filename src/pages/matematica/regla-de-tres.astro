@@ -1,0 +1,65 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Regla de Tres Simple | Directa e Inversa"
+  description="Resolvé problemas de proporcionalidad con nuestra calculadora de regla de tres simple. Ideal para estudiantes, recetas y cálculos rápidos."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4"
+      >
+        Regla de <span class="text-emerald-600">Tres Simple</span>
+      </h1>
+      <p class="text-slate-500 text-lg font-medium">
+        Resolvé cualquier incógnita de proporcionalidad al instante.
+      </p>
+    </header>
+
+    <div
+      class="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-sm mb-12"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center"
+      >
+        <div class="text-center w-full">
+          <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
+            >Si este valor</label
+          >
+          <input
+            type="number"
+            id="valA"
+            placeholder="A"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-emerald-500 outline-none text-center font-black text-2xl shadow-inner"
+          />
+        </div>
+
+        <div class="text-slate-300 text-4xl hidden md:block">➞</div>
+
+        <div class="text-center w-full">
+          <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
+            >Es igual a este</label
+          >
+          <input
+            type="number"
+            id="valB"
+            placeholder="B"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-emerald-500 outline-none text-center font-black text-2xl shadow-inner"
+          />
+        </div>
+
+        <div class="text-center w-full">
+          <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
+            >Entonces este</label
+          >
+          <input type="number" id="valC" placeholder="C" class="w-full p-4 bg-slate-50
+          rounded-2
+        </div>
+      </div>
+    </div>
+  </div></Layout
+>

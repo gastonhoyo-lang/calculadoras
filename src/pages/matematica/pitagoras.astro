@@ -1,0 +1,66 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Pitágoras | Hallar Hipotenusa y Catetos"
+  description="Resolvé triángulos rectángulos usando el Teorema de Pitágoras. Calculá la hipotenusa o los catetos de forma automática."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-black text-slate-900 mb-4">
+        Teorema de <span class="text-blue-600">Pitágoras</span>
+      </h1>
+    </header>
+
+    <div
+      class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm max-w-md mx-auto space-y-6"
+    >
+      <input
+        type="number"
+        id="catA"
+        placeholder="Cateto A"
+        class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold"
+      />
+      <input
+        type="number"
+        id="catB"
+        placeholder="Cateto B"
+        class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold"
+      />
+      <button
+        id="btnPit"
+        class="w-full bg-blue-600 text-white p-5 rounded-2xl font-bold hover:bg-blue-700 transition-all"
+        >Calcular Hipotenusa</button
+      >
+
+      <div
+        id="resPit"
+        class="hidden p-6 bg-blue-50 rounded-3xl text-center border-2 border-blue-100"
+      >
+        <p class="text-blue-600 text-xs font-bold uppercase mb-1">
+          La Hipotenusa es:
+        </p>
+        <span id="valPit" class="text-4xl font-black text-blue-700"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("btnPit")?.addEventListener("click", () => {
+      const a = parseFloat(
+        (document.getElementById("catA") as HTMLInputElement).value,
+      );
+      const b = parseFloat(
+        (document.getElementById("catB") as HTMLInputElement).value,
+      );
+      if (a && b) {
+        const h = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        document.getElementById("valPit")!.innerText = h.toFixed(2);
+        document.getElementById("resPit")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

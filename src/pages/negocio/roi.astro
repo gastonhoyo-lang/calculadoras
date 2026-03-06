@@ -1,0 +1,74 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de ROI | Retorno de Inversión"
+  description="Medí la rentabilidad de tus inversiones. Calculá el porcentaje de retorno de forma fácil y rápida."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-black text-slate-900 mb-4">
+        Calculadora <span class="text-indigo-600">ROI</span>
+      </h1>
+    </header>
+    <div
+      class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm max-w-md mx-auto space-y-6"
+    >
+      <input
+        type="number"
+        id="inversion"
+        placeholder="Monto Invertido ($)"
+        class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-indigo-500 outline-none font-bold"
+      />
+      <input
+        type="number"
+        id="ganancia"
+        placeholder="Ganancia Obtenida ($)"
+        class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-indigo-500 outline-none font-bold"
+      />
+      <button
+        id="btnROI"
+        class="w-full bg-indigo-600 text-white p-5 rounded-2xl font-bold hover:bg-indigo-700 transition-all"
+        >Calcular Retorno</button
+      >
+      <div
+        id="resROI"
+        class="hidden p-6 bg-slate-900 text-white rounded-3xl text-center"
+      >
+        <p class="text-indigo-400 text-xs font-bold uppercase mb-1">
+          Tu ROI es del:
+        </p>
+        <span id="valROI" class="text-4xl font-black"></span>
+      </div>
+    </div>
+
+    <article
+      class="prose prose-slate max-w-none border-t mt-12 pt-10 text-slate-600"
+    >
+      <p>
+        Un <strong>ROI positivo</strong> significa que la inversión es rentable. Un
+        ROI del 100% significa que duplicaste tu dinero inicial después de pagar todos
+        los gastos.
+      </p>
+    </article>
+  </div>
+
+  <script>
+    document.getElementById("btnROI")?.addEventListener("click", () => {
+      const inv = parseFloat(
+        (document.getElementById("inversion") as HTMLInputElement).value,
+      );
+      const gan = parseFloat(
+        (document.getElementById("ganancia") as HTMLInputElement).value,
+      );
+      if (inv && gan) {
+        const roi = ((gan - inv) / inv) * 100;
+        document.getElementById("valROI")!.innerText = roi.toFixed(2) + "%";
+        document.getElementById("resROI")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

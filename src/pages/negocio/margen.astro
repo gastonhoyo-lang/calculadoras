@@ -1,0 +1,78 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Margen de Ganancia | Chieffin"
+  description="Calculá el margen de utilidad bruta de tus productos. Conocé cuánto ganás realmente por cada venta."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-black text-slate-900 mb-4">
+        Margen de <span class="text-emerald-600">Ganancia</span>
+      </h1>
+    </header>
+    <div
+      class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm max-w-md mx-auto space-y-6"
+    >
+      <input
+        type="number"
+        id="costoM"
+        placeholder="Costo del producto ($)"
+        class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-emerald-500 outline-none font-bold"
+      />
+      <input
+        type="number"
+        id="ventaM"
+        placeholder="Precio de venta ($)"
+        class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-emerald-500 outline-none font-bold"
+      />
+      <button
+        id="btnMargen"
+        class="w-full bg-emerald-600 text-white p-5 rounded-2xl font-bold hover:bg-emerald-700 transition-all"
+        >Calcular Margen</button
+      >
+      <div
+        id="resMargen"
+        class="hidden p-6 bg-emerald-50 rounded-3xl text-center border-2 border-emerald-100"
+      >
+        <p class="text-emerald-600 text-xs font-bold uppercase mb-1">
+          Tu margen es del:
+        </p>
+        <span id="valMargen" class="text-4xl font-black text-emerald-700"
+        ></span>
+      </div>
+    </div>
+
+    <article
+      class="prose prose-slate max-w-none border-t mt-12 pt-10 text-slate-600"
+    >
+      <h2 class="text-2xl font-bold text-slate-800">
+        ¿Qué es el Margen de Ganancia?
+      </h2>
+      <p>
+        Es el porcentaje que representa la utilidad sobre el precio de venta. Es
+        vital no confundirlo con el "markup" o recargo sobre el costo.
+      </p>
+    </article>
+  </div>
+
+  <script>
+    document.getElementById("btnMargen")?.addEventListener("click", () => {
+      const costo = parseFloat(
+        (document.getElementById("costoM") as HTMLInputElement).value,
+      );
+      const venta = parseFloat(
+        (document.getElementById("ventaM") as HTMLInputElement).value,
+      );
+      if (costo && venta) {
+        const margen = ((venta - costo) / venta) * 100;
+        document.getElementById("valMargen")!.innerText =
+          margen.toFixed(2) + "%";
+        document.getElementById("resMargen")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

@@ -1,0 +1,72 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Interés Simple | Chieffin"
+  description="Calculá el interés generado por un capital inicial en un tiempo determinado."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-black text-slate-900 mb-4">
+        Interés <span class="text-blue-500">Simple</span>
+      </h1>
+    </header>
+    <div
+      class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm max-w-md mx-auto space-y-4"
+    >
+      <input
+        type="number"
+        id="capI"
+        placeholder="Capital Inicial ($)"
+        class="w-full p-4 bg-slate-50 rounded-2xl border-none outline-none font-bold"
+      />
+      <input
+        type="number"
+        id="tasaI"
+        placeholder="Tasa de interés anual (%)"
+        class="w-full p-4 bg-slate-50 rounded-2xl border-none outline-none font-bold"
+      />
+      <input
+        type="number"
+        id="tiempoI"
+        placeholder="Tiempo (Años)"
+        class="w-full p-4 bg-slate-50 rounded-2xl border-none outline-none font-bold"
+      />
+      <button
+        id="btnIS"
+        class="w-full bg-slate-900 text-white p-5 rounded-2xl font-bold"
+        >Calcular</button
+      >
+      <div id="resIS" class="hidden p-6 bg-blue-50 rounded-3xl text-center">
+        <p class="text-blue-600 text-xs font-bold uppercase mb-1">
+          Interés Total Generado:
+        </p>
+        <span id="valIS" class="text-4xl font-black text-blue-700"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("btnIS")?.addEventListener("click", () => {
+      const c = parseFloat(
+        (document.getElementById("capI") as HTMLInputElement).value,
+      );
+      const i =
+        parseFloat(
+          (document.getElementById("tasaI") as HTMLInputElement).value,
+        ) / 100;
+      const t = parseFloat(
+        (document.getElementById("tiempoI") as HTMLInputElement).value,
+      );
+      if (c && i && t) {
+        const interes = c * i * t;
+        document.getElementById("valIS")!.innerText =
+          "$" + interes.toLocaleString("es-AR");
+        document.getElementById("resIS")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>
