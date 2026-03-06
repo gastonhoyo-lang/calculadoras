@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Chieffin - Herramientas SEO & Finanzas">
+<Layout title="Calculadoras Gratis y Herramientas Inteligentes">
   <div class="text-center py-16 px-4">
     <h1
       class="text-5xl md:text-6xl font-black text-slate-900 tracking-tight mb-4"
@@ -13,8 +13,8 @@ import Layout from "../layouts/Layout.astro";
       >
     </h1>
     <p class="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
-      Herramientas precisas y rápidas para optimizar tus finanzas y estrategias
-      SEO sin vueltas.
+      Simuladores de préstamos, cálculo de IVA, porcentajes e inversiones en un
+      solo clic.
     </p>
   </div>
 
@@ -49,49 +49,31 @@ import Layout from "../layouts/Layout.astro";
       <p class="text-slate-500 text-sm leading-relaxed">
         Calculá cuotas mensuales y el costo total de tu crédito.
       </p>
-    </a>
-
-    <a
-      href="/finanzas/interescompuesto"
-      class="group p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-emerald-500 transition-all duration-300"
+    </a> href="/finanzas/iva" class="group p-8 bg-white rounded-3xl border border-slate-100
+    shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300">
+    <div
+      class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors"
     >
-      <div
-        class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors"
-      >
-        <span class="font-bold text-xl">🚀</span>
-      </div>
-      <h3 class="text-xl font-bold text-slate-800 mb-2">Interés Compuesto</h3>
-      <p class="text-slate-500 text-sm leading-relaxed">
-        Proyectá tus ahorros e inversiones a largo plazo.
-      </p>
-    </a>
-  </div>
-</Layout>
-
-<a
-  href="/finanzas/prestamo"
-  class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-200 hover:border-blue-600/50 shadow-sm hover:shadow-2xl hover:shadow-blue-600/10 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
->
-  <div
-    class="absolute top-0 right-0 p-8 text-6xl opacity-10 group-hover:opacity-20 transition-opacity"
-  >
-    💸
-  </div>
-
-  <div class="relative z-10">
-    <span
-      class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300"
-    >
-      $
-    </span>
-    <h2
-      class="text-2xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors"
-    >
-      Simulador de Préstamos
-    </h2>
-    <p class="text-slate-500 leading-relaxed">
-      Simulá cuotas fijas, intereses y plazos para tus proyectos o inversiones
-      personales.
+      <span class="font-black text-xs">IVA</span>
+    </div>
+    <h3 class="text-xl font-bold text-slate-800 mb-2">Calculadora de IVA</h3>
+    <p class="text-slate-500 text-sm leading-relaxed">
+      Sumá o restá el IVA (21%, 10.5%) a cualquier monto de forma profesional.
     </p>
   </div>
-</a>
+
+  <a
+    href="/finanzas/interescompuesto"
+    class="group p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-emerald-500 transition-all duration-300"
+  >
+    <div
+      class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors"
+    >
+      <span class="font-bold text-xl">🚀</span>
+    </div>
+    <h3 class="text-xl font-bold text-slate-800 mb-2">Interés Compuesto</h3>
+    <p class="text-slate-500 text-sm leading-relaxed">
+      Proyectá tus ahorros e inversiones a largo plazo.
+    </p>
+  </a>
+</Layout>

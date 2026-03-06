@@ -4,84 +4,189 @@ import InputField from "/src/components/InputField.astro";
 import ResultBox from "../../components/ResultBox.astro";
 ---
 
-<Layout title="Calculadora de IVA Argentina (21%)">
-  <div class="max-w-2xl mx-auto px-4">
-    <h1 class="text-3xl font-black mb-6 text-slate-800 tracking-tight">
-      Calculadora de IVA
-    </h1>
+<Layout
+  title="Calculadora de IVA Argentina (21% y 10.5%)"
+  description="Calculá el IVA de cualquier monto de forma rápida. Aprendé cómo quitar el IVA a un precio total o sumarlo al valor neto con nuestra herramienta gratuita."
+>
+  <div class="max-w-3xl mx-auto px-4">
+    <header class="text-center mb-10">
+      <h1
+        class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4"
+      >
+        Calculadora de <span class="text-blue-600">IVA</span>
+      </h1>
+      <p class="text-slate-500 text-lg font-medium">
+        Sumá o restá el Impuesto al Valor Agregado en segundos.
+      </p>
+    </header>
 
     <div
-      class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-8"
+      class="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl shadow-blue-500/5 mb-12"
     >
-      <div>
-        <label
-          class="block text-sm font-bold text-slate-400 uppercase mb-2 ml-1"
-          >Monto ($)</label
-        >
-        <input
-          type="number"
-          id="montoIva"
-          placeholder="Ej: 1000"
-          class="w-full p-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none font-bold text-xl"
-        />
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
-        <button
-          id="btnSumarIva"
-          class="bg-blue-600 text-white p-4 rounded-2xl font-bold hover:bg-blue-700 transition-all"
-        >
-          Sumar IVA (21%)
-        </button>
-        <button
-          id="btnQuitarIva"
-          class="bg-slate-800 text-white p-4 rounded-2xl font-bold hover:bg-slate-900 transition-all"
-        >
-          Quitar IVA
-        </button>
-      </div>
-
-      <div
-        id="resIva"
-        class="hidden p-6 bg-slate-50 rounded-3xl border border-slate-100"
-      >
-        <div class="flex justify-between mb-2">
-          <span class="text-slate-500">Neto:</span>
-          <span id="netoRes" class="font-bold text-slate-800"></span>
+      <div class="space-y-8">
+        <div>
+          <label
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 ml-1"
+            >Monto a calcular ($)</label
+          >
+          <input
+            type="number"
+            id="montoIva"
+            placeholder="Ej: 1500"
+            class="w-full p-6 bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white rounded-3xl outline-none transition-all font-black text-3xl text-slate-800"
+          />
         </div>
-        <div class="flex justify-between mb-2">
-          <span class="text-slate-500">IVA (21%):</span>
-          <span id="ivaRes" class="font-bold text-blue-600"></span>
+
+        <div>
+          <label
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 ml-1"
+            >Tipo de IVA</label
+          >
+          <select
+            id="tipoIva"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none font-bold text-slate-700 outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="0.21">General (21%)</option>
+            <option value="0.105">Reducido (10.5%)</option>
+            <option value="0.27">Especial (27%)</option>
+          </select>
         </div>
-        <div class="border-t border-slate-200 mt-4 pt-4 flex justify-between">
-          <span class="font-bold text-slate-800">Total:</span>
-          <span id="totalRes" class="text-2xl font-black text-slate-900"></span>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <button
+            id="btnSumar"
+            class="group bg-blue-600 text-white p-5 rounded-2xl font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2"
+          >
+            Sumar IVA
+            <span
+              class="opacity-50 group-hover:translate-x-1 transition-transform"
+              >→</span
+            >
+          </button>
+          <button
+            id="btnQuitar"
+            class="group bg-slate-800 text-white p-5 rounded-2xl font-bold hover:bg-slate-900 transition-all flex items-center justify-center gap-2"
+          >
+            Quitar IVA
+            <span
+              class="opacity-50 group-hover:-translate-x-1 transition-transform"
+              >←</span
+            >
+          </button>
+        </div>
+
+        <div
+          id="resBox"
+          class="hidden animate-in fade-in slide-in-from-bottom-4 duration-500"
+        >
+          <div
+            class="p-8 bg-blue-50 rounded-[2rem] border-2 border-blue-100 space-y-4"
+          >
+            <div class="flex justify-between items-center text-slate-600">
+              <span class="font-medium">Subtotal (Neto):</span>
+              <span id="netoVal" class="font-bold"></span>
+            </div>
+            <div class="flex justify-between items-center text-blue-600">
+              <span class="font-medium text-sm uppercase tracking-widest"
+                >IVA Calculado:</span
+              >
+              <span id="ivaVal" class="font-black text-xl"></span>
+            </div>
+            <div
+              class="pt-4 border-t border-blue-200 flex justify-between items-center"
+            >
+              <span class="font-black text-slate-900 text-xl">Total Final:</span
+              >
+              <span id="totalVal" class="text-4xl font-black text-blue-700"
+              ></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <article class="prose prose-slate max-w-none pb-20">
+      <h2 class="text-3xl font-black text-slate-800 mb-6">
+        ¿Cómo calcular el IVA en Argentina?
+      </h2>
+      <p class="text-slate-600 leading-relaxed mb-4">
+        Calcular el <strong>Impuesto al Valor Agregado (IVA)</strong> es una de las
+        tareas contables más comunes para monotributistas, responsables inscriptos
+        y consumidores finales. Dependiendo de tu necesidad, existen dos formas de
+        realizar este cálculo.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 mt-10">
+        <div class="bg-slate-100 p-6 rounded-2xl">
+          <h3 class="text-lg font-bold mb-3">1. Cómo sumar el IVA</h3>
+          <p class="text-sm text-slate-600">
+            Si tenés un precio neto y querés saber el total con impuesto,
+            multiplicá el valor por <strong>1.21</strong>.
+          </p>
+          <code
+            class="block bg-white p-2 mt-2 rounded border text-blue-600 font-bold"
+            >Precio Neto × 1.21 = Total</code
+          >
+        </div>
+        <div class="bg-slate-100 p-6 rounded-2xl">
+          <h3 class="text-lg font-bold mb-3">2. Cómo quitar el IVA</h3>
+          <p class="text-sm text-slate-600">
+            Si tenés el precio final y necesitás desglosar el impuesto, dividí
+            el total por <strong>1.21</strong>.
+          </p>
+          <code
+            class="block bg-white p-2 mt-2 rounded border text-blue-600 font-bold"
+            >Total ÷ 1.21 = Precio Neto</code
+          >
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-800 mt-12 mb-4">
+        Tipos de alícuotas en Argentina
+      </h3>
+      <ul class="list-disc pl-5 text-slate-600 space-y-2">
+        <li>
+          <strong>21%:</strong> Alícuota general (electrónicos, indumentaria, servicios).
+        </li>
+        <li>
+          <strong>10.5%:</strong> Alícuota reducida (alimentos básicos, carnes, frutas,
+          construcción).
+        </li>
+        <li>
+          <strong>27%:</strong> Alícuota especial (energía eléctrica, gas, telecomunicaciones).
+        </li>
+      </ul>
+    </article>
   </div>
 
   <script>
     const input = document.getElementById("montoIva") as HTMLInputElement;
-    const resBox = document.getElementById("resIva");
+    const tipo = document.getElementById("tipoIva") as HTMLSelectElement;
+    const resBox = document.getElementById("resBox");
 
-    const mostrar = (neto: number, iva: number, total: number) => {
-      const f = (n: number) =>
-        n.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
-      document.getElementById("netoRes")!.innerText = f(neto);
-      document.getElementById("ivaRes")!.innerText = f(iva);
-      document.getElementById("totalRes")!.innerText = f(total);
+    const format = (num: number) =>
+      num.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
+
+    const update = (neto: number, iva: number, total: number) => {
+      document.getElementById("netoVal")!.innerText = format(neto);
+      document.getElementById("ivaVal")!.innerText = format(iva);
+      document.getElementById("totalVal")!.innerText = format(total);
       resBox?.classList.remove("hidden");
     };
 
-    document.getElementById("btnSumarIva")?.addEventListener("click", () => {
-      const val = parseFloat(input.value);
-      if (val) mostrar(val, val * 0.21, val * 1.21);
+    document.getElementById("btnSumar")?.addEventListener("click", () => {
+      const v = parseFloat(input.value);
+      const tasa = parseFloat(tipo.value);
+      if (v) update(v, v * tasa, v * (1 + tasa));
     });
 
-    document.getElementById("btnQuitarIva")?.addEventListener("click", () => {
-      const val = parseFloat(input.value);
-      if (val) mostrar(val / 1.21, val - val / 1.21, val);
+    document.getElementById("btnQuitar")?.addEventListener("click", () => {
+      const v = parseFloat(input.value);
+      const tasa = parseFloat(tipo.value);
+      if (v) {
+        const neto = v / (1 + tasa);
+        update(neto, v - neto, v);
+      }
     });
   </script>
 </Layout>
