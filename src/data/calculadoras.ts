@@ -120,4 +120,39 @@ export const calculadoras = [
     icon: "📉",
     color: "blue"
   },
+{
+    titulo: "Calculadora de Asado",
+    descripcion: "¿Cuánta carne comprar? Calculá para tu próxima reunión.",
+    link: "/utiles/asado",
+    icon: "🥩",
+    color: "red"
+  },
+  {
+    titulo: "Propinas",
+    descripcion: "Calculá el 10% o el servicio que prefieras en segundos.",
+    link: "/utiles/propina",
+    icon: "💸",
+    color: "emerald"
+  },
+  {
+    titulo: "Descuentos",
+    descripcion: "Descubrí el precio final con descuentos aplicados.",
+    link: "/utiles/descuentos",
+    icon: "🏷️",
+    color: "blue"
+  },
+  {
+    titulo: "Combustible",
+    descripcion: "Calculá cuánto gasta tu auto por kilómetro.",
+    link: "/utiles/combustible",
+    icon: "⛽",
+    color: "orange"
+  },
+  {
+    titulo: "Contraseñas",
+    descripcion: "Generá claves aleatorias y seguras al instante.",
+    link: "/utiles/password",
+    icon: "🔐",
+    color: "slate"
+  },
 ];
