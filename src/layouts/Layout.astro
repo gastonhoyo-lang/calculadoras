@@ -174,15 +174,18 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
           <ul class="space-y-2 text-slate-500">
             <li>
               <a href="/finanzas/prestamo" class="hover:text-blue-600"
-                >Préstamos</a>
+                >Préstamos</a
+              >
             </li>
             <li>
               <a href="/finanzas/interes-compuesto" class="hover:text-blue-600"
-                >Interés Compuesto</a>
+                >Interés Compuesto</a
+              >
             </li>
             <li>
               <a href="/hogar/hormigon" class="hover:text-blue-600"
-                >Construcción</a>
+                >Construcción</a
+              >
             </li>
           </ul>
         </div>
@@ -191,11 +194,13 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
           <ul class="space-y-2 text-slate-500">
             <li>
               <a href="/privacidad" class="hover:text-blue-600"
-                >Política de Privacidad</a>
+                >Política de Privacidad</a
+              >
             </li>
             <li>
               <a href="/contacto" class="hover:text-blue-600"
-                >Contacto y Sugerencias</a>
+                >Contacto y Sugerencias</a
+              >
             </li>
           </ul>
         </div>
@@ -209,11 +214,15 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
     </footer>
 
     <script>
-      // Lógica del botón Favoritos e Instalación PWA
       let deferredPrompt: any;
       const favBtn = document.getElementById("favBtn");
       const favIcon = document.getElementById("favIcon");
 
+      // Detectar si es dispositivo móvil
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+      // 1. Escuchar el evento de instalación (Solo Android/Chrome)
       window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();
         deferredPrompt = e;
@@ -225,19 +234,36 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
       });
 
       favBtn?.addEventListener("click", async () => {
+        // Caso A: El navegador permite instalación (PWA)
         if (deferredPrompt) {
           deferredPrompt.prompt();
           const { outcome } = await deferredPrompt.userChoice;
-          if (outcome === "accepted") {
-            deferredPrompt = null;
-          }
-        } else {
-          const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
-          const key = isMac ? "Cmd + D" : "Ctrl + D";
-          alert(
-            `¡Guardanos en tus favoritos!\n\nPresioná ${key} para tener estas herramientas siempre a mano.`,
-          );
+          deferredPrompt = null;
+          return;
         }
+
+        // Caso B: Es un iPhone/iOS (No soportan beforeinstallprompt)
+        if (isiOS) {
+          alert(
+            'Para instalar en tu iPhone:\n\n1. Toca el botón "Compartir" (el cuadrado con flecha abajo).\n2. Selecciona "Agregar a inicio" (Add to Home Screen).',
+          );
+          return;
+        }
+
+        // Caso C: Es un Android pero ya está instalada o usa un navegador sin PWA
+        if (isMobile) {
+          alert(
+            '¡Guardanos en tu pantalla de inicio!\n\nTocá los tres puntos (⋮) del navegador y seleccioná "Instalar aplicación" o "Agregar a pantalla de inicio".',
+          );
+          return;
+        }
+
+        // Caso D: Es PC
+        const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+        const key = isMac ? "Cmd + D" : "Ctrl + D";
+        alert(
+          `¡Guardanos en tus favoritos!\n\nPresioná ${key} para tener estas herramientas siempre a mano.`,
+        );
       });
     </script>
   </body>
