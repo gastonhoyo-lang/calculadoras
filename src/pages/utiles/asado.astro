@@ -5,87 +5,208 @@ import ResultBox from "../../components/ResultBox.astro";
 ---
 
 <Layout
-  title="Calculadora de Asado | ¿Cuánto comprar?"
-  description="Calculá la cantidad exacta de carne, achuras y bebida para tu asado o reunión según la cantidad de invitados."
+  title="Calculadora de Asado | ¿Cuánto comprar para tu reunión?"
+  description="Calculá la cantidad exacta de carne, achuras y carbón para tu asado. No te quedes corto ni desperdicies comida con nuestra guía parrillera."
 >
-  <div class="max-w-4xl mx-auto px-4">
+  <div class="max-w-4xl mx-auto px-4 py-12">
     <header class="text-center mb-12">
-      <h1 class="text-4xl font-black text-slate-900 mb-4">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight"
+      >
         Calculadora de <span class="text-red-600">Asado</span> 🥩
       </h1>
-      <p class="text-slate-500 text-lg">
-        Organizá tu reunión sin complicaciones.
+      <p class="text-slate-500 text-lg font-medium text-center">
+        Organizá tu reunión sin complicaciones. Calculá como un experto.
       </p>
     </header>
 
     <div class="grid md:grid-cols-2 gap-8 mb-16">
       <div
-        class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6"
+        class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6 flex flex-col justify-center"
       >
         <div>
-          <label class="block text-xs font-bold text-slate-400 uppercase mb-3"
-            >Comensales (Adultos)</label
+          <label
+            class="block text-xs font-bold text-slate-400 uppercase mb-3 text-center tracking-widest"
+            >Cantidad de Comensales (Adultos)</label
           >
           <input
             type="number"
             id="personas"
             placeholder="Ej: 10"
-            class="w-full p-4 bg-slate-50 rounded-2xl border-none font-bold text-xl outline-none focus:ring-2 focus:ring-red-500"
+            class="w-full p-6 bg-slate-50 rounded-[2rem] border-2 border-transparent focus:border-red-500 font-black text-3xl text-center text-slate-800 outline-none transition-all"
           />
         </div>
         <button
           id="btnAsado"
-          class="w-full bg-red-600 text-white p-5 rounded-2xl font-bold hover:bg-red-700 transition-all"
-          >Calcular Cantidades</button
+          class="w-full bg-red-600 text-white p-5 rounded-2xl font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-100 active:scale-95 text-xl"
         >
+          Calcular Cantidades
+        </button>
       </div>
 
-      <div id="resAsado" class="hidden space-y-4 animate-in fade-in zoom-in">
-        <div class="bg-slate-900 text-white p-6 rounded-3xl">
+      <div
+        id="resAsado"
+        class="hidden space-y-4 animate-in fade-in zoom-in duration-300"
+      >
+        <div class="bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-xl">
           <h3
-            class="text-red-400 font-bold uppercase text-xs mb-4 text-center tracking-widest"
+            class="text-red-400 font-bold uppercase text-xs mb-6 text-center tracking-widest"
           >
             Lista de Compras Sugerida
           </h3>
-          <ul class="space-y-3 text-sm">
-            <li class="flex justify-between border-b border-slate-800 pb-2">
-              <span>Carne (Vacio/Tira):</span>
-              <span id="valCarne" class="font-bold text-white"></span>
+          <ul class="space-y-4">
+            <li
+              class="flex justify-between border-b border-slate-800 pb-3 items-center"
+            >
+              <span class="text-slate-300">Carne (Vacío/Tira):</span>
+              <span id="valCarne" class="font-black text-xl text-white"></span>
             </li>
-            <li class="flex justify-between border-b border-slate-800 pb-2">
-              <span>Chorizos/Morcillas:</span>
-              <span id="valAchuras" class="font-bold text-white"></span>
+            <li
+              class="flex justify-between border-b border-slate-800 pb-3 items-center"
+            >
+              <span class="text-slate-300">Chorizos/Morcillas:</span>
+              <span id="valAchuras" class="font-black text-xl text-white"
+              ></span>
             </li>
-            <li class="flex justify-between border-b border-slate-800 pb-2">
-              <span>Carbón:</span>
-              <span id="valCarbon" class="font-bold text-white"></span>
+            <li
+              class="flex justify-between border-b border-slate-800 pb-3 items-center"
+            >
+              <span class="text-slate-300">Carbón:</span>
+              <span id="valCarbon" class="font-black text-xl text-white"></span>
             </li>
-            <li class="flex justify-between">
-              <span>Pan:</span>
-              <span id="valPan" class="font-bold text-white"></span>
+            <li class="flex justify-between items-center">
+              <span class="text-slate-300">Pan:</span>
+              <span id="valPan" class="font-black text-xl text-white"></span>
+            </li>
+          </ul>
+          <div class="mt-8 p-4 bg-slate-800 rounded-2xl text-center">
+            <p class="text-[11px] text-slate-400 uppercase font-bold italic">
+              * Cantidades estimadas para un asado estándar
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600"
+    >
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-black text-slate-800 mb-6">
+            ¿Cómo calculamos las cantidades?
+          </h2>
+          <p class="leading-relaxed">
+            Un buen asador sabe que no hay nada peor que quedarse corto, pero
+            tampoco queremos desperdiciar. Nuestra calculadora utiliza la <strong
+              >regla del medio kilo</strong
+            >: estimamos 500g de carne por adulto, lo que permite un equilibrio
+            perfecto entre cortes principales y achuras.
+          </p>
+          <p class="mt-4">
+            Si incluís muchas ensaladas o entradas, estas cantidades pueden
+            rendir un poco más, pero para un asado "puro", estos son los números
+            que no fallan.
+          </p>
+        </div>
+
+        <div class="bg-red-50 p-8 rounded-[2.5rem] border border-red-100">
+          <h3 class="text-xl font-bold text-red-900 mb-4 text-center">
+            Tips de Parrillero 🇦🇷
+          </h3>
+          <ul class="space-y-3 text-sm text-red-800 font-medium">
+            <li>
+              • <strong>El Carbón:</strong> Calculamos casi 1kg por persona para cortes
+              que requieren fuego lento como el costillar.
+            </li>
+            <li>
+              • <strong>Las Achuras:</strong> Estimamos 1.5 unidades (entre chorizo
+              y morcilla) por cada comensal.
+            </li>
+            <li>
+              • <strong>El Pan:</strong> Siempre calculamos 2 unidades (mignones o
+              flautitas) para los choripanes y acompañar.
             </li>
           </ul>
         </div>
       </div>
-    </div>
+
+      <div
+        class="mt-16 bg-slate-50 p-10 rounded-[3rem] border border-slate-100"
+      >
+        <h3
+          class="text-2xl font-bold text-slate-800 mb-6 text-center text-balance"
+        >
+          Consejos para un asado exitoso
+        </h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-3xl mb-3">🔥</div>
+            <h4 class="font-bold text-slate-800">El Fuego</h4>
+            <p class="text-xs text-slate-500">
+              Empezá el fuego una hora antes de tirar la carne. Nunca uses
+              maderas tratadas o pintadas.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-3">🧂</div>
+            <h4 class="font-bold text-slate-800">La Sal</h4>
+            <p class="text-xs text-slate-500">
+              Usá sal entrefina para que la carne absorba solo lo necesario.
+              Salá justo antes de poner en la parrilla.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-3">🕒</div>
+            <h4 class="font-bold text-slate-800">El Tiempo</h4>
+            <p class="text-xs text-slate-500">
+              Primero van las achuras, luego los cortes finos y finalmente los
+              cortes con hueso a fuego lento.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
   </div>
 
   <script>
-    document.getElementById("btnAsado")?.addEventListener("click", () => {
-      const p = parseInt(
-        (document.getElementById("personas") as HTMLInputElement).value,
-      );
-      if (p > 0) {
-        document.getElementById("valCarne")!.innerText =
-          (p * 0.5).toFixed(1) + " kg";
-        document.getElementById("valAchuras")!.innerText =
-          Math.ceil(p * 1.5) + " unidades";
-        document.getElementById("valCarbon")!.innerText =
-          Math.ceil(p * 0.8) + " kg";
-        document.getElementById("valPan")!.innerText =
-          Math.ceil(p * 2) + " unidades";
-        document.getElementById("resAsado")?.classList.remove("hidden");
-      }
-    });
+    const setupAsado = () => {
+      const btn = document.getElementById("btnAsado");
+      btn?.addEventListener("click", () => {
+        const input = document.getElementById("personas") as HTMLInputElement;
+        const p = parseInt(input.value);
+
+        if (p > 0) {
+          // Carne: 500g por persona
+          const carne = (p * 0.5).toFixed(1);
+          // Achuras: 1.5 unidades (mezcla de chori y morci)
+          const achuras = Math.ceil(p * 1.5);
+          // Carbón: 0.8kg por persona (redondeamos hacia arriba para no quedarnos sin fuego)
+          const carbon = Math.ceil(p * 0.8);
+          // Pan: 2 unidades por persona
+          const pan = Math.ceil(p * 2);
+
+          const resCarne = document.getElementById("valCarne");
+          const resAchuras = document.getElementById("valAchuras");
+          const resCarbon = document.getElementById("valCarbon");
+          const resPan = document.getElementById("valPan");
+          const resBox = document.getElementById("resAsado");
+
+          if (resCarne && resAchuras && resCarbon && resPan && resBox) {
+            resCarne.innerText = `${carne} kg`;
+            resAchuras.innerText = `${achuras} u.`;
+            resCarbon.innerText = `${carbon} kg`;
+            resPan.innerText = `${pan} u.`;
+
+            resBox.classList.remove("hidden");
+            resBox.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        } else {
+          alert("Por favor, ingresá la cantidad de comensales.");
+        }
+      });
+    };
+
+    setupAsado();
   </script>
 </Layout>
