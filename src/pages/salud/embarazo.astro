@@ -1,0 +1,92 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Embarazo | Semanas y Fecha de Parto"
+  description="Calculá cuántas semanas de embarazo tenés, en qué trimestre estás y tu fecha probable de parto fácilmente."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-4">
+        Gestación <span class="text-indigo-500">Semana a Semana</span> 👶
+      </h1>
+    </header>
+
+    <div
+      class="bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-slate-100 max-w-2xl mx-auto space-y-8"
+    >
+      <div>
+        <label
+          class="block text-center text-xs font-bold text-slate-400 uppercase mb-4"
+          >Fecha de tu última regla (FUM)</label
+        >
+        <input
+          type="date"
+          id="fum"
+          class="w-full text-center p-6 bg-slate-50 rounded-[2rem] border-none font-black text-2xl text-indigo-600 outline-none focus:ring-2 focus:ring-indigo-200"
+        />
+      </div>
+      <button
+        id="btnEmbarazo"
+        class="w-full bg-indigo-600 text-white p-5 rounded-2xl font-bold hover:bg-indigo-700 transition-all text-xl"
+        >Calcular Estado</button
+      >
+
+      <div id="resEmbarazo" class="hidden space-y-4 animate-in fade-in">
+        <div class="bg-slate-900 text-white p-8 rounded-[2rem] text-center">
+          <p class="text-indigo-400 font-bold uppercase text-xs mb-2">
+            Fecha probable de parto
+          </p>
+          <h2 id="fpp" class="text-3xl font-black"></h2>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-indigo-50 p-6 rounded-[2rem] text-center">
+            <span class="block text-indigo-600 font-bold text-xs uppercase"
+              >Semanas</span
+            >
+            <span id="semGen" class="text-4xl font-black text-indigo-900"
+            ></span>
+          </div>
+          <div class="bg-indigo-50 p-6 rounded-[2rem] text-center">
+            <span class="block text-indigo-600 font-bold text-xs uppercase"
+              >Trimestre</span
+            >
+            <span id="trimGen" class="text-4xl font-black text-indigo-900"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("btnEmbarazo")?.addEventListener("click", () => {
+      const fumValue = (document.getElementById("fum") as HTMLInputElement)
+        .value;
+      if (fumValue) {
+        const fum = new Date(fumValue);
+        const hoy = new Date();
+
+        // FPP (Regla de Naegele: FUM + 7 días - 3 meses + 1 año)
+        const fpp = new Date(fum);
+        fpp.setDate(fum.getDate() + 280);
+
+        // Semanas
+        const diff = hoy.getTime() - fum.getTime();
+        const semanas = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+        const trimestre = semanas < 13 ? "1º" : semanas < 27 ? "2º" : "3º";
+
+        document.getElementById("fpp")!.innerText = fpp.toLocaleDateString(
+          "es-ES",
+          { day: "numeric", month: "long", year: "numeric" },
+        );
+        document.getElementById("semGen")!.innerText = semanas.toString();
+        document.getElementById("trimGen")!.innerText = trimestre;
+        document.getElementById("resEmbarazo")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

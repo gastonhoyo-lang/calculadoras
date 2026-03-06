@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Frecuencia Cardíaca Máxima"
+  description="Calculá tu FC Máxima para entrenar en las zonas correctas de intensidad."
+>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <div
+      class="bg-white p-8 rounded-[3rem] shadow-sm border border-slate-50 max-w-md mx-auto text-center"
+    >
+      <h2 class="text-2xl font-black mb-6">
+        Tu <span class="text-red-500">Corazón</span> ❤️
+      </h2>
+      <input
+        type="number"
+        id="edadFC"
+        placeholder="Tu edad"
+        class="w-full p-4 bg-slate-50 rounded-2xl mb-6 outline-none font-bold text-center text-xl"
+      />
+      <button
+        id="btnFC"
+        class="w-full bg-red-600 text-white p-4 rounded-2xl font-bold hover:bg-red-700"
+        >Calcular FC Máx</button
+      >
+
+      <div id="resFC" class="hidden mt-8 space-y-2">
+        <p class="text-slate-500 font-medium">Tu máximo estimado es:</p>
+        <div class="text-5xl font-black text-slate-900">
+          <span id="valFC"></span> PPM
+        </div>
+        <p class="text-xs text-slate-400 mt-4 italic">
+          Fórmula de Tanaka: $208 - (0.7 \times \text{edad})$
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("btnFC")?.addEventListener("click", () => {
+      const edad = parseFloat(
+        (document.getElementById("edadFC") as HTMLInputElement).value,
+      );
+      if (edad > 0) {
+        const fmax = 208 - 0.7 * edad;
+        document.getElementById("valFC")!.innerText =
+          Math.round(fmax).toString();
+        document.getElementById("resFC")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

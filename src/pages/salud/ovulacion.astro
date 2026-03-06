@@ -1,0 +1,112 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calendario de Ovulación | Calculá tus Días Fértiles"
+  description="Descubrí tus días más fértiles y tu fecha de ovulación con nuestra calculadora. Ideal para quienes buscan concebir o conocer su ciclo."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4"
+      >
+        Calendario de <span class="text-pink-500">Ovulación</span> 🌸
+      </h1>
+      <p class="text-slate-500 text-lg font-medium text-center">
+        Calculá tu ventana de fertilidad en segundos.
+      </p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <div
+        class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6"
+      >
+        <div>
+          <label class="block text-xs font-bold text-slate-400 uppercase mb-3"
+            >Último período (Fecha)</label
+          >
+          <input
+            type="date"
+            id="fechaPeriodo"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none font-bold text-lg outline-none focus:ring-2 focus:ring-pink-500"
+          />
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-400 uppercase mb-3"
+            >Duración del ciclo (Días)</label
+          >
+          <input
+            type="number"
+            id="duracionCiclo"
+            placeholder="Promedio: 28"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none font-bold text-lg outline-none focus:ring-2 focus:ring-pink-500"
+          />
+        </div>
+        <button
+          id="btnOvulacion"
+          class="w-full bg-pink-500 text-white p-5 rounded-2xl font-bold hover:bg-pink-600 transition-all shadow-lg shadow-pink-100"
+          >Calcular Fertilidad</button
+        >
+      </div>
+
+      <div
+        id="resOvulacion"
+        class="hidden bg-slate-900 text-white p-10 rounded-[2.5rem] text-center flex flex-col justify-center animate-in zoom-in"
+      >
+        <p
+          class="text-pink-400 text-xs font-bold uppercase mb-2 tracking-widest"
+        >
+          Tu día más fértil es el:
+        </p>
+        <h2 id="diaFertil" class="text-4xl font-black text-white mb-4"></h2>
+        <p class="text-slate-400 text-sm">
+          Tu ventana de fertilidad comienza 3 días antes y termina 1 día después
+          de esta fecha.
+        </p>
+      </div>
+    </div>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600"
+    >
+      <h2 class="text-2xl font-bold text-slate-800">
+        ¿Cómo funciona el cálculo?
+      </h2>
+      <p>
+        La ovulación generalmente ocurre a mitad del ciclo menstrual. En un
+        ciclo de 28 días, suele suceder el día 14. Esta calculadora estima tu
+        día de ovulación restando 14 días a la duración de tu ciclo habitual.
+      </p>
+    </article>
+  </div>
+
+  <script>
+    document.getElementById("btnOvulacion")?.addEventListener("click", () => {
+      const fecha = (
+        document.getElementById("fechaPeriodo") as HTMLInputElement
+      ).value;
+      const duracion =
+        parseInt(
+          (document.getElementById("duracionCiclo") as HTMLInputElement).value,
+        ) || 28;
+
+      if (fecha) {
+        const fechaInicio = new Date(fecha);
+        const diaOvulacion = new Date(fechaInicio);
+        diaOvulacion.setDate(fechaInicio.getDate() + (duracion - 14));
+
+        const opciones: Intl.DateTimeFormatOptions = {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        };
+        document.getElementById("diaFertil")!.innerText =
+          diaOvulacion.toLocaleDateString("es-ES", opciones);
+        document.getElementById("resOvulacion")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

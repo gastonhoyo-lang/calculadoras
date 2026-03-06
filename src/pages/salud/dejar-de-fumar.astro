@@ -1,0 +1,79 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Ahorro: Dejar de Fumar"
+  description="Descubrí cuánto dinero y tiempo de vida ahorrás al dejar el cigarrillo."
+>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-black text-center mb-10 text-slate-800">
+      Vida sin <span class="text-emerald-600">Humo</span> 🚭
+    </h1>
+    <div
+      class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm max-w-lg mx-auto space-y-4"
+    >
+      <input
+        type="number"
+        id="cigarrillosD"
+        placeholder="Cigarrillos por día"
+        class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold"
+      />
+      <input
+        type="number"
+        id="precioPack"
+        placeholder="Precio del paquete (20u)"
+        class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold"
+      />
+      <button
+        id="btnFumar"
+        class="w-full bg-slate-900 text-white p-5 rounded-2xl font-bold"
+        >Ver impacto en 1 año</button
+      >
+
+      <div
+        id="resFumar"
+        class="hidden mt-8 space-y-4 animate-in slide-in-from-top"
+      >
+        <div class="bg-emerald-50 p-6 rounded-2xl text-center">
+          <p class="text-emerald-600 font-bold uppercase text-xs">
+            Ahorro anual
+          </p>
+          <span id="dineroA" class="text-3xl font-black text-emerald-900"
+          ></span>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-2xl text-center">
+          <p class="text-blue-600 font-bold uppercase text-xs">
+            Vida recuperada (estimada)
+          </p>
+          <span id="vidaA" class="text-3xl font-black text-blue-900"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("btnFumar")?.addEventListener("click", () => {
+      const cigs = parseFloat(
+        (document.getElementById("cigarrillosD") as HTMLInputElement).value,
+      );
+      const precio = parseFloat(
+        (document.getElementById("precioPack") as HTMLInputElement).value,
+      );
+
+      if (cigs && precio) {
+        const ahorroAnual = (cigs / 20) * precio * 365;
+        // Se estima que cada cigarrillo quita 11 min de vida
+        const minRecuperados = cigs * 11 * 365;
+        const diasRecuperados = Math.round(minRecuperados / 1440);
+
+        document.getElementById("dineroA")!.innerText =
+          "$" + Math.round(ahorroAnual).toLocaleString("es-AR");
+        document.getElementById("vidaA")!.innerText = diasRecuperados + " días";
+        document.getElementById("resFumar")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

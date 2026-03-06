@@ -197,4 +197,39 @@ export const calculadoras = [
     icon: "🥩",
     color: "blue"
   },
+  {
+    titulo: "Calculadora de Ovulación",
+    descripcion: "Descubrí tus días más fértiles y tu ciclo menstrual.",
+    link: "/salud/ovulacion",
+    icon: "🌸",
+    color: "pink"
+  },
+  {
+    titulo: "Calculadora de Embarazo",
+    descripcion: "Seguimiento de semanas, trimestre y fecha de parto.",
+    link: "/salud/embarazo",
+    icon: "👶",
+    color: "indigo"
+  },
+  {
+    titulo: "Macros Keto",
+    descripcion: "Calculá la proporción ideal de grasas y proteínas para cetosis.",
+    link: "/salud/keto",
+    icon: "🥑",
+    color: "yellow"
+  },
+  {
+    titulo: "FC Máxima",
+    descripcion: "Calculá tu frecuencia cardíaca máxima para entrenar mejor.",
+    link: "/salud/frecuencia-cardiaca",
+    icon: "❤️",
+    color: "red"
+  },
+  {
+    titulo: "Dejar de Fumar",
+    descripcion: "Calculá cuánto dinero y vida ahorrás sin el cigarrillo.",
+    link: "/salud/dejar-de-fumar",
+    icon: "🚭",
+    color: "emerald"
+  },
 ];
