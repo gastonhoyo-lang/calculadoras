@@ -68,24 +68,34 @@ import ResultBox from "../../components/ResultBox.astro";
       <p>
         El ROI mide cuánto ganaste o perdiste en relación al dinero invertido.
       </p>
+
       <div class="bg-slate-50 p-6 rounded-2xl font-mono text-center my-6">
-        $$ROI = \frac{Retorno - Inversion}{Inversion} \times 100$$
+        <p class="text-sm font-bold">Fórmula:</p>
+        <p class="text-lg">ROI = [(Beneficio - Inversión) / Inversión] x 100</p>
       </div>
     </article>
   </div>
 
   <script is:inline>
-    // Script ultra-simplificado para evitar errores de compilación
-    document.getElementById("b").addEventListener("click", function () {
-      var inv = parseFloat(document.getElementById("i").value);
-      var ret = parseFloat(document.getElementById("r").value);
-      if (inv > 0) {
-        var res = ((ret - inv) / inv) * 100;
-        document.getElementById("v").innerText = res.toFixed(2) + "%";
-        document.getElementById("res").classList.remove("hidden");
-      } else {
-        alert("Ingresá un valor válido");
+    // Script blindado
+    (function () {
+      const btn = document.getElementById("b");
+      if (btn) {
+        btn.addEventListener("click", function () {
+          const inv = parseFloat(document.getElementById("i").value);
+          const ret = parseFloat(document.getElementById("r").value);
+          const valDisplay = document.getElementById("v");
+          const resBox = document.getElementById("res");
+
+          if (inv > 0 && !isNaN(ret)) {
+            const resultado = ((ret - inv) / inv) * 100;
+            if (valDisplay) valDisplay.innerText = resultado.toFixed(2) + "%";
+            if (resBox) resBox.classList.remove("hidden");
+          } else {
+            alert("Ingresá valores válidos (Inversión mayor a 0)");
+          }
+        });
       }
-    });
+    })();
   </script>
 </Layout>

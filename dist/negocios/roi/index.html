@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.18.0"><link rel="canonical" href="https://chieffin.com/negocios/roi/"><title>Calculadora de ROI | Retorno de Inversión | Chieffin</title><meta name="title" content="Calculadora de ROI | Retorno de Inversión | Chieffin"><meta name="description" content="Calculá la rentabilidad de tus proyectos o inversiones de forma simple y rápida."><meta property="og:type" content="website"><meta property="og:url" content="https://chieffin.com/negocios/roi/"><meta property="og:title" content="Calculadora de ROI | Retorno de Inversión"><meta property="og:description" content="Calculá la rentabilidad de tus proyectos o inversiones de forma simple y rápida."><meta property="og:image" content="https://chieffin.com/og-image.jpg"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://chieffin.com/negocios/roi/"><meta property="twitter:title" content="Calculadora de ROI | Retorno de Inversión"><meta property="twitter:description" content="Calculá la rentabilidad de tus proyectos o inversiones de forma simple y rápida."><meta property="twitter:image" content="https://chieffin.com/og-image.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/comprar-vs-alquilar.B_icpZcA.css"></head> <body class="bg-slate-50 text-slate-900 font-sans antialiased"> <header class="bg-white border-b border-slate-200 sticky top-0 z-50"> <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"> <a href="/" class="text-2xl font-black tracking-tight text-blue-600">
+CHIEFFIN<span class="text-slate-400">.com</span> </a> <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600"> <div class="relative group"> <button class="flex items-center gap-1 hover:text-blue-600 transition py-5 font-medium">
+Finanzas
+<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </button> <div class="absolute left-0 mt-0 w-64 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-200 z-[60]"> <div class="p-2"> <a href="/finanzas/prestamo" class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition"> <span class="block font-bold">Simulador de Préstamos</span> <span class="text-xs text-slate-500 italic">Calculá tus cuotas mensuales</span> </a> <a href="/finanzas/porcentaje" class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition border-t border-slate-50"> <span class="block font-bold">Calculadora de Porcentajes</span> <span class="text-xs text-slate-500 italic">IVA, descuentos y aumentos</span> </a> </div> </div> </div> <a href="/finanzas/interescompuesto" class="flex items-center hover:text-blue-600 transition py-5">Inversiones</a> <a href="/finanzas/porcentaje" class="flex items-center hover:text-blue-600 transition py-5">Impuestos</a> </div> <button class="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-800 transition">
+Favoritos
+</button> </nav> </header> <main class="max-w-4xl mx-auto px-4 py-12 min-h-[calc(100vh-160px)]">  <div class="max-w-4xl mx-auto px-4 py-12"> <header class="text-center mb-12"> <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">
+Calculadora de <span class="text-blue-600">ROI</span> 📈
+</h1> </header> <div class="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-sm max-w-lg mx-auto mb-16"> <div class="space-y-6"> <div> <label class="block text-[10px] font-black text-slate-400 uppercase mb-2 text-center">Inversión ($)</label> <input type="number" id="i" placeholder="0" class="w-full p-5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none text-center font-black text-2xl"> </div> <div> <label class="block text-[10px] font-black text-slate-400 uppercase mb-2 text-center">Retorno ($)</label> <input type="number" id="r" placeholder="0" class="w-full p-5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none text-center font-black text-2xl"> </div> <button id="b" class="w-full bg-blue-600 text-white p-5 rounded-2xl font-black hover:bg-blue-700 active:scale-95">
+Calcular
+</button> </div> <div id="res" class="hidden mt-10 p-8 bg-blue-50 rounded-[2.5rem] text-center"> <div id="v" class="text-5xl font-black text-slate-900">0%</div> </div> </div> <article class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-600"> <h2 class="text-2xl font-black text-slate-800">¿Qué es el ROI?</h2> <p>
+El ROI mide cuánto ganaste o perdiste en relación al dinero invertido.
+</p> <div class="bg-slate-50 p-6 rounded-2xl font-mono text-center my-6"> <p class="text-sm font-bold">Fórmula:</p> <p class="text-lg">ROI = [(Beneficio - Inversión) / Inversión] x 100</p> </div> </article> </div> <script>
+    // Script blindado
+    (function () {
+      const btn = document.getElementById("b");
+      if (btn) {
+        btn.addEventListener("click", function () {
+          const inv = parseFloat(document.getElementById("i").value);
+          const ret = parseFloat(document.getElementById("r").value);
+          const valDisplay = document.getElementById("v");
+          const resBox = document.getElementById("res");
+
+          if (inv > 0 && !isNaN(ret)) {
+            const resultado = ((ret - inv) / inv) * 100;
+            if (valDisplay) valDisplay.innerText = resultado.toFixed(2) + "%";
+            if (resBox) resBox.classList.remove("hidden");
+          } else {
+            alert("Ingresá valores válidos (Inversión mayor a 0)");
+          }
+        });
+      }
+    })();
+  </script>  </main> <footer class="bg-white border-t border-slate-200 py-12"> <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm"> <div> <p class="font-bold text-lg mb-4">Chieffin</p> <p class="text-slate-500">
+Herramientas financieras diseñadas para ayudarte a entender mejor tu
+            dinero.
+</p> </div> <div> <p class="font-bold mb-4">Categorías</p> <ul class="space-y-2 text-slate-500"> <li> <a href="/finanzas/prestamo" class="hover:text-blue-600">Préstamos Personales</a> </li> <li> <a href="/finanzas/interescompuesto" class="hover:text-blue-600">Interés Compuesto</a> </li> <li> <a href="/finanzas/porcentaje" class="hover:text-blue-600">Calculadora de IVA</a> </li> </ul> </div> <div> <p class="font-bold mb-4">Legal</p> <ul class="space-y-2 text-slate-500"> <li> <a href="/privacidad" class="hover:text-blue-600">Privacidad</a> </li> <li> <a href="/contacto" class="hover:text-blue-600">Contacto</a> </li> </ul> </div> </div> <div class="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-slate-100 text-center text-slate-400 text-xs">
+&copy; 2026 Chieffin.com - Educación financiera sin
+        complicaciones.
+</div> </footer> </body></html>
