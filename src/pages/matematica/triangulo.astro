@@ -1,105 +1,93 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
 ---
 
 <Layout
-  title="Calculadora de Área de Triángulo | Fórmulas y Cálculo Online"
-  description="Calculá la superficie o área de cualquier triángulo ingresando la base y la altura. Herramienta rápida, gratuita y educativa."
+  title="Calculadora de Área de Triángulo"
+  description="Calculá la superficie de un triángulo con base y altura."
 >
-  <div class="max-w-4xl mx-auto px-4">
-    <header class="text-center mb-12">
-      <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">
-        Área de un <span class="text-orange-500">Triángulo</span>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-black text-slate-900">
+        Área del <span class="text-orange-500">Triángulo</span>
       </h1>
-      <p class="text-slate-500 text-lg font-medium max-w-xl mx-auto">
-        Obtené la superficie de forma instantánea con la fórmula de base por altura.
-      </p>
-    </header>
+    </div>
 
-    <div class="grid lg:grid-cols-2 gap-8 items-center mb-16">
-      <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6">
-        <div>
-          <label for="baseT" class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Base (b)</label>
+    <div class="grid md:grid-cols-2 gap-8">
+      <section
+        class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm"
+      >
+        <div class="mb-4">
+          <label class="block text-sm font-bold text-slate-500 mb-2">Base</label
+          >
           <input
             type="number"
             id="baseT"
-            placeholder="Ej: 10"
-            class="w-full p-4 bg-slate-50 border-2 border-transparent focus:border-orange-500 rounded-2xl outline-none transition-all font-bold text-xl text-slate-700"
+            class="w-full p-4 bg-slate-50 rounded-xl border-none text-xl font-bold"
+            placeholder="0"
           />
         </div>
-
-        <div>
-          <label for="alturaT" class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Altura (h)</label>
+        <div class="mb-6">
+          <label class="block text-sm font-bold text-slate-500 mb-2"
+            >Altura</label
+          >
           <input
             type="number"
             id="alturaT"
-            placeholder="Ej: 15"
-            class="w-full p-4 bg-slate-50 border-2 border-transparent focus:border-orange-500 rounded-2xl outline-none transition-all font-bold text-xl text-slate-700"
+            class="w-full p-4 bg-slate-50 rounded-xl border-none text-xl font-bold"
+            placeholder="0"
           />
         </div>
-
         <button
-          id="btnTriangulo"
-          class="w-full bg-orange-500 text-white p-5 rounded-2xl font-bold hover:bg-orange-600 transition-all shadow-lg shadow-orange-100"
+          id="btnTri"
+          class="w-full bg-orange-500 text-white p-4 rounded-xl font-bold text-lg"
+          >Calcular Área</button
         >
-          Calcular Área
-        </button>
-      </div>
+      </section>
 
-      <div id="resTriContainer" class="hidden animate-in fade-in zoom-in duration-500">
-        <div class="bg-slate-900 text-white p-10 rounded-[2.5rem] text-center shadow-xl">
-          <p class="text-orange-400 text-sm font-bold uppercase tracking-widest mb-2">El área resultante es</p>
-          <h2 id="areaTVal" class="text-6xl font-black text-white mb-2">0</h2>
-          <p class="text-slate-400 text-sm">unidades cuadradas</p>
+      <section id="resTri" class="hidden">
+        <div
+          class="bg-slate-900 text-white p-8 rounded-3xl text-center h-full flex flex-col justify-center"
+        >
+          <p class="text-orange-400 font-bold uppercase text-xs mb-2">
+            Resultado
+          </p>
+          <div id="valTri" class="text-5xl font-black">0</div>
+          <p class="text-slate-400 mt-2">unidades cuadradas</p>
         </div>
-      </div>
+      </section>
     </div>
 
-    
-
-    <article class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600">
-      <h2 class="text-3xl font-black text-slate-800 mb-6">¿Cómo se calcula el área de un triángulo?</h2>
+    <article class="mt-12 prose prose-slate">
+      <h2>Fórmula del área</h2>
       <p>
-        Para hallar la superficie de un triángulo, la fórmula matemática universal que aplica a todos los tipos (isósceles, equilátero o escaleno) es:
+        El área se calcula multiplicando la base por la altura y dividiendo por
+        dos.
       </p>
 
-      <div class="bg-orange-50 p-8 rounded-3xl text-center my-8 border border-orange-100">
-        <p class="text-2xl font-mono font-bold text-orange-700">
-          $$A = \frac{b \times h}{2}$$
-        </p>
+      <div class="bg-orange-50 p-4 rounded-xl font-mono text-center">
+        Área = (b × h) / 2
       </div>
-
-      <h3 class="text-2xl font-bold text-slate-800 mb-4">Ejemplo paso a paso:</h3>
-      <p>Si tenemos un triángulo con <strong>base de 10 cm</strong> y <strong>altura de 15 cm</strong>:</p>
-      <ul class="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-100 list-none">
-        <li>1. Multiplicamos la base por la altura: $10 \times 15 = 150$.</li>
-        <li>2. Dividimos el resultado por dos: $150 / 2 = 75$.</li>
-        <li><strong>Resultado final:</strong> El área es de $75 \text{ cm}^2$.</li>
-      </ul>
     </article>
-  </div>
+  </main>
 
   <script>
-    function setup() {
-      const btn = document.getElementById("btnTriangulo");
-      const baseInput = document.getElementById("baseT") as HTMLInputElement;
-      const alturaInput = document.getElementById("alturaT") as HTMLInputElement;
-      const areaDisplay = document.getElementById("areaTVal");
-      const container = document.getElementById("resTriContainer");
+    const bInput = document.getElementById("baseT") as HTMLInputElement;
+    const hInput = document.getElementById("alturaT") as HTMLInputElement;
+    const btn = document.getElementById("btnTri");
+    const resDiv = document.getElementById("resTri");
+    const valSpan = document.getElementById("valTri");
 
-      btn?.addEventListener("click", () => {
-        const b = parseFloat(baseInput.value);
-        const h = parseFloat(alturaInput.value);
-
-        if (b > 0 && h > 0) {
-          const area = (b * h) / 2;
-          if (areaDisplay) areaDisplay.innerText = area.toLocaleString('es-AR', { maximumFractionDigits: 2 });
-          container?.classList.remove("hidden");
-        } else {
-          alert("Ingresá valores válidos mayores a cero.");
-        }
-      });
-    }
-    setup();
+    btn?.addEventListener("click", () => {
+      const b = parseFloat(bInput.value);
+      const h = parseFloat(hInput.value);
+      if (b > 0 && h > 0) {
+        const area = (b * h) / 2;
+        if (valSpan) valSpan.innerText = area.toString();
+        resDiv?.classList.remove("hidden");
+      }
+    });
   </script>
 </Layout>
