@@ -1,99 +1,225 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-// Nota: Corregí la ruta del componente que tenía un ";" al final
-import InputField from "../../components/InputField.astro";
+import InputField from "/src/components/InputField.astro";
 import ResultBox from "../../components/ResultBox.astro";
 ---
 
-<Layout title="Simulador de Préstamo">
-  <div class="max-w-2xl mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-6 text-slate-800 tracking-tight">
-      Simulador de Préstamo
-    </h1>
-
-    <div
-      class="grid gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-100"
-    >
-      <input
-        type="number"
-        id="monto"
-        placeholder="Monto total ($)"
-        class="p-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition"
-      />
-      <input
-        type="number"
-        id="cuotas"
-        placeholder="Cantidad de cuotas (meses)"
-        class="p-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition"
-      />
-      <input
-        type="number"
-        id="interes"
-        placeholder="% Interés Anual (Ej: 45)"
-        class="p-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition"
-      />
-
-      <button
-        id="btnSimular"
-        class="bg-indigo-600 text-white p-4 rounded-xl font-bold hover:bg-indigo-700 transition-all active:scale-95 shadow-lg shadow-indigo-100"
+<Layout
+  title="Simulador de Préstamos Personales | Calculá tu Cuota Mensual"
+  description="Usá nuestro simulador de préstamos para calcular cuotas fijas, intereses y el costo financiero total. Transparente, rápido y gratuito."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4"
       >
-        Simular Cuotas
-      </button>
+        Simulador de <span class="text-indigo-600">Préstamos</span>
+      </h1>
+      <p class="text-slate-500 text-lg font-medium max-w-xl mx-auto">
+        Planificá tus proyectos con precisión. Calculá tu cuota mensual bajo el
+        sistema de amortización francés.
+      </p>
+    </header>
+
+    <div class="grid lg:grid-cols-2 gap-8 items-start mb-16">
+      <div
+        class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6"
+      >
+        <div>
+          <label
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3"
+            >Monto del Crédito</label
+          >
+          <div class="relative">
+            <span
+              class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold"
+              >$</span
+            >
+            <input
+              type="number"
+              id="monto"
+              placeholder="50000"
+              class="w-full pl-10 p-4 bg-slate-50 border-2 border-transparent focus:border-indigo-500 rounded-2xl outline-none transition-all font-bold text-xl"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label
+              class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3"
+              >Tasa Anual (TNA %)</label
+            >
+            <input
+              type="number"
+              id="tasa"
+              placeholder="45"
+              class="w-full p-4 bg-slate-50 border-2 border-transparent focus:border-indigo-500 rounded-2xl outline-none transition-all font-bold text-xl"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3"
+              >Plazo (Meses)</label
+            >
+            <input
+              type="number"
+              id="plazo"
+              placeholder="12"
+              class="w-full p-4 bg-slate-50 border-2 border-transparent focus:border-indigo-500 rounded-2xl outline-none transition-all font-bold text-xl"
+            />
+          </div>
+        </div>
+
+        <button
+          id="btnCalcular"
+          class="w-full bg-indigo-600 text-white p-5 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100 flex items-center justify-center gap-2"
+        >
+          Calcular Cuota
+        </button>
+      </div>
 
       <div
-        id="resL"
-        class="hidden p-8 bg-indigo-50 rounded-2xl border-2 border-indigo-100 text-center animate-in fade-in zoom-in duration-300"
+        id="resCredito"
+        class="hidden space-y-4 animate-in fade-in zoom-in duration-500"
       >
-        <p
-          class="text-indigo-600 font-medium mb-1 uppercase text-xs tracking-wider"
+        <div
+          class="bg-indigo-600 text-white p-8 rounded-[2.5rem] text-center shadow-xl shadow-indigo-200"
         >
-          Tu cuota mensual estimada:
-        </p>
-        <h2
-          id="cuotaVal"
-          class="text-5xl font-black text-indigo-700 tracking-tighter"
-        >
-        </h2>
+          <p
+            class="text-indigo-100 text-sm font-bold uppercase tracking-widest mb-2"
+          >
+            Tu cuota mensual será de
+          </p>
+          <h2 id="cuotaVal" class="text-5xl font-black"></h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            class="bg-white p-6 rounded-3xl border border-slate-100 text-center"
+          >
+            <p class="text-slate-400 text-xs font-bold uppercase mb-1">
+              Total a Pagar
+            </p>
+            <span id="totalPagar" class="text-xl font-black text-slate-800"
+            ></span>
+          </div>
+          <div
+            class="bg-white p-6 rounded-3xl border border-slate-100 text-center"
+          >
+            <p class="text-slate-400 text-xs font-bold uppercase mb-1">
+              Total Intereses
+            </p>
+            <span id="totalInteres" class="text-xl font-black text-indigo-600"
+            ></span>
+          </div>
+        </div>
       </div>
     </div>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20"
+    >
+      <h2 class="text-3xl font-black text-slate-800 mb-6">
+        ¿Cómo funciona nuestro simulador de préstamos?
+      </h2>
+      <p class="text-slate-600 text-lg leading-relaxed mb-6">
+        Esta herramienta utiliza el <strong
+          >Sistema de Amortización Francés</strong
+        >, el más utilizado por bancos y entidades financieras en Argentina y el
+        mundo. En este sistema, la cuota mensual es constante (siempre pagás lo
+        mismo), pero la composición de la cuota varía: al principio pagás más
+        intereses y, hacia el final, devolvés más capital.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 my-10">
+        <div class="p-6 bg-indigo-50 rounded-2xl border border-indigo-100">
+          <h4 class="font-bold text-indigo-900 mb-2">Transparencia</h4>
+          <p class="text-sm text-indigo-700">
+            Conocé el Costo Financiero Total (CFT) antes de comprometerte con un
+            banco.
+          </p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <h4 class="font-bold text-slate-900 mb-2">Sin Registro</h4>
+          <p class="text-sm text-slate-600">
+            Simulá tus préstamos de forma anónima, rápida y totalmente gratuita.
+          </p>
+        </div>
+        <div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
+          <h4 class="font-bold text-emerald-900 mb-2">Comparación</h4>
+          <p class="text-sm text-emerald-700">
+            Cambiá los plazos y las tasas para encontrar la opción que mejor se
+            adapte a tu bolsillo.
+          </p>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Consejos antes de pedir un crédito
+      </h3>
+      <ul class="space-y-4 text-slate-600">
+        <li class="flex gap-3">
+          <span class="text-indigo-500 font-bold">01.</span>
+          <span
+            ><strong>Relación Cuota-Ingreso:</strong> Se recomienda que la cuota del
+            préstamo no supere el 30% de tus ingresos netos mensuales.</span
+          >
+        </li>
+        <li class="flex gap-3">
+          <span class="text-indigo-500 font-bold">02.</span>
+          <span
+            ><strong>TNA vs TEA:</strong> La Tasa Nominal Anual (TNA) es solo informativa.
+            Fijate siempre en la Tasa Efectiva Anual (TEA) para conocer el costo real.</span
+          >
+        </li>
+        <li class="flex gap-3">
+          <span class="text-indigo-500 font-bold">03.</span>
+          <span
+            ><strong>Plazo:</strong> A mayor plazo, menor es la cuota, pero terminarás
+            pagando mucho más en concepto de intereses totales.</span
+          >
+        </li>
+      </ul>
+    </article>
   </div>
 
   <script>
-    // Esta función ahora vive dentro del script de Astro correctamente
-    const calcular = () => {
-      const m = parseFloat(
+    const btn = document.getElementById("btnCalcular");
+
+    btn?.addEventListener("click", () => {
+      const monto = parseFloat(
         (document.getElementById("monto") as HTMLInputElement).value,
       );
-      const c = parseInt(
-        (document.getElementById("cuotas") as HTMLInputElement).value,
+      const tna =
+        parseFloat(
+          (document.getElementById("tasa") as HTMLInputElement).value,
+        ) / 100;
+      const meses = parseInt(
+        (document.getElementById("plazo") as HTMLInputElement).value,
       );
-      const iAnual = parseFloat(
-        (document.getElementById("interes") as HTMLInputElement).value,
-      );
 
-      if (m > 0 && c > 0 && iAnual > 0) {
-        const iMensual = iAnual / 100 / 12;
+      if (monto && tna && meses) {
+        // Tasa efectiva mensual
+        const i = tna / 12;
 
-        // Fórmula de cuota fija (Sistema Francés)
-        const cuota = (m * iMensual) / (1 - Math.pow(1 + iMensual, -c));
+        // Fórmula Sistema Francés: C = V * [ (i * (1+i)^n) / ((1+i)^n - 1) ]
+        const cuota =
+          monto * ((i * Math.pow(1 + i, meses)) / (Math.pow(1 + i, meses) - 1));
 
-        const cuotaFinal = document.getElementById("cuotaVal");
-        const resultadoDiv = document.getElementById("resL");
+        const total = cuota * meses;
+        const intereses = total - monto;
 
-        if (cuotaFinal && resultadoDiv) {
-          cuotaFinal.innerText = new Intl.NumberFormat("es-AR", {
-            style: "currency",
-            currency: "ARS",
-          }).format(cuota);
+        const f = (n: number) =>
+          n.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
 
-          resultadoDiv.classList.remove("hidden");
-        }
-      } else {
-        alert("Por favor, completa todos los campos con números válidos.");
+        document.getElementById("cuotaVal")!.innerText = f(cuota);
+        document.getElementById("totalPagar")!.innerText = f(total);
+        document.getElementById("totalInteres")!.innerText = f(intereses);
+        document.getElementById("resCredito")?.classList.remove("hidden");
+
+        window.scrollTo({ top: 300, behavior: "smooth" });
       }
-    };
-
-    // Conectamos el botón al hacer clic
-    document.getElementById("btnSimular")?.addEventListener("click", calcular);
+    });
   </script>
 </Layout>
