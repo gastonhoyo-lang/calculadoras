@@ -10,7 +10,6 @@ export interface Relacionado {
   link: string;
 }
 
-// El objeto principal debe estar bien cerrado
 export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relacionado[] }> = {
   "asado": {
     faqs: [
@@ -71,7 +70,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/porcentaje" }
     ]
     },
-// Copiá y pegá esto en src/data/faqs.ts
 
   "comprar-o-alquilar": {
     faqs: [
@@ -102,7 +100,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Tasas TNA y TEA", link: "/finanzas/tea-tna" }
     ]
     },
-    // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "costo-auto": {
     faqs: [
@@ -133,7 +130,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Comprar o Alquilar Casa", link: "/utiles/comprar-o-alquilar" }
     ]
   },
-// Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "calculadora-cuotas": {
     faqs: [
@@ -164,7 +160,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/porcentaje" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "dolar-tarjeta": {
     faqs: [
@@ -195,7 +190,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "impuesto-ganancias": {
     faqs: [
@@ -226,7 +220,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Dólar Tarjeta (Percepciones)", link: "/finanzas/dolar-tarjeta" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "indemnizacion": {
     faqs: [
@@ -286,7 +279,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "interes-compuesto": {
     faqs: [
@@ -317,7 +309,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Plazo Fijo", link: "/finanzas/plazo-fijo" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "interes-mora": {
     faqs: [
@@ -378,7 +369,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "iva": {
     faqs: [
@@ -409,7 +399,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Impuesto a las Ganancias", link: "/finanzas/impuesto-ganancias" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "meta-ahorro": {
     faqs: [
@@ -440,7 +429,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Presupuesto Mensual", link: "/finanzas/presupuesto" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "plazo-fijo": {
     faqs: [
@@ -471,7 +459,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "porcentaje": {
     faqs: [
@@ -502,7 +489,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "prestamo": {
     faqs: [
@@ -533,7 +519,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Presupuesto Mensual", link: "/finanzas/presupuesto" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "regla-50-30-20": {
     faqs: [
@@ -564,7 +549,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "calculadora-fire": {
     faqs: [
@@ -595,7 +579,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Meta de Ahorro", link: "/finanzas/meta-ahorro" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "calculadora-vacaciones": {
     faqs: [
@@ -626,7 +609,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "calculadora-frigorias": {
     faqs: [
@@ -657,7 +639,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Porcentajes", link: "/matematicas/porcentajes" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "consumo-electrico": {
     faqs: [
@@ -688,7 +669,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "calculadora-hormigon": {
     faqs: [
@@ -719,7 +699,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/calculadora-iva" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "ladrillos": {
     faqs: [
@@ -750,7 +729,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/calculadora-iva" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "consumo-energia": {
     faqs: [
@@ -781,7 +759,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "metros-cuadrados": {
     faqs: [
@@ -812,7 +789,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Consumo Eléctrico", link: "/hogar/consumo-electrico" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "calculadora-pintura": {
     faqs: [
@@ -843,7 +819,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Consumo Eléctrico", link: "/hogar/consumo-electrico" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "calculadora-circulo": {
     faqs: [
@@ -874,7 +849,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Cálculo de Hormigón", link: "/construccion/hormigon" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "calculadora-pitagoras": {
     faqs: [
@@ -905,7 +879,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Cálculo de Ladrillos", link: "/construccion/ladrillos" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "regla-de-tres": {
     faqs: [
@@ -936,7 +909,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Conversor de Unidades", link: "/herramientas/conversor" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "area-triangulo": {
     faqs: [
@@ -967,7 +939,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Círculo", link: "/herramientas/circulo" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "comisiones-venta": {
     faqs: [
@@ -998,7 +969,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Descuentos", link: "/finanzas/descuentos" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "margen-ganancia": {
     faqs: [
@@ -1029,7 +999,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Regla de Tres Simple", link: "/herramientas/regla-de-tres" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "markup-vs-margen": {
     faqs: [
@@ -1060,7 +1029,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "precio-de-venta": {
     faqs: [
@@ -1091,7 +1059,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "punto-de-equilibrio": {
     faqs: [
@@ -1122,7 +1089,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Markup vs Margen", link: "/finanzas/markup-vs-margen" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "roi": {
     faqs: [
@@ -1153,7 +1119,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "tarifa-freelance": {
     faqs: [
@@ -1184,7 +1149,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "valor-hora": {
     faqs: [
@@ -1215,7 +1179,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Markup vs Margen", link: "/finanzas/markup-vs-margen" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "agua-diaria": {
     faqs: [
@@ -1246,7 +1209,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Días Vividos", link: "/curiosidades/días-vividos" }
     ]
   },
-// Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "calorias": {
     faqs: [
@@ -1277,7 +1239,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "dejar-de-fumar": {
     faqs: [
@@ -1308,7 +1269,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "embarazo": {
     faqs: [
@@ -1339,7 +1299,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "frecuencia-cardiaca": {
     faqs: [
@@ -1370,7 +1329,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Valor de tu Hora", link: "/productividad/valor-hora" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "imc": {
     faqs: [
@@ -1401,7 +1359,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Frecuencia Cardíaca", link: "/salud/frecuencia-cardiaca" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "dieta-keto": {
     faqs: [
@@ -1432,7 +1389,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Agua Diaria", link: "/salud/agua-diaria" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "ovulacion": {
     faqs: [
@@ -1463,7 +1419,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "proteina": {
     faqs: [
@@ -1494,7 +1449,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Frecuencia Cardíaca", link: "/salud/frecuencia-cardiaca" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "volumen-definicion": {
     faqs: [
@@ -1525,7 +1479,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IMC", link: "/salud/imc" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "combustible": {
     faqs: [
@@ -1556,7 +1509,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "costo-uso": {
     faqs: [
@@ -1587,7 +1539,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Regla 50/30/20", link: "/finanzas/regla-50-30-20" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "descuento-doble": {
     faqs: [
@@ -1618,7 +1569,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "propinas": {
     faqs: [
