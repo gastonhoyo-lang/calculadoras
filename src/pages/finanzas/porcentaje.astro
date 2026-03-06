@@ -1,49 +1,90 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import InputField from "/src/components/InputField.astro";
-import ResultBox from "../../components/ResultBox.astro";
+// Eliminamos los imports de componentes que no estamos usando para evitar errores de build
 ---
 
-<Layout title="Calculadora de Porcentaje">
-  <h1 class="text-3xl font-bold mb-4 text-slate-800">
-    Calculadora de Porcentaje
-  </h1>
-  <div class="space-y-4">
-    <p class="text-slate-600 font-medium">
-      ¿Cuánto es el <input
-        type="number"
-        id="porc"
-        class="border-b-2 border-blue-500 w-16 text-center outline-none"
-        placeholder="10"
-      />% de <input
-        type="number"
-        id="num"
-        class="border-b-2 border-blue-500 w-24 text-center outline-none"
-        placeholder="500"
-      />?
-    </p>
-
-    <button
-      onclick="calcPorc()"
-      class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition"
-      >Calcular</button
-    >
+<Layout
+  title="Calculadora de Porcentajes"
+  description="Calculá porcentajes de forma rápida y sencilla con nuestra herramienta online."
+>
+  <div class="max-w-2xl mx-auto px-4">
+    <h1 class="text-4xl font-black mb-8 text-slate-900 tracking-tight">
+      Calculadora de Porcentaje
+    </h1>
 
     <div
-      id="resP"
-      class="hidden p-4 bg-blue-50 rounded-lg text-2xl font-black text-blue-700"
+      class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm transition-all"
     >
-      Resultado: <span id="valP"></span>
+      <div class="space-y-8">
+        <div
+          class="text-2xl md:text-3xl text-slate-700 font-medium leading-relaxed"
+        >
+          ¿Cuánto es el
+          <input
+            type="number"
+            id="porc"
+            class="border-b-4 border-blue-500 w-20 md:w-24 text-center outline-none focus:bg-blue-50 transition-all font-black text-blue-600 pb-1"
+            placeholder="10"
+          />
+          <span class="text-blue-500">%</span> de
+          <input
+            type="number"
+            id="num"
+            class="border-b-4 border-blue-500 w-32 md:w-40 text-center outline-none focus:bg-blue-50 transition-all font-black text-blue-600 pb-1"
+            placeholder="500"
+          />?
+        </div>
+
+        <button
+          id="btnCalc"
+          class="w-full md:w-auto bg-blue-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-100 transition-all active:scale-95"
+        >
+          Calcular ahora
+        </button>
+
+        <div
+          id="resP"
+          class="hidden mt-8 p-8 bg-blue-50 rounded-3xl border-2 border-blue-100 text-center animate-in fade-in zoom-in duration-300"
+        >
+          <p
+            class="text-blue-600 font-bold text-sm uppercase tracking-widest mb-2"
+          >
+            El resultado es
+          </p>
+          <span
+            id="valP"
+            class="text-6xl font-black text-blue-700 tracking-tighter"></span>
+        </div>
+      </div>
     </div>
+
+    <p class="mt-8 text-slate-400 text-sm text-center font-medium">
+      Ingresá los valores arriba para obtener el resultado al instante.
+    </p>
   </div>
 
-  <script is:inline>
-    function calcPorc() {
-      const p = document.getElementById("porc").value;
-      const n = document.getElementById("num").value;
-      const res = (p * n) / 100;
-      document.getElementById("valP").innerText = res;
-      document.getElementById("resP").classList.remove("hidden");
-    }
+  <script>
+    // Usamos el manejo de eventos estándar de Astro (sin is:inline para mejor rendimiento)
+    const btn = document.getElementById("btnCalc");
+
+    btn?.addEventListener("click", () => {
+      const pInput = document.getElementById("porc") as HTMLInputElement;
+      const nInput = document.getElementById("num") as HTMLInputElement;
+
+      const p = parseFloat(pInput.value);
+      const n = parseFloat(nInput.value);
+
+      if (!isNaN(p) && !isNaN(n)) {
+        const res = (p * n) / 100;
+        const valP = document.getElementById("valP");
+        const resP = document.getElementById("resP");
+
+        if (valP && resP) {
+          // Formateo de número para que sea legible (ej: 1.000,50)
+          valP.innerText = res.toLocaleString("es-AR");
+          resP.classList.remove("hidden");
+        }
+      }
+    });
   </script>
 </Layout>
