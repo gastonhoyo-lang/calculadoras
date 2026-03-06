@@ -10,42 +10,94 @@ import ResultBox from "../../components/ResultBox.astro";
 >
   <div class="max-w-4xl mx-auto px-4">
     <header class="text-center mb-12">
-      <h1 class="text-4xl font-black text-slate-900 mb-4">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4"
+      >
         Teorema de <span class="text-blue-600">Pitágoras</span>
       </h1>
+      <p class="text-slate-500 text-lg font-medium">
+        Calculá la longitud de los lados de un triángulo rectángulo.
+      </p>
     </header>
 
     <div
       class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm max-w-md mx-auto space-y-6"
     >
-      <input
-        type="number"
-        id="catA"
-        placeholder="Cateto A"
-        class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold"
-      />
-      <input
-        type="number"
-        id="catB"
-        placeholder="Cateto B"
-        class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold"
-      />
+      <div>
+        <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
+          >Cateto A</label
+        >
+        <input
+          type="number"
+          id="catA"
+          placeholder="Ej: 3"
+          class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold text-xl"
+        />
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
+          >Cateto B</label
+        >
+        <input
+          type="number"
+          id="catB"
+          placeholder="Ej: 4"
+          class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold text-xl"
+        />
+      </div>
+
       <button
         id="btnPit"
-        class="w-full bg-blue-600 text-white p-5 rounded-2xl font-bold hover:bg-blue-700 transition-all"
-        >Calcular Hipotenusa</button
+        class="w-full bg-blue-600 text-white p-5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
       >
+        Calcular Hipotenusa
+      </button>
 
       <div
         id="resPit"
-        class="hidden p-6 bg-blue-50 rounded-3xl text-center border-2 border-blue-100"
+        class="hidden p-6 bg-slate-900 rounded-3xl text-center border-2 border-slate-800 animate-in fade-in zoom-in"
       >
-        <p class="text-blue-600 text-xs font-bold uppercase mb-1">
-          La Hipotenusa es:
+        <p class="text-blue-400 text-xs font-bold uppercase mb-1">
+          La Hipotenusa (c) es:
         </p>
-        <span id="valPit" class="text-4xl font-black text-blue-700"></span>
+        <span id="valPit" class="text-4xl font-black text-white"></span>
       </div>
     </div>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600 mt-12"
+    >
+      <h2 class="text-3xl font-black text-slate-800 mb-6">
+        ¿Qué es el Teorema de Pitágoras?
+      </h2>
+      <p>
+        Es una relación fundamental en geometría entre los tres lados de un <strong
+          >triángulo rectángulo</strong
+        >. Establece que el cuadrado de la hipotenusa (el lado más largo) es
+        igual a la suma de los cuadrados de los catetos (los dos lados menores).
+      </p>
+
+      <div
+        class="bg-blue-50 p-8 rounded-3xl text-center my-8 border border-blue-100"
+      >
+        <p class="text-2xl font-mono font-bold text-blue-700">
+          $$a^2 + b^2 = c^2$$
+        </p>
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">Ejemplo Práctico:</h3>
+      <p>
+        Imaginemos que tenés un triángulo donde el <strong
+          >Cateto A mide 3</strong
+        > y el <strong>Cateto B mide 4</strong>. Para hallar la hipotenusa:
+      </p>
+      <ul class="space-y-2 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+        <li>1. Elevamos al cuadrado: $$3^2 = 9$$ y $$4^2 = 16$$.</li>
+        <li>2. Sumamos los resultados: $$9 + 16 = 25$$.</li>
+        <li>3. Aplicamos la raíz cuadrada: $$\sqrt{25} = 5$$.</li>
+        <li><strong>Resultado:</strong> La hipotenusa mide 5.</li>
+      </ul>
+    </article>
   </div>
 
   <script>
@@ -56,10 +108,16 @@ import ResultBox from "../../components/ResultBox.astro";
       const b = parseFloat(
         (document.getElementById("catB") as HTMLInputElement).value,
       );
-      if (a && b) {
+
+      if (a > 0 && b > 0) {
         const h = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
-        document.getElementById("valPit")!.innerText = h.toFixed(2);
+        document.getElementById("valPit")!.innerText = h.toLocaleString(
+          "es-AR",
+          { maximumFractionDigits: 2 },
+        );
         document.getElementById("resPit")?.classList.remove("hidden");
+      } else {
+        alert("Por favor, ingresá valores mayores a cero.");
       }
     });
   </script>

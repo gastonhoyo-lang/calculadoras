@@ -10,26 +10,18 @@ import ResultBox from "../../components/ResultBox.astro";
 >
   <div class="max-w-4xl mx-auto px-4">
     <header class="text-center mb-12">
-      <h1
-        class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4"
-      >
+      <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">
         Área de un <span class="text-orange-500">Triángulo</span>
       </h1>
       <p class="text-slate-500 text-lg font-medium max-w-xl mx-auto">
-        Obtené la superficie de forma instantánea con la fórmula de base por
-        altura.
+        Obtené la superficie de forma instantánea con la fórmula de base por altura.
       </p>
     </header>
 
     <div class="grid lg:grid-cols-2 gap-8 items-center mb-16">
-      <div
-        class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6"
-      >
+      <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6">
         <div>
-          <label
-            class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3"
-            >Base (b)</label
-          >
+          <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Base (b)</label>
           <input
             type="number"
             id="baseT"
@@ -39,10 +31,7 @@ import ResultBox from "../../components/ResultBox.astro";
         </div>
 
         <div>
-          <label
-            class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3"
-            >Altura (h)</label
-          >
+          <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Altura (h)</label>
           <input
             type="number"
             id="alturaT"
@@ -59,46 +48,60 @@ import ResultBox from "../../components/ResultBox.astro";
         </button>
       </div>
 
-      <div
-        id="resTriContainer"
-        class="hidden animate-in fade-in zoom-in duration-500"
-      >
-        <div
-          class="bg-slate-900 text-white p-10 rounded-[2.5rem] text-center shadow-xl"
-        >
-          <p
-            class="text-orange-400 text-sm font-bold uppercase tracking-widest mb-2"
-          >
-            El área resultante es
-          </p>
+      <div id="resTriContainer" class="hidden animate-in fade-in zoom-in duration-500">
+        <div class="bg-slate-900 text-white p-10 rounded-[2.5rem] text-center shadow-xl">
+          <p class="text-orange-400 text-sm font-bold uppercase tracking-widest mb-2">El área resultante es</p>
           <h2 id="areaTVal" class="text-6xl font-black text-white mb-2"></h2>
           <p class="text-slate-400 text-sm">unidades cuadradas</p>
         </div>
       </div>
     </div>
 
-    <article
-      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600"
-    >
-      <h2 class="text-3xl font-black text-slate-800 mb-6">
-        ¿Cómo se calcula el área de un triángulo?
-      </h2>
+    <article class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600">
+      <h2 class="text-3xl font-black text-slate-800 mb-6">¿Cómo se calcula el área de un triángulo?</h2>
       <p>
-        Para hallar la superficie de un triángulo, sin importar si es isósceles,
-        equilátero o escaleno, la fórmula matemática universal es:
+        Para hallar la superficie de un triángulo, sin importar si es isósceles, equilátero o escaleno, la fórmula matemática universal es:
       </p>
 
-      <div
-        class="bg-orange-50 p-8 rounded-3xl text-center my-8 border border-orange-100"
-      >
+      
+
+      <div class="bg-orange-50 p-8 rounded-3xl text-center my-8 border border-orange-100">
         <p class="text-2xl font-mono font-bold text-orange-700">
-          Área = (Base × Altura) / 2
+          $$A = \frac{b \times h}{2}$$
         </p>
       </div>
 
-      <h3 class="text-2xl font-bold text-slate-800 mb-4">
-        Ejemplo paso a paso:
-      </h3>
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">Ejemplo paso a paso:</h3>
+      <p>Supongamos que tenemos un triángulo con una <strong>base de 10 cm</strong> y una <strong>altura de 15 cm</strong>:</p>
+      <ol class="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+        <li><strong>Multiplicamos la base por la altura:</strong> $10 \times 15 = 150$.</li>
+        <li><strong>Dividimos el resultado por dos:</strong> $150 / 2 = 75$.</li>
+        <li><strong>Resultado final:</strong> El área es de $75 \text{ cm}^2$.</li>
+      </ol>
+
+      <h3 class="text-2xl font-bold text-slate-800 mt-10 mb-4">Tipos de triángulos</h3>
+      <p>Aunque existen diferentes tipos, esta fórmula funciona para todos:</p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><strong>Equilátero:</strong> Tres lados iguales.</li>
+        <li><strong>Isósceles:</strong> Dos lados iguales.</li>
+        <li><strong>Escaleno:</strong> Todos los lados diferentes.</li>
+        <li><strong>Rectángulo:</strong> Tiene un ángulo de 90°.</li>
+      </ul>
     </article>
-  </div></Layout
->
+  </div>
+
+  <script>
+    document.getElementById("btnTriangulo")?.addEventListener("click", () => {
+      const b = parseFloat((document.getElementById("baseT") as HTMLInputElement).value);
+      const h = parseFloat((document.getElementById("alturaT") as HTMLInputElement).value);
+
+      if (b > 0 && h > 0) {
+        const area = (b * h) / 2;
+        document.getElementById("areaTVal")!.innerText = area.toLocaleString('es-AR', { maximumFractionDigits: 2 });
+        document.getElementById("resTriContainer")?.classList.remove("hidden");
+      } else {
+        alert("Por favor, ingresá valores válidos mayores a cero.");
+      }
+    });
+  </script>
+</Layout>
