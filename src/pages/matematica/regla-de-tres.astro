@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import InputField from "/src/components/InputField.astro";
-import ResultBox from "../../components/ResultBox.astro";
+import ResultBox from "../../components/ResultBox.astro"; // Nota: Importaste componentes pero no los estabas usando, usé los inputs estándar para asegurar que funcione.
 ---
 
 <Layout
@@ -28,7 +28,7 @@ import ResultBox from "../../components/ResultBox.astro";
       >
         <div class="text-center w-full">
           <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
-            >Si este valor</label
+            >Si este valor (A)</label
           >
           <input
             type="number"
@@ -42,7 +42,7 @@ import ResultBox from "../../components/ResultBox.astro";
 
         <div class="text-center w-full">
           <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
-            >Es igual a este</label
+            >Es igual a este (B)</label
           >
           <input
             type="number"
@@ -54,12 +54,78 @@ import ResultBox from "../../components/ResultBox.astro";
 
         <div class="text-center w-full">
           <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
-            >Entonces este</label
+            >Entonces este (C)</label
           >
-          <input type="number" id="valC" placeholder="C" class="w-full p-4 bg-slate-50
-          rounded-2
+          <input
+            type="number"
+            id="valC"
+            placeholder="C"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-emerald-500 outline-none text-center font-black text-2xl shadow-inner"
+          />
+        </div>
+
+        <div class="text-slate-300 text-4xl hidden md:block">➞</div>
+
+        <div class="w-full bg-slate-900 p-4 rounded-2xl text-center">
+          <p class="text-emerald-400 text-xs font-bold uppercase mb-1">
+            Resultado (X)
+          </p>
+          <div id="resX" class="text-white text-3xl font-black font-mono">
+            ?
+          </div>
         </div>
       </div>
+
+      <div class="flex flex-wrap gap-4 mt-10 justify-center">
+        <button
+          id="btnDirecta"
+          class="bg-emerald-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-emerald-700 transition-all"
+          >Proporción Directa</button
+        >
+        <button
+          id="btnInversa"
+          class="bg-slate-800 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-900 transition-all"
+          >Proporción Inversa</button
+        >
+      </div>
     </div>
-  </div></Layout
->
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600"
+    >
+      <h2 class="text-3xl font-black text-slate-800 mb-6">
+        ¿Cómo funciona la regla de tres?
+      </h2>
+      <p>
+        Es el método más sencillo para resolver problemas de proporcionalidad.
+        Conocemos tres datos y buscamos un cuarto.
+      </p>
+    </article>
+  </div>
+
+  <script>
+    const getVal = (id: string) =>
+      parseFloat((document.getElementById(id) as HTMLInputElement).value);
+    const display = document.getElementById("resX");
+
+    document.getElementById("btnDirecta")?.addEventListener("click", () => {
+      const a = getVal("valA"),
+        b = getVal("valB"),
+        c = getVal("valC");
+      if (a && b && c) {
+        const res = (c * b) / a;
+        display!.innerText = res.toFixed(2);
+      }
+    });
+
+    document.getElementById("btnInversa")?.addEventListener("click", () => {
+      const a = getVal("valA"),
+        b = getVal("valB"),
+        c = getVal("valC");
+      if (a && b && c) {
+        const res = (a * b) / c;
+        display!.innerText = res.toFixed(2);
+      }
+    });
+  </script>
+</Layout>
