@@ -11,6 +11,13 @@ const categorias = [
     color: "bg-emerald-50 text-emerald-700",
   },
   {
+    id: "negocios", // <--- AGREGÁ ESTE BLOQUE
+    id: "negocios",
+    nombre: "Negocios y Emprendedores",
+    icon: "📈",
+    color: "bg-indigo-50 text-indigo-700",
+  },
+  {
     id: "hogar",
     nombre: "Hogar y Construcción",
     icon: "🏗️",
@@ -129,32 +136,46 @@ const getCalcsByCat = (cat: string) =>
   const sections = document.querySelectorAll(".category-section");
   const noResults = document.getElementById("noResults");
 
+  // Función para quitar acentos y dejar texto limpio
+  const normalizar = (texto: string) =>
+    texto
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+
   search?.addEventListener("input", () => {
-    const query = search.value.toLowerCase().trim();
+    const query = normalizar(search.value);
     let hasResults = false;
 
     cards.forEach((card) => {
-      const title = (card as HTMLElement).dataset.title || "";
-      if (title.includes(query)) {
-        (card as HTMLElement).style.display = "flex";
+      const el = card as HTMLElement;
+      // Ahora buscamos en el combo de Titulo + Descripcion + Keywords
+      const contenidoBusqueda = normalizar(el.dataset.keywords || "");
+
+      if (contenidoBusqueda.includes(query)) {
+        el.style.display = "flex";
         hasResults = true;
       } else {
-        (card as HTMLElement).style.display = "none";
+        el.style.display = "none";
       }
     });
 
-    // Ocultar secciones vacías
+    // Ocultar secciones que se quedaron sin tarjetas visibles
     sections.forEach((section) => {
-      const visibleCards = (section as HTMLElement).querySelectorAll(
+      const el = section as HTMLElement;
+      const visibleCards = el.querySelectorAll(
         '.card-calc[style="display: flex;"]',
       );
+
       if (visibleCards.length === 0 && query !== "") {
-        (section as HTMLElement).style.display = "none";
+        el.style.display = "none";
       } else {
-        (section as HTMLElement).style.display = "block";
+        el.style.display = "block";
       }
     });
 
+    // Mostrar mensaje de "No hay resultados"
     if (!hasResults && query !== "") {
       noResults?.classList.remove("hidden");
     } else {
