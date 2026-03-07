@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { calculadoras } from "../data/calculadoras";
+
+// 1. Generar las rutas para cada categoría
+export async function getStaticPaths() {
+  const categorias = [
+    {
+      id: "finanzas",
+      nombre: "Finanzas y Economía",
+      desc: "Herramientas para gestionar tu dinero, calcular impuestos y proyectar inversiones.",
+    },
+    {
+      id: "hogar",
+      nombre: "Hogar y Construcción",
+      desc: "Calculá materiales para tu obra, consumo eléctrico y medidas para tu casa.",
+    },
+    {
+      id: "matematica",
+      nombre: "Matemática y Geometría",
+      desc: "Resolvé ecuaciones, calculá áreas y porcentajes de forma rápida.",
+    },
+    {
+      id: "negocios",
+      nombre: "Negocios y Emprendedores",
+      desc: "Calculadoras de rentabilidad, punto de equilibrio y gestión comercial.",
+    },
+    {
+      id: "salud",
+      nombre: "Salud y Bienestar",
+      desc: "Monitoreá tu IMC, gasto calórico y hábitos saludables.",
+    },
+    {
+      id: "utiles",
+      nombre: "Herramientas Útiles",
+      desc: "Calculadoras para el día a día: asado, propinas y gestión del tiempo.",
+    },
+    {
+      id: "varios",
+      nombre: "Varios",
+      desc: "Otras herramientas útiles para diversas situaciones.",
+    },
+  ];
+
+  return categorias.map((cat) => ({
+    params: { categoria: cat.id },
+    props: { info: cat },
+  }));
+}
+
+const { categoria } = Astro.params;
+const { info } = Astro.props;
+
+// 2. Filtrar las calculadoras que pertenecen a esta categoría
+// Asumimos que el link de la calculadora empieza con /categoria/
+const calcsFiltradas = calculadoras.filter((calc) =>
+  calc.link.startsWith(`/${categoria}/`),
+);
+---
+
+<Layout
+  title={`${info.nombre} - Herramientas y Calculadoras`}
+  description={info.desc}
+>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <nav class="flex text-sm text-slate-500 mb-8" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600">Inicio</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-900 font-medium">{info.nombre}</span>
+    </nav>
+
+    <header class="mb-12">
+      <h1 class="text-4xl font-black text-slate-900 mb-4">{info.nombre}</h1>
+      <p class="text-xl text-slate-600 max-w-3xl">
+        {info.desc}
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        calcsFiltradas.map((calc) => (
+          <a
+            href={calc.link}
+            class="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+          >
+            <div class="text-3xl mb-4">{calc.icon}</div>
+            <h2 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">
+              {calc.titulo}
+            </h2>
+            <p class="text-slate-500 text-sm mt-2">{calc.descripcion}</p>
+            <div class="mt-4 text-blue-600 text-sm font-bold flex items-center gap-1">
+              Usar calculadora
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7-7"
+                />
+              </svg>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <article class="mt-20 prose prose-slate max-w-none border-t pt-12">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">
+        Información sobre {info.nombre}
+      </h2>
+      <p class="text-slate-600 leading-relaxed">
+        Bienvenido a nuestra sección especializada en <strong
+          >{info.nombre.toLowerCase()}</strong
+        >. En Chieffin hemos diseñado estas herramientas para simplificar tareas
+        que suelen ser complejas o tediosas. Nuestras calculadoras de {
+          categoria
+        } son gratuitas, rápidas y están actualizadas para ofrecerte resultados precisos.
+      </p>
+      <p class="text-slate-600 leading-relaxed mt-4">
+        Ya sea que necesites resolver un problema puntual o estés planificando a
+        largo plazo, estas utilidades te permiten ahorrar tiempo y evitar
+        errores manuales. Explorá cada una de las opciones arriba listadas para
+        encontrar la que mejor se adapte a tu necesidad actual.
+      </p>
+    </article>
+  </div>
+</Layout>
