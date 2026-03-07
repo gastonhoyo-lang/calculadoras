@@ -75,7 +75,7 @@ export const navigation = [
     links: [
       { name: "Edad Exacta", href: "/varios/edad" },
       { name: "Tiempo", href: "/utiles/tiempo" },
-      { name: "Ecuaciones", href: "/utiles/ecuaciones" },
+      { name: "Ecuaciones", href: "/varios/ecuaciones" },
     ]
   }
 ];

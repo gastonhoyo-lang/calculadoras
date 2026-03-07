@@ -426,7 +426,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
       { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" },
-      { nombre: "Presupuesto Mensual", link: "/finanzas/presupuesto" }
+      { nombre: "Presupuesto Mensual", link: "/finanzas/regla-50-30-20/" }
     ]
   },
 
