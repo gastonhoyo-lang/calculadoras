@@ -127,7 +127,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Gastos Compartidos", link: "/utiles/gastos-compartidos" },
       { nombre: "Simulador de Préstamos", link: "/finanzas/prestamo" },
-      { nombre: "Comprar o Alquilar Casa", link: "/utiles/comprar-o-alquilar" }
+      { nombre: "Comprar o Alquilar Casa", link: "/utiles/comprar-vs-alquilar" }
     ]
   },
 
@@ -186,7 +186,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Calculadora de IVA", link: "/finanzas/porcentaje" },
-      { nombre: "Calculadora de Cuotas", link: "/finanzas/calculadora-cuotas" },
+      { nombre: "Calculadora de Cuotas", link: "/finanzas/cuotas" },
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
     ]
   },
@@ -246,7 +246,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Calculadora de Aguinaldo", link: "/finanzas/aguinaldo" },
-      { nombre: "Impuesto a las Ganancias", link: "/finanzas/impuesto-ganancias" },
+      { nombre: "Impuesto a las Ganancias", link: "/finanzas/ganancias" },
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
     ] 
   },
@@ -275,7 +275,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
-      { nombre: "Calculadora de Cuotas", link: "/finanzas/calculadora-cuotas" },
+      { nombre: "Calculadora de Cuotas", link: "/finanzas/cuotas" },
       { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" }
     ]
   },
@@ -304,7 +304,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" },
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" },
       { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" },
       { nombre: "Plazo Fijo", link: "/finanzas/plazo-fijo" }
     ]
@@ -334,7 +334,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" },
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" },
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
       { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" }
     ]
@@ -366,7 +366,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
       { nombre: "Interés por Mora", link: "/finanzas/interes-mora" },
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" }
     ]
   },
 
@@ -394,9 +394,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" },
-      { nombre: "Factura de Exportación (E)", link: "/finanzas/factura-e" },
-      { nombre: "Impuesto a las Ganancias", link: "/finanzas/impuesto-ganancias" }
+      { nombre: "Calculadora de ROI", link: "/negocios/roi/" },
+      { nombre: "Calculadora de Porcentaje", link: "/finanzas/porcentaje/" },
+      { nombre: "Impuesto a las Ganancias", link: "/finanzas/ganancias" }
     ]
   },
 
@@ -425,7 +425,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" },
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" },
       { nombre: "Presupuesto Mensual", link: "/finanzas/presupuesto" }
     ]
   },
@@ -455,7 +455,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" },
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" },
       { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" }
     ]
   },
@@ -484,9 +484,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de IVA", link: "/finanzas/calculadora-iva" },
+      { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
       { nombre: "Interés Simple", link: "/finanzas/interes-simple" },
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" }
     ]
   },
 
@@ -514,9 +514,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" },
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" },
       { nombre: "Interés Simple", link: "/finanzas/interes-simple" },
-      { nombre: "Presupuesto Mensual", link: "/finanzas/presupuesto" }
+      { nombre: "Presupuesto Mensual", link: "/finanzas/regla-50-30-20" }
     ]
   },
 
@@ -546,7 +546,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Meta de Ahorro", link: "/finanzas/meta-ahorro" },
       { nombre: "Calculadora de Plazo Fijo", link: "/finanzas/plazo-fijo" },
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" }
     ]
   },
 
@@ -606,7 +606,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Calculadora de Aguinaldo", link: "/finanzas/aguinaldo" },
       { nombre: "Presupuesto 50/30/20", link: "/finanzas/regla-50-30-20" },
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" }
     ]
   },
 
@@ -664,9 +664,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de Frigorías", link: "/finanzas/frigorias" },
+      { nombre: "Calculadora de Frigorías", link: "/hogar/aire-acondicionado/" },
       { nombre: "Presupuesto 50/30/20", link: "/finanzas/regla-50-30-20" },
-      { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" }
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" }
     ]
   },
 
@@ -696,7 +696,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Consumo Eléctrico", link: "/finanzas/consumo-electrico" },
       { nombre: "Presupuesto 50/30/20", link: "/finanzas/regla-50-30-20" },
-      { nombre: "Calculadora de IVA", link: "/finanzas/calculadora-iva" }
+      { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
 
@@ -730,7 +730,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "consumo-energia": {
+  "consumo-electrico": {
     faqs: [
       { 
         q: "¿Qué significa el valor de Watts en un aparato?", 
