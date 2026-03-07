@@ -2,44 +2,148 @@
 import Layout from "../../layouts/Layout.astro";
 import InputField from "/src/components/InputField.astro";
 import ResultBox from "../../components/ResultBox.astro";
+
+const title = "Calculadora de Interés Compuesto";
+const description =
+  "Calculá el crecimiento exponencial de tus ahorros. Entendé el poder de reinvertir tus ganancias a largo plazo.";
 ---
 
-<Layout title="Calculadora de Interés Compuesto">
-  <div
-    class="max-w-md mx-auto p-6 bg-white rounded-3xl shadow-sm border border-slate-100"
-  >
-    <h1 class="text-2xl font-bold text-slate-900 mb-6">Interés Compuesto</h1>
+<Layout title={title} description={description}>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Inicio</a> /
+      <a href="/finanzas" class="hover:text-blue-600">Finanzas</a> /
+      <span class="text-slate-900 font-medium">Interés Compuesto</span>
+    </nav>
 
-    <div class="grid gap-4">
-      <InputField
-        id="capital"
-        label="Capital Inicial"
-        placeholder="1000"
-        unit="$"
-      />
-      <InputField
-        id="interes"
-        label="Tasa de Interés Anual"
-        placeholder="5"
-        unit="%"
-      />
-      <InputField
-        id="tiempo"
-        label="Tiempo (Años)"
-        placeholder="10"
-        unit="años"
-      />
-
-      <button
-        onclick="calcular()"
-        class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition-colors mt-2"
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <section
+        class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-100"
       >
-        Calcular Ganancia
-      </button>
+        <h1
+          class="text-3xl font-black text-slate-900 mb-6 italic tracking-tight underline decoration-emerald-400"
+        >
+          Interés Compuesto
+        </h1>
 
-      <ResultBox id="total" label="Monto Final Estimado" />
+        <div class="grid gap-5">
+          <InputField
+            id="capital"
+            label="Capital Inicial"
+            placeholder="1000"
+            unit="$"
+          />
+          <InputField
+            id="interes"
+            label="Tasa de Interés Anual (%)"
+            placeholder="10"
+            unit="%"
+          />
+          <InputField
+            id="tiempo"
+            label="Tiempo (Años)"
+            placeholder="5"
+            unit="años"
+          />
+
+          <button
+            onclick="calcular()"
+            class="w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-200 mt-2 active:scale-95"
+          >
+            Calcular Crecimiento
+          </button>
+
+          <div id="total-container" class="hidden animate-fade-in">
+            <ResultBox id="total" label="Monto Total Final" />
+            <p class="text-xs text-slate-400 mt-3 text-center italic">
+              * El cálculo asume reinversión anual de intereses.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="prose prose-slate">
+        <h2 class="text-2xl font-bold text-slate-900">
+          ¿Cómo funciona la "Bola de Nieves"?
+        </h2>
+        <p>
+          El interés compuesto ocurre cuando los intereses que ganás se suman al
+          capital original. En el siguiente período, los intereses se calculan
+          sobre ese <b>nuevo monto</b>.
+        </p>
+
+        <h3 class="text-lg font-bold">La Fórmula Matemática</h3>
+        <p>Utilizamos la fórmula de capitalización compuesta anual:</p>
+        <div
+          class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center my-4"
+        >
+          $$A = P(1 + r)^t$$
+        </div>
+        <ul class="text-sm text-slate-600">
+          <li><b>A</b>: Monto final acumulado.</li>
+          <li><b>P</b>: Capital inicial invertido.</li>
+          <li><b>r</b>: Tasa de interés anual (decimal).</li>
+          <li><b>t</b>: Cantidad de años.</li>
+        </ul>
+      </section>
     </div>
-  </div>
+
+    <div class="mt-16 border-t border-slate-100 pt-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 italic">
+            💡 Tres claves del éxito
+          </h3>
+          <ul class="space-y-4 text-slate-600">
+            <li class="flex gap-3">
+              <span class="text-emerald-500 font-bold">01.</span>
+              <span
+                ><b>El tiempo es tu aliado:</b> Empezar hoy es más importante que
+                la cantidad que inviertas.</span
+              >
+            </li>
+            <li class="flex gap-3">
+              <span class="text-emerald-500 font-bold">02.</span>
+              <span
+                ><b>No toques el capital:</b> Dejá que los intereses se reinviertan
+                para ver el efecto exponencial.</span
+              >
+            </li>
+            <li class="flex gap-3">
+              <span class="text-emerald-500 font-bold">03.</span>
+              <span
+                ><b>Inflación:</b> Recordá que para ganar dinero real, tu tasa debe
+                superar la inflación.</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl">
+          <h3 class="text-xl font-bold mb-4">Preguntas Frecuentes</h3>
+          <details class="cursor-pointer mb-3">
+            <summary class="font-bold text-slate-800"
+              >¿Es lo mismo que el interés simple?</summary
+            >
+            <p class="text-sm mt-2 text-slate-600">
+              No. En el simple, el interés siempre se calcula sobre los $1000
+              iniciales. En el compuesto, el interés del año 2 se calcula sobre
+              el total del año 1.
+            </p>
+          </details>
+          <details class="cursor-pointer">
+            <summary class="font-bold text-slate-800"
+              >¿Qué tasa de interés es buena?</summary
+            >
+            <p class="text-sm mt-2 text-slate-600">
+              Depende del riesgo. Históricamente, el mercado de acciones (S&P
+              500) rinde un 7-10% anual promedio.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <script is:inline>
     function calcular() {
@@ -47,16 +151,39 @@ import ResultBox from "../../components/ResultBox.astro";
       const r = parseFloat(document.getElementById("interes").value) / 100;
       const t = parseFloat(document.getElementById("tiempo").value);
 
-      if (p && r && t) {
+      if (!isNaN(p) && !isNaN(r) && !isNaN(t)) {
         // Fórmula: A = P(1 + r)^t
         const res = p * Math.pow(1 + r, t);
 
-        document.getElementById("total").innerText = res.toLocaleString(
-          "es-ES",
-          { minimumFractionDigits: 2, maximumFractionDigits: 2 },
-        );
-        document.getElementById("total-container").classList.remove("hidden");
+        const resultElement = document.getElementById("total");
+        if (resultElement) {
+          resultElement.innerText =
+            "$ " +
+            res.toLocaleString("es-ES", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            });
+          document.getElementById("total-container").classList.remove("hidden");
+        }
+      } else {
+        alert("Por favor, completá todos los campos con números válidos.");
       }
     }
   </script>
 </Layout>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
