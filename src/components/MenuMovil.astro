@@ -1,0 +1,98 @@
+---
+import { navigation } from "../data/navigation";
+---
+
+<button
+  id="openMobileMenu"
+  class="lg:hidden p-2 text-slate-600 hover:text-blue-600 transition"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-7 h-7"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M4 6h16M4 12h16m-7 6h7"></path>
+  </svg>
+</button>
+
+<div
+  id="mobileMenu"
+  class="fixed inset-0 z-[100] invisible opacity-0 transition-all duration-300"
+>
+  <div
+    id="closeMobileMenu"
+    class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+  >
+  </div>
+
+  <div
+    class="absolute right-0 top-0 h-full w-[80%] max-w-sm bg-white shadow-2xl flex flex-col translate-x-full transition-transform duration-300"
+    id="mobileMenuPanel"
+  >
+    <div class="p-4 border-b flex items-center justify-between">
+      <span class="font-black text-blue-600">MENÚ</span>
+      <button id="closeMobileMenuBtn" class="p-2 text-slate-400">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-4">
+      {
+        navigation.map((category) => (
+          <div class="mb-6">
+            <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3">
+              {category.name}
+            </h3>
+            <div class="grid grid-cols-1 gap-2">
+              {category.links.map((link) => (
+                <a
+                  href={link.href}
+                  class="block py-2 text-slate-700 font-bold hover:text-blue-600 border-b border-slate-50"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  const openBtn = document.getElementById("openMobileMenu");
+  const closeBtn = document.getElementById("closeMobileMenuBtn");
+  const overlay = document.getElementById("closeMobileMenu");
+  const menu = document.getElementById("mobileMenu");
+  const panel = document.getElementById("mobileMenuPanel");
+
+  function toggleMenu() {
+    menu?.classList.toggle("invisible");
+    menu?.classList.toggle("opacity-0");
+    panel?.classList.toggle("translate-x-full");
+    document.body.classList.toggle("overflow-hidden");
+  }
+
+  openBtn?.addEventListener("click", toggleMenu);
+  closeBtn?.addEventListener("click", toggleMenu);
+  overlay?.addEventListener("click", toggleMenu);
+</script>
