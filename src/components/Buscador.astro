@@ -1,0 +1,74 @@
+---
+import { navigation } from "../data/navigation";
+---
+
+<div class="relative w-full max-w-md mx-auto" id="search-container">
+  <input
+    type="text"
+    id="search-input"
+    placeholder="¿Qué necesitás calcular? (ej: obra, sueldo, iva...)"
+    class="w-full px-5 py-3 rounded-xl border border-slate-200 shadow-sm focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+  />
+
+  <div
+    id="search-results"
+    class="absolute w-full mt-2 bg-white border border-slate-200 rounded-xl shadow-2xl hidden z-[100] max-h-80 overflow-y-auto"
+  >
+  </div>
+</div>
+
+<script>
+  import { navigation } from "../data/navigation";
+
+  const input = document.getElementById("search-input");
+  const resultsContainer = document.getElementById("search-results");
+  const allLinks = navigation.flatMap((cat) => cat.links);
+
+  const limpiar = (str) =>
+    str
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+
+  input?.addEventListener("input", (e) => {
+    const query = limpiar(e.target.value);
+
+    if (query.length < 2) {
+      resultsContainer.classList.add("hidden");
+      return;
+    }
+
+    const matches = allLinks.filter((link) => {
+      const matchNombre = limpiar(link.name).includes(query);
+      const matchKeywords = link.keywords?.some((k) =>
+        limpiar(k).includes(query),
+      );
+      return matchNombre || matchKeywords;
+    });
+
+    if (matches.length > 0) {
+      resultsContainer.innerHTML = matches
+        .map(
+          (link) => `
+        <a href="${link.href}" class="block px-4 py-3 hover:bg-blue-50 transition border-b border-slate-50 last:border-0">
+          <span class="font-bold text-slate-700">${link.name}</span>
+        </a>
+      `,
+        )
+        .join("");
+      resultsContainer.classList.remove("hidden");
+    } else {
+      resultsContainer.innerHTML =
+        '<div class="p-4 text-slate-400 text-sm text-center">No encontramos esa calculadora...</div>';
+      resultsContainer.classList.remove("hidden");
+    }
+  });
+
+  // Cerrar si hacés clic afuera
+  document.addEventListener("click", (e) => {
+    if (!document.getElementById("search-container")?.contains(e.target)) {
+      resultsContainer?.classList.add("hidden");
+    }
+  });
+</script>
