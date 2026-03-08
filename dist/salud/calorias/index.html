@@ -68,5 +68,35 @@ Herramientas diseñadas para ayudarte a entender mejor tus números y
         alert(
           `¡Guardanos en tus favoritos!\n\nPresioná ${isMac ? "Cmd + D" : "Ctrl + D"} para tenernos a mano.`,
         );
-      });
-    </script> </body> </html>
+      <script is:inline>
+  // Esta función se ejecuta cada vez que el usuario hace clic en un botón de calcular
+  document.addEventListener('click', (e) => {
+    // Si el clic fue en un botón de "Calcular" (buscamos por ID o clase)
+    if (e.target.id?.includes('btn') || e.target.innerText.toLowerCase().includes('calcular')) {
+      
+      // Esperamos un milisegundo a que tus scripts actuales muestren el resultado
+      setTimeout(() => {
+        const resultBoxes = document.querySelectorAll('[id*="res"], [id*="Result"], .animate-in');
+        
+        resultBoxes.forEach(box => {
+          if (!box.classList.contains('hidden') && !box.querySelector('.btn-share-auto')) {
+            // Creamos el botón dinámicamente
+            const btn = document.createElement('button');
+            btn.className = "btn-share-auto mt-4 w-full bg-green-600 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95";
+            btn.innerHTML = `<span>Compartir en WhatsApp</span>`;
+            
+            btn.onclick = () => {
+              const texto = box.innerText.replace(/[\n\r]+/g, '\n').trim();
+              const msg = `📊 *Resultado de Chieffin*\n\n${texto}\n\n👉 ${window.location.href}`;
+              window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+            };
+            
+            box.appendChild(btn);
+          }
+        });
+      }, 100);
+    }
+  });
+</script>
+});
+</body> </html> 

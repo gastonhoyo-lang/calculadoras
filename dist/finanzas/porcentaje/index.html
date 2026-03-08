@@ -81,5 +81,35 @@ Herramientas diseñadas para ayudarte a entender mejor tus números y
         alert(
           `¡Guardanos en tus favoritos!\n\nPresioná ${isMac ? "Cmd + D" : "Ctrl + D"} para tenernos a mano.`,
         );
-      });
-    </script> </body> </html> <script type="module">const c=document.getElementById("btn1");c?.addEventListener("click",()=>{const e=parseFloat(document.getElementById("p1_porc").value),t=parseFloat(document.getElementById("p1_num").value),n=document.getElementById("res1"),o=document.getElementById("val1");if(e&&t&&n&&o){const d=e*t/100;o.textContent=d.toLocaleString(),n.classList.remove("hidden")}});const s=document.getElementById("btn2");s?.addEventListener("click",()=>{const e=parseFloat(document.getElementById("p2_num1").value),t=parseFloat(document.getElementById("p2_num2").value),n=document.getElementById("res2"),o=document.getElementById("val2");if(e&&t&&n&&o){const d=e/t*100;o.textContent=d.toFixed(2)+"%",n.classList.remove("hidden")}});</script>
+      <script is:inline>
+  // Esta función se ejecuta cada vez que el usuario hace clic en un botón de calcular
+  document.addEventListener('click', (e) => {
+    // Si el clic fue en un botón de "Calcular" (buscamos por ID o clase)
+    if (e.target.id?.includes('btn') || e.target.innerText.toLowerCase().includes('calcular')) {
+      
+      // Esperamos un milisegundo a que tus scripts actuales muestren el resultado
+      setTimeout(() => {
+        const resultBoxes = document.querySelectorAll('[id*="res"], [id*="Result"], .animate-in');
+        
+        resultBoxes.forEach(box => {
+          if (!box.classList.contains('hidden') && !box.querySelector('.btn-share-auto')) {
+            // Creamos el botón dinámicamente
+            const btn = document.createElement('button');
+            btn.className = "btn-share-auto mt-4 w-full bg-green-600 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95";
+            btn.innerHTML = `<span>Compartir en WhatsApp</span>`;
+            
+            btn.onclick = () => {
+              const texto = box.innerText.replace(/[\n\r]+/g, '\n').trim();
+              const msg = `📊 *Resultado de Chieffin*\n\n${texto}\n\n👉 ${window.location.href}`;
+              window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+            };
+            
+            box.appendChild(btn);
+          }
+        });
+      }, 100);
+    }
+  });
+</script>
+});
+</body> </html>  <script type="module">const c=document.getElementById("btn1");c?.addEventListener("click",()=>{const e=parseFloat(document.getElementById("p1_porc").value),t=parseFloat(document.getElementById("p1_num").value),n=document.getElementById("res1"),o=document.getElementById("val1");if(e&&t&&n&&o){const d=e*t/100;o.textContent=d.toLocaleString(),n.classList.remove("hidden")}});const s=document.getElementById("btn2");s?.addEventListener("click",()=>{const e=parseFloat(document.getElementById("p2_num1").value),t=parseFloat(document.getElementById("p2_num2").value),n=document.getElementById("res2"),o=document.getElementById("val2");if(e&&t&&n&&o){const d=e/t*100;o.textContent=d.toFixed(2)+"%",n.classList.remove("hidden")}});</script>
