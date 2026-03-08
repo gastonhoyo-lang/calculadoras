@@ -18,4 +18,37 @@ const { id, label } = Astro.props;
   <div class="text-4xl font-black mt-1">
     <span id={id}>0</span>
   </div>
+
+  <button
+    id={`${id}-share`}
+    class="mt-4 w-full bg-white/20 hover:bg-white/30 text-white text-xs font-bold py-2 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95"
+  >
+    <span>Compartir resultado</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path
+        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 8.38 8.38 0 0 1 3.8.9L21 3z"
+      ></path></svg
+    >
+  </button>
 </div>
+
+<script is:inline define:vars={{ id, label }}>
+  document.getElementById(`${id}-share`)?.addEventListener("click", () => {
+    const valor = document.getElementById(id)?.innerText;
+    const url = window.location.href;
+    const tituloSitio = "Chieffin.com";
+
+    const mensaje = `📊 *${label}*\nResultado: *${valor}*\n\n👉 Calculá el tuyo en: ${url}`;
+
+    window.open(`https://wa.me/?text=${encodeURIComponent(mensaje)}`, "_blank");
+  });
+</script>
