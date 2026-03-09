@@ -1,0 +1,143 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Contador de Palabras Clave | Analizador de Densidad SEO"
+  description="Analizá la frecuencia de palabras en tu texto. Optimizá la densidad de keywords y evitá penalizaciones de Google por sobreoptimización."
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+        Contador de Palabras Clave
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">
+        Pegá tu texto para descubrir cuáles son los términos que más se repiten
+        y optimizá tu relevancia.
+      </p>
+    </div>
+
+    <div
+      class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"
+    >
+      <div class="space-y-6">
+        <textarea
+          id="textInput"
+          class="w-full h-64 p-6 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-rose-500 focus:bg-white outline-none transition-all text-slate-700 resize-none"
+          placeholder="Pegá tu artículo o descripción aquí..."></textarea>
+
+        <div id="resultsWrapper" class="hidden animate-fade-in">
+          <h3 class="text-xs font-bold uppercase text-slate-400 mb-4 ml-1">
+            Top 10 Palabras más frecuentes
+          </h3>
+          <div id="keywordList" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section
+      class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6">
+        ¿Qué es la Densidad de Palabras Clave?
+      </h2>
+      <p>
+        Es la relación porcentual entre la frecuencia de una palabra específica
+        y el total de palabras de un texto. Mantener una densidad equilibrada
+        ayuda a los buscadores a entender tu temática sin parecer contenido
+        artificial.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-2">
+            Evitá el Keyword Stuffing
+          </h4>
+          <p class="text-xs leading-relaxed">
+            Si una palabra clave supera el 3% o 4% de densidad, Google podría
+            considerar que estás intentando manipular el algoritmo. Usá
+            sinónimos para mantener la riqueza semántica.
+          </p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-2">
+            Palabras de Parada (Stopwords)
+          </h4>
+          <p class="text-xs leading-relaxed">
+            Nuestro contador filtra automáticamente artículos y preposiciones
+            (el, la, de, y) para que puedas enfocarte en las palabras con carga
+            semántica real.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const input = document.getElementById("textInput") as HTMLTextAreaElement;
+  const list = document.getElementById("keywordList");
+  const wrapper = document.getElementById("resultsWrapper");
+
+  const stopWords = [
+    "el",
+    "la",
+    "los",
+    "las",
+    "un",
+    "una",
+    "unos",
+    "unas",
+    "de",
+    "del",
+    "en",
+    "y",
+    "o",
+    "que",
+    "es",
+    "con",
+    "por",
+    "para",
+    "como",
+    "su",
+    "sus",
+  ];
+
+  input?.addEventListener("input", () => {
+    const text = input.value.toLowerCase();
+    if (text.length < 5) {
+      wrapper?.classList.add("hidden");
+      return;
+    }
+
+    wrapper?.classList.remove("hidden");
+    const words = text.match(/\b\w+\b/g) || [];
+    const counts = {};
+
+    words.forEach((word) => {
+      if (word.length > 2 && !stopWords.includes(word)) {
+        counts[word] = (counts[word] || 0) + 1;
+      }
+    });
+
+    const sorted = Object.entries(counts)
+      .sort((a, b) => (b[1] as number) - (a[1] as number))
+      .slice(0, 10);
+
+    if (list) {
+      list.innerHTML = sorted
+        .map(
+          ([word, count]) => `
+        <div class="flex justify-between items-center p-3 bg-rose-50 rounded-xl border border-rose-100">
+          <span class="font-bold text-rose-700">${word}</span>
+          <span class="bg-white px-3 py-1 rounded-lg text-xs font-black text-rose-400 shadow-sm">${count} veces</span>
+        </div>
+      `,
+        )
+        .join("");
+    }
+  });
+</script>

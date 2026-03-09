@@ -2255,5 +2255,687 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Notación Científica", link: "/matematica/notacion-cientifica" },
     { nombre: "Probabilidad Binomial", link: "/matematica/calculadora-binomial" }
   ]
+},
+"contador-palabras": {
+  faqs: [
+    {
+      q: "¿Cuántas palabras debe tener un artículo SEO?",
+      a: "No hay un número fijo, pero la mayoría de los artículos que posicionan en Google tienen entre 1000 y 2000 palabras, dependiendo de la competencia."
+    },
+    {
+      q: "¿Cuál es el límite de caracteres para un título en Google?",
+      a: "Google suele mostrar los primeros 60 caracteres. Nuestra [herramienta de conteo](/seo/contador-palabras) te ayuda a no pasarte del límite visual."
+    },
+    {
+      q: "¿Los espacios cuentan como caracteres?",
+      a: "Sí, en SEO los espacios son caracteres que ocupan píxeles. Por eso es vital usar un [contador de caracteres preciso](/seo/contador-palabras)."
+    },
+    {
+      q: "¿Cómo influye el tiempo de lectura en el SEO?",
+      a: "Un tiempo de lectura estimado ayuda a mejorar la experiencia del usuario (UX), permitiéndole saber de antemano cuánto tardará en consumir tu contenido."
+    }
+  ],
+  relacionados: [
+    { nombre: "Notación Científica", link: "/matematica/notacion-cientifica" },
+    { nombre: "Conversor de Bases", link: "/matematica/conversor-bases" }
+  ]
+},
+"contador-caracteres": {
+  faqs: [
+    {
+      q: "¿Cuál es la diferencia entre el contador de palabras y el de caracteres?",
+      a: "El [contador de palabras](/seo/contador-palabras) mide el volumen total de contenido, mientras que el de caracteres se enfoca en los límites técnicos de Google para evitar recortes en la SERP."
+    },
+    {
+      q: "¿Qué pasa si me paso de los 155 caracteres en la descripción?",
+      a: "Google truncará el texto. Esto no penaliza directamente el ranking, pero puede hacer que tu mensaje pierda fuerza y baje el número de clics."
+    },
+    {
+      q: "¿Los emojis cuentan en el contador de caracteres SEO?",
+      a: "Sí, y de hecho suelen ocupar más espacio visual (píxeles) que una letra normal. Usalos con moderación en tus [Meta Títulos](/seo/contador-caracteres)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
+    { nombre: "Calculadora de Matrices", link: "/matematica/calculadora-matrices" }
+  ]
+},
+"generador-slugs": {
+  faqs: [
+    {
+      q: "¿Por qué no deben usarse tildes en las URLs?",
+      a: "Los navegadores codifican las tildes con caracteres extraños (ej. %c3%a1), lo que genera URLs largas, feas y poco confiables para los usuarios y buscadores."
+    },
+    {
+      q: "¿Es mejor usar guion medio o guion bajo?",
+      a: "Google recomienda oficialmente el **guion medio (-)**. Los guiones bajos (_) son tratados como parte de una misma palabra, lo que dificulta la identificación de keywords."
+    },
+    {
+      q: "¿Debo incluir palabras cortas como 'y', 'de' o 'para'?",
+      a: "No. Se conocen como 'stop words'. Eliminarlas hace que tu URL sea más corta y que las palabras clave tengan más relevancia. Podés medir la longitud total en nuestro [Contador de Caracteres](/seo/contador-caracteres)."
+    },
+    {
+      q: "¿Cambiar un slug afecta mi posicionamiento?",
+      a: "Sí, cambiar una URL ya indexada genera un error 404. Si lo hacés, debés aplicar una redirección 301. Usá nuestro [Generador de Slugs](/seo/generador-slugs) antes de publicar."
+    },
+    {
+      q: "¿Cuántas palabras debe tener un slug ideal?",
+      a: "Lo ideal es entre 3 y 5 palabras. Si tu texto es muy largo, podés resumirlo analizando las palabras clave con el [Contador de Palabras SEO](/seo/contador-palabras)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Caracteres SEO", link: "/seo/contador-caracteres" },
+    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
+    { nombre: "Notación Científica", link: "/matematica/notacion-cientifica" }
+  ]
+},
+"contador-caracteres-sin-espacios": {
+  faqs: [
+    {
+      q: "¿Qué se considera 'espacio' en este contador?",
+      a: "Nuestra herramienta elimina los espacios en blanco, los tabuladores y los saltos de línea (enters), dejando únicamente caracteres visibles como letras, números y símbolos."
+    },
+    {
+      q: "¿Los signos de puntuación cuentan como caracteres?",
+      a: "Sí. Comas, puntos, exclamaciones y otros símbolos son caracteres visibles y se incluyen en el conteo neto. Solo se excluyen los caracteres de espaciado invisible."
+    },
+    {
+      q: "¿Por qué Google usa caracteres con espacios para el SEO?",
+      a: "Google mide el ancho visual en píxeles de lo que el usuario ve en pantalla. Como los espacios ocupan un lugar físico en el título, debés usar nuestro [Contador de Caracteres SEO](/seo/contador-caracteres) para tus metas."
+    },
+    {
+      q: "¿Cuándo es obligatorio contar sin espacios?",
+      a: "Es común en publicaciones académicas, traducción de documentos por palabra/caracter y en la configuración de ciertos lenguajes de programación o bases de datos con límites de almacenamiento estrictos."
+    },
+    {
+      q: "¿Puedo limpiar el formato antes de contar?",
+      a: "Sí, al pegar el texto en nuestro [Generador de Slugs](/seo/generador-slugs) podés ver cómo se simplifica una cadena, pero para el conteo neto lo mejor es usar directamente esta calculadora."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Caracteres SEO", link: "/seo/contador-caracteres" },
+    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
+    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" }
+  ]
+},
+"densidad-keywords": {
+  faqs: [
+    {
+      q: "¿Cuál es la densidad de palabras clave ideal?",
+      a: "No existe una cifra mágica, pero la mayoría de los expertos recomiendan entre un 0.5% y un 2%. Lo más importante es que el texto fluya de forma natural."
+    },
+    {
+      q: "¿Qué es el Keyword Stuffing?",
+      a: "Es la práctica de repetir excesivamente una palabra clave con la intención de manipular los rankings. Google penaliza esta técnica por considerar que ofrece una mala experiencia al usuario."
+    },
+    {
+      q: "¿Cómo puedo reducir la densidad sin perder relevancia?",
+      a: "Usá sinónimos y palabras relacionadas semánticamente (LSI). Esto ayuda a Google a entender el contexto sin necesidad de repetir la misma keyword exacta."
+    },
+    {
+      q: "¿Esta herramienta analiza frases o solo palabras sueltas?",
+      a: "Nuestra herramienta analiza palabras individuales filtrando las 'stop words' para que te enfoques en los términos con mayor carga semántica."
+    },
+    {
+      q: "¿La densidad de keywords afecta al SEO en 2026?",
+      a: "Sí, pero no como antes. Hoy Google prioriza la intención de búsqueda. Usá nuestro [Generador de Slugs](/seo/generador-slugs) para complementar la optimización de tu página."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
+    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" },
+    { nombre: "Contador de Caracteres SEO", link: "/seo/contador-caracteres" }
+  ]
+},
+"tiempo-lectura": {
+  faqs: [
+    {
+      q: "¿Cuál es la velocidad de lectura promedio de una persona?",
+      a: "Para lectura en pantallas digitales, el promedio se sitúa entre 200 y 250 palabras por minuto. En papel, esta velocidad suele ser ligeramente superior."
+    },
+    {
+      q: "¿Por qué es importante mostrar el tiempo de lectura en mi blog?",
+      a: "Mejora la transparencia con el usuario y ayuda a reducir la tasa de rebote. Si un usuario sabe que la lectura es corta, es más probable que comience a leer de inmediato."
+    },
+    {
+      q: "¿El tiempo de lectura influye en el ranking de Google?",
+      a: "No es un factor directo, pero influye en métricas de comportamiento como el 'Dwell Time' (tiempo de permanencia). Si los usuarios se quedan más tiempo, Google interpreta que tu contenido es valioso."
+    },
+    {
+      q: "¿Cómo puedo reducir el tiempo de lectura sin quitar información?",
+      a: "Podés usar nuestro [Contador de Palabras SEO](/seo/contador-palabras) para identificar partes redundantes y mejorar la concisión de tus párrafos."
+    },
+    {
+      q: "¿Qué herramientas complementan el tiempo de lectura?",
+      a: "Para que la lectura sea fluida, es vital que la URL sea clara; usá nuestro [Generador de Slugs](/seo/generador-slugs) para crear direcciones fáciles de recordar."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
+    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" },
+    { nombre: "Densidad de Keywords", link: "/seo/densidad-keywords" }
+  ]
+},
+"calculadora-ctr": {
+  faqs: [
+    {
+      q: "¿Qué es un buen CTR en SEO?",
+      a: "Depende de la posición. Para un primer resultado en Google, un CTR superior al 20% es excelente. Para posiciones inferiores (7 al 10), un 1% o 2% se considera normal."
+    },
+    {
+      q: "¿Por qué mi CTR es bajo si estoy en la primera página?",
+      a: "Puede que tu Meta Título no sea lo suficientemente atractivo o que la intención de búsqueda del usuario no coincida con lo que ofrecés en el snippet."
+    },
+    {
+      q: "¿Cómo afecta el CTR al posicionamiento?",
+      a: "Aunque Google no lo confirma como factor directo, un CTR alto indica relevancia. Si muchos usuarios hacen clic en tu resultado, Google entiende que tu página responde bien a la consulta."
+    },
+    {
+      q: "¿Cómo puedo mejorar el CTR rápido?",
+      a: "Optimizá tu Meta Título con nuestro [Contador de Caracteres SEO](/seo/contador-caracteres) para que no se corte y probá agregando palabras de acción o números."
+    },
+    {
+      q: "¿El CTR es lo mismo en Google Ads que en SEO?",
+      a: "La fórmula es la misma, pero en Ads pagás por cada clic. En SEO, un CTR alto significa tráfico gratuito. Podés analizar la longitud de tus anuncios con el [Contador de Palabras SEO](/seo/contador-palabras)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Caracteres SEO", link: "/seo/contador-caracteres" },
+    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
+    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" }
+  ]
+},
+"tasa-conversion": {
+  faqs: [
+    {
+      q: "¿Cuál es una buena tasa de conversión en E-commerce?",
+      a: "El promedio mundial ronda entre el 1% y el 3%. Sin embargo, esto varía según el nicho; productos de lujo suelen tener conversiones más bajas que artículos de primera necesidad."
+    },
+    {
+      q: "¿Cómo puedo mejorar mi tasa de conversión?",
+      a: "Mejorando la velocidad de carga, simplificando los formularios y usando textos persuasivos. Podés analizar la densidad de tus palabras de venta con nuestra [Calculadora de Densidad](/seo/densidad-keywords)."
+    },
+    {
+      q: "¿Qué relación hay entre el CTR y la conversión?",
+      a: "El [CTR](/seo/calculadora-ctr) mide el éxito en atraer al usuario desde Google, mientras que la conversión mide el éxito una vez que el usuario ya está dentro de tu sitio."
+    },
+    {
+      q: "¿Por qué tengo muchas visitas pero pocas conversiones?",
+      a: "Esto suele ocurrir si tu contenido no responde a la intención de búsqueda o si tu página genera desconfianza. Revisá que tus [Meta Datos](/seo/contador-caracteres) prometan lo que realmente ofrecés."
+    },
+    {
+      q: "¿Es lo mismo conversión que venta?",
+      a: "No necesariamente. Una conversión es cualquier objetivo cumplido: puede ser una suscripción al newsletter, la descarga de un PDF o completar un carrito de compras."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
+    { nombre: "Densidad de Keywords", link: "/seo/densidad-keywords" },
+    { nombre: "Contador de Caracteres SEO", link: "/seo/contador-caracteres" }
+  ]
+},
+"roi-marketing": {
+  faqs: [
+    {
+      q: "¿Qué se considera un buen ROI en marketing digital?",
+      a: "Un ROI de 5:1 (500%) se considera excelente para la mayoría de las industrias. Un ROI de 2:1 indica que la campaña es rentable pero tiene poco margen de ganancia tras gastos operativos."
+    },
+    {
+      q: "¿Cuál es la diferencia entre ROI y ROAS?",
+      a: "El ROAS mide solo los ingresos brutos por la inversión publicitaria, mientras que el ROI resta todos los costos (producto, herramientas, salarios) para dar la rentabilidad neta."
+    },
+    {
+      q: "¿Cómo influye el SEO en el ROI a largo plazo?",
+      a: "A diferencia de los anuncios, el SEO no tiene un costo por clic. Una vez posicionado con un buen [Slug Optimizado](/seo/generador-slugs), el ROI tiende a subir exponencialmente con el tiempo."
+    },
+    {
+      q: "¿Por qué mi ROI es negativo si tengo muchas ventas?",
+      a: "Esto sucede cuando el costo de adquisición (CAC) es más alto que el margen de beneficio. Debés optimizar tu [Tasa de Conversión](/seo/tasa-conversion) para bajar costos."
+    },
+    {
+      q: "¿Cómo ayuda el CTR a mejorar el ROI?",
+      a: "Un [CTR](/seo/calculadora-ctr) alto en tus anuncios baja el costo por clic (CPC) en plataformas como Google Ads, lo que directamente mejora tu retorno de inversión."
+    }
+  ],
+  relacionados: [
+    { nombre: "Tasa de Conversión", link: "/seo/tasa-conversion" },
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
+    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" }
+  ]
+},
+"calculadora-cpc": {
+  faqs: [
+    {
+      q: "¿Cómo se calcula el CPC?",
+      a: "La fórmula es simple: dividís el costo total de la campaña por el número de clics recibidos. Si gastaste $50 y tuviste 100 clics, tu CPC es de $0.50."
+    },
+    {
+      q: "¿Por qué sube mi CPC en Google Ads?",
+      a: "Suele subir por mayor competencia en la subasta o porque el Nivel de Calidad de tu anuncio es bajo. Asegurate de optimizar tus textos con el [Contador de Caracteres SEO](/seo/contador-caracteres)."
+    },
+    {
+      q: "¿Es mejor un CPC bajo siempre?",
+      a: "No necesariamente. Un CPC muy bajo puede traer tráfico de mala calidad que no convierte. Lo ideal es balancear un buen CPC con una alta [Tasa de Conversión](/seo/tasa-conversion)."
+    },
+    {
+      q: "¿Cómo bajo el CPC de mis anuncios?",
+      a: "Mejorando la relevancia entre tu anuncio y la página de destino. Usar una palabra clave clara y un [Slug Optimizado](/seo/generador-slugs) ayuda a que las plataformas confíen más en tu enlace."
+    },
+    {
+      q: "¿Cuál es la diferencia entre CPC y CPM?",
+      a: "En el CPC pagás por cada clic (acción), mientras que en el CPM pagás por cada mil impresiones (visualización), sin importar si hicieron clic o no."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
+    { nombre: "Tasa de Conversión", link: "/seo/tasa-conversion" },
+    { nombre: "ROI Marketing", link: "/seo/roi-marketing" }
+  ]
+},
+"calculadora-cpm": {
+  faqs: [
+    {
+      q: "¿Cuál es la fórmula del CPM?",
+      a: "El CPM se calcula dividiendo el costo total de la campaña por el número de impresiones y multiplicando el resultado por 1,000."
+    },
+    {
+      q: "¿Cuándo es mejor usar CPM que CPC?",
+      a: "El CPM es ideal para campañas de reconocimiento de marca (Awareness). El [CPC](/seo/calculadora-cpc) es mejor cuando buscás una acción directa o venta."
+    },
+    {
+      q: "¿Qué factores influyen en el precio del CPM?",
+      a: "La segmentación (públicos específicos son más caros), la temporada del año (como Black Friday) y la calidad de tus anuncios."
+    },
+    {
+      q: "¿Cómo ayuda el SEO a bajar la dependencia del CPM?",
+      a: "Al generar impresiones orgánicas gratuitas, no necesitás pagar por visibilidad. Podés mejorar tu alcance orgánico usando un [Slug Optimizado](/seo/generador-slugs)."
+    },
+    {
+      q: "¿Un CPM bajo siempre es bueno?",
+      a: "No siempre. Un CPM muy barato puede significar que tus anuncios se muestran en sitios de baja calidad o a personas que no tienen interés en tu producto."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de CPC", link: "/seo/calculadora-cpc" },
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
+    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" }
+  ]
+},
+"engagement-rate": {
+  faqs: [
+    {
+      q: "¿Qué se considera un buen engagement rate?",
+      a: "Entre un 1% y un 3.5% se considera promedio. Si superás el 3.5%, tenés una comunidad muy comprometida. En cuentas pequeñas (menos de 5k), es normal ver tasas del 5% al 10%."
+    },
+    {
+      q: "¿Es mejor calcularlo sobre seguidores o sobre alcance?",
+      a: "Sobre alcance es más preciso para medir la calidad del contenido. Sobre seguidores es mejor para medir la lealtad de la marca a largo plazo."
+    },
+    {
+      q: "¿Cómo puedo subir mi engagement?",
+      a: "Fomentando la conversación. Hacé preguntas en tus textos, usá CTAs claros y asegurate de que tu [Slug de URL](/seo/generador-slugs) en la bio sea fácil de recordar."
+    },
+    {
+      q: "¿Por qué baja mi engagement si subo de seguidores?",
+      a: "Es un fenómeno común. A medida que la audiencia crece, se vuelve más heterogénea y es difícil que todo el contenido le guste a todos. Por eso la [Segmentación de Keywords](/seo/densidad-keywords) es vital."
+    },
+    {
+      q: "¿Cómo afecta el engagement al ROI?",
+      a: "Un usuario que interactúa está más cerca de la compra. Un engagement alto suele abaratar los costos en nuestra [Calculadora de ROI](/seo/roi-marketing)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Tasa de Conversión", link: "/seo/tasa-conversion" },
+    { nombre: "ROI Marketing", link: "/seo/roi-marketing" },
+    { nombre: "Densidad de Keywords", link: "/seo/densidad-keywords" }
+  ]
+},
+"calculadora-alcance": {
+  faqs: [
+    {
+      q: "¿Cuál es la diferencia entre Alcance e Impresiones?",
+      a: "El alcance cuenta personas únicas. Las impresiones cuentan cuántas veces se mostró el post en total. Si 10 personas ven tu post 2 veces cada una, el alcance es 10 y las impresiones son 20."
+    },
+    {
+      q: "¿Qué es una buena tasa de alcance orgánico?",
+      a: "En Instagram y Facebook, un alcance orgánico del 10% al 25% de tus seguidores se considera muy bueno debido a las limitaciones actuales del algoritmo."
+    },
+    {
+      q: "¿Cómo puedo aumentar mi alcance sin pagar?",
+      a: "Publicando en horarios pico, usando Reels o videos cortos, y optimizando tus captions con nuestra [Calculadora de Densidad de Keywords](/seo/densidad-keywords) para aparecer en búsquedas internas."
+    },
+    {
+      q: "¿Por qué mi alcance es menor que mi número de seguidores?",
+      a: "Las redes sociales no muestran tu contenido a todos tus seguidores para priorizar el contenido más relevante. Un alto [Engagement Rate](/seo/engagement-rate) ayuda a romper esa barrera."
+    },
+    {
+      q: "¿El alcance influye en el ROI?",
+      a: "Sí. A mayor alcance, más gente entra en tu embudo de ventas, lo que mejora las probabilidades de éxito en nuestra [Calculadora de ROI](/seo/roi-marketing)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Engagement Rate", link: "/seo/engagement-rate" },
+    { nombre: "Densidad de Keywords", link: "/seo/densidad-keywords" },
+    { nombre: "ROI Marketing", link: "/seo/roi-marketing" }
+  ]
+},
+"frecuencia-publicitaria": {
+  faqs: [
+    {
+      q: "¿Cómo se calcula la frecuencia publicitaria?",
+      a: "Dividiendo el número total de impresiones por el alcance único (personas únicas). Si tenés 1000 impresiones y llegaste a 500 personas, tu frecuencia es 2."
+    },
+    {
+      q: "¿Cuál es la frecuencia ideal en Facebook Ads?",
+      a: "Para la mayoría de los productos, una frecuencia de entre 2 y 4 es el punto dulce para generar recuerdo sin cansar al usuario."
+    },
+    {
+      q: "¿Qué pasa si mi frecuencia es muy alta?",
+      a: "El rendimiento de tu campaña bajará. El [CTR](/seo/calculadora-ctr) disminuirá y el costo por mil impresiones ([CPM](/seo/calculadora-cpm)) o el costo por clic ([CPC](/seo/calculadora-cpc)) tenderá a subir."
+    },
+    {
+      q: "¿Cómo bajo la frecuencia de mis anuncios?",
+      a: "Podés ampliar tu segmentación para llegar a gente nueva o pausar los anuncios por unos días para dejar descansar a tu audiencia actual."
+    },
+    {
+      q: "¿Es lo mismo frecuencia que impresiones?",
+      a: "No. Las impresiones son el total de veces que se vio el anuncio. La frecuencia es el promedio de esas vistas por cada persona individual."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Alcance", link: "/seo/calculadora-alcance" },
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
+    { nombre: "Costo por Mil (CPM)", link: "/seo/calculadora-cpm" }
+  ]
+},
+"calculadora-cpl": {
+  faqs: [
+    {
+      q: "¿Cómo se calcula el CPL?",
+      a: "Se divide la inversión total realizada en una campaña o canal por el número de leads (contactos) obtenidos en ese mismo periodo."
+    },
+    {
+      q: "¿Cuál es un buen CPL?",
+      a: "Depende totalmente de tu industria y del valor de vida del cliente (LTV). Un CPL de $50 puede ser excelente para vender casas, pero pésimo para vender remeras."
+    },
+    {
+      q: "¿Cómo puedo bajar mi Costo por Lead?",
+      a: "Mejorando la [Tasa de Conversión](/seo/tasa-conversion) de tu formulario o aumentando el [CTR](/seo/calculadora-ctr) de tus anuncios para atraer tráfico más calificado."
+    },
+    {
+      q: "¿Es mejor el CPL o el CPA?",
+      a: "El CPL mide el interés inicial (datos), mientras que el CPA (Costo por Adquisición) mide la venta final. Ambos son necesarios para medir el [ROI](/seo/roi-marketing)."
+    },
+    {
+      q: "¿Cómo influye el SEO en el CPL?",
+      a: "El tráfico orgánico suele tener un CPL mucho más bajo a largo plazo que los anuncios pagados. Optimizá tus textos con el [Contador de Palabras](/seo/contador-palabras) para convencer mejor a tus visitas."
+    }
+  ],
+  relacionados: [
+    { nombre: "Tasa de Conversión", link: "/seo/tasa-conversion" },
+    { nombre: "ROI Marketing", link: "/seo/roi-marketing" },
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" }
+  ]
+},
+"calculadora-cpa": {
+  faqs: [
+    {
+      q: "¿Cómo se diferencia el CPA del CAC?",
+      a: "A menudo se usan como sinónimos, pero el CPA suele referirse al costo de una acción específica (venta), mientras que el CAC (Customer Acquisition Cost) engloba todos los costos de marketing y ventas durante un periodo largo."
+    },
+    {
+      q: "¿Por qué es importante el CPA en campañas de retargeting?",
+      a: "En retargeting el CPA suele ser más bajo porque impactas a gente que ya te conoce. Es vital medirlo para comparar su eficiencia contra el tráfico frío."
+    },
+    {
+      q: "¿Cómo puedo reducir un CPA elevado?",
+      a: "Mejorando la segmentación para no gastar en clics inútiles y optimizando la [Tasa de Conversión](/seo/tasa-conversion) de tu página de ventas."
+    },
+    {
+      q: "¿Qué relación tiene el CPA con el ROI?",
+      a: "El [ROI](/seo/roi-marketing) depende directamente del CPA. Si logras bajar el costo por adquisición manteniendo el precio de venta, tu retorno de inversión sube automáticamente."
+    },
+    {
+      q: "¿El SEO ayuda a bajar el CPA?",
+      a: "Totalmente. El tráfico SEO no tiene costo por clic directo, por lo que las ventas que vienen de buscadores diluyen el costo total de adquisición, bajando el promedio general."
+    }
+  ],
+  relacionados: [
+    { nombre: "Costo por Lead (CPL)", link: "/seo/calculadora-cpl" },
+    { nombre: "Tasa de Conversión", link: "/seo/tasa-conversion" },
+    { nombre: "ROI Marketing", link: "/seo/roi-marketing" }
+  ]
+},
+"analizador-titulos": {
+  faqs: [
+    {
+      q: "¿Cuál es la longitud ideal de un título SEO?",
+      a: "Entre 50 y 60 caracteres. Superar los 60 hará que Google corte el título con puntos suspensivos en los resultados de búsqueda."
+    },
+    {
+      q: "¿Qué son las 'Palabras de Poder'?",
+      a: "Son términos que disparan una respuesta emocional o de curiosidad, como 'Infalible', 'Estrategia' o 'Completo'. Ayudan a destacar sobre la competencia."
+    },
+    {
+      q: "¿Debo poner mi marca al final del título?",
+      a: "Sí, a menos que seas una marca muy reconocida. Es mejor priorizar la palabra clave principal al inicio y dejar el nombre del sitio para el final."
+    },
+    {
+      q: "¿Por qué los números funcionan en los títulos?",
+      a: "Porque prometen una estructura clara y un tiempo de lectura estimado. '5 Trucos' suena mucho más accionable que simplemente 'Trucos'."
+    },
+    {
+      q: "¿Cómo afecta el título a mi CTR?",
+      a: "El título es lo primero que ve el usuario. Un buen título puede aumentar tu [CTR](/seo/calculadora-ctr) incluso si no estás en la primera posición absoluta."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
+    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" },
+    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" }
+  ]
+},
+"contador-encabezados": {
+  faqs: [
+    {
+      q: "¿Es malo tener más de un H1 por página?",
+      a: "Para el SEO moderno no es un error crítico, pero se recomienda usar solo uno para clarificar a Google cuál es el tema principal y mejorar la accesibilidad."
+    },
+    {
+      q: "¿Los encabezados deben contener palabras clave?",
+      a: "Sí, los H2 y H3 son lugares estratégicos para colocar variaciones de tu keyword principal y responder a preguntas de los usuarios."
+    },
+    {
+      q: "¿Puedo usar un H3 antes que un H2?",
+      a: "No es recomendable. La jerarquía debe ser descendente para mantener el orden lógico del contenido y facilitar la lectura a los bots."
+    },
+    {
+      q: "¿Qué longitud debe tener un encabezado?",
+      a: "Deben ser concisos. Si un H2 es muy largo, usá nuestro [Analizador de Títulos](/seo/analizador-titulos) para optimizarlo."
+    },
+    {
+      q: "¿Cómo influyen los encabezados en los fragmentos destacados (featured snippets)?",
+      a: "Google suele usar los encabezados H2 y H3 para crear listas o pasos en los resultados de búsqueda, lo que puede disparar tu [CTR](/seo/calculadora-ctr)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" },
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
+    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" }
+  ]
+},
+"contador-keywords": {
+  faqs: [
+    {
+      q: "¿Cuál es la densidad de palabras clave ideal?",
+      a: "No hay una regla fija, pero la mayoría de los expertos recomiendan entre un 1% y un 2.5% para la palabra clave principal."
+    },
+    {
+      q: "¿Qué es el Keyword Stuffing?",
+      a: "Es el uso excesivo de una palabra clave con el fin de manipular el ranking en buscadores. Esto resulta en una mala experiencia de lectura y penalizaciones."
+    },
+    {
+      q: "¿Cómo puedo reducir la densidad sin perder relevancia?",
+      a: "Utilizando LSI (Latent Semantic Indexing) o palabras semánticamente relacionadas y sinónimos. Esto ayuda a Google a entender el contexto sin repetir lo mismo."
+    },
+    {
+      q: "¿El contador analiza frases (keywords de cola larga)?",
+      a: "Esta versión analiza palabras individuales. Para frases completas, es recomendable revisar la estructura de tus [Encabezados H1-H3](/seo/contador-encabezados)."
+    },
+    {
+      q: "¿Influye la posición de la palabra clave?",
+      a: "Sí, las palabras que aparecen en el primer párrafo y en el [Analizador de Títulos](/seo/analizador-titulos) tienen más peso para el algoritmo."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Encabezados", link: "/seo/contador-encabezados" },
+    { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" },
+    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" }
+  ]
+},
+"longitud-meta-description": {
+  faqs: [
+    {
+      q: "¿Cuál es la longitud máxima de una meta description?",
+      a: "Para escritorio es de unos 155-160 caracteres. Para móviles es un poco más corta, alrededor de 120 caracteres. Por eso recomendamos el rango de 120-150."
+    },
+    {
+      q: "¿Qué pasa si mi meta descripción es muy larga?",
+      a: "Google la cortará con puntos suspensivos (...). Esto puede ocultar tu llamado a la acción y reducir la tasa de clics (CTR)."
+    },
+    {
+      q: "¿Por qué Google a veces cambia mi meta descripción?",
+      a: "Si Google considera que tu descripción no describe bien el contenido o no coincide con la búsqueda del usuario, generará una automáticamente extrayendo texto de tu página."
+    },
+    {
+      q: "¿La meta descripción ayuda a rankear mejor?",
+      a: "No directamente. Google no la usa para posicionarte, pero sí influye en el CTR. Si mucha gente hace clic en tu resultado, eso envía señales positivas de relevancia a Google."
+    },
+    {
+      q: "¿Debo usar emojis en la meta descripción?",
+      a: "Podés usarlos para destacar, pero sin exagerar. Algunos emojis pueden ayudar a subir el [CTR](/seo/calculadora-ctr), pero asegurate de que encajen con el tono de tu marca."
+    }
+  ],
+  relacionados: [
+    { nombre: "Analizador de Títulos SEO", link: "/seo/analizador-titulos" },
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
+    { nombre: "Contador de Keywords", link: "/seo/contador-keywords" }
+  ]
+},
+"longitud-titulo-seo": {
+  faqs: [
+    {
+      q: "¿Cuántos caracteres permite Google en el título?",
+      a: "El límite técnico es por píxeles (600px), lo que equivale generalmente a entre 55 y 60 caracteres. Si te mantienes en ese rango, tu título se verá completo."
+    },
+    {
+      q: "¿Es malo tener un título muy corto?",
+      a: "No es penalizado, pero desaprovechas espacio para incluir variaciones de palabras clave que podrían ayudarte a rankear para más términos de búsqueda."
+    },
+    {
+      q: "¿Debo poner el nombre de mi marca en el título?",
+      a: "Sí, se recomienda ponerlo al final separado por un guion o barra vertical ( | ). Esto ayuda a construir autoridad de marca sin quitar peso a la keyword principal."
+    },
+    {
+      q: "¿Influyen las mayúsculas en el espacio del título?",
+      a: "Sí. Las letras mayúsculas ocupan más píxeles que las minúsculas. Un título todo en mayúsculas se cortará mucho antes que uno normal."
+    },
+    {
+      q: "¿Qué pasa si Google muestra un título distinto al que configuré?",
+      a: "Google puede reescribir tu título si considera que el tuyo no es relevante para la consulta del usuario o si detecta un exceso de palabras clave (keyword stuffing)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Analizador de Títulos SEO", link: "/seo/analizador-titulos" },
+    { nombre: "Longitud de Meta Description", link: "/seo/longitud-meta-description" },
+    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" }
+  ]
+},
+"ratio-texto-html": {
+  faqs: [
+    {
+      q: "¿Cómo afecta el ratio Texto-HTML al SEO?",
+      a: "Un ratio alto ayuda a los motores de búsqueda a identificar el contenido principal más rápido. Además, suele estar correlacionado con una mejor velocidad de carga."
+    },
+    {
+      q: "¿Qué se considera un 'buen' ratio?",
+      a: "Generalmente se busca que el texto represente al menos el 15% del total del archivo HTML. Menos del 10% suele indicar código innecesario o falta de contenido."
+    },
+    {
+      q: "¿Cómo puedo mejorar este ratio?",
+      a: "Eliminando estilos CSS en línea, scripts JS innecesarios o moviéndolos a archivos externos, y por supuesto, escribiendo más contenido de valor en la página."
+    },
+    {
+      q: "¿El código de los comentarios HTML cuenta?",
+      a: "Sí, los comentarios aumentan el peso del HTML sin añadir texto visible, lo que baja el ratio. Es recomendable eliminarlos en producción."
+    },
+    {
+      q: "¿Es este ratio un factor de ranking directo?",
+      a: "No directamente, pero afecta factores que sí lo son, como la velocidad de carga (Core Web Vitals) y la densidad de palabras clave."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Keywords", link: "/seo/contador-keywords" },
+    { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" },
+    { nombre: "Contador de Encabezados", link: "/seo/contador-encabezados" }
+  ]
+},
+"densidad-enlaces-internos": {
+  faqs: [
+    {
+      q: "¿Cuántos enlaces internos son recomendables por post?",
+      a: "No hay un número exacto, pero una buena práctica es incluir entre 2 y 5 enlaces internos por cada 1000 palabras, siempre que sean relevantes para el usuario."
+    },
+    {
+      q: "¿Qué es una página huérfana?",
+      a: "Es una página que no recibe ningún enlace interno desde otras partes de tu sitio. Esto hace que sea muy difícil para Google encontrarla y posicionarla."
+    },
+    {
+      q: "¿Importa el texto del enlace (Anchor Text)?",
+      a: "Muchísimo. El anchor text le dice a Google de qué trata la página a la que estás enlazando. Evitá usar 'leer más' y usá palabras clave descriptivas."
+    },
+    {
+      q: "¿Es malo enlazar muchas veces a la misma página?",
+      a: "Sí, es redundante. Un solo enlace bien ubicado (preferiblemente al principio del texto) suele ser suficiente para transmitir autoridad."
+    },
+    {
+      q: "¿Cómo ayuda el interlinking al SEO?",
+      a: "Mejora el tiempo de permanencia del usuario, reduce la tasa de rebote y ayuda a los rastreadores de Google a entender la jerarquía y relación entre tus contenidos."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Keywords", link: "/seo/contador-keywords" },
+    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" },
+    { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" }
+  ]
+},
+"anchor-text-ratio": {
+  faqs: [
+    {
+      q: "¿Qué es el anchor text o texto de ancla?",
+      a: "Es el texto visible y cliqueable de un hipervínculo. Para el SEO, es una señal que indica a los buscadores de qué trata la página de destino."
+    },
+    {
+      q: "¿Por qué es peligroso usar siempre la palabra clave exacta?",
+      a: "Porque parece artificial. Google Penguin penaliza a los sitios cuyos enlaces externos parecen fabricados mediante la repetición constante de la misma keyword."
+    },
+    {
+      q: "¿Cómo diluyo un ratio de anclajes muy alto?",
+      a: "Consiguiendo nuevos enlaces que usen el nombre de tu marca, la URL de tu sitio o palabras genéricas como 'haga clic aquí'."
+    },
+    {
+      q: "¿El ratio es igual para todas las industrias?",
+      a: "No, en nichos muy competitivos los ratios suelen ser un poco más altos, pero la regla de oro es observar a los competidores que ya están en el Top 3."
+    },
+    {
+      q: "¿Qué son los anclajes de 'LSI'?",
+      a: "Son variaciones semánticas de tu palabra clave. Por ejemplo, si tu keyword es 'SEO', un anclaje LSI sería 'optimización en buscadores'."
+    }
+  ],
+  relacionados: [
+    { nombre: "Densidad de Enlaces", link: "/seo/densidad-enlaces-internos" },
+    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" },
+    { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" }
+  ]
 }
 };

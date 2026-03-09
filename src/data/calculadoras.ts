@@ -661,4 +661,220 @@ export const calculadoras = [
   color: "rose",
   keywords: "factorial, matematicas, n!, probabilidad, combinatoria, formula factorial"
 },
+{
+  titulo: "Contador de Palabras SEO",
+  descripcion: "Analizá la longitud de tus textos, caracteres y párrafos. Incluye tiempo estimado de lectura.",
+  link: "/seo/contador-palabras",
+  categoria: "seo",
+  icon: "📝",
+  color: "blue",
+  keywords: "contador de palabras, seo, caracteres, meta descripcion, longitud de texto, lectura"
+},
+{
+  titulo: "Contador de Caracteres SEO",
+  descripcion: "Simulador de longitud para Meta Títulos y Meta Descripciones. Optimizá tu CTR para Google.",
+  link: "/seo/contador-caracteres",
+  categoria: "seo",
+  icon: "📏",
+  color: "emerald",
+  keywords: "contador de caracteres, meta title, meta description, google serp, optimizacion seo"
+},
+{
+  titulo: "Generador de Slugs",
+  descripcion: "Convertí títulos complejos en URLs amigables y optimizadas para SEO en un segundo.",
+  link: "/seo/generador-slugs",
+  categoria: "seo",
+  icon: "🔗",
+  color: "indigo",
+  keywords: "slug, url amigable, permalink, generador de urls, seo tecnico, slugs google"
+},
+{
+  titulo: "Contador sin Espacios",
+  descripcion: "Obtené el recuento neto de caracteres eliminando espacios, saltos de línea y tabulaciones.",
+  link: "/seo/contador-caracteres-sin-espacios",
+  categoria: "seo",
+  icon: "🔠",
+  color: "emerald",
+  keywords: "contador de caracteres sin espacios, caracteres netos, recuento de letras, contar letras online"
+},
+{
+  titulo: "Densidad de Keywords",
+  descripcion: "Analizá la frecuencia de palabras de tus textos para evitar penalizaciones y mejorar la relevancia semántica.",
+  link: "/seo/densidad-keywords",
+  categoria: "seo",
+  icon: "📊",
+  color: "amber",
+  keywords: "densidad de palabras clave, keyword density, analizador de texto, seo copy, frecuencia de palabras"
+},
+{
+  titulo: "Tiempo de Lectura",
+  descripcion: "Calculá cuánto tiempo le tomará a tus usuarios leer tu contenido para mejorar la experiencia de usuario.",
+  link: "/seo/tiempo-lectura",
+  categoria: "seo",
+  icon: "⏱️",
+  color: "purple",
+  keywords: "tiempo de lectura, reading time, ux seo, calcular tiempo leer, palabras por minuto"
+},
+{
+  titulo: "Calculadora de CTR",
+  descripcion: "Medí la efectividad de tus títulos y descripciones calculando el porcentaje de clics por impresión.",
+  link: "/seo/calculadora-ctr",
+  categoria: "seo",
+  icon: "🎯",
+  color: "blue",
+  keywords: "ctr, tasa de clics, click through rate, calcular ctr, metricas seo, google search console"
+},
+{
+  titulo: "Tasa de Conversión",
+  descripcion: "Calculá el porcentaje de éxito de tu web midiendo cuántos visitantes realizan una acción deseada.",
+  link: "/seo/tasa-conversion",
+  categoria: "seo",
+  icon: "📈",
+  color: "rose",
+  keywords: "tasa de conversion, conversion rate, cro, ventas online, metricas marketing, leads"
+},
+{
+  titulo: "Calculadora de ROI",
+  descripcion: "Medí el retorno de inversión de tus campañas para saber exactamente cuánto dinero ganás por cada peso invertido.",
+  link: "/seo/roi-marketing",
+  categoria: "seo",
+  icon: "💰",
+  color: "emerald",
+  keywords: "roi, retorno de inversion, rentabilidad marketing, calcular ganancias, seo roi, publicidad rentable"
+},
+{
+  titulo: "Calculadora de CPC",
+  descripcion: "Descubrí cuánto estás pagando por cada visita a tu web desde tus campañas publicitarias.",
+  link: "/seo/calculadora-cpc",
+  categoria: "seo",
+  icon: "🖱️",
+  color: "sky",
+  keywords: "cpc, costo por clic, sem, google ads, facebook ads, presupuesto marketing, calculadora cpc"
+},
+{
+  titulo: "Calculadora de CPM",
+  descripcion: "Calculá el costo por cada mil impresiones de tus anuncios para optimizar el alcance de tu marca.",
+  link: "/seo/calculadora-cpm",
+  categoria: "seo",
+  icon: "📺",
+  color: "cyan",
+  keywords: "cpm, costo por mil, impresiones, publicidad display, alcance marketing, calculadora cpm"
+},
+{
+  titulo: "Engagement Rate",
+  descripcion: "Medí el nivel de compromiso de tu audiencia comparando las interacciones con tu alcance total.",
+  link: "/seo/engagement-rate",
+  categoria: "seo",
+  icon: "🔥",
+  color: "orange",
+  keywords: "engagement rate, tasa de interaccion, redes sociales, metricas instagram, compromiso audiencia"
+},
+{
+  titulo: "Alcance en Redes",
+  descripcion: "Calculá el impacto real de tus posts midiendo el porcentaje de usuarios únicos alcanzados.",
+  link: "/seo/calculadora-alcance",
+  categoria: "seo",
+  icon: "📡",
+  color: "fuchsia",
+  keywords: "alcance redes sociales, reach rate, penetración de audiencia, métricas instagram, alcance orgánico"
+},
+{
+  titulo: "Frecuencia Publicitaria",
+  descripcion: "Calculá cuántas veces ven tus anuncios los usuarios para evitar la saturación y optimizar tu presupuesto.",
+  link: "/seo/frecuencia-publicitaria",
+  categoria: "seo",
+  icon: "🔄",
+  color: "lime",
+  keywords: "frecuencia publicitaria, fatiga de anuncio, impresiones vs alcance, metricas publicidad, frecuencia optima"
+},
+{
+  titulo: "Costo por Lead (CPL)",
+  descripcion: "Calculá cuánto te cuesta captar cada cliente potencial para optimizar tu embudo de ventas.",
+  link: "/seo/calculadora-cpl",
+  categoria: "seo",
+  icon: "👤",
+  color: "indigo",
+  keywords: "cpl, costo por lead, captacion de clientes, leads marketing, calculadora cpl, performance marketing"
+},
+{
+  titulo: "Costo por Adquisición",
+  descripcion: "Calculá cuánto dinero te cuesta cerrar una venta real para asegurar la rentabilidad de tu negocio.",
+  link: "/seo/calculadora-cpa",
+  categoria: "seo",
+  icon: "🤝",
+  color: "teal",
+  keywords: "cpa, costo por adquisicion, cac, costo de venta, rentabilidad, marketing de resultados"
+},
+{
+  titulo: "Analizador de Títulos",
+  descripcion: "Evaluá la efectividad de tus títulos H1 y Meta Titles para maximizar el CTR y mejorar el SEO.",
+  link: "/seo/analizador-titulos",
+  categoria: "seo",
+  icon: "✒️",
+  color: "violet",
+  keywords: "analizador de titulos, h1 checker, meta titles, optimizar encabezados, copywriting seo, clickbait etico"
+},
+{
+  titulo: "Contador de Encabezados",
+  descripcion: "Auditá la estructura H1-H6 de tu contenido para asegurar una jerarquía semántica perfecta.",
+  link: "/seo/contador-encabezados",
+  categoria: "seo",
+  icon: "📑",
+  color: "amber",
+  keywords: "contador de h1, etiquetas de encabezado, estructura html seo, jerarquia de contenidos, h1 h2 h3 h4"
+},
+{
+  titulo: "Contador de Keywords",
+  descripcion: "Analizá la frecuencia y densidad de tus palabras clave para evitar el keyword stuffing y mejorar tu SEO.",
+  link: "/seo/contador-keywords",
+  categoria: "seo",
+  icon: "📊",
+  color: "rose",
+  keywords: "contador de palabras clave, densidad de keywords, keyword density, analizador de texto, seo copy, frecuencia de palabras"
+},
+{
+  titulo: "Longitud de Meta Description",
+  descripcion: "Asegurá que tus descripciones en Google sean perfectas y no se corten, mejorando tu CTR orgánico.",
+  link: "/seo/longitud-meta-description",
+  categoria: "seo",
+  icon: "📝",
+  color: "blue",
+  keywords: "longitud meta description, caracteres meta description, seo snippet, optimizar buscador, meta tag description"
+},
+{
+  titulo: "Longitud de Título SEO",
+  descripcion: "Calculá la extensión exacta de tu meta title para evitar que Google lo corte y mejorar tu visibilidad.",
+  link: "/seo/longitud-titulo-seo",
+  categoria: "seo",
+  icon: "📏",
+  color: "cyan",
+  keywords: "longitud titulo seo, meta title, caracteres google, optimizar snippet, tamaño titulo buscador"
+},
+{
+  titulo: "Ratio Texto-HTML",
+  descripcion: "Auditá la proporción de contenido real frente al código de tu web para optimizar el SEO técnico.",
+  link: "/seo/ratio-texto-html",
+  categoria: "seo",
+  icon: "🧮",
+  color: "yellow",
+  keywords: "ratio texto html, text to html ratio, seo tecnico, optimizar codigo, peso de pagina"
+},
+{
+  titulo: "Densidad de Enlaces",
+  descripcion: "Auditá la cantidad de links internos en tu contenido para optimizar la navegación y el flujo de autoridad.",
+  link: "/seo/densidad-enlaces-internos",
+  categoria: "seo",
+  icon: "🔗",
+  color: "orange",
+  keywords: "enlaces internos, interlinking seo, densidad de links, link juice, estructura de silo, anchor text"
+},
+{
+  titulo: "Anchor Text Ratio",
+  descripcion: "Auditá la distribución de los textos de tus enlaces para evitar penalizaciones por sobreoptimización.",
+  link: "/seo/anchor-text-ratio",
+  categoria: "seo",
+  icon: "⚓",
+  color: "indigo",
+  keywords: "anchor text ratio, texto de ancla, perfil de enlaces, auditoria backlinks, google penguin, seo off-page"
+},
 ];
