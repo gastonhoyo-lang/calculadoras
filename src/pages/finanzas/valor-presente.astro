@@ -1,0 +1,166 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Valor Presente | Descuento de Capital"
+  description="Calculá cuánto vale hoy una suma de dinero que recibirás en el futuro. Traé flujos de fondos al presente con nuestra calculadora financiera."
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+        Valor Presente (VP)
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">
+        Descubrí cuánto vale hoy una suma futura aplicando una tasa de
+        descuento.
+      </p>
+    </div>
+
+    <div
+      class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div>
+            <label
+              class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1 tracking-widest"
+              >Monto Futuro a Recibir ($)</label
+            >
+            <input
+              type="number"
+              id="fvInput"
+              class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-teal-500 outline-none transition-all font-mono text-xl"
+              placeholder="Ej: 10000"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label
+                class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1 tracking-widest"
+                >Tasa de Descuento (%)</label
+              >
+              <input
+                type="number"
+                id="rateInput"
+                class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-teal-500 outline-none transition-all font-mono"
+                placeholder="10"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1 tracking-widest"
+                >Años</label
+              >
+              <input
+                type="number"
+                id="yearsInput"
+                class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-teal-500 outline-none transition-all font-mono"
+                placeholder="5"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="text-center p-10 bg-teal-600 rounded-[2.5rem] shadow-lg shadow-teal-200 relative overflow-hidden h-full flex flex-col justify-center"
+        >
+          <div class="relative z-10 text-white">
+            <span
+              class="block text-[10px] font-bold uppercase opacity-80 mb-2 tracking-widest"
+              >Valor Presente Actual</span
+            >
+            <div id="pvOutput" class="text-6xl font-black leading-none">$0</div>
+
+            <div
+              class="mt-8 p-4 bg-white/20 rounded-2xl backdrop-blur-sm inline-block"
+            >
+              <span id="discountLabel" class="text-sm font-bold"
+                >Descuento aplicado: $0</span
+              >
+            </div>
+          </div>
+          <span
+            class="absolute -left-4 -top-10 text-[12rem] font-black text-white/10 select-none"
+            >VP</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <section
+      class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6">
+        El Valor del Tiempo
+      </h2>
+      <p>
+        El Valor Presente es el valor actual de una suma de dinero que se
+        recibirá en el futuro. Se basa en el principio de que <strong
+          >un dólar hoy vale más que un dólar mañana</strong
+        >, porque el dinero de hoy puede invertirse para generar intereses.
+      </p>
+
+      <div
+        class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl overflow-x-auto"
+      >
+        <span class="text-teal-400 font-mono text-xl">
+          $$VP = \frac{VF}{(1 + r) ^ n}$$
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-2 italic">
+            Tasa de Descuento
+          </h4>
+          <p class="text-xs leading-relaxed">
+            Representa el costo de oportunidad o la tasa de retorno que podrías
+            obtener en una inversión alternativa de riesgo similar.
+          </p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-2 italic text-sm">
+            Uso en Negocios
+          </h4>
+          <p class="text-xs leading-relaxed">
+            Se usa para calcular el VAN (Valor Actual Neto) de un proyecto. Si
+            el VP de lo que vas a ganar es mayor que lo que tenés que invertir
+            hoy, el negocio es rentable.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const fvIn = document.getElementById("fvInput") as HTMLInputElement;
+  const rateIn = document.getElementById("rateInput") as HTMLInputElement;
+  const yearsIn = document.getElementById("yearsInput") as HTMLInputElement;
+  const pvOut = document.getElementById("pvOutput");
+  const discOut = document.getElementById("discountLabel");
+
+  const calculatePV = () => {
+    const FV = parseFloat(fvIn.value) || 0;
+    const rate = (parseFloat(rateIn.value) || 0) / 100;
+    const years = parseFloat(yearsIn.value) || 0;
+
+    if (FV === 0 || years < 0) return;
+
+    // Fórmula: VP = VF / (1 + r)^n
+    const pv = FV / Math.pow(1 + rate, years);
+    const discount = FV - pv;
+
+    if (pvOut) pvOut.innerText = "$" + Math.round(pv).toLocaleString();
+    if (discOut)
+      discOut.innerText = `Descuento aplicado: $${Math.round(discount).toLocaleString()}`;
+  };
+
+  [fvIn, rateIn, yearsIn].forEach((el) =>
+    el?.addEventListener("input", calculatePV),
+  );
+</script>

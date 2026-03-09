@@ -1,0 +1,157 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Analizador de Longitud de Párrafos | SEO Copywriting Tool"
+  description="Auditá la legibilidad de tu contenido. Detectá párrafos demasiado largos que afectan la experiencia de usuario y el SEO de tu página."
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+        Analizador de Párrafos
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">
+        No dejes que tus lectores se cansen. Fragmentá tu contenido para una
+        lectura ágil y efectiva.
+      </p>
+    </div>
+
+    <div
+      class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"
+    >
+      <div class="space-y-6">
+        <textarea
+          id="paragraphInput"
+          class="w-full h-64 p-6 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-teal-500 focus:bg-white outline-none transition-all text-slate-700 resize-none"
+          placeholder="Pegá tu artículo aquí..."></textarea>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div
+            class="p-4 bg-teal-50 rounded-2xl text-center border border-teal-100"
+          >
+            <span class="block text-[10px] font-bold text-teal-600 uppercase"
+              >Párrafos Totales</span
+            >
+            <span id="totalParagraphs" class="text-2xl font-black text-teal-700"
+              >0</span
+            >
+          </div>
+          <div
+            class="p-4 bg-rose-50 rounded-2xl text-center border border-rose-100"
+          >
+            <span class="block text-[10px] font-bold text-rose-600 uppercase"
+              >Párrafos Largos</span
+            >
+            <span id="longParagraphs" class="text-2xl font-black text-rose-700"
+              >0</span
+            >
+          </div>
+          <div
+            class="p-4 bg-slate-50 rounded-2xl text-center border border-slate-100"
+          >
+            <span class="block text-[10px] font-bold text-slate-400 uppercase"
+              >Palabras/Párrafo Promedio</span
+            >
+            <span id="avgWords" class="text-2xl font-black text-slate-700"
+              >0</span
+            >
+          </div>
+        </div>
+
+        <div id="paragraphFeedback" class="space-y-3 mt-4"></div>
+      </div>
+    </div>
+
+    <section
+      class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6">
+        La Regla de Oro del Copywriting Web
+      </h2>
+      <p>
+        En el entorno digital, la atención es limitada. Un párrafo ideal no
+        debería superar las <strong>3 o 4 líneas</strong> (unas 45-60 palabras). Esto
+        crea "espacio en blanco", lo que reduce la fatiga visual y facilita la comprensión.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-2">
+            Optimización para Móviles
+          </h4>
+          <p class="text-xs leading-relaxed">
+            Lo que en escritorio parecen 3 líneas, en un smartphone pueden ser
+            8. Los párrafos cortos son vitales para que el usuario no abandone
+            la lectura al ver un bloque interminable de texto.
+          </p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-2">Uso de Encabezados</h4>
+          <p class="text-xs leading-relaxed">
+            Si un párrafo se extiende demasiado, considerá dividirlo con un
+            [Encabezado H3](/seo/contador-encabezados) o usar una lista de
+            puntos para enumerar conceptos.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const input = document.getElementById(
+    "paragraphInput",
+  ) as HTMLTextAreaElement;
+  const totalDisp = document.getElementById("totalParagraphs");
+  const longDisp = document.getElementById("longParagraphs");
+  const avgDisp = document.getElementById("avgWords");
+  const feedback = document.getElementById("paragraphFeedback");
+
+  input?.addEventListener("input", () => {
+    const text = input.value.trim();
+    if (!text) return;
+
+    const paragraphs = text.split(/\n+/).filter((p) => p.trim().length > 0);
+    let longCount = 0;
+    let totalWords = 0;
+
+    const feedbackHTML = paragraphs
+      .map((p, index) => {
+        const words = p.split(/\s+/).length;
+        totalWords += words;
+        let statusClass = "border-teal-200 bg-teal-50 text-teal-700";
+        let label = "Óptimo";
+
+        if (words > 70) {
+          statusClass = "border-rose-200 bg-rose-50 text-rose-700";
+          label = "Demasiado Largo";
+          longCount++;
+        } else if (words > 45) {
+          statusClass = "border-amber-200 bg-amber-50 text-amber-700";
+          label = "Aceptable";
+        }
+
+        return `
+        <div class="p-3 border-l-4 rounded-r-xl text-xs font-medium ${statusClass}">
+          <div class="flex justify-between mb-1">
+            <span class="uppercase font-bold text-[9px]">Párrafo ${index + 1}</span>
+            <span class="uppercase font-bold text-[9px]">${words} palabras - ${label}</span>
+          </div>
+          <p class="line-clamp-1 opacity-70">${p}</p>
+        </div>
+      `;
+      })
+      .join("");
+
+    if (totalDisp) totalDisp.innerText = paragraphs.length.toString();
+    if (longDisp) longDisp.innerText = longCount.toString();
+    if (avgDisp)
+      avgDisp.innerText = Math.round(
+        totalWords / (paragraphs.length || 1),
+      ).toString();
+    if (feedback) feedback.innerHTML = feedbackHTML;
+  });
+</script>

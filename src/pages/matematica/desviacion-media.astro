@@ -1,0 +1,48 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Nombre de la Calculadora"
+  description="Descripción de la herramienta"
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-black mb-6">Título de la Calculadora</h1>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg mb-12">
+      <!-- Inputs -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-xs font-bold mb-2">Valor 1</label>
+          <input type="number" id="val1" class="w-full p-3 border rounded-lg" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold mb-2">Valor 2</label>
+          <input type="number" id="val2" class="w-full p-3 border rounded-lg" />
+        </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="mt-6 p-4 bg-slate-100 rounded-lg text-center">
+        <span class="font-bold">Resultado: </span><span id="resultado">0</span>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script lang="ts" client:load>
+  const val1 = document.getElementById("val1") as HTMLInputElement;
+  const val2 = document.getElementById("val2") as HTMLInputElement;
+  const resultado = document.getElementById("resultado");
+
+  const calcular = () => {
+    const v1 = parseFloat(val1.value) || 0;
+    const v2 = parseFloat(val2.value) || 0;
+    const res = v1 + v2; // Aquí cambia la fórmula según la calculadora
+    if (resultado) resultado.innerText = res.toFixed(2);
+  };
+
+  [val1, val2].forEach((el) => el?.addEventListener("input", calcular));
+</script>

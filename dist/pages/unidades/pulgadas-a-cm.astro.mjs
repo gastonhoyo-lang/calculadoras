@@ -1,0 +1,41 @@
+/* empty css                                          */
+import { a as createComponent, r as renderComponent, d as renderScript, b as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_Do9XiQ7L.mjs';
+import 'piccolore';
+import { $ as $$Layout } from '../../chunks/Layout_DvQkidL1.mjs';
+export { renderers } from '../../renderers.mjs';
+
+const $$PulgadasACm = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Conversor de Pulgadas a Cent\xEDmetros | Pulgadas a cm", "description": "Convert\xED pulgadas a cent\xEDmetros y viceversa de forma instant\xE1nea. Herramienta precisa para medidas, pantallas y carpinter\xEDa." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="max-w-4xl mx-auto px-4 py-12"> <div class="text-center mb-10"> <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+Pulgadas a Centímetros
+</h1> <p class="text-slate-600 max-w-2xl mx-auto">
+Pasá medidas del sistema imperial al métrico decimal con precisión
+        quirúrgica.
+</p> </div> <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"> <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 items-center"> <div class="space-y-2"> <label class="block text-[10px] font-bold uppercase text-slate-400 ml-1 tracking-widest text-center">Pulgadas (in)</label> <input type="number" id="inchInput" class="w-full p-6 bg-slate-50 rounded-3xl border-2 border-transparent focus:border-blue-500 outline-none transition-all font-mono text-3xl text-center" placeholder="1" step="any"> </div> <div class="flex justify-center"> <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 font-bold rotate-90 md:rotate-0">
+⇆
+</div> </div> <div class="space-y-2"> <label class="block text-[10px] font-bold uppercase text-slate-400 ml-1 tracking-widest text-center">Centímetros (cm)</label> <input type="number" id="cmInput" class="w-full p-6 bg-slate-50 rounded-3xl border-2 border-transparent focus:border-blue-500 outline-none transition-all font-mono text-3xl text-center" placeholder="2.54" step="any"> </div> </div> <div class="mt-8 p-4 bg-blue-50 rounded-2xl text-center"> <p id="equivalenceText" class="text-blue-700 font-medium italic">
+1 pulgada equivale exactamente a 2.54 centímetros
+</p> </div> </div> <section class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"> <h2 class="text-3xl font-black text-slate-900 mb-6">
+¿Cómo convertir pulgadas a cm?
+</h2> <p>
+La relación entre estas dos unidades es constante y universal. Para
+        realizar la conversión manual, se utiliza la siguiente fórmula:
+</p> <div class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl"> <span class="text-blue-400 font-mono text-xl">
+$$cm = pulgadas \\cdot 2.54$$
+</span> </div> <h3 class="text-2xl font-bold text-slate-900 mb-4">
+Tabla de Medidas Comunes
+</h3> <div class="overflow-x-auto"> <table class="w-full text-sm text-left"> <thead class="bg-slate-50 border-b border-slate-200"> <tr> <th class="p-4 font-bold">Pulgadas (in)</th> <th class="p-4 font-bold">Centímetros (cm)</th> <th class="p-4 font-bold">Uso Típico</th> </tr> </thead> <tbody class="divide-y divide-slate-100"> <tr><td class="p-4">1/4"</td><td class="p-4">0.635 cm</td><td class="p-4">Carpintería / Tornillos</td></tr> <tr><td class="p-4">1/2"</td><td class="p-4">1.27 cm</td><td class="p-4">Tuberías / Herramientas</td></tr> <tr><td class="p-4">1"</td><td class="p-4">2.54 cm</td><td class="p-4">Unidad Base</td></tr> <tr><td class="p-4">15.6"</td><td class="p-4">39.62 cm</td><td class="p-4">Pantalla de Notebook</td></tr> <tr><td class="p-4">32"</td><td class="p-4">81.28 cm</td><td class="p-4">Televisor pequeño</td></tr> </tbody> </table> </div> </section> </main> ` })} ${renderScript($$result, "C:/proyectos/seo-tools/src/pages/unidades/pulgadas-a-cm.astro?astro&type=script&index=0&lang.ts")}`;
+}, "C:/proyectos/seo-tools/src/pages/unidades/pulgadas-a-cm.astro", void 0);
+
+const $$file = "C:/proyectos/seo-tools/src/pages/unidades/pulgadas-a-cm.astro";
+const $$url = "/unidades/pulgadas-a-cm";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$PulgadasACm,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

@@ -1,0 +1,81 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Decimal a Fracción | Simplificación Automática"
+  description="Convertí cualquier número decimal en una fracción simplificada."
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-black mb-4">Decimal a Fracción</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">
+        Ingresá un número decimal y obtené su equivalente en fracción
+        irreducible.
+      </p>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-xl mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <label class="block text-xs font-bold mb-2">Número Decimal</label>
+          <input
+            id="decInput"
+            type="number"
+            step="any"
+            placeholder="Ej: 0.75"
+            class="w-full p-4 border rounded-lg font-mono text-xl text-center"
+          />
+        </div>
+
+        <div
+          id="fractionCard"
+          class="text-center p-8 bg-teal-50 rounded-2xl flex flex-col justify-center items-center"
+        >
+          <div class="text-2xl font-bold text-teal-800" id="fractionResult">
+            ?
+          </div>
+          <div class="text-xs mt-2 text-teal-700" id="calcStep">
+            Introduce un valor
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script lang="ts" client:load>
+  const decInput = document.getElementById("decInput") as HTMLInputElement;
+  const fractionResult = document.getElementById("fractionResult");
+  const calcStep = document.getElementById("calcStep");
+
+  const gcd = (a: number, b: number): number => (b ? gcd(b, a % b) : a);
+
+  const convertDecimal = () => {
+    const val = parseFloat(decInput.value);
+    if (isNaN(val)) {
+      if (fractionResult) fractionResult.innerText = "?";
+      if (calcStep) calcStep.innerText = "Introduce un valor";
+      return;
+    }
+
+    if (Number.isInteger(val)) {
+      if (fractionResult) fractionResult.innerText = val + "/1";
+      if (calcStep) calcStep.innerText = "Número Entero";
+      return;
+    }
+
+    const decimalPlaces = decInput.value.split(".")[1]?.length || 0;
+    const denominator = 10 ** decimalPlaces;
+    const numerator = Math.round(val * denominator);
+    const common = gcd(numerator, denominator);
+
+    if (fractionResult)
+      fractionResult.innerText = `${numerator / common}/${denominator / common}`;
+    if (calcStep) calcStep.innerText = "Fracción Simplificada";
+  };
+
+  decInput?.addEventListener("input", convertDecimal);
+</script>

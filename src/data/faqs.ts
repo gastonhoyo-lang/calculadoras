@@ -2937,5 +2937,1044 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Generador de Slugs", link: "/seo/generador-slugs" },
     { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" }
   ]
+},
+"tiempo-ranking-seo": {
+  faqs: [
+    {
+      q: "¿Es posible posicionar en menos de un mes?",
+      a: "Sí, para palabras clave con muy poca competencia (long tail) o noticias de tendencia (Google Discover), pero para términos competitivos el promedio es de 3 a 6 meses."
+    },
+    {
+      q: "¿Por qué mi página no sube de posición?",
+      a: "Puede deberse a falta de autoridad, contenido poco original o problemas técnicos. Revisá tu [Ratio Texto-HTML](/seo/ratio-texto-html) para descartar errores de código."
+    },
+    {
+      q: "¿Influye la antigüedad del dominio?",
+      a: "Muchísimo. Google confía más en sitios que han demostrado consistencia a lo largo de los años. Los sitios nuevos deben esforzarse más en el [Interlinking](/seo/densidad-enlaces-internos)."
+    },
+    {
+      q: "¿Qué es la dificultad de palabra clave (KD)?",
+      a: "Es una métrica que estima qué tan difícil es superar a los sitios que ya están en el Top 10. Se basa principalmente en la cantidad y calidad de backlinks de la competencia."
+    },
+    {
+      q: "¿Cómo puedo acelerar el posicionamiento?",
+      a: "Mejorando la experiencia de usuario, obteniendo backlinks de calidad y asegurando que tus [Meta Titles](/seo/longitud-titulo-seo) y [Descripciones](/seo/longitud-meta-description) maximicen el clic."
+    }
+  ],
+  relacionados: [
+    { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" },
+    { nombre: "Densidad de Enlaces", link: "/seo/densidad-enlaces-internos" },
+    { nombre: "Longitud de Meta Description", link: "/seo/longitud-meta-description" }
+  ]
+},
+"analizador-repeticion": {
+  faqs: [
+    {
+      q: "¿Qué es la diversidad léxica?",
+      a: "Es la relación entre el número de palabras únicas y el total de palabras en un texto. A mayor porcentaje, más variado y profesional se percibe el contenido."
+    },
+    {
+      q: "¿Cuántas veces puedo repetir mi palabra clave?",
+      a: "Depende de la extensión. Para el SEO, lo ideal es que la palabra clave no se sienta forzada. Usá nuestro [Contador de Keywords](/seo/contador-keywords) para medir la densidad exacta."
+    },
+    {
+      q: "¿La repetición afecta al SEO?",
+      a: "Sí. El uso excesivo de los mismos términos puede considerarse sobreoptimización. Google prefiere el uso de sinónimos y conceptos relacionados (LSI)."
+    },
+    {
+      q: "¿Cómo puedo reducir la repetición en mis artículos?",
+      a: "Utilizando diccionarios de sinónimos, cambiando la estructura de las oraciones y dividiendo párrafos largos mediante [Encabezados H2 o H3](/seo/contador-encabezados)."
+    },
+    {
+      q: "¿Este analizador cuenta preposiciones y artículos?",
+      a: "No, el analizador filtra automáticamente palabras comunes (stop-words) para enfocarse en los sustantivos y verbos que realmente impactan en la calidad del texto."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Keywords", link: "/seo/contador-keywords" },
+    { nombre: "Contador de Encabezados", link: "/seo/contador-encabezados" },
+    { nombre: "Tiempo de Ranking", link: "/seo/tiempo-ranking-seo" }
+  ]
+},
+"analizador-parrafos": {
+  faqs: [
+    {
+      q: "¿Cuál es la longitud ideal de un párrafo para SEO?",
+      a: "Para la web, se recomienda que los párrafos tengan entre 40 y 60 palabras. Esto facilita el escaneo visual y mantiene al lector interesado."
+    },
+    {
+      q: "¿Cómo afectan los párrafos largos a mi tasa de rebote?",
+      a: "Los bloques densos de texto generan fatiga visual. Si un usuario ve una pared de texto al entrar, es muy probable que abandone la página sin leer."
+    },
+    {
+      q: "¿Es malo tener párrafos de una sola frase?",
+      a: "No, en el copywriting moderno se usan para dar énfasis o crear ritmo. Sin embargo, no abuses de ellos para no fragmentar demasiado el discurso."
+    },
+    {
+      q: "¿Por qué es importante el 'espacio en blanco'?",
+      a: "El espacio en blanco da un respiro visual al lector y ayuda a separar ideas, haciendo que el contenido parezca menos abrumador y más organizado."
+    },
+    {
+      q: "¿Cómo puedo mejorar un párrafo muy largo?",
+      a: "Dividiéndolo en dos ideas separadas, convirtiendo listas en bullet points o introduciendo un [Encabezado H3](/seo/contador-encabezados) intermedio."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Encabezados", link: "/seo/contador-encabezados" },
+    { nombre: "Analizador de Repetición", link: "/seo/analizador-repeticion" },
+    { nombre: "Contador de Keywords", link: "/seo/contador-keywords" }
+  ]
+},
+"frecuencia-palabras": {
+  faqs: [
+    {
+      q: "¿Para qué sirve medir la frecuencia de palabras?",
+      a: "Sirve para verificar que las palabras más repetidas coincidan con el tema principal de tu artículo, asegurando coherencia semántica para usuarios y buscadores."
+    },
+    {
+      q: "¿Qué diferencia hay con la densidad de palabras clave?",
+      a: "La frecuencia es el conteo absoluto (cuántas veces), mientras que la densidad es el porcentaje respecto al total del texto."
+    },
+    {
+      q: "¿Es malo que las preposiciones sean las más frecuentes?",
+      a: "No, es lo normal en el lenguaje natural. Lo importante es que, después de los conectores, tus palabras clave ocupen los siguientes lugares en la lista."
+    },
+    {
+      q: "¿Cómo ayuda esto a evitar el Keyword Stuffing?",
+      a: "Al ver la lista completa, podés detectar si una palabra clave específica aparece demasiadas veces y decidir si es mejor usar el [Analizador de Repetición](/seo/analizador-repeticion)."
+    },
+    {
+      q: "¿Puedo usar esto para analizar a mi competencia?",
+      a: "Totalmente. Pegar el contenido de una página que ya rankea bien te permite entender qué palabras secundarias (LSI) están usando para dar contexto."
+    }
+  ],
+  relacionados: [
+    { nombre: "Contador de Keywords", link: "/seo/contador-keywords" },
+    { nombre: "Analizador de Repetición", link: "/seo/analizador-repeticion" },
+    { nombre: "Analizador de Párrafos", link: "/seo/analizador-parrafos" }
+  ]
+},
+"contador-frases": {
+  faqs: [
+    {
+      q: "¿Cuántas palabras debe tener una frase ideal para la web?",
+      a: "Lo recomendable es mantener la mayoría de las frases por debajo de las 20-25 palabras. Esto asegura que la idea sea fácil de procesar de un solo vistazo."
+    },
+    {
+      q: "¿Por qué Google prefiere frases cortas?",
+      a: "Las frases cortas reducen la ambigüedad semántica, lo que facilita que los algoritmos de IA y NLP de Google entiendan la intención de búsqueda de tu contenido."
+    },
+    {
+      q: "¿Es malo usar muchas frases largas?",
+      a: "No es una penalización directa, pero aumenta el esfuerzo cognitivo del lector, lo que suele traducirse en un menor tiempo de permanencia y mayor tasa de rebote."
+    },
+    {
+      q: "¿Cómo puedo identificar frases difíciles?",
+      a: "Nuestro contador marca como 'largas' aquellas con más de 25 palabras. Intentá dividirlas usando puntos seguidos o comas estratégicas."
+    },
+    {
+      q: "¿Qué es el ritmo en la redacción SEO?",
+      a: "Es la alternancia entre frases cortas (impacto) y largas (explicación). Un texto con buen ritmo evita la monotonía y mantiene al usuario leyendo hasta el final."
+    }
+  ],
+  relacionados: [
+    { nombre: "Analizador de Párrafos", link: "/seo/analizador-parrafos" },
+    { nombre: "Contador de Keywords", link: "/seo/contador-keywords" },
+    { nombre: "Frecuencia de Palabras", link: "/seo/frecuencia-palabras" }
+  ]
+},
+"contador-hashtags": {
+  faqs: [
+    {
+      q: "¿Cuántos hashtags es recomendable usar en Instagram?",
+      a: "Aunque Instagram permite hasta 30, las recomendaciones actuales sugieren entre 3 y 5 hashtags muy específicos para mejorar el alcance a través del buscador de la plataforma."
+    },
+    {
+      q: "¿Es mejor poner los hashtags en el post o en el primer comentario?",
+      a: "Instagram ha confirmado que para el SEO de búsqueda es mejor incluirlos directamente en el cuerpo del mensaje (caption)."
+    },
+    {
+      q: "¿Qué es el shadowban por hashtags?",
+      a: "Ocurre cuando usas hashtags prohibidos o cuando repites exactamente el mismo bloque de etiquetas en todos tus posts, haciendo que el algoritmo oculte tu contenido."
+    },
+    {
+      q: "¿Debo usar hashtags en LinkedIn?",
+      a: "Sí, pero LinkedIn favorece la profesionalidad. Usar más de 3 hashtags suele reducir el alcance del post. Elegí uno genérico y dos específicos."
+    },
+    {
+      q: "¿Cómo elijo los mejores hashtags?",
+      a: "Combiná hashtags de comunidad (medianos) con hashtags de nicho (pequeños). Evitá los masivos como #follow, ya que tu contenido desaparecerá en segundos."
+    }
+  ],
+  relacionados: [
+    { nombre: "Analizador de Repetición", link: "/seo/analizador-repeticion" },
+    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" }
+  ]
+},
+"calculadora-raiz-cuadrada": {
+  faqs: [
+    {
+      q: "¿Cómo se llama el símbolo de la raíz cuadrada?",
+      a: "Se llama 'radical'. El número dentro del símbolo es el 'radicando' y el resultado es la 'raíz'."
+    },
+    {
+      q: "¿Qué pasa si el número no es un cuadrado perfecto?",
+      a: "El resultado será un número irracional con infinitos decimales. Nuestra calculadora te muestra los primeros 4 para facilitar el trabajo."
+    },
+    {
+      q: "¿La raíz cuadrada siempre es positiva?",
+      a: "Matemáticamente, un número tiene dos raíces (una positiva y una negativa, ej: 4 y -4 para 16). Sin embargo, en esta calculadora mostramos la raíz principal (positiva)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de IVA", link: "/finanzas/calculadora-iva" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Ratio Texto-HTML", link: "/seo/ratio-texto-html" }
+  ]
+},
+"calculadora-raiz-cubica": {
+  faqs: [
+    {
+      q: "¿Cómo se diferencia de la raíz cuadrada?",
+      a: "La raíz cuadrada busca un número que multiplicado por sí mismo una vez ($x^2$) de el resultado. La cúbica busca uno que se multiplique dos veces por sí mismo ($x^3$)."
+    },
+    {
+      q: "¿Por qué se pueden calcular raíces cúbicas de números negativos?",
+      a: "Porque multiplicar tres números negativos da como resultado un negativo ($ - \times - \times - = - $). Por eso, $\sqrt[3]{-27}$ es $-3$."
+    },
+    {
+      q: "¿Qué es un cubo perfecto?",
+      a: "Es un número entero que es el resultado de elevar otro entero al cubo. Ejemplos comunes son 1, 8, 27, 64, 125 y 216."
+    }
+  ],
+  relacionados: [
+    { nombre: "Raíz Cuadrada", link: "/matematica/calculadora-raiz-cuadrada" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Ratio Texto-HTML", link: "/seo/ratio-texto-html" }
+  ]
+},
+"calculadora-potencia": {
+  faqs: [
+    {
+      q: "¿Qué pasa si el exponente es negativo?",
+      a: "Un exponente negativo indica que el número debe ser invertido. Por ejemplo, $2^{-3}$ es igual a $1 / (2^3)$, lo que resulta en $1/8$ o $0.125$."
+    },
+    {
+      q: "¿Por qué cualquier número elevado a cero da uno?",
+      a: "Es una convención matemática derivada de las leyes de los exponentes (por ejemplo, $a^n / a^n = a^{n-n} = a^0$, y como cualquier número dividido por sí mismo es 1, $a^0 = 1$)."
+    },
+    {
+      q: "¿Se pueden usar decimales como exponente?",
+      a: "Sí, elevar un número a un exponente decimal (como 0.5) es equivalente a realizar una raíz. Por ejemplo, $x^{0.5}$ es lo mismo que $\sqrt{x}$."
+    }
+  ],
+  relacionados: [
+    { nombre: "Raíz Cuadrada", link: "/matematica/calculadora-raiz-cuadrada" },
+    { nombre: "Raíz Cúbica", link: "/matematica/calculadora-raiz-cubica" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
+  ]
+},
+"porcentaje-inverso": {
+  faqs: [
+    {
+      q: "¿Por qué no puedo simplemente restar el porcentaje?",
+      a: "Porque el porcentaje de aumento se aplicó sobre el valor original, que es menor al valor final. Restar el mismo porcentaje al valor final daría un resultado erróneo."
+    },
+    {
+      q: "¿Para qué sirve esta calculadora en finanzas?",
+      a: "Es ideal para calcular el precio base de un producto si ya conoces el precio con IVA o para saber cuánto valía una acción antes de una subida porcentual."
+    },
+    {
+      q: "¿Qué pasa si el descuento es del 100%?",
+      a: "Matemáticamente, si el valor final es mayor a 0 y el descuento fue del 100%, el cálculo es imposible porque el valor original tendería al infinito."
+    }
+  ],
+  relacionados: [
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Raíz Cuadrada", link: "/matematica/calculadora-raiz-cuadrada" },
+    { nombre: "Calculadora de Potencia", link: "/matematica/calculadora-potencia" }
+  ]
+},
+"incremento-porcentual": {
+  faqs: [
+    {
+      q: "¿Cómo se calcula la diferencia porcentual entre dos números?",
+      a: "Restas el valor antiguo del valor nuevo, divides el resultado por el valor antiguo y multiplicas por 100."
+    },
+    {
+      q: "¿Qué significa un incremento del 100%?",
+      a: "Significa que el valor final es exactamente el doble del valor inicial."
+    },
+    {
+      q: "¿La calculadora sirve para medir la inflación?",
+      a: "Sí, puedes poner el precio antiguo en el Valor 1 y el precio nuevo en el Valor 2 para saber exactamente cuánto ha subido el costo de vida en porcentaje."
+    }
+  ],
+  relacionados: [
+    { nombre: "Porcentaje Inverso", link: "/matematica/porcentaje-inverso" },
+    { nombre: "Calculadora de Potencia", link: "/matematica/calculadora-potencia" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
+  ]
+},
+"decremento-porcentual": {
+  faqs: [
+    {
+      q: "¿En qué se diferencia del incremento porcentual?",
+      a: "La base del cálculo es la misma, pero el decremento se enfoca en medir cuánto valor se ha perdido desde el punto inicial."
+    },
+    {
+      q: "¿Por qué es importante para el SEO?",
+      a: "Permite cuantificar de forma precisa el impacto de las actualizaciones de Google o la pérdida de relevancia de una palabra clave específica."
+    },
+    {
+      q: "¿Qué significa una disminución del 50%?",
+      a: "Significa que el valor final es exactamente la mitad del valor original inicial."
+    }
+  ],
+  relacionados: [
+    { nombre: "Incremento Porcentual", link: "/matematica/incremento-porcentual" },
+    { nombre: "Porcentaje Inverso", link: "/matematica/porcentaje-inverso" },
+    { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" }
+  ]
+},
+"calculadora-proporcion": {
+  faqs: [
+    {
+      q: "¿Cómo se resuelve una proporción?",
+      a: "Se utiliza la regla del producto cruzado: multiplicas los dos números que están en diagonal y divides el resultado por el tercer número restante."
+    },
+    {
+      q: "¿Para qué sirve en diseño web?",
+      a: "Es vital para redimensionar elementos (como videos o fotos) sin que se deformen, asegurando que la relación entre ancho y alto se mantenga constante."
+    },
+    {
+      q: "¿Cuál es la diferencia entre razón y proporción?",
+      a: "Una razón es el cociente entre dos números (comparación), mientras que la proporción es la igualdad entre dos razones."
+    }
+  ],
+  relacionados: [
+    { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" },
+    { nombre: "Incremento Porcentual", link: "/matematica/incremento-porcentual" },
+    { nombre: "Calculadora de Potencia", link: "/matematica/calculadora-potencia" }
+  ]
+},
+"media-ponderada": {
+  faqs: [
+    {
+      q: "¿Cómo se calcula la media ponderada paso a paso?",
+      a: "Multiplicas cada valor por su peso, sumas todos esos resultados y finalmente divides el total por la suma de todos los pesos."
+    },
+    {
+      q: "¿Qué pasa si los pesos no suman 100?",
+      a: "No importa. La fórmula divide por la suma total de los pesos, por lo que el resultado siempre será proporcional, aunque los pesos no lleguen a 100 o lo superen."
+    },
+    {
+      q: "¿Cuándo usar media ponderada en lugar de promedio simple?",
+      a: "Usala siempre que un dato sea más importante que otro. Por ejemplo, en un curso donde el examen final influye más en la nota que los trabajos prácticos."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Proporción", link: "/matematica/calculadora-proporcion" },
+    { nombre: "Incremento Porcentual", link: "/matematica/incremento-porcentual" },
+    { nombre: "Calculadora de Potencia", link: "/matematica/calculadora-potencia" }
+  ]
+},
+"calculadora-percentil": {
+  faqs: [
+    {
+      q: "¿Qué significa estar en el percentil 75?",
+      a: "Significa que tu valor es igual o superior al 75% de los datos del grupo analizado."
+    },
+    {
+      q: "¿Cómo se relaciona el percentil con la mediana?",
+      a: "El percentil 50 es exactamente igual a la mediana, ya que divide el conjunto de datos ordenado en dos partes iguales."
+    },
+    {
+      q: "¿Por qué se usa el P75 en Google Search Console?",
+      a: "Google considera el percentil 75 para asegurar que la experiencia de usuario sea buena para la gran mayoría de las visitas, no solo para el promedio."
+    }
+  ],
+  relacionados: [
+    { nombre: "Media Ponderada", link: "/matematica/media-ponderada" },
+    { nombre: "Incremento Porcentual", link: "/matematica/incremento-porcentual" },
+    { nombre: "Calculadora de Proporción", link: "/matematica/calculadora-proporcion" }
+  ]
+},
+"desviacion-media": {
+  faqs: [
+    {
+      q: "¿Para qué sirve la desviación media?",
+      a: "Sirve para conocer qué tan dispersos están los valores de un conjunto. Una desviación media baja indica que los datos están muy cerca del promedio (son uniformes)."
+    },
+    {
+      q: "¿Es lo mismo que la desviación estándar?",
+      a: "No. La desviación media usa valores absolutos $|x - \bar{x}|$, mientras que la estándar usa cuadrados $(x - \bar{x})^2$. La estándar es más común en ciencia, pero la media es más intuitiva."
+    },
+    {
+      q: "¿Cuándo es mejor usar la desviación media?",
+      a: "Cuando quieres una medida de dispersión que no penalice tanto los valores extremos o cuando buscas explicar la variabilidad a personas no expertas en estadística."
+    }
+  ],
+  relacionados: [
+    { nombre: "Media Ponderada", link: "/matematica/media-ponderada" },
+    { nombre: "Calculadora de Percentil", link: "/matematica/calculadora-percentil" },
+    { nombre: "Proporciones", link: "/matematica/calculadora-proporcion" }
+  ]
+},
+"rango-estadistico": {
+  faqs: [
+    {
+      q: "¿Para qué sirve el rango en un análisis de datos?",
+      a: "Sirve para obtener una noción rápida de la extensión de los datos. Si el rango es pequeño, los datos están muy concentrados; si es grande, están muy dispersos."
+    },
+    {
+      q: "¿El rango puede ser negativo?",
+      a: "No. Como es el resultado de restar el valor menor al mayor, el rango siempre es un valor positivo o cero (si todos los datos son iguales)."
+    },
+    {
+      q: "¿Por qué se dice que el rango es limitado?",
+      a: "Porque solo tiene en cuenta los dos valores extremos e ignora lo que sucede con el resto de los datos en el medio. Por eso suele acompañarse de la [Desviación Media](/matematica/desviacion-media)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Desviación Media", link: "/matematica/desviacion-media" },
+    { nombre: "Calculadora de Percentil", link: "/matematica/calculadora-percentil" },
+    { nombre: "Media Ponderada", link: "/matematica/media-ponderada" }
+  ]
+},
+"calculadora-probabilidad": {
+  faqs: [
+    {
+      q: "¿Qué es la probabilidad simple?",
+      a: "Es la medida de qué tan posible es que ocurra un evento determinado. Se expresa como un número entre 0 (imposible) y 1 (seguro), o como un porcentaje del 0% al 100%."
+    },
+    {
+      q: "¿Qué sucede si la probabilidad es mayor al 100%?",
+      a: "Matemáticamente es imposible. La probabilidad máxima es 1 (100%), lo que indica que el evento ocurrirá con total seguridad."
+    },
+    {
+      q: "¿Para qué sirve la Regla de Laplace?",
+      a: "Es la fórmula básica para calcular probabilidades en experimentos donde todos los resultados tienen la misma chance de ocurrir, como lanzar una moneda o un dado."
+    },
+    {
+      q: "¿Cómo se interpreta un resultado de 0.5?",
+      a: "Un valor decimal de 0.5 equivale al 50%. Significa que el evento tiene tantas posibilidades de ocurrir como de no ocurrir (como el 'cara o seca')."
+    },
+    {
+      q: "¿Puedo usar esta calculadora para juegos de rol o videojuegos?",
+      a: "¡Sí! Es perfecta para calcular las chances de éxito de una acción si conoces el número de resultados positivos frente al total de posibilidades del dado o sistema."
+    }
+  ],
+  relacionados: [
+    { nombre: "Media Ponderada", link: "/matematica/media-ponderada" },
+    { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" },
+    { nombre: "Incremento Porcentual", link: "/matematica/incremento-porcentual" }
+  ]
+},
+"calculadora-combinatoria": {
+  faqs: [
+    {
+      q: "¿Cuándo usar una combinación?",
+      a: "Usala cuando el orden de los elementos no afecte el resultado final, como elegir a los miembros de un comité o los números de la lotería."
+    },
+    {
+      q: "¿Qué es una variación?",
+      a: "Es similar a la combinación pero donde el orden importa. Por ejemplo, en una carrera de 10 personas, importa quién llega primero, segundo y tercero."
+    },
+    {
+      q: "¿Qué significa el símbolo '!' en la fórmula?",
+      a: "Representa el factorial de un número, que es la multiplicación de todos los números enteros positivos desde 1 hasta ese número."
+    },
+    {
+      q: "¿Esta calculadora incluye repetición?",
+      a: "Esta versión calcula combinatoria simple (sin repetición), donde cada elemento del conjunto total puede usarse una sola vez."
+    },
+    {
+      q: "¿Por qué el resultado de las variaciones es mayor?",
+      a: "Porque al importar el orden, cada grupo de elementos genera múltiples arreglos distintos, mientras que en la combinación cuentan como uno solo."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Probabilidad", link: "/matematica/calculadora-probabilidad" },
+    { nombre: "Media Ponderada", link: "/matematica/media-ponderada" },
+    { nombre: "Rango Estadístico", link: "/matematica/rango-estadistico" }
+  ]
+},
+"calculadora-divisores": {
+  faqs: [
+    {
+      q: "¿Cómo saber cuáles son los divisores de un número?",
+      a: "Un número es divisor de otro si al realizar la división el residuo es cero. Se puede probar dividiendo el número por todos los enteros menores a su raíz cuadrada."
+    },
+    {
+      q: "¿Todos los números tienen divisores?",
+      a: "Sí, todos los números enteros mayores que 1 tienen al menos dos divisores: el 1 y ellos mismos."
+    },
+    {
+      q: "¿Qué es un divisor común?",
+      a: "Es un número que divide exactamente a dos o más números al mismo tiempo. El mayor de ellos se conoce como Máximo Común Divisor (MCD)."
+    },
+    {
+      q: "¿El cero tiene divisores?",
+      a: "No, la división por cero no está definida en matemáticas, por lo que el cero no puede ser divisor de ningún número."
+    },
+    {
+      q: "¿Cuál es la diferencia entre divisor y múltiplo?",
+      a: "Los divisores son los números que 'caben' exactamente en otro, mientras que los múltiplos son los resultados de multiplicar ese número por otros enteros."
+    }
+  ],
+  relacionados: [
+    { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" },
+    { nombre: "Proporciones", link: "/matematica/calculadora-proporcion" },
+    { nombre: "Combinatoria", link: "/matematica/calculadora-combinatoria" }
+  ]
+},
+"calculadora-numeros-primos": {
+  faqs: [
+    {
+      q: "¿Cómo saber si un número es primo?",
+      a: "Un número es primo si solo puede dividirse exactamente por 1 y por sí mismo. Si encuentras cualquier otro divisor entre 2 y su raíz cuadrada, es un número compuesto."
+    },
+    {
+      q: "¿Por qué el 2 es un número primo especial?",
+      a: "Es el único número primo que es par. Todos los demás números primos son impares, ya que cualquier otro par sería divisible por 2."
+    },
+    {
+      q: "¿Cuántos números primos existen?",
+      a: "Existen infinitos números primos. Fue demostrado por Euclides hace más de 2000 años."
+    },
+    {
+      q: "¿Para qué sirven los números primos en la vida real?",
+      a: "Son la base de la criptografía moderna. La seguridad de tus compras online y contraseñas depende de la dificultad de factorizar números primos muy grandes."
+    },
+    {
+      q: "¿Cuál es el número primo más grande?",
+      a: "No existe el más grande, pero los científicos descubren constantemente nuevos 'Primos de Mersenne', que tienen millones de dígitos."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Divisores", link: "/matematica/calculadora-divisores" },
+    { nombre: "Combinatoria", link: "/matematica/calculadora-combinatoria" },
+    { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" }
+  ]
+},
+"fraccion-a-decimal": {
+  faqs: [
+    {
+      q: "¿Cómo se convierte una fracción a decimal?",
+      a: "Debes realizar la división del numerador (el número de arriba) entre el denominador (el número de abajo)."
+    },
+    {
+      q: "¿Qué es una fracción propia e impropia?",
+      a: "En una propia, el numerador es menor al denominador (resultado < 1). En la impropia, el numerador es mayor (resultado > 1)."
+    },
+    {
+      q: "¿Por qué algunas fracciones dan decimales infinitos?",
+      a: "Ocurre cuando el denominador tiene factores primos distintos de 2 o 5. Esto genera decimales periódicos que se repiten para siempre."
+    },
+    {
+      q: "¿Cómo convertir un decimal a porcentaje?",
+      a: "Una vez que tengas el decimal, solo debes multiplicarlo por 100. Por ejemplo, 0.25 es el 25%."
+    },
+    {
+      q: "¿Para qué sirve esta conversión en la vida real?",
+      a: "Es útil para comparar precios, calcular descuentos, entender probabilidades o seguir recetas que usan medidas en fracciones."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Proporción", link: "/matematica/calculadora-proporcion" },
+    { nombre: "Media Ponderada", link: "/matematica/media-ponderada" },
+    { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" }
+  ]
+},
+"decimal-a-fraccion": {
+  faqs: [
+    {
+      q: "¿Cómo se simplifica la fracción resultante?",
+      a: "Se divide tanto el numerador como el denominador por su Máximo Común Divisor (MCD) hasta que no tengan más divisores comunes."
+    },
+    {
+      q: "¿Qué es una fracción irreducible?",
+      a: "Es aquella fracción que ya no se puede simplificar más, porque el numerador y el denominador son primos entre sí."
+    },
+    {
+      q: "¿Puede un decimal periódico convertirse en fracción?",
+      a: "Sí, aunque el método es distinto (usando nueves en el denominador). Esta versión actual se enfoca en decimales exactos."
+    },
+    {
+      q: "¿Para qué sirve pasar decimales a fracciones?",
+      a: "Las fracciones suelen ser más precisas en cálculos matemáticos largos, ya que evitan el error de redondeo que tienen los decimales."
+    },
+    {
+      q: "¿El resultado cambia si el decimal es negativo?",
+      a: "No, el procedimiento es el mismo. Simplemente se mantiene el signo negativo en el numerador de la fracción final."
+    }
+  ],
+  relacionados: [
+    { nombre: "Fracción a Decimal", link: "/matematica/fraccion-a-decimal" },
+    { nombre: "Calculadora de Divisores", link: "/matematica/calculadora-divisores" },
+    { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" }
+  ]
+},
+"sistemas-ecuaciones": {
+  faqs: [
+    {
+      q: "¿Qué es un sistema de ecuaciones 2x2?",
+      a: "Es un conjunto de dos ecuaciones que comparten dos incógnitas (generalmente x e y). Resolverlo significa encontrar los valores que satisfacen ambas igualdades al mismo tiempo."
+    },
+    {
+      q: "¿Qué métodos existen para resolverlos?",
+      a: "Los más comunes son Sustitución, Igualación, Reducción y el método de Determinantes (Cramer)."
+    },
+    {
+      q: "¿Qué significa que el sistema sea incompatible?",
+      a: "Significa que las ecuaciones representan rectas paralelas que nunca se cruzan, por lo que no existe ningún valor de x e y que sirva para ambas."
+    },
+    {
+      q: "¿Cómo se aplica esto en la vida real?",
+      a: "Se usa para calcular puntos de equilibrio en economía, mezclas de productos químicos o para programar la lógica de movimiento de objetos en un plano cartesiano."
+    },
+    {
+      q: "¿Por qué el determinante no puede ser cero?",
+      a: "Si el determinante es cero, estaríamos dividiendo por cero en la fórmula de Cramer, lo cual es matemáticamente imposible e indica que las rectas no tienen un único punto de cruce."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Proporción", link: "/matematica/calculadora-proporcion" },
+    { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" },
+    { nombre: "Decimal a Fracción", link: "/matematica/decimal-a-fraccion" }
+  ]
+},
+"regla-del-72": {
+  faqs: [
+    {
+      q: "¿Qué tan precisa es la Regla del 72?",
+      a: "Es una estimación muy cercana a la realidad para tasas de interés comunes. Por ejemplo, al 8%, la regla dice 9 años (72/8), mientras que el cálculo exacto es 9.006 años."
+    },
+    {
+      q: "¿Puedo usarla para calcular el impacto de la inflación?",
+      a: "¡Sí! Si la inflación es del 6% anual, podés usar 72/6 para saber que el poder de compra de tu dinero se reducirá a la mitad en aproximadamente 12 años."
+    },
+    {
+      q: "¿Sirve para intereses que no sean anuales?",
+      a: "Sí, siempre que la tasa y el tiempo estén en la misma unidad. Si usás una tasa mensual, el resultado será en meses."
+    },
+    {
+      q: "¿Existen reglas similares como la del 114 o 144?",
+      a: "Sí. La Regla del 114 estima cuánto tiempo tarda el dinero en triplicarse, y la del 144 para cuadruplicarse."
+    },
+    {
+      q: "¿Por qué un inversor debería conocer esta regla?",
+      a: "Porque te permite evaluar rápidamente si una inversión vale la pena sin necesidad de usar calculadoras financieras sofisticadas."
+    }
+  ],
+  relacionados: [
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Incremento Porcentual", link: "/matematica/incremento-porcentual" },
+    { nombre: "TNA y TEA", link: "/finanzas/tasas-tna-tea" }
+  ]
+},
+"inflacion-acumulada": {
+  faqs: [
+    {
+      q: "¿Por qué no se pueden sumar simplemente los porcentajes?",
+      a: "Porque la inflación se aplica sobre el precio del mes anterior. Si sumas 10% + 10%, daría 20%, pero el cálculo real es 1.10 * 1.10 = 1.21, o sea, un 21% acumulado."
+    },
+    {
+      q: "¿Cómo se calcula la inflación interanual?",
+      a: "Es la inflación acumulada de 12 meses consecutivos. Se toma el índice de precios del mes actual y se compara con el mismo mes del año anterior."
+    },
+    {
+      q: "¿Qué es el IPC?",
+      a: "Es el Índice de Precios al Consumidor, un indicador que mide la variación promedio de los precios de una canasta de bienes y servicios representativa del consumo de los hogares."
+    },
+    {
+      q: "¿La inflación acumulada afecta a los ahorros?",
+      a: "Sí, reduce el valor real del dinero ahorrado. Si la inflación acumulada es del 50%, lo que antes comprabas con $100 ahora te costará $150."
+    },
+    {
+      q: "¿Qué significa deflación acumulada?",
+      a: "Es cuando el resultado del cálculo es negativo, lo que indica que en promedio los precios han bajado durante el periodo analizado."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Inflación", link: "/finanzas/calculadora-inflacion" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Regla del 72", link: "/finanzas/regla-del-72" }
+  ]
+},
+"perdida-poder-adquisitivo": {
+  faqs: [
+    {
+      q: "¿Es lo mismo la inflación que la pérdida de poder adquisitivo?",
+      a: "No. La inflación mide cuánto suben los precios, mientras que la pérdida de poder adquisitivo mide cuánto disminuye lo que podés comprar con tus ingresos."
+    },
+    {
+      q: "¿Si la inflación es del 100%, mi dinero vale cero?",
+      a: "No. Si la inflación es del 100%, los precios se duplicaron, por lo que tu dinero ahora vale la mitad (perdiste el 50% de tu poder de compra)."
+    },
+    {
+      q: "¿Cómo protejo mi poder adquisitivo?",
+      a: "Invirtiendo en activos que ajusten por inflación (como plazos fijos UVA) o comprando bienes/monedas que mantengan su valor real frente a la moneda local."
+    },
+    {
+      q: "¿Por qué los salarios suelen perder contra la inflación?",
+      a: "Porque los precios suelen ajustarse más rápido que los contratos laborales. Esto genera un 'rezago' donde el trabajador compra menos hasta la siguiente paritaria."
+    },
+    {
+      q: "¿Qué sucede en una deflación?",
+      a: "En una deflación (inflación negativa), tu poder adquisitivo aumenta: con la misma cantidad de dinero podés comprar más bienes porque los precios bajaron."
+    }
+  ],
+  relacionados: [
+    { nombre: "Inflación Acumulada", link: "/finanzas/inflacion-acumulada" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Regla del 72", link: "/finanzas/regla-del-72" }
+  ]
+},
+"cuota-maxima": {
+  faqs: [
+    {
+      q: "¿Por qué se recomienda no superar el 30% de los ingresos?",
+      a: "Porque este porcentaje permite cubrir el resto de tus necesidades básicas (vivienda, comida, transporte) y mantener un pequeño margen para ahorros o emergencias."
+    },
+    {
+      q: "¿La cuota máxima incluye intereses?",
+      a: "Sí. La cuota que pagas al banco ya incluye tanto la devolución del capital como los intereses y seguros asociados al préstamo."
+    },
+    {
+      q: "¿Qué ingresos debo considerar para el cálculo?",
+      a: "Debes considerar tus ingresos netos (en mano), es decir, lo que efectivamente recibes después de impuestos y descuentos de ley."
+    },
+    {
+      q: "¿Puedo subir al 40% si no tengo hijos o gastos fijos?",
+      a: "Es posible, pero aumenta el riesgo. Un imprevisto médico o un aumento en los servicios podría dejarte sin liquidez rápidamente."
+    },
+    {
+      q: "¿Cómo afecta la inflación a mi cuota máxima?",
+      a: "Si tu cuota es fija, la inflación puede 'licuarla' (hacerla sentir más barata). Si la cuota ajusta por inflación (como los créditos UVA), tu capacidad de pago dependerá de que tu sueldo suba al mismo ritmo."
+    }
+  ],
+  relacionados: [
+    { nombre: "TNA y TEA", link: "/finanzas/tasas-tna-tea" },
+    { nombre: "Pérdida de Poder Adquisitivo", link: "/finanzas/perdida-poder-adquisitivo" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
+  ]
+},
+"amortizacion-prestamo": {
+  faqs: [
+    {
+      q: "¿Por qué al principio pago más intereses?",
+      a: "En el sistema francés, el interés se calcula sobre el saldo pendiente. Como al inicio del préstamo el saldo es máximo, los intereses también lo son."
+    },
+    {
+      q: "¿Qué sucede si hago una cancelación anticipada?",
+      a: "Si cancelas capital antes de tiempo, el saldo pendiente disminuye drásticamente. Esto reduce los intereses de los meses siguientes y puede acortar el plazo o bajar la cuota."
+    },
+    {
+      q: "¿La cuota de este simulador incluye seguros e IVA?",
+      a: "No. Este simulador calcula la cuota pura de capital e intereses. En un banco real, deberías sumar el IVA sobre intereses y seguros de vida o incendio."
+    },
+    {
+      q: "¿Cuál es la diferencia con el Sistema Alemán?",
+      a: "En el alemán, lo que es fijo es la amortización de capital. Las cuotas empiezan siendo muy altas y van bajando con el tiempo."
+    },
+    {
+      q: "¿Qué es el CFT?",
+      a: "El Costo Financiero Total (CFT) es la tasa real que vas a pagar, incluyendo intereses, comisiones y seguros. Siempre es más alto que la TNA."
+    }
+  ],
+  relacionados: [
+    { nombre: "TNA y TEA", link: "/finanzas/tasas-tna-tea" },
+    { nombre: "Cuota Máxima", link: "/finanzas/cuota-maxima" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
+  ]
+},
+"rendimiento-inversion": {
+  faqs: [
+    {
+      q: "¿Qué es un buen ROI?",
+      a: "Depende del sector y del riesgo. En la bolsa, un ROI anual promedio del 7% al 10% se considera sólido. En negocios de alto riesgo, se buscan retornos mucho mayores."
+    },
+    {
+      q: "¿El ROI incluye impuestos?",
+      a: "El ROI bruto no los incluye, pero lo ideal es calcular el ROI neto restando impuestos y comisiones para conocer la ganancia real que queda en tu bolsillo."
+    },
+    {
+      q: "¿Cómo se diferencia el ROI del interés compuesto?",
+      a: "El ROI es una foto de una operación específica (cuánto gané hoy sobre lo que puse ayer). El interés compuesto es el proceso de reinvertir esas ganancias para generar más valor en el futuro."
+    },
+    {
+      q: "¿Puede el ROI ser mayor al 100%?",
+      a: "Sí. Si inviertes $100 y recibes $300, tu ganancia es de $200, lo que representa un ROI del 200%. Significa que duplicaste tu inversión inicial de ganancia."
+    },
+    {
+      q: "¿Qué limitaciones tiene el ROI simple?",
+      a: "Su mayor debilidad es que ignora el factor tiempo y la inflación. No es lo mismo un 50% en un año que en diez años, aunque el ROI sea idéntico."
+    }
+  ],
+  relacionados: [
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Regla del 72", link: "/finanzas/regla-del-72" },
+    { nombre: "Pérdida de Poder Adquisitivo", link: "/finanzas/perdida-poder-adquisitivo" }
+  ]
+},
+"calculadora-dividendos": {
+  faqs: [
+    {
+      q: "¿Qué es el Dividend Yield?",
+      a: "Es el porcentaje que representa el dividendo anual respecto al precio actual de la acción. Te dice cuánto estás 'ganando' por cada dólar invertido."
+    },
+    {
+      q: "¿Con qué frecuencia se pagan los dividendos?",
+      a: "Depende de la empresa. La mayoría en EE.UU. paga trimestralmente, pero hay empresas que pagan mensual, semestral o anualmente."
+    },
+    {
+      q: "¿Qué es el 'Ex-Dividend Date'?",
+      a: "Es la fecha límite para ser dueño de la acción si quieres cobrar el próximo dividendo. Debes comprarla al menos un día antes de esta fecha."
+    },
+    {
+      q: "¿Los dividendos son seguros?",
+      a: "No. Una empresa puede recortar o suspender sus dividendos si sus ganancias caen o si decide reinvertir ese capital en el negocio."
+    },
+    {
+      q: "¿Qué impuestos pagan los dividendos?",
+      a: "En muchos países tienen retenciones automáticas (como el 30% en EE.UU. para extranjeros). Es importante calcular el dividendo neto para saber cuánto llegará realmente a tu cuenta."
+    }
+  ],
+  relacionados: [
+    { nombre: "Rendimiento ROI", link: "/finanzas/rendimiento-inversion" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Regla del 72", link: "/finanzas/regla-del-72" }
+  ]
+},
+"ahorro-jubilacion": {
+  faqs: [
+    {
+      q: "¿Qué es la Regla del 4%?",
+      a: "Es una regla basada en el Estudio Trinity que sugiere que podés retirar el 4% de tu cartera de inversiones anualmente sin agotar el capital principal durante al menos 30 años."
+    },
+    {
+      q: "¿Debo considerar la inflación en este cálculo?",
+      a: "Sí. Para una mayor precisión, podés restar la inflación esperada a tu tasa de rendimiento. Si esperás un 10% de retorno y un 3% de inflación, usá un 7% en la calculadora."
+    },
+    {
+      q: "¿Es mejor ahorrar en efectivo o invertir?",
+      a: "Invertir es fundamental. El interés compuesto generado por las inversiones es lo que realmente permite que un fondo de retiro crezca lo suficiente para cubrir tus gastos futuros."
+    },
+    {
+      q: "¿Qué sucede si empiezo tarde a ahorrar?",
+      a: "Tendrás que destinar un porcentaje mucho mayor de tus ingresos mensuales al ahorro. No obstante, nunca es tarde para empezar a mejorar tu situación financiera futura."
+    },
+    {
+      q: "¿El fondo objetivo debe incluir mi casa?",
+      a: "Generalmente no, a menos que planees venderla para mudarte a algo más pequeño. El fondo debe estar compuesto por activos líquidos que generen renta (acciones, bonos, propiedades de alquiler)."
+    }
+  ],
+  relacionados: [
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Regla del 72", link: "/finanzas/regla-del-72" },
+    { nombre: "Amortización", link: "/finanzas/amortizacion-prestamo" }
+  ]
+},
+"valor-futuro": {
+  faqs: [
+    {
+      q: "¿Qué diferencia hay entre Valor Presente y Valor Futuro?",
+      a: "El Valor Futuro es lo que valdrá tu dinero mañana tras invertirlo. El Valor Presente es cuánto vale hoy una suma que recibirás en el futuro."
+    },
+    {
+      q: "¿Por qué es importante el interés compuesto en el Valor Futuro?",
+      a: "Porque genera un crecimiento exponencial. Los intereses de cada periodo se suman al capital, generando nuevos intereses en el siguiente."
+    },
+    {
+      q: "¿Cómo afecta la frecuencia de capitalización?",
+      a: "Cuanto más frecuente sea (diaria vs mensual vs anual), mayor será el Valor Futuro, ya que el interés se reinvierte más rápido."
+    },
+    {
+      q: "¿Es una garantía de ganancia?",
+      a: "No. Es una proyección matemática. En inversiones reales, la tasa de retorno puede variar y existen riesgos de mercado."
+    },
+    {
+      q: "¿Qué tasa de interés debería usar para proyectar?",
+      a: "Para proyecciones conservadoras se suele usar entre el 4% y 7% anual, que es el promedio histórico de mercados bursátiles ajustado por inflación."
+    }
+  ],
+  relacionados: [
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Rendimiento ROI", link: "/finanzas/rendimiento-inversion" },
+    { nombre: "Regla del 72", link: "/finanzas/regla-del-72" }
+  ]
+},
+"valor-presente": {
+  faqs: [
+    {
+      q: "¿Para qué sirve calcular el Valor Presente?",
+      a: "Sirve para comparar el valor de dinero recibido en diferentes momentos del tiempo. Es fundamental para evaluar inversiones, préstamos y proyectos empresariales."
+    },
+    {
+      q: "¿Qué sucede si aumenta la tasa de descuento?",
+      a: "Si la tasa de descuento sube, el Valor Presente baja. Esto ocurre porque un mayor rendimiento alternativo hace que el dinero futuro valga menos en el presente."
+    },
+    {
+      q: "¿Es lo mismo que el Valor Actual Neto (VAN)?",
+      a: "El Valor Presente es el cálculo de una única suma. El VAN es la suma de todos los Valores Presentes de los flujos de fondos de un proyecto menos la inversión inicial."
+    },
+    {
+      q: "¿Cómo elijo la tasa de descuento?",
+      a: "Suele elegirse basándose en la tasa de inflación esperada, la tasa de interés de un plazo fijo o el rendimiento promedio del mercado de acciones."
+    },
+    {
+      q: "¿Por qué el tiempo reduce el Valor Presente?",
+      a: "Debido al costo de oportunidad: cuanto más tiempo falte para recibir el dinero, más tiempo perdés de invertirlo y generar intereses hoy."
+    }
+  ],
+  relacionados: [
+    { nombre: "Valor Futuro", link: "/finanzas/valor-futuro" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Rendimiento ROI", link: "/finanzas/rendimiento-inversion" }
+  ]
+},
+"tasa-de-retorno": {
+  faqs: [
+    {
+      q: "¿Qué significa CAGR?",
+      a: "Significa 'Compound Annual Growth Rate' o Tasa de Crecimiento Anual Compuesto. Es la tasa constante a la que habría crecido tu inversión si lo hubiera hecho al mismo ritmo cada año."
+    },
+    {
+      q: "¿Por qué es mejor que el retorno total?",
+      a: "Porque el retorno total no considera el tiempo. Ganar un 50% es bueno, pero es mucho mejor si lo hiciste en 1 año que en 10. El CAGR permite comparar ambas situaciones."
+    },
+    {
+      q: "¿El CAGR garantiza rendimientos futuros?",
+      a: "No. El CAGR describe lo que sucedió en el pasado o lo que debería suceder para alcanzar una meta. Los mercados reales fluctúan año a año."
+    },
+    {
+      q: "¿Se puede calcular con menos de un año?",
+      a: "Matemáticamente sí, pero los resultados pueden ser engañosos (extrapolados). Se recomienda usarlo para periodos de 1 año en adelante."
+    },
+    {
+      q: "¿Qué es un buen CAGR?",
+      a: "Depende del riesgo. Un CAGR del 7-10% en dólares es considerado muy bueno históricamente (promedio del S&P 500), mientras que un plazo fijo suele tener un CAGR menor."
+    }
+  ],
+  relacionados: [
+    { nombre: "Rendimiento ROI", link: "/finanzas/rendimiento-inversion" },
+    { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+    { nombre: "Valor Futuro", link: "/finanzas/valor-futuro" }
+  ]
+},
+"pulgadas-a-cm": {
+  faqs: [
+    {
+      q: "¿Exactamente cuánto es una pulgada?",
+      a: "Desde 1959, se definió internacionalmente que una pulgada (inch) equivale exactamente a 25.4 milímetros o 2.54 centímetros."
+    },
+    {
+      q: "¿Cómo se abrevia pulgada?",
+      a: "Se puede abreviar como 'in' (del inglés inch) o mediante las comillas dobles (\"), por ejemplo: 10\"."
+    },
+    {
+      q: "¿Por qué las pantallas se miden en pulgadas?",
+      a: "Es un estándar heredado de la industria estadounidense. La medida de una pantalla (TV o monitor) siempre se refiere a la longitud de la diagonal."
+    },
+    {
+      q: "¿Cómo paso de cm a pulgadas mentalmente?",
+      a: "Una regla rápida es dividir por 2.5. Si tenés 10 cm, dividís por 2.5 y te da 4 pulgadas aproximadamente."
+    },
+    {
+      q: "¿Qué países siguen usando las pulgadas?",
+      a: "Principalmente Estados Unidos, Liberia y Myanmar. Sin embargo, en industrias como la informática y la aviación, la pulgada es el estándar mundial."
+    }
+  ],
+  relacionados: [
+    { nombre: "Costo por Kilómetro", link: "/transporte/costo-kilometro" },
+    { nombre: "Regla de 3 Simple", link: "/matematica/regla-de-tres" },
+    { nombre: "Pérdida de Poder Adquisitivo", link: "/finanzas/perdida-poder-adquisitivo" }
+  ]
+},
+"cm-a-pulgadas": {
+  faqs: [
+    {
+      q: "¿Cuántas pulgadas tiene un centímetro?",
+      a: "Un centímetro equivale a aproximadamente 0.3937 pulgadas."
+    },
+    {
+      q: "¿Por qué se usa 2.54 para la conversión?",
+      a: "Es el factor de conversión exacto definido por el estándar internacional para relacionar el sistema métrico con el imperial."
+    },
+    {
+      q: "¿Cómo calculo pulgadas de una pantalla si tengo los cm?",
+      a: "Debes medir la diagonal de la pantalla en centímetros y dividir ese resultado por 2.54. El número obtenido es el tamaño de la pantalla en pulgadas."
+    },
+    {
+      q: "¿Es lo mismo 'pulgada' que 'inch'?",
+      a: "Sí, 'pulgada' es la traducción al español del término inglés 'inch'."
+    },
+    {
+      q: "¿Qué precisión tiene esta calculadora?",
+      a: "Utiliza el factor exacto de 2.54 y redondea a dos decimales, lo cual es más que suficiente para la mayoría de usos domésticos y profesionales."
+    }
+  ],
+  relacionados: [
+    { nombre: "Pulgadas a Centímetros", link: "/unidades/pulgadas-a-cm" },
+    { nombre: "Regla de 3 Simple", link: "/matematica/regla-de-tres" },
+    { nombre: "Costo por Kilómetro", link: "/transporte/costo-kilometro" }
+  ]
+},
+"km-a-millas": {
+  faqs: [
+    {
+      q: "¿Es lo mismo una milla terrestre que una náutica?",
+      a: "No. La milla terrestre (usada en esta calculadora) mide 1.609 metros, mientras que la milla náutica mide exactamente 1.852 metros."
+    },
+    {
+      q: "¿Cómo calculo millas a km rápido sin calculadora?",
+      a: "Multiplicá las millas por 1.6. Por ejemplo, 10 millas son unos 16 km."
+    },
+    {
+      q: "¿Por qué algunos países usan millas?",
+      a: "Es una herencia del sistema imperial británico. Aunque el Reino Unido se ha pasado parcialmente al sistema métrico, las señales de tránsito siguen estando en millas."
+    },
+    {
+      q: "¿A cuántos km equivale una maratón de 26.2 millas?",
+      a: "Equivale a 42.195 kilómetros exactamente."
+    }
+  ],
+  relacionados: [
+    { nombre: "Costo por Kilómetro", link: "/transporte/costo-kilometro" },
+    { nombre: "Pulgadas a Centímetros", link: "/unidades/pulgadas-a-cm" },
+    { nombre: "Regla de 3 Simple", link: "/matematica/regla-de-tres" }
+  ]
+},
+"millas-a-km": {
+  "faqs": [
+    {
+      "q": "¿A cuántos kilómetros equivale exactamente una milla?",
+      "a": "Una milla terrestre equivale a exactamente 1,609344 kilómetros. Para cálculos rápidos, se suele redondear a 1,61 km."
+    },
+    {
+      "q": "¿Cómo convertir millas a km mentalmente?",
+      "a": "Una forma fácil es multiplicar por 1.6. Si quieres más precisión, sumá la mitad del valor original más un 10% adicional (Ej: 10mi -> 5 + 1 = 16km)."
+    },
+    {
+      "q": "¿Qué países siguen utilizando las millas para la distancia?",
+      "a": "Principalmente Estados Unidos, el Reino Unido, Liberia y Myanmar. En el resto del mundo predomina el sistema métrico (kilómetros)."
+    },
+    {
+      "q": "¿Cuál es la diferencia entre milla terrestre y náutica?",
+      "a": "La milla terrestre mide 1.609 metros, mientras que la milla náutica (usada en navegación y aviación) es más larga, midiendo exactamente 1.852 metros."
+    },
+    {
+      "q": "¿A cuánto equivalen 60 mph en kilómetros por hora?",
+      "a": "60 millas por hora equivalen aproximadamente a 96,56 km/h, un límite de velocidad estándar en muchas autopistas estadounidenses."
+    }
+  ],
+  "relacionados": [
+    { "nombre": "Kilómetros a Millas", "link": "/unidades/km-a-millas" },
+    { "nombre": "Pies a Metros", "link": "/unidades/pies-a-metros" },
+    { "nombre": "Consumo de Combustible", "link": "/transporte/consumo-combustible" }
+  ]
 }
 };

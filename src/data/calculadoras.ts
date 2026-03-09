@@ -877,4 +877,355 @@ export const calculadoras = [
   color: "indigo",
   keywords: "anchor text ratio, texto de ancla, perfil de enlaces, auditoria backlinks, google penguin, seo off-page"
 },
+{
+  titulo: "Tiempo de Ranking",
+  descripcion: "Estimá cuántos meses tardará tu página en llegar a los primeros resultados según la competencia.",
+  link: "/seo/tiempo-ranking-seo",
+  categoria: "seo",
+  icon: "⏳",
+  color: "fuchsia",
+  keywords: "tiempo seo, cuanto tarda el seo, posicionamiento google meses, estrategia seo tiempo, dificultad de palabra clave"
+},
+{
+  titulo: "Analizador de Repetición",
+  descripcion: "Detectá redundancias en tu escritura y mejorá la riqueza de tu vocabulario para cautivar a tus lectores.",
+  link: "/seo/analizador-repeticion",
+  categoria: "seo",
+  icon: "♻️",
+  color: "lime",
+  keywords: "palabras repetidas, analizador de texto, redundancia, sinonimos seo, riqueza lexica, redaccion profesional"
+},
+{
+  titulo: "Analizador de Párrafos",
+  descripcion: "Auditá la longitud de tus párrafos para mejorar la legibilidad y la experiencia del usuario en dispositivos móviles.",
+  link: "/seo/analizador-parrafos",
+  categoria: "seo",
+  icon: "📏",
+  color: "teal",
+  keywords: "longitud de parrafos, legibilidad seo, copywriting web, ux writing, mejorar lectura, bloques de texto"
+},
+{
+  titulo: "Frecuencia de Palabras",
+  descripcion: "Descubrí qué palabras dominan tu texto. Analizá patrones de repetición para optimizar tu mensaje y relevancia.",
+  link: "/seo/frecuencia-palabras",
+  categoria: "seo",
+  icon: "📉",
+  color: "indigo",
+  keywords: "frecuencia de palabras, contar repeticiones, analisis semantico, estadisticas de texto, densidad de terminos"
+},
+{
+  titulo: "Contador de Frases",
+  descripcion: "Analizá el número de frases y su longitud promedio para mejorar el ritmo y la legibilidad de tu contenido.",
+  link: "/seo/contador-frases",
+  categoria: "seo",
+  icon: "💬",
+  color: "violet",
+  keywords: "contador de frases, analizar lectura, ritmo de escritura, longitud de oraciones, legibilidad de texto, redaccion seo"
+},
+{
+  titulo: "Contador de Hashtags",
+  descripcion: "Extraé y contá las etiquetas de tus publicaciones para optimizar el alcance en redes sociales.",
+  link: "/seo/contador-hashtags",
+  categoria: "seo",
+  icon: "♯",
+  color: "sky",
+  keywords: "contador de hashtags, extraer hashtags instagram, seo redes sociales, etiquetas linkedin, social media tools"
+},
+{
+  titulo: "Raíz Cuadrada",
+  descripcion: "Calculá la raíz cuadrada de cualquier número de forma rápida y con precisión decimal.",
+  link: "/matematica/calculadora-raiz-cuadrada",
+  categoria: "matematica",
+  icon: "√",
+  color: "emerald",
+  keywords: "raiz cuadrada online, calcular raiz, matematicas gratis, operacion radical, numeros cuadrados"
+},
+{
+  titulo: "Raíz Cúbica",
+  descripcion: "Calculá la raíz cúbica de números positivos y negativos con precisión instantánea.",
+  link: "/matematica/calculadora-raiz-cubica",
+  categoria: "matematica",
+  icon: "³√",
+  color: "cyan",
+  keywords: "raiz cubica online, calcular raiz 3, matematicas paso a paso, raiz de numero negativo, volumen cubo"
+},
+{
+  titulo: "Calculadora de Potencia",
+  descripcion: "Elevá cualquier número a la potencia de n de forma rápida. Soporta exponentes negativos y decimales.",
+  link: "/matematica/calculadora-potencia",
+  categoria: "matematica",
+  icon: "xⁿ",
+  color: "rose",
+  keywords: "calculadora potencia, elevar al cuadrado, potencias online, exponente negativo, base y exponente"
+},
+{
+  titulo: "Porcentaje Inverso",
+  descripcion: "Descubrí el valor original antes de un aumento o descuento porcentual de forma instantánea.",
+  link: "/matematica/porcentaje-inverso",
+  categoria: "matematica",
+  icon: "↩️",
+  color: "amber",
+  keywords: "porcentaje inverso, valor original, calcular descuento, desglose de aumento, matematicas financieras"
+},
+{
+  titulo: "Incremento Porcentual",
+  descripcion: "Calculá la diferencia porcentual entre dos números para medir el crecimiento o caída de tus métricas.",
+  link: "/matematica/incremento-porcentual",
+  categoria: "matematica",
+  icon: "📈",
+  color: "orange",
+  keywords: "incremento porcentual, diferencia porcentual, calcular crecimiento, variacion de precios, seo metrics"
+},
+{
+  titulo: "Decremento Porcentual",
+  descripcion: "Calculá la caída porcentual entre dos valores. Ideal para medir pérdidas de tráfico o descuentos comerciales.",
+  link: "/matematica/decremento-porcentual",
+  categoria: "matematica",
+  icon: "📉",
+  color: "rose",
+  keywords: "decremento porcentual, disminucion porcentaje, calcular perdida, rebaja de precios, caida seo"
+},
+{
+  titulo: "Calculadora de Proporción",
+  descripcion: "Resolvé proporciones y razones matemáticas. Ideal para escalar dimensiones y mantener el aspect ratio.",
+  link: "/matematica/calculadora-proporcion",
+  categoria: "matematica",
+  icon: "⚖️",
+  color: "blue",
+  keywords: "calculadora proporcion, razones y proporciones, regla de tres, escalar imagenes, aspect ratio calculator"
+},
+{
+  titulo: "Media Ponderada",
+  descripcion: "Calculá promedios reales asignando diferentes pesos o importancia a cada valor de tus datos.",
+  link: "/matematica/media-ponderada",
+  categoria: "matematica",
+  icon: "📊",
+  color: "indigo",
+  keywords: "media ponderada, promedio ponderado, calcular notas, promedio con pesos, estadistica descriptiva"
+},
+{
+  titulo: "Calculadora de Percentil",
+  descripcion: "Calculá la posición relativa de un dato en un conjunto. Vital para benchmarks de Core Web Vitals y educación.",
+  link: "/matematica/calculadora-percentil",
+  categoria: "matematica",
+  icon: "📊",
+  color: "violet",
+  keywords: "percentil online, calcular percentiles, posicion relativa, estadistica descriptiva, core web vitals p75"
+},
+{
+  titulo: "Desviación Media",
+  descripcion: "Calculá el promedio de las distancias de tus datos respecto a la media. Ideal para medir variabilidad.",
+  link: "/matematica/desviacion-media",
+  categoria: "matematica",
+  icon: "📏",
+  color: "indigo",
+  keywords: "desviacion media online, calcular dispersion, promedio distancias, variabilidad de datos, estadistica basica"
+},
+{
+  titulo: "Rango Estadístico",
+  descripcion: "Calculá la diferencia entre el valor máximo y mínimo de tus datos para medir la amplitud de la muestra.",
+  link: "/matematica/rango-estadistico",
+  categoria: "matematica",
+  icon: "↔️",
+  color: "emerald",
+  keywords: "rango estadistico online, calcular rango, amplitud de datos, valor maximo y minimo, dispersion simple"
+},
+{
+  titulo: "Calculadora de Probabilidad",
+  descripcion: "Calculá la posibilidad de que un evento ocurra. Ideal para estadística, juegos de azar y toma de decisiones.",
+  link: "/matematica/calculadora-probabilidad",
+  categoria: "matematica",
+  icon: "🎲",
+  color: "indigo",
+  keywords: "calculadora probabilidad, calcular posibilidades, ley de laplace, estadistica simple, azar"
+},
+{
+  titulo: "Calculadora de Combinatoria",
+  descripcion: "Calculá combinaciones y variaciones al instante para tus problemas de estadística y lógica.",
+  link: "/matematica/calculadora-combinatoria",
+  categoria: "matematica",
+  icon: "🧩",
+  color: "fuchsia",
+  keywords: "combinatoria online, calcular combinaciones, variaciones con orden, permutaciones, estadistica"
+},
+{
+  titulo: "Calculadora de Divisores",
+  descripcion: "Encontrá todos los divisores de un número y verificá si es primo de forma instantánea.",
+  link: "/matematica/calculadora-divisores",
+  categoria: "matematica",
+  icon: "➗",
+  color: "amber",
+  keywords: "divisores de un numero, calcular divisores, numeros primos, factores de un numero, aritmetica"
+},
+{
+  titulo: "Calculadora de Números Primos",
+  descripcion: "Comprobá si un número es primo o compuesto al instante y encontrá el siguiente número primo.",
+  link: "/matematica/calculadora-numeros-primos",
+  categoria: "matematica",
+  icon: "✨",
+  color: "emerald",
+  keywords: "numeros primos, test de primalidad, buscador de primos, numeros compuestos, factorizacion"
+},
+{
+  titulo: "Fracción a Decimal",
+  descripcion: "Convertí cualquier fracción a su forma decimal de manera rápida y precisa.",
+  link: "/matematica/fraccion-a-decimal",
+  categoria: "matematica",
+  icon: "🔢",
+  color: "indigo",
+  keywords: "fraccion a decimal, convertir fraccion, quebrado a decimal, pasar fraccion a numero, division de fracciones"
+},
+{
+  titulo: "Decimal a Fracción",
+  descripcion: "Convertí números decimales en fracciones irreducibles de forma automática y rápida.",
+  link: "/matematica/decimal-a-fraccion",
+  categoria: "matematica",
+  icon: "➗",
+  color: "teal",
+  keywords: "decimal a fraccion, convertir decimal, simplificar fraccion, numero decimal a quebrado, calculadora matematica"
+},
+{
+  titulo: "Sistemas de Ecuaciones",
+  descripcion: "Resolvé sistemas 2x2 al instante. Obtené los valores de x e y mediante el método de Cramer.",
+  link: "/matematica/sistemas-ecuaciones",
+  categoria: "matematica",
+  icon: "📐",
+  color: "orange",
+  keywords: "sistemas de ecuaciones, resolver 2x2, metodo de cramer, interseccion de rectas, algebra lineal"
+},
+{
+  titulo: "Regla del 72",
+  descripcion: "Calculá cuánto tiempo tardará tu inversión en duplicarse según la tasa de interés de forma instantánea.",
+  link: "/finanzas/regla-del-72",
+  categoria: "finanzas",
+  icon: "⏳",
+  color: "amber",
+  keywords: "regla del 72, duplicar inversion, interes compuesto rapido, tiempo de retorno, finanzas personales"
+},
+{
+  titulo: "Inflación Acumulada",
+  descripcion: "Calculá el impacto real de la inflación compuesta sumando diferentes periodos de forma correcta.",
+  link: "/finanzas/inflacion-acumulada",
+  categoria: "finanzas",
+  icon: "📈",
+  color: "red",
+  keywords: "inflacion acumulada, calcular ipc, inflacion compuesta, costo de vida, perdida poder adquisitivo"
+},
+{
+  titulo: "Pérdida de Poder Adquisitivo",
+  descripcion: "Descubrí cuánto valor real pierde tu dinero con el tiempo debido al impacto de la inflación.",
+  link: "/finanzas/perdida-poder-adquisitivo",
+  categoria: "finanzas",
+  icon: "💸",
+  color: "rose",
+  keywords: "perdida poder adquisitivo, valor real del dinero, inflacion vs salario, cuanto vale mi plata, economia personal"
+},
+{
+  titulo: "Cuota Máxima de Préstamo",
+  descripcion: "Calculá cuánto podés pagar mensualmente por un crédito sin poner en riesgo tu estabilidad financiera.",
+  link: "/finanzas/cuota-maxima",
+  categoria: "finanzas",
+  icon: "🛡️",
+  color: "blue",
+  keywords: "cuota maxima prestamo, capacidad de pago, endeudamiento responsable, cuanto puedo pedir prestado, finanzas sanas"
+},
+{
+  titulo: "Amortización de Préstamo",
+  descripcion: "Generá tu tabla de cuotas completa bajo el sistema francés. Visualizá capital e intereses mes a mes.",
+  link: "/finanzas/amortizacion-prestamo",
+  categoria: "finanzas",
+  icon: "📊",
+  color: "indigo",
+  keywords: "tabla de amortizacion, sistema frances, calcular cuota prestamo, simulador credito, capital e intereses"
+},
+{
+  titulo: "Rendimiento de Inversión",
+  descripcion: "Calculá el ROI de tus operaciones financieras y descubrí qué tan rentables son tus negocios.",
+  link: "/finanzas/rendimiento-inversion",
+  categoria: "finanzas",
+  icon: "📈",
+  color: "emerald",
+  keywords: "ROI, rendimiento inversion, calcular rentabilidad, retorno de capital, ganancia neta inversion"
+},
+{
+  titulo: "Calculadora de Dividendos",
+  descripcion: "Proyectá tus ingresos pasivos y calculá el rendimiento anual de tus acciones y ETFs.",
+  link: "/finanzas/calculadora-dividendos",
+  categoria: "finanzas",
+  icon: "🏦",
+  color: "violet",
+  keywords: "calculadora dividendos, renta pasiva acciones, dividend yield, flujo de caja inversiones, vivir de rentas"
+},
+{
+  titulo: "Ahorro para Jubilación",
+  descripcion: "Proyectá tu retiro ideal. Descubrí cuánto necesitás invertir hoy para vivir de tus rentas en el futuro.",
+  link: "/finanzas/ahorro-jubilacion",
+  categoria: "finanzas",
+  icon: "🌅",
+  color: "cyan",
+  keywords: "jubilacion, retiro, ahorrar para el futuro, regla del 4 por ciento, libertad financiera"
+},
+{
+  titulo: "Valor Futuro de Inversión",
+  descripcion: "Proyectá cuánto valdrá tu capital en el futuro considerando intereses y aportes periódicos.",
+  link: "/finanzas/valor-futuro",
+  categoria: "finanzas",
+  icon: "🔮",
+  color: "lime",
+  keywords: "valor futuro, proyeccion financiera, interes compuesto, calcular ahorros, inversion a largo plazo"
+},
+{
+  titulo: "Valor Presente",
+  descripcion: "Calculá cuánto vale hoy una suma de dinero futura aplicando una tasa de descuento específica.",
+  link: "/finanzas/valor-presente",
+  categoria: "finanzas",
+  icon: "📉",
+  color: "teal",
+  keywords: "valor presente, valor actual neto, descuento de flujos, finanzas corporativas, matemática financiera"
+},
+{
+  titulo: "Tasa de Retorno (CAGR)",
+  descripcion: "Calculá la tasa de crecimiento anual de tu capital para comparar rendimientos de forma profesional.",
+  link: "/finanzas/tasa-de-retorno",
+  categoria: "finanzas",
+  icon: "📉",
+  color: "amber",
+  keywords: "CAGR, tasa de retorno anualizada, rendimiento compuesto, comparar inversiones, rentabilidad anual"
+},
+{
+  titulo: "Pulgadas a Centímetros",
+  descripcion: "Convertí medidas rápidamente entre el sistema imperial y el sistema métrico decimal.",
+  link: "/unidades/pulgadas-a-cm",
+  categoria: "unidades",
+  icon: "📏",
+  color: "blue",
+  keywords: "pulgadas a cm, conversor pulgadas, calcular cm a in, medidas de pantalla, carpinteria"
+},
+{
+  titulo: "Centímetros a Pulgadas",
+  descripcion: "Convertí centímetros a pulgadas de forma instantánea. Ideal para medidas de pantallas y textiles.",
+  link: "/unidades/cm-a-pulgadas",
+  categoria: "unidades",
+  icon: "📐",
+  color: "indigo",
+  keywords: "cm a pulgadas, convertir centimetros, calcular in desde cm, medidas tv cm, costura"
+},
+{
+  titulo: "Kilómetros a Millas",
+  descripcion: "Convertí distancias de kilómetros a millas de forma precisa. Ideal para viajes y navegación.",
+  link: "/unidades/km-a-millas",
+  categoria: "unidades",
+  icon: "🚗",
+  color: "amber",
+  keywords: "km a millas, convertir kilometros, distancia en millas, calcular millas terrestres"
+},
+{
+  titulo: "Millas a Kilómetros",
+  descripcion: "Convertí millas a kilómetros (mi a km) de forma rápida. Ideal para distancias de carretera y límites de velocidad.",
+  link: "/unidades/millas-a-km",
+  categoria: "unidades",
+  icon: "🛣️",
+  color: "blue",
+  keywords: "millas a km, convertir millas, distancia en km, calculadora de distancia, mi a kilometros"
+},
 ];
