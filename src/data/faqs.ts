@@ -2012,36 +2012,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Frigorías de Aire", link: "/hogar/calculadora-frigorias" },
     { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
   ]
-},
-"calculadora-de-angulos": {
-  faqs: [
-    { 
-      q: "¿Qué es un ángulo complementario?", 
-      a: "Dos ángulos son complementarios si la suma de sus medidas es exactamente 90°. Por ejemplo, el complemento de un ángulo de 30° es 60°." 
-    },
-    { 
-      q: "¿Qué es un ángulo suplementario?", 
-      a: "Dos ángulos son suplementarios si su suma da como resultado 180°. Son fundamentales en geometría para calcular inclinaciones en líneas rectas." 
-    },
-    { 
-      q: "¿Cómo convertir grados a radianes?", 
-      a: "La fórmula de conversión es: $$Radianes = Grados \\times (\\pi / 180)$$. Un círculo completo tiene 360° o $2\\pi$ radianes." 
-    },
-    { 
-      q: "¿Qué es un ángulo recto, agudo y obtuso?", 
-      a: "Un ángulo **agudo** mide menos de 90°, un ángulo **recto** mide exactamente 90° y un ángulo **obtuso** mide más de 90° pero menos de 180°." 
-    },
-    { 
-      q: "¿Para qué sirve calcular ángulos en la vida real?", 
-      a: "Es esencial en arquitectura para techos y pendientes, en carpintería para cortes a inglete y en navegación para determinar rumbos precisos." 
-    }
-  ],
-  relacionados: [
-    { nombre: "Calculadora de Áreas", link: "/matematicas/calculadora-de-areas" },
-    { nombre: "Teorema de Pitágoras", link: "/matematicas/pitagoras" },
-    { nombre: "Frigorías de Aire", link: "/hogar/calculadora-frigorias" }
-  ]
-},
+  },
 "calculadora-de-angulos": {
   faqs: [
     { 
