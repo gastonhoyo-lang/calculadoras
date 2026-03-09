@@ -2080,11 +2080,11 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" }
     ]
     },
-    "logaritmos": {
+  "logaritmos": {
     faqs: [
       {
         q: "¿Qué es un logaritmo?",
-        a: "El logaritmo de un número es el exponente al que se debe elevar una base fija para obtener dicho número. Por ejemplo, el logaritmo de 100 en base 10 es 2, porque $10^2 = 100$."
+        a: "El logaritmo de un número es el exponente al que se debe elevar una base fija para obtener dicho número. Por ejemplo, el logaritmo de 100 en base 10 es 2, porque 10 elevado a la potencia 2 es igual a 100."
       },
       {
         q: "¿Cuál es la diferencia entre log y ln?",
@@ -2100,5 +2100,47 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "MCM y MCD", link: "/matematica/mcm-mcd" },
       { nombre: "Calculadora de Fracciones", link: "/utiles/fracciones" }
     ]
+  },
+  "promedio-mediana-moda": {
+    faqs: [
+      {
+        q: "¿Cuál es la diferencia entre promedio y mediana?",
+        a: "El promedio suma todos los valores y los divide por la cantidad de datos, mientras que la mediana es el valor que ocupa la posición central al ordenarlos. La mediana es más confiable cuando hay valores extremos que distorsionan el promedio."
+      },
+      {
+        q: "¿Qué sucede si hay dos modas en un conjunto de datos?",
+        a: "Si dos números se repiten la misma cantidad de veces y esa frecuencia es la máxima, el conjunto se denomina 'bimodal'. Si son más de dos, es 'multimodal'."
+      },
+      {
+        q: "¿Cómo se calcula la mediana si la cantidad de datos es par?",
+        a: "En ese caso, no hay un único número central. Se toman los dos valores centrales y se calcula su promedio (se suman y se dividen por dos)."
+      }
+    ],
+    relacionados: [
+      { nombre: "Ecuaciones Segundo Grado", link: "/matematica/ecuaciones-segundo-grado" },
+      { nombre: "MCM y MCD", link: "/matematica/mcm-mcd" },
+      { nombre: "Logaritmos", link: "/matematica/logaritmos" }
+    ]
+  },
+  "varianza-desviacion-estandar": {
+    faqs: [
+      {
+        q: "¿Qué indica una desviación estándar alta?",
+        a: "Indica que los datos están muy alejados del promedio, es decir, que hay mucha variabilidad o dispersión en el conjunto de datos."
+      },
+      {
+        q: "¿Cuál es la diferencia entre varianza y desviación estándar?",
+        a: "La varianza se expresa en unidades al cuadrado, lo que dificulta su interpretación. La desviación estándar es la raíz cuadrada de la varianza, devolviendo el resultado a la unidad de medida original de los datos."
+      },
+      {
+        q: "¿Por qué es importante en finanzas?",
+        a: "Se utiliza para medir el riesgo de una inversión. Una mayor desviación estándar en los rendimientos históricos de un activo suele indicar una mayor volatilidad y riesgo."
+      }
+    ],
+    relacionados: [
+      { nombre: "Promedio, Mediana y Moda", link: "/matematica/promedio-mediana-moda" },
+      { nombre: "Logaritmos", link: "/matematica/logaritmos" },
+      { nombre: "MCM y MCD", link: "/matematica/mcm-mcd" }
+    ]
   }
-  };
+};

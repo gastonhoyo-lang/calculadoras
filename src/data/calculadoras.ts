@@ -570,8 +570,8 @@ export const calculadoras = [
   icon: "🧬",
   color: "orange",
   keywords: "cuadratica, bhaskara, bascara, raices x1 x2, algebra, secundaria"
-},
-{
+  },
+  {
     titulo: "MCM y MCD",
     descripcion: "Calculá el Mínimo Común Múltiplo y Máximo Común Divisor al instante.",
     link: "/matematica/mcm-mcd",
@@ -588,5 +588,23 @@ export const calculadoras = [
     icon: "📐",
     color: "orange",
     keywords: "logaritmo, ln, base e, log10, algebra, potencias, exponencial"
+  },
+  {
+    titulo: "Promedio, Mediana y Moda",
+    descripcion: "Calculá las medidas de tendencia central de un conjunto de datos y entendé sus diferencias.",
+    link: "/matematica/promedio-mediana-moda",
+    categoria: "matematica",
+    icon: "📊",
+    color: "blue",
+    keywords: "promedio, mediana, moda, estadistica, media aritmetica, desviacion, analisis de datos"
+  },
+  {
+    titulo: "Varianza y Desviación Estándar",
+    descripcion: "Medí la dispersión de tus datos de forma precisa. Ideal para análisis de riesgo y control de calidad.",
+    link: "/matematica/varianza-desviacion-estandar",
+    categoria: "matematica",
+    icon: "📉",
+    color: "purple",
+    keywords: "varianza, desviacion estandar, dispersion, sigma, estadistica, analisis de riesgo"
   },
 ];
