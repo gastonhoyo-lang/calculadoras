@@ -156,44 +156,7 @@ import ResultBox from "../../components/ResultBox.astro";
   </main>
 </Layout>
 
-<!-- Código JS solo para el cliente -->
-<script client:load>
-  const pvIn = document.getElementById("pvInput");
-  const rateIn = document.getElementById("rateInput");
-  const yearsIn = document.getElementById("yearsInput");
-  const pmtIn = document.getElementById("pmtInput");
-  const fvOut = document.getElementById("fvOutput");
-  const intOut = document.getElementById("interestEarned");
-
-  const calculateFV = () => {
-    const PV = parseFloat(pvIn.value) || 0;
-    const annualRate = (parseFloat(rateIn.value) || 0) / 100;
-    const years = parseFloat(yearsIn.value) || 0;
-    const PMT = parseFloat(pmtIn.value) || 0;
-
-    if (years === 0 && PV === 0) return;
-
-    const r = annualRate / 12;
-    const n = years * 12;
-
-    // VF de la inversión inicial + VF de las anualidades (aportes)
-    let fv = PV * Math.pow(1 + annualRate, years);
-
-    if (r > 0) {
-      fv += PMT * ((Math.pow(1 + r, n) - 1) / r);
-    } else {
-      fv += PMT * n;
-    }
-
-    const totalInvested = PV + PMT * n;
-    const profit = fv - totalInvested;
-
-    if (fvOut) fvOut.innerText = "$" + Math.round(fv).toLocaleString();
-    if (intOut)
-      intOut.innerText = `Ganancia por intereses: $${Math.round(profit).toLocaleString()}`;
-  };
-
-  [pvIn, rateIn, yearsIn, pmtIn].forEach((el) =>
-    el?.addEventListener("input", calculateFV),
-  );
+<!-- Script externo cargado solo en cliente -->
+<script type="module" client:only>
+  import "/src/scripts/fvCalculator.js";
 </script>
