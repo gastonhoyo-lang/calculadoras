@@ -27,8 +27,9 @@ import ResultBox from "../../components/ResultBox.astro";
           <div id="inputsContainer" class="space-y-4">
             <label
               class="block text-[10px] font-bold uppercase text-slate-400 ml-1 tracking-widest"
-              >Tasas de Inflación (%)</label
             >
+              Tasas de Inflación (%)
+            </label>
             <div class="flex gap-2">
               <input
                 type="number"
@@ -61,8 +62,9 @@ import ResultBox from "../../components/ResultBox.astro";
           <div class="relative z-10 text-white">
             <span
               class="block text-[10px] font-bold uppercase opacity-80 mb-2 tracking-widest"
-              >Total Acumulado</span
             >
+              Total Acumulado
+            </span>
             <div id="resultOutput" class="text-7xl font-black leading-none">
               0%
             </div>
@@ -89,9 +91,7 @@ import ResultBox from "../../components/ResultBox.astro";
       </h2>
       <p>
         Mucha gente comete el error de sumar los porcentajes (ej: 10% + 10% =
-        20%). Sin embargo, la inflación es <strong>compuesta</strong>. Si algo
-        sube un 10% y luego otro 10%, el segundo aumento se aplica sobre el
-        precio ya aumentado.
+        20%). Sin embargo, la inflación es <strong>compuesta</strong>.
       </p>
 
       <div
@@ -102,40 +102,18 @@ import ResultBox from "../../components/ResultBox.astro";
           \cdot 100$$
         </span>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-2 italic text-sm">
-            Efecto Bola de Nieve
-          </h4>
-          <p class="text-xs leading-relaxed">
-            Debido al interés compuesto, la inflación acumulada siempre será
-            mayor a la suma simple de los porcentajes mensuales.
-          </p>
-        </div>
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-2 italic text-sm">
-            Poder Adquisitivo
-          </h4>
-          <p class="text-xs leading-relaxed">
-            Esta herramienta te permite saber cuánto debería haber aumentado tu
-            sueldo para no perder contra los aumentos de precios en un periodo
-            dado.
-          </p>
-        </div>
-      </div>
     </section>
   </main>
 </Layout>
 
-<!-- JS solo para el cliente -->
+<!-- TODO: Todo JS va dentro de client:load -->
 <script client:load>
   const container = document.getElementById("inputsContainer");
   const addButton = document.getElementById("addInput");
   const output = document.getElementById("resultOutput");
   const step = document.getElementById("calcStep");
 
-  const calculateAccumulated = () => {
+  function calculateAccumulated() {
     const inputs = document.querySelectorAll(".inflation-input");
     let totalMultiplier = 1;
     let hasValues = false;
@@ -149,7 +127,7 @@ import ResultBox from "../../components/ResultBox.astro";
     });
 
     if (!hasValues) {
-      if (output) output.innerText = "0%";
+      output && (output.innerText = "0%");
       return;
     }
 
@@ -159,7 +137,7 @@ import ResultBox from "../../components/ResultBox.astro";
         totalInflation.toLocaleString(undefined, { maximumFractionDigits: 2 }) +
         "%";
     if (step) step.innerText = "Inflación compuesta calculada";
-  };
+  }
 
   addButton?.addEventListener("click", () => {
     const newInput = document.createElement("div");
@@ -169,8 +147,7 @@ import ResultBox from "../../components/ResultBox.astro";
 
     newInput
       .querySelector("input")
-      .addEventListener("input", calculateAccumulated);
-
+      ?.addEventListener("input", calculateAccumulated);
     calculateAccumulated(); // recalcular al añadir input
   });
 
