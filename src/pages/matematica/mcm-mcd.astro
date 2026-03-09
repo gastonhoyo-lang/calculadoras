@@ -1,7 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import InputField from "/src/components/InputField.astro";
-import ResultBox from "../../components/ResultBox.astro";
 ---
 
 <Layout
@@ -28,7 +26,7 @@ import ResultBox from "../../components/ResultBox.astro";
         <input
           type="text"
           id="numInput"
-          class="w-full p-6 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-indigo-500 outline-none text-xl font-bold transition-all"
+          class="w-full p-6 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-orange-500 outline-none text-xl font-bold transition-all text-center"
           placeholder="Ej: 12, 18, 24"
         />
       </div>
@@ -51,7 +49,7 @@ import ResultBox from "../../components/ResultBox.astro";
             class="block text-indigo-600 font-bold uppercase tracking-wider text-xs mb-1"
             >Mínimo Común Múltiplo</span
           >
-          <div id="mcmRes" class="text-3xl font-black text-indigo-900">-</div>
+          <div id="mcmRes" class="text-4xl font-black text-indigo-900">-</div>
         </div>
         <div
           class="p-6 rounded-2xl bg-emerald-50 border border-emerald-100 text-center"
@@ -60,111 +58,101 @@ import ResultBox from "../../components/ResultBox.astro";
             class="block text-emerald-600 font-bold uppercase tracking-wider text-xs mb-1"
             >Máximo Común Divisor</span
           >
-          <div id="mcdRes" class="text-3xl font-black text-emerald-900">-</div>
-          <section
-            class="mt-16 prose prose-slate max-w-none border-t border-slate-100 pt-10 text-slate-700"
-          >
-            <h2 class="text-3xl font-black text-slate-900 mb-6">
-              Mínimo Común Múltiplo y Máximo Común Divisor
-            </h2>
-
-            <p class="mb-6">
-              Estas dos operaciones son fundamentales en aritmética. Mientras
-              que una se enfoca en encontrar el "punto de encuentro" hacia
-              adelante (múltiplos), la otra busca el factor compartido más
-              grande (divisores).
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
-              <div
-                class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100"
-              >
-                <h3 class="text-indigo-700 font-bold text-xl mb-3">
-                  MCM (Mínimo Común Múltiplo)
-                </h3>
-                <p class="text-sm mb-4">
-                  Es el número más pequeño que es múltiplo de todos los números
-                  del grupo. Se usa para:
-                </p>
-                <ul class="list-disc pl-5 text-sm space-y-2">
-                  <li>Sumar y restar fracciones con distinto denominador.</li>
-                  <li>
-                    Calcular cuándo coincidirán dos eventos que tienen distintas
-                    frecuencias.
-                  </li>
-                </ul>
-              </div>
-
-              <div
-                class="bg-emerald-50 p-6 rounded-2xl border border-emerald-100"
-              >
-                <h3 class="text-emerald-700 font-bold text-xl mb-3">
-                  MCD (Máximo Común Divisor)
-                </h3>
-                <p class="text-sm mb-4">
-                  Es el mayor número que divide exactamente a todos los números
-                  del grupo. Se usa para:
-                </p>
-                <ul class="list-disc pl-5 text-sm space-y-2">
-                  <li>Simplificar fracciones hasta su mínima expresión.</li>
-                  <li>
-                    Dividir objetos en grupos iguales lo más grandes posible.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <h3 class="text-2xl font-black text-slate-900 mb-4 italic">
-              Ejemplo Práctico: Números 12 y 18
-            </h3>
-
-            <div class="space-y-4">
-              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                <p class="font-bold text-slate-800 mb-2 underline">
-                  Paso 1: Descomposición en factores primos
-                </p>
-                <ul class="font-mono text-sm space-y-1">
-                  <li>12 = 2² × 3</li>
-                  <li>18 = 2 × 3²</li>
-                </ul>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="p-4 bg-white border-2 border-indigo-200 rounded-xl">
-                  <p class="font-bold text-indigo-800">Cálculo del MCM:</p>
-                  <p class="text-sm italic">
-                    Factores comunes y no comunes con su mayor exponente:
-                  </p>
-                  <p class="font-mono mt-2">
-                    2² × 3² = 4 × 9 = <strong>36</strong>
-                  </p>
-                </div>
-                <div
-                  class="p-4 bg-white border-2 border-emerald-200 rounded-xl"
-                >
-                  <p class="font-bold text-emerald-800">Cálculo del MCD:</p>
-                  <p class="text-sm italic">
-                    Solo factores comunes con su menor exponente:
-                  </p>
-                  <p class="font-mono mt-2">2 × 3 = <strong>6</strong></p>
-                </div>
-              </div>
-            </div>
-
-            <h3 class="text-xl font-bold text-slate-900 mt-10 mb-4">
-              ¿Cuándo usar cada uno?
-            </h3>
-            <p>
-              Si un problema te pregunta <strong
-                >"¿Cuándo volverán a encontrarse?"</strong
-              >, probablemente necesites el <strong>MCM</strong>. Si te pregunta <strong
-                >"¿Cuál es el tamaño máximo de los trozos?"</strong
-              >, buscás el <strong>MCD</strong>.
-            </p>
-          </section>
+          <div id="mcdRes" class="text-4xl font-black text-emerald-900">-</div>
         </div>
       </div>
     </div>
+
+    <section
+      class="mt-16 prose prose-slate max-w-none border-t border-slate-100 pt-10 text-slate-700"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6 text-center">
+        ¿Qué son el MCM y el MCD?
+      </h2>
+
+      <p class="mb-6 text-center text-lg">
+        Estas dos operaciones son fundamentales en aritmética para trabajar con
+        grupos de números y encontrar sus relaciones de divisibilidad.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
+        <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100">
+          <h3 class="text-indigo-700 font-bold text-xl mb-3">
+            MCM (Mínimo Común Múltiplo)
+          </h3>
+          <p class="text-sm mb-4">
+            Es el número más pequeño que es múltiplo de todos los números del
+            grupo. Es útil para:
+          </p>
+          <ul class="list-disc pl-5 text-sm space-y-2">
+            <li>Sumar y restar fracciones con distinto denominador.</li>
+            <li>
+              Calcular cuándo coincidirán dos eventos con distintas frecuencias.
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-100">
+          <h3 class="text-emerald-700 font-bold text-xl mb-3">
+            MCD (Máximo Común Divisor)
+          </h3>
+          <p class="text-sm mb-4">
+            Es el mayor número que divide exactamente a todos los números del
+            grupo. Es útil para:
+          </p>
+          <ul class="list-disc pl-5 text-sm space-y-2">
+            <li>Simplificar fracciones hasta su mínima expresión.</li>
+            <li>Dividir objetos en grupos iguales lo más grandes posible.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 mb-4 italic">
+        Ejemplo Práctico: Números 12 y 18
+      </h3>
+
+      <div class="space-y-4">
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <p class="font-bold text-slate-800 mb-2 underline">
+            Paso 1: Descomposición en factores primos
+          </p>
+          <ul class="font-mono text-sm space-y-1">
+            <li>12 = 2² × 3</li>
+            <li>18 = 2 × 3²</li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+          <div class="p-4 bg-white border-2 border-indigo-200 rounded-xl">
+            <p class="font-bold text-indigo-800">Cálculo del MCM:</p>
+            <p class="text-sm italic">
+              Comunes y no comunes con mayor exponente:
+            </p>
+            <p class="font-mono mt-2 text-xl">
+              2² × 3² = 4 × 9 = <strong>36</strong>
+            </p>
+          </div>
+          <div class="p-4 bg-white border-2 border-emerald-200 rounded-xl">
+            <p class="font-bold text-emerald-800">Cálculo del MCD:</p>
+            <p class="text-sm italic">
+              Solo factores comunes con menor exponente:
+            </p>
+            <p class="font-mono mt-2 text-xl">2 × 3 = <strong>6</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-10 mb-4">
+        ¿Cuándo usar cada uno?
+      </h3>
+      <p class="bg-amber-50 p-4 rounded-xl border-l-4 border-amber-400">
+        <strong>Regla de oro:</strong> Si el problema implica <strong
+          >repetición o futuro</strong
+        > (¿cuándo vuelven a verse?), usá el <strong>MCM</strong>. Si el
+        problema implica <strong>repartir o cortar</strong> (¿cuántos caben?), usá
+        el <strong>MCD</strong>.
+      </p>
+    </section>
   </main>
 </Layout>
 
@@ -173,7 +161,6 @@ import ResultBox from "../../components/ResultBox.astro";
   const resDiv = document.getElementById("resultado");
   const input = document.getElementById("numInput") as HTMLInputElement;
 
-  // Funciones lógicas
   const obtenerMCD = (a: number, b: number): number =>
     b === 0 ? a : obtenerMCD(b, a % b);
 
@@ -184,7 +171,6 @@ import ResultBox from "../../components/ResultBox.astro";
 
   btn?.addEventListener("click", () => {
     const rawValue = input.value;
-    // Limpiamos la entrada para aceptar espacios o comas
     const numeros = rawValue
       .split(/[\s,]+/)
       .map((n) => parseInt(n))
@@ -195,19 +181,14 @@ import ResultBox from "../../components/ResultBox.astro";
       return;
     }
 
-    // Cálculo MCD
     let mcd = numeros[0];
+    let mcm = numeros[0];
+
     for (let i = 1; i < numeros.length; i++) {
       mcd = obtenerMCD(mcd, numeros[i]);
-    }
-
-    // Cálculo MCM
-    let mcm = numeros[0];
-    for (let i = 1; i < numeros.length; i++) {
       mcm = obtenerMCM(mcm, numeros[i]);
     }
 
-    // Mostrar resultados
     const mcmEl = document.getElementById("mcmRes");
     const mcdEl = document.getElementById("mcdRes");
 
