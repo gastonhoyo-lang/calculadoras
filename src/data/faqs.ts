@@ -2080,4 +2080,25 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" }
     ]
     },
-};
+    "logaritmos": {
+    faqs: [
+      {
+        q: "¿Qué es un logaritmo?",
+        a: "El logaritmo de un número es el exponente al que se debe elevar una base fija para obtener dicho número. Por ejemplo, el logaritmo de 100 en base 10 es 2, porque $10^2 = 100$."
+      },
+      {
+        q: "¿Cuál es la diferencia entre log y ln?",
+        a: "A menudo 'log' se refiere al logaritmo decimal (base 10), mientras que 'ln' es el logaritmo natural, cuya base es el número e (aproximadamente 2.718)."
+      },
+      {
+        q: "¿Existen logaritmos de números negativos?",
+        a: "En el campo de los números reales, no existen logaritmos de números negativos ni de cero, ya que no hay ninguna potencia de una base positiva que de un resultado negativo."
+      }
+    ],
+    relacionados: [
+      { nombre: "Ecuaciones Segundo Grado", link: "/matematica/ecuaciones-segundo-grado" },
+      { nombre: "MCM y MCD", link: "/matematica/mcm-mcd" },
+      { nombre: "Calculadora de Fracciones", link: "/utiles/fracciones" }
+    ]
+  }
+  };

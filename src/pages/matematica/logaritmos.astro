@@ -1,0 +1,99 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Logaritmos | Hallar Base, Argumento y Resultado"
+  description="Calculá logaritmos de cualquier base. Herramienta gratuita para resolver logaritmos naturales (ln) y decimales (log10) al instante."
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-black text-slate-900 mb-4">
+        Calculadora de Logaritmos
+      </h1>
+      <p class="text-slate-600 text-lg">
+        Calculá el valor de $y$ en $\log_{b}(a) = y$
+      </p>
+    </div>
+
+    <div
+      class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div>
+          <label class="block text-sm font-bold mb-2 text-slate-700"
+            >Base ($b$)</label
+          >
+          <input
+            type="number"
+            id="baseInput"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-orange-500"
+            placeholder="Ej: 10 (Vacío para ln)"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-2 text-slate-700"
+            >Argumento ($a$)</label
+          >
+          <input
+            type="number"
+            id="argInput"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-orange-500"
+            placeholder="Ej: 100"
+          />
+        </div>
+      </div>
+
+      <button
+        id="btnCalcular"
+        class="w-full py-4 bg-orange-500 text-white font-bold rounded-2xl hover:bg-orange-600 transition-all shadow-lg shadow-orange-200"
+      >
+        Calcular Logaritmo
+      </button>
+
+      <div id="resultado" class="mt-8 p-6 rounded-2xl hidden"></div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const btn = document.getElementById("btnCalcular");
+  const resDiv = document.getElementById("resultado");
+
+  btn?.addEventListener("click", () => {
+    const base = (document.getElementById("baseInput") as HTMLInputElement)
+      .value;
+    const argumento = parseFloat(
+      (document.getElementById("argInput") as HTMLInputElement).value,
+    );
+
+    if (isNaN(argumento) || argumento <= 0) {
+      alert("El argumento debe ser un número positivo.");
+      return;
+    }
+
+    let resultado;
+    let label;
+
+    if (base === "" || base.toLowerCase() === "e") {
+      resultado = Math.log(argumento);
+      label = `ln(${argumento})`;
+    } else {
+      const b = parseFloat(base);
+      if (b <= 0 || b === 1) {
+        alert("La base debe ser positiva y distinta de 1.");
+        return;
+      }
+      resultado = Math.log(argumento) / Math.log(b);
+      label = `log<sub>${b}</sub>(${argumento})`;
+    }
+
+    resDiv!.classList.remove("hidden");
+    resDiv!.className =
+      "mt-8 p-6 rounded-2xl bg-orange-50 text-orange-900 border border-orange-100 text-center";
+    resDiv!.innerHTML = `<p class="text-xl">El resultado de <strong>${label}</strong> es:</p>
+                         <p class="text-4xl font-black mt-2">${resultado.toLocaleString(undefined, { maximumFractionDigits: 6 })}</p>`;
+  });
+</script>

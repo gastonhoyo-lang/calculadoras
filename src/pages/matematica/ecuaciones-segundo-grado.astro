@@ -6,7 +6,7 @@ import ResultBox from "../../components/ResultBox.astro";
 
 <Layout
   title="Calculadora de Ecuaciones de Segundo Grado | Paso a Paso"
-  description="Resolvé ecuaciones cuadráticas usando la fórmula general. Obtené las raíces x1 y x2 de forma instantánea."
+  description="Resolvé ecuaciones cuadráticas usando la fórmula de Bhaskara. Incluye ejemplos resueltos y explicación del discriminante."
 >
   <main class="max-w-4xl mx-auto px-4 py-12">
     <div class="text-center mb-10">
@@ -14,9 +14,9 @@ import ResultBox from "../../components/ResultBox.astro";
         Calculadora de Ecuaciones de Segundo Grado
       </h1>
       <p class="text-slate-600">
-        Introducí los valores de <strong>a</strong>, <strong>b</strong> y <strong
-          >c</strong
-        > para la forma: $ax^2 + bx + c = 0$
+        Resolvé ecuaciones de la forma: <span
+          class="font-mono bg-slate-100 px-2 py-1 rounded"
+          >ax² + bx + c = 0</span>
       </p>
     </div>
 
@@ -39,7 +39,7 @@ import ResultBox from "../../components/ResultBox.astro";
             type="number"
             id="valB"
             class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Ej: -3"
+            placeholder="Ej: -5"
           />
         </div>
         <div>
@@ -48,7 +48,7 @@ import ResultBox from "../../components/ResultBox.astro";
             type="number"
             id="valC"
             class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Ej: 2"
+            placeholder="Ej: 6"
           />
         </div>
       </div>
@@ -57,11 +57,103 @@ import ResultBox from "../../components/ResultBox.astro";
         id="btnCalcular"
         class="w-full py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
       >
-        Resolver Ecuación
+        Calcular Raíces
       </button>
 
-      <div id="resultado" class="mt-8 p-6 rounded-2xl hidden"></div>
+      <div
+        id="resultado"
+        class="mt-8 p-6 rounded-2xl hidden text-center font-bold"
+      >
+      </div>
     </div>
+
+    <section
+      class="mt-16 prose prose-slate max-w-none border-t border-slate-100 pt-10 text-slate-700"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6">
+        Guía: Cómo resolver ecuaciones cuadráticas
+      </h2>
+
+      <p class="mb-4">
+        Resolver una ecuación de segundo grado consiste en encontrar los valores
+        de <strong>x</strong> que hacen que la igualdad sea cero. Para esto, utilizamos
+        la <strong>Fórmula General (Bhaskara)</strong>:
+      </p>
+
+      <div
+        class="bg-indigo-50 p-6 rounded-xl text-center text-2xl my-6 text-indigo-900 border border-indigo-100 font-serif italic"
+      >
+        x = (-b ± √(b² - 4ac)) / 2a
+      </div>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4 italic">
+        Ejemplos Paso a Paso
+      </h3>
+
+      <div class="space-y-6">
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-black text-indigo-600 mb-2">
+            Ejemplo 1: Dos soluciones reales
+          </h4>
+          <p class="font-mono mb-2 text-lg">x² - 5x + 6 = 0</p>
+          <ul class="text-sm space-y-1">
+            <li><strong>Valores:</strong> a=1, b=-5, c=6</li>
+            <li>
+              <strong>Discriminante:</strong> (-5)² - 4(1)(6) = 25 - 24 = <strong
+                >1</strong
+              > (Positivo)
+            </li>
+            <li><strong>Resultado:</strong> x₁ = 3, x₂ = 2</li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-black text-indigo-600 mb-2">
+            Ejemplo 2: Una solución única
+          </h4>
+          <p class="font-mono mb-2 text-lg">x² - 4x + 4 = 0</p>
+          <ul class="text-sm space-y-1">
+            <li><strong>Valores:</strong> a=1, b=-4, c=4</li>
+            <li>
+              <strong>Discriminante:</strong> (-4)² - 4(1)(4) = 16 - 16 = <strong
+                >0</strong>
+            </li>
+            <li><strong>Resultado:</strong> x = 2</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-10 mb-4">
+        ¿Qué significa el Discriminante (Δ)?
+      </h3>
+      <p>
+        El valor obtenido dentro de la raíz cuadrada ($b^2 - 4ac$) es
+        fundamental para entender la naturaleza de las raíces:
+      </p>
+
+      <table class="w-full border-collapse mt-4">
+        <thead>
+          <tr class="bg-slate-100 text-left">
+            <th class="p-3 border">Valor del Δ</th>
+            <th class="p-3 border">Tipo de Solución</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border font-bold text-emerald-600">Mayor a 0</td>
+            <td class="p-3 border">Dos raíces reales distintas.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border font-bold text-blue-600">Igual a 0</td>
+            <td class="p-3 border">Una raíz real única (doble).</td>
+          </tr>
+          <tr>
+            <td class="p-3 border font-bold text-red-600">Menor a 0</td>
+            <td class="p-3 border">Sin raíces reales (números complejos).</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </main>
 </Layout>
 
@@ -70,43 +162,50 @@ import ResultBox from "../../components/ResultBox.astro";
   const resDiv = document.getElementById("resultado");
 
   btn?.addEventListener("click", () => {
-    const a = parseFloat(
-      (document.getElementById("valA") as HTMLInputElement).value,
-    );
-    const b = parseFloat(
-      (document.getElementById("valB") as HTMLInputElement).value,
-    );
-    const c = parseFloat(
-      (document.getElementById("valC") as HTMLInputElement).value,
-    );
+    const aInput = document.getElementById("valA") as HTMLInputElement;
+    const bInput = document.getElementById("valB") as HTMLInputElement;
+    const cInput = document.getElementById("valC") as HTMLInputElement;
 
-    if (isNaN(a) || isNaN(b) || isNaN(c)) return;
-    if (a === 0) {
-      resDiv!.innerHTML =
-        "El valor de 'a' no puede ser 0 en una ecuación de segundo grado.";
-      resDiv!.className =
-        "mt-8 p-6 rounded-2xl bg-red-50 text-red-700 font-bold hidden";
-      resDiv!.classList.remove("hidden");
+    const a = parseFloat(aInput.value);
+    const b = parseFloat(bInput.value);
+    const c = parseFloat(cInput.value);
+
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+      alert("Por favor, completa todos los campos con números.");
       return;
     }
 
-    const discriminante = b * b - 4 * a * c;
-    resDiv!.classList.remove("hidden");
-    resDiv!.className = "mt-8 p-6 rounded-2xl bg-indigo-50 text-indigo-900";
+    if (a === 0) {
+      if (resDiv) {
+        resDiv.innerHTML = "Error: El coeficiente 'a' no puede ser 0.";
+        resDiv.className = "mt-8 p-6 rounded-2xl bg-red-50 text-red-700 block";
+        resDiv.classList.remove("hidden");
+      }
+      return;
+    }
 
-    if (discriminante > 0) {
-      const x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
-      const x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
-      resDiv!.innerHTML = `
-        <p class="font-bold text-lg mb-2">Dos soluciones reales:</p>
-        <p>x₁ = <strong>${x1.toFixed(2)}</strong></p>
-        <p>x₂ = <strong>${x2.toFixed(2)}</strong></p>
-      `;
-    } else if (discriminante === 0) {
-      const x = -b / (2 * a);
-      resDiv!.innerHTML = `<p class="font-bold text-lg">Una única solución real: x = <strong>${x.toFixed(2)}</strong></p>`;
-    } else {
-      resDiv!.innerHTML = `<p class="font-bold text-lg text-amber-700">La ecuación no tiene soluciones reales (soluciones complejas).</p>`;
+    const disc = b * b - 4 * a * c;
+
+    if (resDiv) {
+      resDiv.classList.remove("hidden");
+      resDiv.className =
+        "mt-8 p-6 rounded-2xl bg-indigo-50 text-indigo-900 block border border-indigo-100";
+
+      if (disc > 0) {
+        const x1 = (-b + Math.sqrt(disc)) / (2 * a);
+        const x2 = (-b - Math.sqrt(disc)) / (2 * a);
+        resDiv.innerHTML =
+          "Soluciones Reales: x₁ = " +
+          x1.toFixed(2) +
+          " | x₂ = " +
+          x2.toFixed(2);
+      } else if (disc === 0) {
+        const x = -b / (2 * a);
+        resDiv.innerHTML = "Solución Única: x = " + x.toFixed(2);
+      } else {
+        resDiv.innerHTML =
+          "Sin soluciones reales (Discriminante: " + disc.toFixed(2) + ")";
+      }
     }
   });
 </script>

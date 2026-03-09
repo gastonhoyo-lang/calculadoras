@@ -580,4 +580,13 @@ export const calculadoras = [
     color: "orange",
     keywords: "mcm, mcd, divisores, multiplos, matematica, escuela, factorizar"
   },
+  {
+    titulo: "Logaritmos",
+    descripcion: "Calculá logaritmos de cualquier base y logaritmos naturales (ln) rápidamente.",
+    link: "/matematica/logaritmos",
+    categoria: "matematica",
+    icon: "📐",
+    color: "orange",
+    keywords: "logaritmo, ln, base e, log10, algebra, potencias, exponencial"
+  },
 ];
