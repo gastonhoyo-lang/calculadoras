@@ -2142,5 +2142,21 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Logaritmos", link: "/matematica/logaritmos" },
       { nombre: "MCM y MCD", link: "/matematica/mcm-mcd" }
     ]
+  },
+  "probabilidad-binomial": {
+    faqs: [
+      {
+        q: "¿Qué es la distribución binomial?",
+        a: "Es una distribución de probabilidad que describe el número de éxitos al realizar n experimentos independientes entre sí, con una probabilidad fija de éxito p."
+      },
+      {
+        q: "¿Cuáles son los requisitos para usarla?",
+        a: "Solo debe haber dos resultados posibles (éxito/fracaso), los experimentos deben ser independientes y la probabilidad de éxito debe ser constante en cada prueba."
+      }
+    ],
+    relacionados: [
+      { nombre: "Varianza y Desviación", link: "/matematica/varianza-desviacion-estandar" },
+      { nombre: "Promedio, Mediana y Moda", link: "/matematica/promedio-mediana-moda" }
+    ]
   }
 };

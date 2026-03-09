@@ -607,4 +607,13 @@ export const calculadoras = [
     color: "purple",
     keywords: "varianza, desviacion estandar, dispersion, sigma, estadistica, analisis de riesgo"
   },
+  {
+  titulo: "Probabilidad Binomial",
+  descripcion: "Calculá la probabilidad de obtener un número exacto de éxitos en una serie de experimentos.",
+  link: "/matematica/probabilidad-binomial",
+  categoria: "matematica",
+  icon: "🎲",
+  color: "blue",
+  keywords: "probabilidad, binomial, estadistica, exito, fracaso, ncr"
+},
 ];
