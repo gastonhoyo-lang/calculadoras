@@ -2008,8 +2008,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     }
   ],
   relacionados: [
-    { nombre: "Calculadora de Áreas", link: "/matematicas/calculadora-de-areas" },
-    { nombre: "Frigorías de Aire", link: "/hogar/calculadora-frigorias" },
+    { nombre: "Calculadora de Áreas", link: "/matematica/areas" },
+    { nombre: "Frigorías de Aire", link: "/hogar/aire-acondicionado" },
     { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
   ]
   },
@@ -2037,9 +2037,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     }
   ],
   relacionados: [
-    { nombre: "Calculadora de Áreas", link: "/matematicas/calculadora-de-areas" },
-    { nombre: "Calculadora de Volúmenes", link: "/matematicas/calculadora-de-volumenes" },
-    { nombre: "Frigorías de Aire", link: "/hogar/calculadora-frigorias" }
+    { nombre: "Calculadora de Áreas", link: "/matematica/areas" },
+    { nombre: "Calculadora de Volúmenes", link: "/matematica/calculadora-de-volumenes" },
+    { nombre: "Frigorías de Aire", link: "/hogar/aire-acondicionado" }
   ]
 },
 };
