@@ -83,7 +83,8 @@ import ResultBox from "../../components/ResultBox.astro";
         </div>
 
         <div
-          class="text-center p-10 bg-lime-500 rounded-[2.5rem] shadow-lg shadow-lime-200 relative overflow-hidden h-full flex flex-col justify-center"
+          id="fvCard"
+          class="text-center p-10 bg-lime-500 rounded-[2.5rem] shadow-lg shadow-lime-200 relative overflow-hidden h-full flex flex-col justify-center min-h-[350px]"
         >
           <div class="relative z-10 text-white">
             <span
@@ -94,7 +95,7 @@ import ResultBox from "../../components/ResultBox.astro";
             <div id="fvOutput" class="text-6xl font-black leading-none">$0</div>
 
             <div
-              class="mt-8 p-4 bg-white/20 rounded-2xl backdrop-blur-sm inline-block"
+              class="mt-8 p-4 bg-white/20 rounded-2xl backdrop-blur-sm inline-block border border-white/20"
             >
               <span id="interestEarned" class="text-sm font-bold">
                 Ganancia por intereses: $0
@@ -103,9 +104,8 @@ import ResultBox from "../../components/ResultBox.astro";
           </div>
           <span
             class="absolute -right-4 -bottom-10 text-[12rem] font-black text-white/10 select-none"
+            >VF</span
           >
-            VF
-          </span>
         </div>
       </div>
     </div>
@@ -113,44 +113,98 @@ import ResultBox from "../../components/ResultBox.astro";
     <section
       class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"
     >
-      <h2 class="text-3xl font-black text-slate-900 mb-6">
-        La Matemática del Futuro
-      </h2>
-      <p>
-        El Valor Futuro es el valor que tendrá en una fecha próxima una cantidad
-        de dinero que tenemos hoy, o una serie de pagos realizados a una tasa de
-        interés determinada.
-      </p>
-
-      <div
-        class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl overflow-x-auto"
-      >
-        <span class="text-lime-400 font-mono text-xl">
-          {
-            `$$VF = VP \\cdot (1 + r)^n + PMT \\cdot \\frac{(1 + r)^{n} - 1}{r}$$`
-          }
-        </span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-2 italic">
-            Impacto del Aporte Mensual
-          </h4>
-          <p class="text-xs leading-relaxed">
-            Incluso un aporte pequeño pero constante puede superar a una gran
-            inversión inicial única gracias a la acumulación de intereses sobre
-            intereses.
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <div>
+          <h2 class="text-3xl font-black text-slate-900 mb-6 tracking-tight">
+            El Poder del Interés Compuesto
+          </h2>
+          <p>
+            El <strong>Valor Futuro (VF)</strong> es el monto que alcanzará una inversión
+            después de un tiempo determinado, aplicado a una tasa de interés. La magia
+            ocurre cuando los intereses generados se reinvierten, creando un crecimiento
+            exponencial.
+          </p>
+          <p>
+            Esta calculadora no solo proyecta una suma fija, sino que permite
+            incluir <strong>aportes mensuales</strong>, simulando un plan de
+            ahorro sistemático que acelera drásticamente el resultado final.
           </p>
         </div>
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-2 italic">
-            Valor Real vs. Nominal
+
+        <div
+          class="bg-slate-900 p-8 rounded-[2rem] shadow-2xl flex flex-col justify-center border border-slate-800 text-center"
+        >
+          <span
+            class="text-lime-400 font-mono text-xs mb-4 block uppercase tracking-widest font-bold"
+            >Lógica de Proyección</span
+          >
+          <div class="text-white font-mono text-sm leading-relaxed opacity-90">
+            VF = VP * (1 + r)^n + PMT * [((1 + r)^n - 1) / r]
+            <span class="block mt-2 text-[10px] text-slate-500 italic"
+              >Donde VP es Capital Inicial y PMT el aporte mensual</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-900 mt-16 mb-8 text-center">
+        Ejemplos de Crecimiento de Capital
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+          <div class="text-3xl mb-4 text-center">🌱</div>
+          <h4
+            class="font-bold text-slate-900 mb-2 text-sm uppercase italic text-center"
+          >
+            Ahorro Moderado
           </h4>
-          <p class="text-xs leading-relaxed">
-            No olvides considerar la inflación. Si proyectas a 20 años, el
-            "valor real" (lo que podrás comprar) será menor que el monto que
-            muestra la pantalla.
+          <p class="text-xs leading-relaxed text-slate-600 text-center">
+            Invertís <strong>$1.000</strong> con <strong>$100/mes</strong> al 8% anual.
+            En 10 años tenés unos <strong>$20.400</strong>.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+          <div class="text-3xl mb-4 text-center">🌳</div>
+          <h4
+            class="font-bold text-slate-900 mb-2 text-sm uppercase italic text-center"
+          >
+            Inversión a Largo Plazo
+          </h4>
+          <p class="text-xs leading-relaxed text-slate-600 text-center">
+            Con <strong>$5.000</strong> iniciales y <strong>$300/mes</strong> por
+            20 años al 10%, alcanzás los <strong>$230.000</strong>.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+          <div class="text-3xl mb-4 text-center">🚀</div>
+          <h4
+            class="font-bold text-slate-900 mb-2 text-sm uppercase italic text-center"
+          >
+            Efecto Tiempo
+          </h4>
+          <p class="text-xs leading-relaxed text-slate-600 text-center">
+            Si dejás esos mismos <strong>$300/mes</strong> por 30 años en lugar de
+            20, terminás con más de <strong>$650.000</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="p-8 bg-lime-50 rounded-[2rem] border border-lime-100 flex items-start gap-5 shadow-sm"
+      >
+        <div class="text-3xl bg-white p-3 rounded-2xl shadow-sm">💡</div>
+        <div>
+          <h4 class="text-lime-900 font-bold mb-1">
+            Dato de Oro para Inversores
+          </h4>
+          <p class="text-sm text-lime-800 leading-relaxed">
+            La variable más importante en el Valor Futuro no es la tasa ni el
+            capital, sino el <strong>TIEMPO</strong>. Cuanto antes empieces,
+            menos esfuerzo mensual tendrás que hacer para alcanzar tus metas
+            financieras.
           </p>
         </div>
       </div>
@@ -158,39 +212,51 @@ import ResultBox from "../../components/ResultBox.astro";
   </main>
 </Layout>
 
-<script client:load>
-  const pvIn = document.getElementById("pvInput");
-  const rateIn = document.getElementById("rateInput");
-  const yearsIn = document.getElementById("yearsInput");
-  const pmtIn = document.getElementById("pmtInput");
+<script>
+  // Selección de elementos con tipado seguro
+  const pvIn = document.getElementById("pvInput") as HTMLInputElement | null;
+  const rateIn = document.getElementById(
+    "rateInput",
+  ) as HTMLInputElement | null;
+  const yearsIn = document.getElementById(
+    "yearsInput",
+  ) as HTMLInputElement | null;
+  const pmtIn = document.getElementById("pmtInput") as HTMLInputElement | null;
   const fvOut = document.getElementById("fvOutput");
   const intOut = document.getElementById("interestEarned");
 
   const calculateFV = () => {
+    if (!pvIn || !rateIn || !yearsIn || !pmtIn || !fvOut || !intOut) return;
+
     const PV = parseFloat(pvIn.value) || 0;
     const annualRate = (parseFloat(rateIn.value) || 0) / 100;
     const years = parseFloat(yearsIn.value) || 0;
     const PMT = parseFloat(pmtIn.value) || 0;
 
-    if (years === 0 && PV === 0) return;
-
-    const r = annualRate / 12;
-    const n = years * 12;
-
-    let fv = PV * Math.pow(1 + annualRate, years);
-
-    if (r > 0) {
-      fv += PMT * ((Math.pow(1 + r, n) - 1) / r);
-    } else {
-      fv += PMT * n;
+    if (years === 0 && PV === 0 && PMT === 0) {
+      fvOut.innerText = "$0";
+      intOut.innerText = "Ganancia por intereses: $0";
+      return;
     }
 
-    const totalInvested = PV + PMT * n;
+    const rMonthly = annualRate / 12;
+    const nMonths = years * 12;
+
+    // Parte 1: Crecimiento del capital inicial
+    let fv = PV * Math.pow(1 + annualRate, years);
+
+    // Parte 2: Crecimiento de los aportes mensuales (Anualidad)
+    if (rMonthly > 0) {
+      fv += PMT * ((Math.pow(1 + rMonthly, nMonths) - 1) / rMonthly);
+    } else {
+      fv += PMT * nMonths;
+    }
+
+    const totalInvested = PV + PMT * nMonths;
     const profit = fv - totalInvested;
 
-    if (fvOut) fvOut.innerText = "$" + Math.round(fv).toLocaleString();
-    if (intOut)
-      intOut.innerText = `Ganancia por intereses: $${Math.round(profit).toLocaleString()}`;
+    fvOut.innerText = "$" + Math.round(fv).toLocaleString();
+    intOut.innerText = `Ganancia por intereses: $${Math.round(profit).toLocaleString()}`;
   };
 
   [pvIn, rateIn, yearsIn, pmtIn].forEach((el) =>
