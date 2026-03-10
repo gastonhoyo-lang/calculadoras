@@ -3920,7 +3920,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   relacionados: [
     { nombre: "Pulgadas a Centímetros", link: "/unidades/pulgadas-a-cm" },
     { nombre: "Regla de 3 Simple", link: "/matematica/regla-de-tres" },
-    { nombre: "Costo por Kilómetro", link: "/transporte/costo-kilometro" }
+    { nombre: "Costo por Kilómetro", link: "/utilidades/combustible" }
   ]
 },
 "km-a-millas": {
