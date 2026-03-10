@@ -1222,7 +1222,7 @@ export const calculadoras = [
 {
   titulo: "Millas a Kilómetros",
   descripcion: "Convertí millas a kilómetros (mi a km) de forma rápida. Ideal para distancias de carretera y límites de velocidad.",
-  link: "/unidades/millas-a-km",
+  link: "/unidades/miles-to-km",
   categoria: "unidades",
   icon: "🛣️",
   color: "blue",
