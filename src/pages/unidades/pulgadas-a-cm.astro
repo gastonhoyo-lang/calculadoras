@@ -6,7 +6,7 @@ import ResultBox from "../../components/ResultBox.astro";
 
 <Layout
   title="Conversor de Pulgadas a Centímetros | Pulgadas a cm"
-  description="Convertí pulgadas a centímetros y viceversa de forma instantánea. Herramienta precisa para medidas, pantallas y carpintería."
+  description="Convertí pulgadas a centímetros y viceversa de forma instantánea. Herramienta precisa para medidas de pantallas, carpintería y más."
 >
   <main class="max-w-4xl mx-auto px-4 py-12">
     <div class="text-center mb-10">
@@ -28,8 +28,9 @@ import ResultBox from "../../components/ResultBox.astro";
         <div class="space-y-2">
           <label
             class="block text-[10px] font-bold uppercase text-slate-400 ml-1 tracking-widest text-center"
-            >Pulgadas (in)</label
           >
+            Pulgadas (in o ")
+          </label>
           <input
             type="number"
             id="inchInput"
@@ -43,15 +44,16 @@ import ResultBox from "../../components/ResultBox.astro";
           <div
             class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 font-bold rotate-90 md:rotate-0"
           >
-            ⇆
+            ⇄
           </div>
         </div>
 
         <div class="space-y-2">
           <label
             class="block text-[10px] font-bold uppercase text-slate-400 ml-1 tracking-widest text-center"
-            >Centímetros (cm)</label
           >
+            Centímetros (cm)
+          </label>
           <input
             type="number"
             id="cmInput"
@@ -76,67 +78,92 @@ import ResultBox from "../../components/ResultBox.astro";
         ¿Cómo convertir pulgadas a cm?
       </h2>
       <p>
-        La relación entre estas dos unidades es constante y universal. Para
-        realizar la conversión manual, se utiliza la siguiente fórmula:
+        La relación entre estas dos unidades es constante y universal desde
+        1959. Para realizar la conversión manual, se utiliza la siguiente
+        fórmula:
       </p>
 
       <div class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl">
-        <span class="text-blue-400 font-mono text-xl">
-          $$cm = pulgadas \cdot 2.54$$
+        <span class="text-blue-400 font-mono text-2xl font-bold">
+          $$cm = in \cdot 2.54$$
         </span>
+        <p class="text-slate-500 text-[10px] uppercase tracking-widest mt-4">
+          Multiplicá tus pulgadas por 2.54
+        </p>
       </div>
 
       <h3 class="text-2xl font-bold text-slate-900 mb-4">
         Tabla de Medidas Comunes
       </h3>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm text-left">
-          <thead class="bg-slate-50 border-b border-slate-200">
+      <div
+        class="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm mb-12"
+      >
+        <table class="w-full text-sm text-left m-0">
+          <thead class="bg-slate-50 border-b border-slate-200 text-slate-500">
             <tr>
-              <th class="p-4 font-bold">Pulgadas (in)</th>
-              <th class="p-4 font-bold">Centímetros (cm)</th>
-              <th class="p-4 font-bold">Uso Típico</th>
+              <th class="p-4 font-bold uppercase text-[10px]">Pulgadas (in)</th>
+              <th class="p-4 font-bold uppercase text-[10px]"
+                >Centímetros (cm)</th
+              >
+              <th class="p-4 font-bold uppercase text-[10px]">Uso Típico</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100">
             <tr
-              ><td class="p-4">1/4"</td><td class="p-4">0.635 cm</td><td
-                class="p-4">Carpintería / Tornillos</td
-              ></tr
+              ><td class="p-4 font-mono">1/4"</td><td class="p-4">0.64 cm</td
+              ><td class="p-4 italic">Tornillería fina</td></tr
             >
             <tr
-              ><td class="p-4">1/2"</td><td class="p-4">1.27 cm</td><td
-                class="p-4">Tuberías / Herramientas</td
-              ></tr
+              ><td class="p-4 font-mono">1/2"</td><td class="p-4">1.27 cm</td
+              ><td class="p-4 italic">Tuberías de agua</td></tr
             >
             <tr
-              ><td class="p-4">1"</td><td class="p-4">2.54 cm</td><td
-                class="p-4">Unidad Base</td
-              ></tr
+              ><td class="p-4 font-mono">6.1"</td><td class="p-4">15.49 cm</td
+              ><td class="p-4 italic">iPhone estándar</td></tr
             >
             <tr
-              ><td class="p-4">15.6"</td><td class="p-4">39.62 cm</td><td
-                class="p-4">Pantalla de Notebook</td
-              ></tr
+              ><td class="p-4 font-mono">15.6"</td><td class="p-4">39.62 cm</td
+              ><td class="p-4 italic">Notebook clásica</td></tr
             >
             <tr
-              ><td class="p-4">32"</td><td class="p-4">81.28 cm</td><td
-                class="p-4">Televisor pequeño</td
-              ></tr
+              ><td class="p-4 font-mono">55"</td><td class="p-4">139.70 cm</td
+              ><td class="p-4 italic">TV Smart 4K</td></tr
             >
           </tbody>
         </table>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-2">💡 Dato Útil</h4>
+          <p class="text-xs leading-relaxed">
+            Recordá que las medidas de pantallas (como TVs o celulares) se dan
+            siempre en la <strong>diagonal</strong>. Si tu TV dice 50", esa es
+            la distancia desde una esquina hasta la opuesta.
+          </p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-3xl border border-blue-100">
+          <h4 class="font-bold text-blue-900 mb-2">📏 El origen</h4>
+          <p class="text-xs leading-relaxed text-blue-800">
+            Originalmente, una pulgada se definía como el ancho del pulgar de un
+            hombre adulto. Hoy en día es una medida exacta definida por el
+            sistema internacional.
+          </p>
+        </div>
       </div>
     </section>
   </main>
 </Layout>
 
 <script>
-  const inchIn = document.getElementById("inchInput") as HTMLInputElement;
-  const cmIn = document.getElementById("cmInput") as HTMLInputElement;
+  const inchIn = document.getElementById(
+    "inchInput",
+  ) as HTMLInputElement | null;
+  const cmIn = document.getElementById("cmInput") as HTMLInputElement | null;
   const eqText = document.getElementById("equivalenceText");
 
   const updateInch = () => {
+    if (!inchIn || !cmIn) return;
     const inches = parseFloat(inchIn.value);
     if (!isNaN(inches)) {
       const cm = inches * 2.54;
@@ -144,10 +171,13 @@ import ResultBox from "../../components/ResultBox.astro";
       if (eqText) eqText.innerText = `${inches}" pulgadas son ${cmIn.value} cm`;
     } else {
       cmIn.value = "";
+      if (eqText)
+        eqText.innerText = "1 pulgada equivale exactamente a 2.54 centímetros";
     }
   };
 
   const updateCm = () => {
+    if (!inchIn || !cmIn) return;
     const cm = parseFloat(cmIn.value);
     if (!isNaN(cm)) {
       const inches = cm / 2.54;
@@ -156,6 +186,8 @@ import ResultBox from "../../components/ResultBox.astro";
         eqText.innerText = `${cm} cm equivalen a ${inchIn.value}" pulgadas`;
     } else {
       inchIn.value = "";
+      if (eqText)
+        eqText.innerText = "1 pulgada equivale exactamente a 2.54 centímetros";
     }
   };
 
