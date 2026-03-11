@@ -1,13 +1,14 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
-// Reparación técnica: Se eliminan expresiones matemáticas complejas fuera de scripts
-// que Astro confunde con variables de JavaScript durante el build.
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+// Reparación técnica: Se eliminan llaves conflictivas en el HTML
+// para evitar que el compilador de Astro las interprete como JS inexistente.
 ---
 
 <Layout
   title="Conversor de Metros Cuadrados a Pies Cuadrados | m² a ft²"
-  description="Calculadora profesional de m² a ft². Guía completa sobre conversión de áreas, fórmulas internacionales y ejemplos aplicados a la arquitectura."
+  description="Calculadora profesional de m² a ft². Guía técnica sobre conversión de superficies, fórmulas internacionales y aplicaciones en Real Estate y Arquitectura."
 >
   <main class="max-w-5xl mx-auto px-4 py-12">
     <header class="text-center mb-16">
@@ -19,8 +20,8 @@ import Layout from "../../layouts/Layout.astro";
       <p
         class="text-slate-500 text-lg font-medium max-w-2xl mx-auto text-balance"
       >
-        Precisión profesional para convertir superficies del sistema métrico al
-        imperial. Ideal para real estate y construcción.
+        Herramienta de precisión para la conversión de áreas métricas e
+        imperiales. Indispensable para inversores, arquitectos y constructores.
       </p>
     </header>
 
@@ -38,7 +39,7 @@ import Layout from "../../layouts/Layout.astro";
           <input
             type="number"
             id="m2InputFix"
-            placeholder="Ej: 80"
+            placeholder="Ej: 150"
             step="any"
             class="w-full p-5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-indigo-500 font-bold text-xl outline-none transition-all shadow-sm"
           />
@@ -48,7 +49,7 @@ import Layout from "../../layouts/Layout.astro";
           id="btnCalcM2Ft"
           class="w-full bg-slate-900 text-white p-5 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg active:scale-95 text-lg"
         >
-          Convertir Superficie
+          Calcular Equivalencia
         </button>
       </div>
 
@@ -59,7 +60,7 @@ import Layout from "../../layouts/Layout.astro";
         <p
           class="text-indigo-600 text-[10px] font-bold uppercase tracking-widest mb-2"
         >
-          Resultado en Pies Cuadrados (ft²)
+          Área en Pies Cuadrados (ft²)
         </p>
         <div
           id="ft2OutputVal"
@@ -80,119 +81,159 @@ import Layout from "../../layouts/Layout.astro";
     >
       <section class="mb-16">
         <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
-          ¿Por qué es vital convertir metros cuadrados a pies cuadrados?
+          La Importancia de la Precisión en la Conversión de Áreas
         </h2>
         <p class="text-lg leading-relaxed mb-6">
-          En el dinámico mundo del <strong>Real Estate internacional</strong> y la
-          arquitectura, la superficie es la métrica reina que determina el valor de
-          mercado. Mientras que la gran mayoría de los países utilizan el metro cuadrado
-          (m²) como estándar oficial, mercados de influencia masiva como Estados Unidos,
-          Reino Unido y Canadá basan sus transacciones comerciales en el <strong
-            >pie cuadrado (sq ft o ft²)</strong
-          >.
+          En el mercado global actual, la capacidad de traducir medidas de
+          superficie entre el <strong>Sistema Internacional (SI)</strong> y el <strong
+            >Sistema Anglosajón o Imperial</strong
+          > es una habilidad técnica fundamental. El metro cuadrado (m²) es la unidad
+          de área por excelencia en la mayor parte del mundo, representando un cuadrado
+          cuyos lados miden exactamente un metro. Sin embargo, en potencias como Estados
+          Unidos, Reino Unido y Canadá, el <strong
+            >pie cuadrado (ft² o sq ft)</strong
+          > sigue siendo la medida de referencia para el comercio, la construcción
+          y la industria inmobiliaria.
         </p>
-        <p class="text-lg leading-relaxed">
-          Un error de cálculo en la conversión de áreas puede significar una
-          diferencia de miles de dólares en una tasación inmobiliaria o en el
-          presupuesto de materiales para una obra. Nuestra herramienta garantiza
-          una transición fluida entre estos dos sistemas, permitiendo que
-          profesionales y compradores tomen decisiones basadas en datos técnicos
-          rigurosos.
+        <p class="text-lg leading-relaxed mb-6">
+          Entender esta conversión no es solo una cuestión de matemáticas; es
+          una cuestión de <strong>valor comercial</strong>. Un error de apenas
+          unos decimales en una superficie de 500 metros cuadrados puede
+          resultar en una discrepancia de más de 50 pies cuadrados, lo que en
+          ciudades con precios de suelo elevados como Nueva York o Londres,
+          podría traducirse en pérdidas de miles de dólares en una tasación o en
+          la compra de materiales de construcción.
         </p>
       </section>
 
-      <div class="grid md:grid-cols-2 gap-12 items-start mb-16">
-        <div class="bg-slate-900 text-white p-10 rounded-[2.5rem] shadow-xl">
-          <h3 class="text-2xl font-bold mb-6 text-indigo-400 text-center">
-            Fórmula de Conversión Exacta
-          </h3>
-          <p class="text-sm text-slate-300 mb-8 text-center italic">
-            Relación matemática dimensional:
-          </p>
-          <div
-            class="bg-slate-800 p-8 rounded-3xl border border-slate-700 text-center mb-8"
+      <section class="mb-16">
+        <h3 class="text-2xl font-bold mb-6 text-indigo-800">
+          Fundamentos Matemáticos: ¿De dónde sale el factor 10.7639?
+        </h3>
+        <p class="mb-6 leading-relaxed">
+          Para realizar una conversión precisa de metros cuadrados a pies
+          cuadrados, debemos entender que estamos trabajando en <strong
+            >dos dimensiones</strong
+          >. Un metro lineal equivale aproximadamente a 3.28084 pies. Cuando
+          calculamos una superficie, multiplicamos largo por ancho (3.28084 pies
+          x 3.28084 pies), lo que nos da el factor de conversión internacional
+          estándar de <strong>10.7639104</strong>.
+        </p>
+
+        <div
+          class="bg-slate-900 text-white p-10 rounded-[2.5rem] shadow-xl text-center mb-10"
+        >
+          <h4
+            class="text-indigo-400 font-bold mb-4 uppercase tracking-widest text-xs"
           >
-            <p class="text-3xl font-mono text-indigo-300">
-              Pies² = Metros² × 10.7639
-            </p>
-          </div>
-          <ul class="space-y-4 text-sm text-slate-400">
-            <li class="flex items-center gap-3">
-              <span
-                class="w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center text-white text-[10px] font-bold"
-                >1</span
-              >
-              <span>1 m² equivale a 10.7639104 ft².</span>
-            </li>
-          </ul>
+            Fórmula General
+          </h4>
+          <p class="text-3xl font-mono text-indigo-300">
+            Área (ft²) = Área (m²) × 10.7639
+          </p>
         </div>
 
-        <div class="pt-4">
-          <h3 class="text-2xl font-black text-slate-900 mb-4 italic">
-            El origen del factor 10.76
-          </h3>
-          <p class="leading-relaxed mb-4">
-            Al trabajar en <strong>dos dimensiones</strong>, el factor lineal
-            (donde 1 metro ≈ 3.2808 pies) debe elevarse al cuadrado para cubrir
-            la superficie total:
-          </p>
-
-          <p
-            class="leading-relaxed font-medium italic bg-slate-50 p-6 rounded-2xl border-l-4 border-indigo-500 mt-4"
-          >
-            Cálculo: (3.28084 ft) × (3.28084 ft) = 10.7639 ft²
-          </p>
-        </div>
-      </div>
+        <p class="mt-6 italic text-sm text-slate-500 text-center">
+          Visualización de cómo un solo metro cuadrado contiene más de diez
+          cuadrados de un pie por lado.
+        </p>
+      </section>
 
       <section class="mb-16">
-        <h2 class="text-3xl font-black text-slate-900 mb-8 text-center italic">
-          Ejemplos Prácticos de Área
+        <h2 class="text-3xl font-black text-slate-900 mb-6">
+          Aplicaciones Críticas en el Mundo Real
         </h2>
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-          <div
-            class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100 font-medium italic shadow-sm"
-          >
-            <p class="text-3xl mb-2">🏢</p>
-            <p class="text-indigo-900 text-lg font-bold">12 m²</p>
-            <p class="text-xs text-indigo-700 mt-2">
-              129.17 ft²<br />(Dormitorio pequeño)
+
+        <h4 class="text-xl font-bold text-indigo-700 mb-3">
+          1. Mercado Inmobiliario (Real Estate)
+        </h4>
+        <p class="mb-6">
+          Si estás buscando invertir en propiedades en el extranjero, notarás
+          que los anuncios en portales como Zillow o Realtor siempre listan el
+          tamaño en "Sq Ft". Un departamento de 100 m² (tamaño común en Europa o
+          Latinoamérica) se traduce en aproximadamente 1,076 ft². Sin esta
+          conversión rápida, es imposible comparar el <strong
+            >precio por metro cuadrado</strong
+          > frente al <strong>precio por pie cuadrado</strong>, dificultando la
+          detección de oportunidades de inversión.
+        </p>
+
+        <h4 class="text-xl font-bold text-indigo-700 mb-3">
+          2. Arquitectura y Diseño de Interiores
+        </h4>
+        <p class="mb-6">
+          Muchos materiales de acabado premium, como el mármol italiano o las
+          maderas nobles de exportación, se cotizan por pie cuadrado en el
+          mercado global. Un arquitecto que diseña en metros pero compra en pies
+          debe ser extremadamente preciso para evitar el desperdicio de material
+          o, peor aún, quedarse corto en medio de una instalación, lo que
+          elevaría los costos logísticos.
+        </p>
+
+        <h4 class="text-xl font-bold text-indigo-700 mb-3">
+          3. Logística e Industria
+        </h4>
+        <p class="mb-6">
+          El almacenamiento industrial y la capacidad de los almacenes a menudo
+          se calcula en pies cuadrados en contratos de arrendamiento
+          internacionales. Conocer la equivalencia exacta permite optimizar el
+          uso del espacio y cumplir con las normativas de seguridad de carga en
+          diferentes regiones.
+        </p>
+      </section>
+
+      <section
+        class="mb-16 bg-slate-50 p-10 rounded-[3rem] border border-slate-100"
+      >
+        <h2 class="text-3xl font-black text-slate-900 mb-8 text-center italic">
+          Tabla de Ejemplos y Referencias
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+            <p class="text-xs text-slate-400 font-bold uppercase mb-2">
+              Habitación
             </p>
+            <p class="text-2xl font-black text-indigo-600">10 m²</p>
+            <p class="text-sm font-medium">107.64 ft²</p>
           </div>
-          <div
-            class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100 font-medium italic shadow-sm"
-          >
-            <p class="text-3xl mb-2">🏠</p>
-            <p class="text-indigo-900 text-lg font-bold">90 m²</p>
-            <p class="text-xs text-indigo-700 mt-2">
-              968.75 ft²<br />(Apartamento estándar)
+          <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+            <p class="text-xs text-slate-400 font-bold uppercase mb-2">
+              Oficina
             </p>
+            <p class="text-2xl font-black text-indigo-600">50 m²</p>
+            <p class="text-sm font-medium">538.19 ft²</p>
           </div>
-          <div
-            class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100 font-medium italic shadow-sm"
-          >
-            <p class="text-3xl mb-2">🏭</p>
-            <p class="text-indigo-900 text-lg font-bold">1000 m²</p>
-            <p class="text-xs text-indigo-700 mt-2">
-              10,763.91 ft²<br />(Nave Industrial)
+          <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+            <p class="text-xs text-slate-400 font-bold uppercase mb-2">
+              Vivienda
             </p>
+            <p class="text-2xl font-black text-indigo-600">120 m²</p>
+            <p class="text-sm font-medium">1,291.67 ft²</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+            <p class="text-xs text-slate-400 font-bold uppercase mb-2">
+              Terreno
+            </p>
+            <p class="text-2xl font-black text-indigo-600">800 m²</p>
+            <p class="text-sm font-medium">8,611.13 ft²</p>
           </div>
         </div>
       </section>
 
       <section class="mb-16">
         <h2 class="text-3xl font-black text-slate-900 mb-6">
-          Aplicaciones Profesionales
+          Conclusión Educativa
         </h2>
-        <p class="mb-6 leading-relaxed">
-          <strong>Arquitectura Internacional:</strong> Al importar revestimientos
-          de mármol o madera, los proveedores suelen cotizar por pie cuadrado. Esta
-          calculadora evita errores de pedido que podrían retrasar obras meses.
-          <br /><br />
-          <strong>Tasaciones de Real Estate:</strong> En ciudades globales como Nueva
-          York o Londres, el "precio por pie cuadrado" es la métrica de inversión
-          primaria. Convertir tus planos en m² a esta unidad es el primer paso para
-          una negociación exitosa.
+        <p class="leading-relaxed">
+          La transición entre el sistema métrico e imperial es una de las tareas
+          más comunes pero críticas en la ingeniería y el comercio. Utilizar una
+          calculadora de alta precisión como la nuestra elimina el error de
+          redondeo que suele ocurrir al usar el factor simplificado de "10". En
+          proyectos de gran escala, esos decimales adicionales garantizan que la
+          planificación financiera y técnica sea impecable. Recuerda: en el
+          mundo de la construcción y los negocios, <strong
+            >medir dos veces significa ahorrar una vez</strong
+          >.
         </p>
       </section>
 
@@ -200,8 +241,8 @@ import Layout from "../../layouts/Layout.astro";
         class="bg-slate-900 text-white p-12 rounded-[3rem] text-center italic"
       >
         <p class="text-sm text-slate-400">
-          "La precisión métrica es el lenguaje universal que transforma planos
-          en realidades tangibles."
+          "La precisión es la base de la confianza en cualquier proyecto
+          internacional."
         </p>
       </footer>
     </article>
@@ -215,31 +256,27 @@ import Layout from "../../layouts/Layout.astro";
       const output = document.getElementById("ft2OutputVal");
       const detail = document.getElementById("detailTxtM2Ft");
 
+      // Constante de alta fidelidad
       const RATIO = 10.7639104;
 
       btn?.addEventListener("click", () => {
-        const val = parseFloat(input.value);
+        const m2 = parseFloat(input.value);
 
-        if (!isNaN(val) && val >= 0) {
-          const res = val * RATIO;
+        if (!isNaN(m2) && m2 >= 0) {
+          const ft2 = m2 * RATIO;
           if (output && detail && box) {
-            output.innerText =
-              res.toLocaleString("en-US", { maximumFractionDigits: 2 }) +
-              " ft²";
-            detail.innerText = `${val} m² equivalen a ${res.toFixed(4)} pies cuadrados.`;
+            output.innerText = `${ft2.toLocaleString("en-US", { maximumFractionDigits: 2 })} ft²`;
+            detail.innerText = `${m2} metros cuadrados equivalen a ${ft2.toFixed(4)} pies cuadrados.`;
 
             box.classList.remove("hidden");
             box.scrollIntoView({ behavior: "smooth", block: "center" });
           }
         } else {
-          alert(
-            "Por favor, ingresa una superficie válida mayor o igual a cero.",
-          );
+          alert("Por favor, ingresá una superficie válida (número positivo).");
         }
       });
     };
 
-    // Ejecutar al cargar la página
     setupM2ToFt2();
   </script>
 </Layout>
