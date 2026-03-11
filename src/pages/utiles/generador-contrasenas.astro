@@ -2,25 +2,26 @@
 import Layout from "../../layouts/Layout.astro";
 import InputField from "/src/components/InputField.astro";
 import ResultBox from "../../components/ResultBox.astro";
-
-// Reparación de Build: Eliminamos cualquier expresión que Astro confunda con JS.
+// Evitamos el uso de llaves directas en el HTML para prevenir errores de compilación en Astro.
+// Las llaves de CSS o JS se manejan dentro de etiquetas <script> o <style> específicas.
 ---
 
 <Layout
   title="Generador de Contraseñas Seguras Online | Crea Claves Fuertes"
-  description="Crea contraseñas seguras y robustas con nuestro generador online. Personaliza longitud, símbolos y números para proteger tus cuentas contra ataques."
+  description="Crea contraseñas robustas y personalizadas con nuestro generador online. Protege tu seguridad digital con entropía avanzada."
 >
   <main class="max-w-5xl mx-auto px-4 py-12">
     <header class="text-center mb-16">
       <h1
         class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight"
       >
-        Generador de <span class="text-blue-600">Contraseñas Seguras</span> 🔐
+        Generador de <span class="text-emerald-600">Contraseñas</span> 🔐
       </h1>
       <p
         class="text-slate-500 text-lg font-medium max-w-2xl mx-auto text-balance"
       >
-        Protege tu identidad digital creando claves imposibles de descifrar.
+        Crea claves imposibles de descifrar con algoritmos de aleatoriedad pura.
+        Seguridad nivel militar a un solo clic.
       </p>
     </header>
 
@@ -31,14 +32,14 @@ import ResultBox from "../../components/ResultBox.astro";
         <div class="relative group">
           <input
             type="text"
-            id="outputPassword"
+            id="passwordOutput"
             readonly
-            class="w-full p-6 bg-slate-900 text-blue-400 font-mono text-2xl rounded-2xl border-4 border-slate-800 text-center outline-none transition-all"
+            class="w-full p-6 bg-slate-900 text-emerald-400 font-mono text-2xl rounded-2xl border-4 border-slate-800 text-center outline-none transition-all shadow-inner"
             value="Cargando..."
           />
           <button
-            id="btnCopy"
-            class="absolute right-4 top-1/2 -translate-y-1/2 bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-bold"
+            id="copyBtn"
+            class="absolute right-4 top-1/2 -translate-y-1/2 bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 transition-colors font-bold text-sm"
           >
             Copiar
           </button>
@@ -47,74 +48,86 @@ import ResultBox from "../../components/ResultBox.astro";
         <div class="grid md:grid-cols-2 gap-8">
           <div class="space-y-4">
             <label
-              class="block text-xs font-bold text-slate-400 uppercase tracking-widest"
+              class="block text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
             >
-              Longitud: <span id="lengthLabel" class="text-blue-600">16</span>
+              Longitud: <span id="lenDisplay" class="text-emerald-600">16</span>
             </label>
             <input
               type="range"
-              id="passLength"
+              id="lengthSlider"
               min="8"
-              max="50"
+              max="64"
               value="16"
-              class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
             />
           </div>
 
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-2 gap-3">
             <label
-              class="flex items-center space-x-3 cursor-pointer p-3 bg-slate-50 rounded-xl"
+              class="flex items-center space-x-2 cursor-pointer p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all border border-transparent"
             >
               <input
                 type="checkbox"
-                id="incUpper"
+                id="checkUpper"
                 checked
-                class="w-5 h-5 accent-blue-600"
+                class="w-4 h-4 accent-emerald-600"
               />
-              <span class="text-sm font-bold text-slate-700">A-Z</span>
+              <span class="text-xs font-bold text-slate-700">MAYUS</span>
             </label>
             <label
-              class="flex items-center space-x-3 cursor-pointer p-3 bg-slate-50 rounded-xl"
+              class="flex items-center space-x-2 cursor-pointer p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all border border-transparent"
             >
               <input
                 type="checkbox"
-                id="incLower"
+                id="checkLower"
                 checked
-                class="w-5 h-5 accent-blue-600"
+                class="w-4 h-4 accent-emerald-600"
               />
-              <span class="text-sm font-bold text-slate-700">a-z</span>
+              <span class="text-xs font-bold text-slate-700">minus</span>
             </label>
             <label
-              class="flex items-center space-x-3 cursor-pointer p-3 bg-slate-50 rounded-xl"
+              class="flex items-center space-x-2 cursor-pointer p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all border border-transparent"
             >
               <input
                 type="checkbox"
-                id="incNumber"
+                id="checkNumbers"
                 checked
-                class="w-5 h-5 accent-blue-600"
+                class="w-4 h-4 accent-emerald-600"
               />
-              <span class="text-sm font-bold text-slate-700">0-9</span>
+              <span class="text-xs font-bold text-slate-700">1234</span>
             </label>
             <label
-              class="flex items-center space-x-3 cursor-pointer p-3 bg-slate-50 rounded-xl"
+              class="flex items-center space-x-2 cursor-pointer p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all border border-transparent"
             >
               <input
                 type="checkbox"
-                id="incSymbol"
+                id="checkSymbols"
                 checked
-                class="w-5 h-5 accent-blue-600"
+                class="w-4 h-4 accent-emerald-600"
               />
-              <span class="text-sm font-bold text-slate-700">!@#</span>
+              <span class="text-xs font-bold text-slate-700">#$@!</span>
             </label>
           </div>
         </div>
 
         <button
-          id="btnGenerate"
-          class="w-full bg-slate-900 text-white p-5 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg active:scale-95 text-lg"
+          id="generateBtn"
+          class="w-full bg-slate-900 text-white p-5 rounded-2xl font-bold hover:bg-emerald-600 transition-all shadow-lg active:scale-95 text-lg"
         >
-          Generar Nueva Clave
+          Generar Nueva Contraseña
         </button>
+
+        <div
+          id="strengthBox"
+          class="mt-4 h-2 w-full bg-slate-100 rounded-full overflow-hidden"
+        >
+          <div
+            id="strengthBar"
+            class="h-full bg-emerald-500 transition-all duration-500"
+            style="width: 80%"
+          >
+          </div>
+        </div>
       </div>
     </section>
 
@@ -122,95 +135,208 @@ import ResultBox from "../../components/ResultBox.astro";
       class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700 font-light"
     >
       <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
-        La matemática de la seguridad digital
+        La Importancia de un Generador de Contraseñas Seguras
       </h2>
 
-      <p class="mb-6">
-        Para calcular la seguridad de una contraseña, los expertos utilizan la
-        fórmula de combinaciones posibles, que se define matemáticamente como:
-      </p>
-
-      <div class="bg-slate-900 text-blue-400 p-8 rounded-3xl text-center mb-8">
-        <p class="text-sm uppercase tracking-widest text-slate-400 mb-4">
-          Fórmula de Entropía
-        </p>
-        <div class="text-3xl font-mono">Combinaciones = L^N</div>
-      </div>
-
-      <p class="mb-6">
-        Donde <strong>L</strong> es el número de caracteres disponibles y <strong
-          >N</strong
-        > es la longitud de la clave. Al aumentar N (la longitud), la dificultad para
-        un hacker crece de forma exponencial.
+      <p class="text-lg leading-relaxed mb-6">
+        En un entorno digital cada vez más hostil, la seguridad de nuestras
+        cuentas depende directamente de la complejidad de nuestras credenciales.
+        Un <strong>generador de contraseñas seguras</strong> utiliza algoritmos de
+        aleatoriedad pseudoaleatoria o criptográficamente segura para crear cadenas
+        de caracteres que no siguen patrones humanos, lo que las hace virtualmente
+        inmunes a ataques de diccionario.
       </p>
 
       <h3 class="text-2xl font-bold text-slate-800 mb-4">
-        Ejemplos de Robustez
+        La Matemática de la Seguridad: Entropía
       </h3>
-      <ul class="space-y-4 mb-12">
-        <li class="p-6 bg-slate-50 rounded-2xl border-l-4 border-blue-500">
-          <strong>Clave de 8 caracteres:</strong> Vulnerable en minutos con fuerza
-          bruta.
+      <p class="mb-6">
+        La fortaleza de una contraseña se mide mediante la entropía, que
+        determina cuántas combinaciones posibles existen. Se define mediante la
+        siguiente fórmula:
+      </p>
+
+      <div class="bg-slate-50 p-6 rounded-2xl mb-8">
+        <p class="text-center text-xl font-mono">
+          $$ E = \log_2(L^n) = n \cdot \log_2(L) $$
+        </p>
+      </div>
+
+      <p class="mb-6">Donde:</p>
+      <ul class="list-disc pl-6 mb-8 space-y-2">
+        <li><strong>E:</strong> Representa la entropía en bits.</li>
+        <li>
+          <strong>L:</strong> Es el tamaño del conjunto de caracteres (letras, números,
+          símbolos).
         </li>
-        <li class="p-6 bg-slate-50 rounded-2xl border-l-4 border-blue-500">
-          <strong>Clave de 16 caracteres:</strong> Requeriría miles de años para ser
-          descifrada con tecnología actual.
-        </li>
+        <li><strong>n:</strong> Es la longitud total de la contraseña.</li>
       </ul>
+
+      <p class="mb-6">
+        Por cada bit de entropía adicional, la dificultad de descifrar la clave
+        mediante fuerza bruta se duplica. Una contraseña de 12 caracteres que
+        mezcla diversos tipos de caracteres suele tener suficiente entropía para
+        ser segura durante décadas frente a la tecnología de cómputo actual.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Ejemplos Prácticos de Fortaleza
+      </h3>
+      <div class="space-y-6 mb-12">
+        <div
+          class="p-6 border-l-4 border-emerald-500 bg-slate-50 rounded-r-xl shadow-sm"
+        >
+          <p class="font-bold uppercase text-xs text-emerald-600 mb-1">
+            Ejemplo 1: Contraseña Débil
+          </p>
+          <p class="mb-2 italic">"perro123"</p>
+          <p class="text-sm">
+            Esta clave es vulnerable a <strong>ataques de diccionario</strong>.
+            Un software de hacking la descifraría en menos de un segundo debido
+            a su baja entropía y uso de palabras comunes.
+          </p>
+        </div>
+        <div
+          class="p-6 border-l-4 border-emerald-500 bg-slate-50 rounded-r-xl shadow-sm"
+        >
+          <p class="font-bold uppercase text-xs text-emerald-600 mb-1">
+            Ejemplo 2: Contraseña Fuerte
+          </p>
+          <p class="mb-2 italic">"K8!p@2mZq9#R"</p>
+          <p class="text-sm">
+            Generada aleatoriamente con 12 caracteres. Esta clave requeriría
+            miles de millones de intentos, protegiendo eficazmente contra <strong
+              >ataques de fuerza bruta</strong
+            >.
+          </p>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        ¿Por qué no usar palabras del diccionario?
+      </h3>
+      <p class="mb-6 leading-relaxed">
+        El error más común es utilizar palabras reales con sustituciones simples
+        (como cambiar la "a" por un "4"). Los algoritmos modernos de cracking
+        conocen perfectamente estos patrones. Al utilizar nuestro generador de
+        contraseñas, eliminas cualquier sesgo humano, garantizando que cada
+        carácter sea el resultado de una probabilidad matemática pura.
+      </p>
+
+      <div class="bg-slate-900 text-white p-8 rounded-[3rem] mb-12">
+        <h4 class="text-xl font-bold mb-4">Consejos Pro de Seguridad:</h4>
+        <ul class="space-y-3 text-slate-300">
+          <li>
+            • Nunca repitas la misma contraseña en dos servicios diferentes.
+          </li>
+          <li>
+            • Utiliza un gestor de contraseñas (Password Manager) para almacenar
+            tus claves.
+          </li>
+          <li>• Activa siempre la autenticación de dos factores (2FA).</li>
+          <li>
+            • Las contraseñas de más de 16 caracteres son el estándar de oro
+            actual.
+          </li>
+        </ul>
+      </div>
+
+      <footer
+        class="bg-slate-900 text-white p-12 rounded-[3rem] text-center italic mt-12"
+      >
+        <p class="text-sm text-slate-400">
+          "En el mundo digital, tu contraseña es el único muro entre tus datos y
+          el caos."
+        </p>
+      </footer>
     </article>
   </main>
 
   <script>
     const initGen = () => {
-      const out = document.getElementById("outputPassword") as HTMLInputElement;
-      const btnG = document.getElementById("btnGenerate");
-      const btnC = document.getElementById("btnCopy");
-      const lenI = document.getElementById("passLength") as HTMLInputElement;
-      const lenL = document.getElementById("lengthLabel");
+      const output = document.getElementById(
+        "passwordOutput",
+      ) as HTMLInputElement;
+      const lengthSlider = document.getElementById(
+        "lengthSlider",
+      ) as HTMLInputElement;
+      const lenDisplay = document.getElementById("lenDisplay");
+      const genBtn = document.getElementById("generateBtn");
+      const copyBtn = document.getElementById("copyBtn");
+      const strengthBar = document.getElementById("strengthBar");
 
-      const sets = {
-        u: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-        l: "abcdefghijklmnopqrstuvwxyz",
-        n: "0123456789",
-        s: "!@#$%^&*()_+~`|}{[]:;?><,./-=",
-      };
+      const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const lower = "abcdefghijklmnopqrstuvwxyz";
+      const nums = "0123456789";
+      const syms = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 
-      const gen = () => {
-        const length = parseInt(lenI.value);
-        let chars = "";
-        if ((document.getElementById("incUpper") as HTMLInputElement).checked)
-          chars += sets.u;
-        if ((document.getElementById("incLower") as HTMLInputElement).checked)
-          chars += sets.l;
-        if ((document.getElementById("incNumber") as HTMLInputElement).checked)
-          chars += sets.n;
-        if ((document.getElementById("incSymbol") as HTMLInputElement).checked)
-          chars += sets.s;
+      const createPassword = () => {
+        const length = parseInt(lengthSlider.value);
+        let pool = "";
 
-        if (chars === "") return (out.value = "Selecciona opciones");
+        if ((document.getElementById("checkUpper") as HTMLInputElement).checked)
+          pool += upper;
+        if ((document.getElementById("checkLower") as HTMLInputElement).checked)
+          pool += lower;
+        if (
+          (document.getElementById("checkNumbers") as HTMLInputElement).checked
+        )
+          pool += nums;
+        if (
+          (document.getElementById("checkSymbols") as HTMLInputElement).checked
+        )
+          pool += syms;
 
-        let p = "";
-        for (let i = 0; i < length; i++) {
-          p += chars.charAt(Math.floor(Math.random() * chars.length));
+        if (pool === "") {
+          output.value = "Selecciona opciones";
+          return;
         }
-        out.value = p;
+
+        let pass = "";
+        const array = new Uint32Array(length);
+        window.crypto.getRandomValues(array);
+
+        for (let i = 0; i < length; i++) {
+          pass += pool[array[i] % pool.length];
+        }
+
+        output.value = pass;
+        updateStrength(length, pool.length);
       };
 
-      lenI?.addEventListener("input", () => {
-        if (lenL) lenL.innerText = lenI.value;
-        gen();
+      const updateStrength = (len: number, poolLen: number) => {
+        const score = len * Math.log2(poolLen);
+        if (strengthBar) {
+          if (score < 60) {
+            strengthBar.style.width = "30%";
+            strengthBar.style.backgroundColor = "#ef4444";
+          } else if (score < 90) {
+            strengthBar.style.width = "60%";
+            strengthBar.style.backgroundColor = "#f59e0b";
+          } else {
+            strengthBar.style.width = "100%";
+            strengthBar.style.backgroundColor = "#10b981";
+          }
+        }
+      };
+
+      lengthSlider?.addEventListener("input", () => {
+        if (lenDisplay) lenDisplay.innerText = lengthSlider.value;
+        createPassword();
       });
 
-      btnG?.addEventListener("click", gen);
-      btnC?.addEventListener("click", () => {
-        navigator.clipboard.writeText(out.value);
-        const t = btnC.innerText;
-        btnC.innerText = "Copiado";
-        setTimeout(() => (btnC.innerText = t), 2000);
+      genBtn?.addEventListener("click", createPassword);
+
+      copyBtn?.addEventListener("click", () => {
+        navigator.clipboard.writeText(output.value);
+        const originalText = copyBtn.innerText;
+        copyBtn.innerText = "¡Copiado!";
+        setTimeout(() => (copyBtn.innerText = originalText), 1500);
       });
 
-      gen();
+      createPassword();
     };
+
     initGen();
   </script>
 </Layout>
