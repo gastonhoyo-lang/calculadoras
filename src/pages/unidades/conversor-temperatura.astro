@@ -1,0 +1,221 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+// Reparación Final: Uso de entidades HTML (&deg;) y eliminación total de símbolos conflictivos.
+---
+
+<Layout
+  title="Conversor de Temperatura | Celsius, Fahrenheit y Kelvin"
+  description="Calculadora profesional para convertir unidades de temperatura. Incluye fórmulas de Celsius a Fahrenheit y Kelvin con ejemplos prácticos."
+>
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight"
+      >
+        Conversor de <span class="text-orange-600">Temperatura</span> 🌡️
+      </h1>
+      <p
+        class="text-slate-500 text-lg font-medium max-w-2xl mx-auto text-balance"
+      >
+        Transforma grados Celsius, Fahrenheit y Kelvin con precisión científica.
+      </p>
+    </header>
+
+    <section
+      class="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl max-w-3xl mx-auto mb-20"
+    >
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label
+            for="valIn"
+            class="block text-xs font-bold text-slate-400 uppercase ml-2 tracking-widest mb-2"
+          >
+            Valor a convertir
+          </label>
+          <input
+            type="number"
+            id="valIn"
+            placeholder="Ej: 37"
+            step="any"
+            class="w-full p-5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-orange-500 font-bold text-xl outline-none transition-all"
+          />
+        </div>
+        <div>
+          <label
+            for="unitIn"
+            class="block text-xs font-bold text-slate-400 uppercase ml-2 tracking-widest mb-2"
+          >
+            Unidad original
+          </label>
+          <select
+            id="unitIn"
+            class="w-full p-5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-orange-500 font-bold text-lg outline-none cursor-pointer"
+          >
+            <option value="C">Celsius (&deg;C)</option>
+            <option value="F">Fahrenheit (&deg;F)</option>
+            <option value="K">Kelvin (K)</option>
+          </select>
+        </div>
+      </div>
+
+      <button
+        id="btnCalcTemp"
+        class="w-full mt-6 bg-slate-900 text-white p-5 rounded-2xl font-bold hover:bg-orange-600 transition-all shadow-lg active:scale-95 text-lg"
+      >
+        Realizar Conversión
+      </button>
+
+      <div
+        id="boxRes"
+        class="hidden mt-10 p-8 bg-orange-50 rounded-[2.5rem] border-2 border-orange-100 animate-in fade-in zoom-in duration-500"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+          <div>
+            <p
+              id="lab1"
+              class="text-orange-600 text-[10px] font-bold uppercase tracking-widest mb-2"
+            >
+            </p>
+            <div
+              id="res1"
+              class="text-4xl font-black text-orange-900 font-mono"
+            >
+            </div>
+          </div>
+          <div>
+            <p
+              id="lab2"
+              class="text-orange-600 text-[10px] font-bold uppercase tracking-widest mb-2"
+            >
+            </p>
+            <div
+              id="res2"
+              class="text-4xl font-black text-orange-900 font-mono"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700 font-light"
+    >
+      <section class="mb-16">
+        <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
+          Entendiendo las Escalas Térmicas
+        </h2>
+        <p class="text-lg leading-relaxed mb-6">
+          La conversión de temperatura es un proceso fundamental en ciencias,
+          cocina y meteorología. A diferencia de otras unidades, las escalas de
+          temperatura no siempre parten del mismo cero, lo que requiere fórmulas
+          específicas para mantener la precisión.
+        </p>
+
+        [Image of temperature conversion formulas Celsius to Fahrenheit and
+        Kelvin]
+
+        <div class="grid md:grid-cols-2 gap-6 my-10">
+          <div class="bg-slate-900 text-white p-8 rounded-[2.5rem] text-center">
+            <p
+              class="text-xs font-bold text-orange-400 mb-4 uppercase tracking-widest"
+            >
+              Celsius a Fahrenheit
+            </p>
+            <p class="text-2xl font-mono">F = (C * 1.8) + 32</p>
+          </div>
+          <div class="bg-slate-900 text-white p-8 rounded-[2.5rem] text-center">
+            <p
+              class="text-xs font-bold text-orange-400 mb-4 uppercase tracking-widest"
+            >
+              Celsius a Kelvin
+            </p>
+            <p class="text-2xl font-mono">K = C + 273.15</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-3xl font-black text-slate-900 mb-6">
+          Puntos Críticos de Referencia
+        </h2>
+        <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-200">
+          <ul class="space-y-4 list-none pl-0">
+            <li>
+              <strong>Cero Absoluto:</strong> -273.15 &deg;C o 0 K. Es el punto donde
+              el movimiento atómico se detiene.
+            </li>
+            <li>
+              <strong>Congelación del Agua:</strong> 0 &deg;C o 32 &deg;F.
+            </li>
+            <li>
+              <strong>Temperatura Corporal:</strong> Aproximadamente 37 &deg;C o 98.6
+              &deg;F.
+            </li>
+            <li>
+              <strong>Ebullición del Agua:</strong> 100 &deg;C o 212 &deg;F a nivel
+              del mar.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <footer
+        class="bg-slate-900 text-white p-12 rounded-[3rem] text-center italic mt-12"
+      >
+        <p class="text-sm text-slate-400">
+          "La precisión en la medida es la base de la ciencia moderna."
+        </p>
+      </footer>
+    </article>
+  </main>
+
+  <script>
+    const initT = () => {
+      const v = document.getElementById("valIn") as HTMLInputElement;
+      const u = document.getElementById("unitIn") as HTMLSelectElement;
+      const b = document.getElementById("btnCalcTemp");
+      const box = document.getElementById("boxRes");
+      const l1 = document.getElementById("lab1");
+      const r1 = document.getElementById("res1");
+      const l2 = document.getElementById("lab2");
+      const r2 = document.getElementById("res2");
+
+      b?.addEventListener("click", () => {
+        const val = parseFloat(v.value);
+        if (isNaN(val)) return alert("Ingresa un valor numérico");
+
+        const sel = u.value;
+        if (sel === "C") {
+          if (l1 && r1 && l2 && r2) {
+            l1.innerText = "Fahrenheit";
+            r1.innerText = (val * 1.8 + 32).toFixed(2) + " F";
+            l2.innerText = "Kelvin";
+            r2.innerText = (val + 273.15).toFixed(2) + " K";
+          }
+        } else if (sel === "F") {
+          const c = (val - 32) / 1.8;
+          if (l1 && r1 && l2 && r2) {
+            l1.innerText = "Celsius";
+            r1.innerText = c.toFixed(2) + " C";
+            l2.innerText = "Kelvin";
+            r2.innerText = (c + 273.15).toFixed(2) + " K";
+          }
+        } else {
+          const c = val - 273.15;
+          if (l1 && r1 && l2 && r2) {
+            l1.innerText = "Celsius";
+            r1.innerText = c.toFixed(2) + " C";
+            l2.innerText = "Fahrenheit";
+            r2.innerText = (c * 1.8 + 32).toFixed(2) + " F";
+          }
+        }
+        box?.classList.remove("hidden");
+        box?.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    };
+    initT();
+  </script>
+</Layout>

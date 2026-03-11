@@ -4353,6 +4353,92 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de Días a Semanas", "link": "/unidades/dias-a-semanas" },
       { "nombre": "Conversor de Segundos a Horas", "link": "/unidades/segundos-a-horas" }
     ]
-  }
-
+  },
+  "semanas-a-meses": {
+    "faqs": [
+      {
+        "q": "¿Cómo convertir semanas a meses correctamente?",
+        "a": "Para convertir semanas a meses de forma precisa, divide el número de semanas por 4.345. Esto se debe a que un mes promedio tiene un poco más de 4 semanas."
+      },
+      {
+        "q": "¿Por qué un mes no tiene exactamente 4 semanas?",
+        "a": "Porque 4 semanas equivalen a 28 días, y la mayoría de los meses tienen 30 o 31 días. Solo febrero en años no bisiestos tiene exactamente 4 semanas."
+      },
+      {
+        "q": "¿Cuántos meses son 12 semanas?",
+        "a": "12 semanas equivalen a aproximadamente 2.76 meses. Muchas personas creen que son 3 meses, pero faltarían algunos días para completar el trimestre calendario."
+      },
+      {
+        "q": "¿Qué constante se usa en finanzas para semanas por mes?",
+        "a": "En contabilidad y finanzas se suele utilizar 4.33 o 4.345 para normalizar pagos semanales a mensuales."
+      },
+      {
+        "q": "¿Cuántas semanas tiene un mes de 31 días?",
+        "a": "Un mes de 31 días tiene aproximadamente 4.43 semanas."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Conversor de Horas a Días", "link": "/unidades/horas-a-dias" },
+      { "nombre": "Calculadora de Meses a Años", "link": "/unidades/meses-a-años" },
+      { "nombre": "Calculadora de Semanas de Embarazo", "link": "/salud/semanas-embarazo" }
+    ]
+  },
+  "conversor-temperatura": {
+    "faqs": [
+      {
+        "q": "¿Cómo pasar de Celsius a Fahrenheit rápidamente?",
+        "a": "Multiplica los grados Celsius por 1.8 y suma 32. Por ejemplo, 10°C serían (10 * 1.8) + 32 = 50°F."
+      },
+      {
+        "q": "¿Qué temperatura es igual en Celsius y Fahrenheit?",
+        "a": "El punto donde ambas escalas coinciden es exactamente a -40 grados. Es decir, -40°C es igual a -40°F."
+      },
+      {
+        "q": "¿Por qué la escala Kelvin no usa el símbolo de grado?",
+        "a": "Kelvin es una escala absoluta de base termodinámica y no una escala graduada arbitraria, por lo que su unidad es el 'kelvin' y no el 'grado kelvin'."
+      },
+      {
+        "q": "¿A cuántos grados Kelvin se congela el agua?",
+        "a": "El agua se congela a 273.15 K, que corresponde a 0 grados Celsius o 32 grados Fahrenheit."
+      },
+      {
+        "q": "¿Cómo convertir Fahrenheit a Celsius mentalmente?",
+        "a": "Una forma rápida aproximada es restar 30 al valor en Fahrenheit y luego dividir entre 2. No es exacto, pero sirve para estimaciones meteorológicas rápidas."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Conversor de Unidades", "link": "/unidades/conversor-longitud" },
+      { "nombre": "Calculadora Científica", "link": "/matematicas/calculadora-cientifica" },
+      { "nombre": "Conversor de Pesos", "link": "/unidades/conversor-masa" }
+    ]
+  },
+  "conversor-velocidad": {
+    "faqs": [
+      {
+        "q": "¿Cómo convertir km/h a m/s rápidamente?",
+        "a": "La forma más sencilla es dividir la velocidad en km/h entre 3.6. Por ejemplo, 36 km/h dividido por 3.6 es igual a 10 m/s."
+      },
+      {
+        "q": "¿A cuántos km/h equivale una milla por hora (mph)?",
+        "a": "Una milla por hora equivale exactamente a 1.60934 kilómetros por hora."
+      },
+      {
+        "q": "¿Qué es un nudo y por qué se usa en el mar?",
+        "a": "Un nudo es una milla náutica por hora (1.852 km/h). Se utiliza en navegación porque una milla náutica corresponde exactamente a un minuto de arco de latitud terrestre."
+      },
+      {
+        "q": "¿A qué velocidad viaja el sonido?",
+        "a": "En condiciones estándar (20°C a nivel del mar), el sonido viaja a aproximadamente 1235 km/h o 343 m/s."
+      },
+      {
+        "q": "¿Cómo pasar de m/s a km/h mentalmente?",
+        "a": "Para una estimación rápida, multiplica el valor en m/s por 4 y resta un 10% del resultado. El factor exacto es multiplicar por 3.6."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Conversor de Temperatura", "link": "/unidades/conversor-temperatura" },
+      { "nombre": "Conversor de Horas a Días", "link": "/unidades/horas-a-dias" },
+      { "nombre": "Calculadora de Regla de Tres", "link": "/matematicas/regla-de-tres" }
+    ]
+  },
 };

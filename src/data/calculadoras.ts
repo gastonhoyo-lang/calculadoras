@@ -1335,4 +1335,31 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "blue-600",
   keywords: "horas a dias, convertir h a d, calculadora de tiempo, cuantas horas tiene un dia, pasar horas a dias decimal"
 },
+{
+  titulo: "Conversor de Semanas a Meses",
+  descripcion: "Calculadora técnica para transformar semanas en meses usando la constante de mes promedio. Ideal para finanzas, medicina y proyectos.",
+  link: "/unidades/semanas-a-meses",
+  categoria: "unidades",
+  icon: "🗓️",
+  color: "indigo-600",
+  keywords: "semanas a meses, convertir semanas a meses, calculadora de tiempo, cuantas semanas tiene un mes promedio, formula semanas meses"
+},
+{
+  titulo: "Conversor de Temperatura",
+  descripcion: "Herramienta precisa para convertir entre grados Celsius, Fahrenheit y Kelvin con fórmulas científicas.",
+  link: "/unidades/conversor-temperatura",
+  categoria: "unidades",
+  icon: "🌡️",
+  color: "orange-600",
+  keywords: "conversor temperatura, celsius a fahrenheit, kelvin a celsius, grados f, grados c, termodinamica"
+},
+{
+  titulo: "Conversor de Velocidad",
+  descripcion: "Transforma unidades de rapidez entre km/h, m/s, mph y nudos de forma instantánea y precisa.",
+  link: "/unidades/conversor-velocidad",
+  categoria: "unidades",
+  icon: "🚀",
+  color: "emerald-600",
+  keywords: "conversor velocidad, kmh a ms, mph a kmh, nudos a kmh, calculadora de rapidez, unidades de velocidad"
+},
 ];
