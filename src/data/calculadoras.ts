@@ -1289,5 +1289,23 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   icon: "🏠",
   color: "orange-500",
   keywords: "metros cuadrados a pies cuadrados, m2 a ft2, convertir superficie, sq ft to m2, calculadora inmobiliaria"
-}
+},
+{
+  titulo: "Conversor de Pies Cuadrados a Metros Cuadrados",
+  descripcion: "Calculadora profesional para convertir superficies imperiales (ft²) a métricas (m²) con precisión decimal. Útil para Real Estate y construcción.",
+  link: "/unidades/pies-cuadrados-a-metros-cuadrados",
+  categoria: "unidades",
+  icon: "🏠",
+  color: "emerald-600",
+  keywords: "pies cuadrados a metros cuadrados, ft2 a m2, convertir sq ft a m2, calculadora de area, real estate conversion, unidades de superficie"
+},
+{
+  titulo: "Conversor de Bytes a Megabytes",
+  descripcion: "Calculadora técnica para convertir bytes a MB utilizando estándares decimales o binarios. Ideal para gestión de archivos y optimización web.",
+  link: "/unidades/bytes-a-mb",
+  categoria: "unidades",
+  icon: "💾",
+  color: "blue-600",
+  keywords: "bytes a mb, convertir bytes a megabytes, almacenamiento digital, calculadora informática, miB a bytes"
+},
 ];
