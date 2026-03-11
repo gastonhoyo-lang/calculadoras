@@ -3943,7 +3943,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     }
   ],
   relacionados: [
-    { nombre: "Costo por Kilómetro", link: "/transporte/costo-kilometro" },
+    { nombre: "Costo por Kilómetro", link: "/utiles/combustible" },
     { nombre: "Pulgadas a Centímetros", link: "/unidades/pulgadas-a-cm" },
     { nombre: "Regla de 3 Simple", link: "/matematica/regla-de-tres" }
   ]
@@ -3976,5 +3976,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { "nombre": "Pies a Metros", "link": "/unidades/pies-a-metros" },
     { "nombre": "Consumo de Combustible", "link": "/transporte/consumo-combustible" }
   ]
-}
+},
+"miles-to-km": {
+  "faqs": [
+    {
+      "q": "¿A cuántos kilómetros equivale exactamente una milla?",
+      "a": "Una milla terrestre equivale a exactamente 1,609344 kilómetros. Para cálculos rápidos y estimaciones, se suele redondear el valor a 1,61 km."
+    },
+    {
+      "q": "¿Cómo convertir millas a km mentalmente?",
+      "a": "Un truco rápido es multiplicar las millas por 1.6. Por ejemplo, para 10 millas: 10 x 1 = 10; 10 x 0.6 = 6; la suma te da 16 km aproximadamente."
+    },
+    {
+      "q": "¿Cuál es la diferencia entre milla terrestre y milla náutica?",
+      "a": "La milla terrestre (1.609 km) se usa en carreteras y mapas, mientras que la milla náutica (1.852 km) es el estándar internacional para navegación marítima y aviación."
+    },
+    {
+      "q": "¿Por qué Estados Unidos usa millas en lugar de kilómetros?",
+      "a": "Estados Unidos mantiene el sistema imperial por tradición y por el alto costo logístico que implicaría cambiar toda la señalización de sus carreteras al sistema métrico decimal."
+    },
+    {
+      "q": "¿A cuánto equivalen las velocidades de carretera comunes en km/h?",
+      "a": "60 mph son 96,5 km/h, 70 mph son 112,6 km/h y 80 mph equivalen a 128,7 km/h. Conocer estas equivalencias es vital para evitar multas al conducir en el extranjero."
+    }
+  ],
+  "relacionados": [
+    { "nombre": "Kilómetros a Millas", "link": "/unidades/km-a-millas" },
+    { "nombre": "Pulgadas a Centímetros", "link": "/unidades/pulgadas-a-cm" },
+    { "nombre": "Calculadora de Consumo", "link": "/utiles/combustible" }
+  ]
+},
 };
