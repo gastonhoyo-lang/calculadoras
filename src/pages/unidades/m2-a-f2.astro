@@ -1,0 +1,133 @@
+---
+// Archivo: src/pages/unidades/m2-a-f2.astro
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Conversor de Metros Cuadrados a Pies Cuadrados | m² a ft²"
+  description="Convertí metros cuadrados a pies cuadrados de forma instantánea. Herramienta profesional para conversión de áreas entre sistemas métricos e imperiales."
+>
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight"
+      >
+        Metros Cuadrados a <span class="text-blue-600">Pies Cuadrados</span> 📐
+      </h1>
+      <p
+        class="text-slate-500 text-lg font-medium max-w-2xl mx-auto text-balance"
+      >
+        Convierte áreas métricas a imperiales de manera precisa y rápida.
+      </p>
+    </header>
+
+    <div
+      class="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl max-w-2xl mx-auto mb-20"
+    >
+      <div class="space-y-6">
+        <div>
+          <label
+            for="m2Input"
+            class="block text-xs font-bold text-slate-400 uppercase ml-2 tracking-widest mb-2"
+          >
+            Área en Metros Cuadrados (m²)
+          </label>
+          <input
+            type="number"
+            id="m2Input"
+            placeholder="Ej: 50"
+            step="any"
+            class="w-full p-5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 font-bold text-xl outline-none transition-all shadow-sm"
+          />
+        </div>
+
+        <button
+          id="btnConvertM2"
+          class="w-full bg-slate-900 text-white p-5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg active:scale-95 text-lg"
+        >
+          Convertir a Pies Cuadrados
+        </button>
+      </div>
+
+      <div
+        id="resultM2"
+        class="hidden mt-10 p-8 bg-blue-50 rounded-[2.5rem] border-2 border-blue-100 animate-in fade-in zoom-in duration-500 text-center"
+      >
+        <p
+          class="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-2"
+        >
+          Resultado en Pies Cuadrados (ft²)
+        </p>
+        <div
+          id="ft2Output"
+          class="text-5xl font-black text-blue-900 mb-2 font-mono"
+        >
+        </div>
+        <div class="h-px bg-blue-200 w-full my-6"></div>
+        <p
+          id="m2ToFtDescription"
+          class="text-sm text-blue-700 font-medium italic"
+        >
+        </p>
+      </div>
+    </div>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700"
+    >
+      <section class="mb-16">
+        <h2 class="text-3xl font-black text-slate-900 mb-6">
+          Introducción a la Conversión
+        </h2>
+        <p class="text-lg leading-relaxed">
+          Convertir metros cuadrados a pies cuadrados es útil en construcción,
+          diseño, inmobiliaria y planificación de espacios, ya que muchos planos
+          o medidas antiguas usan el sistema imperial.
+        </p>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-3xl font-black text-slate-900 mb-8">La Fórmula</h2>
+        <p>Para convertir m² a ft² aplicamos la relación:</p>
+        <div
+          class="bg-slate-800 p-6 rounded-3xl border border-slate-700 text-center mb-6"
+        >
+          <p class="text-3xl font-mono text-blue-300">ft² = m² × 10.7639</p>
+        </div>
+        <p>1 m² ≈ 10.7639 ft², según la equivalencia exacta internacional.</p>
+      </section>
+    </article>
+
+    <footer
+      class="bg-slate-900 text-white p-10 rounded-[3rem] text-center italic"
+    >
+      <p class="text-sm text-slate-400">
+        "La precisión en las unidades de área es clave para todo cálculo
+        aplicado."
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    const btn = document.getElementById("btnConvertM2");
+    const input = document.getElementById("m2Input");
+    const output = document.getElementById("ft2Output");
+    const detail = document.getElementById("m2ToFtDescription");
+    const box = document.getElementById("resultM2");
+
+    const RATIO = 10.7639;
+
+    btn.addEventListener("click", () => {
+      const m2 = parseFloat(input.value);
+      if (m2 >= 0) {
+        const ft2 = m2 * RATIO;
+        output.innerText = `${ft2.toLocaleString("es-AR", { maximumFractionDigits: 2 })} ft²`;
+        detail.innerText = `${m2} metros cuadrados equivalen a ${ft2.toFixed(2)} pies cuadrados.`;
+        box.classList.remove("hidden");
+        box.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        alert("Por favor, ingresá un valor numérico positivo.");
+      }
+    });
+  </script>
+</Layout>

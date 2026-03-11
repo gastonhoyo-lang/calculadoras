@@ -1275,10 +1275,19 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
 {
   titulo: "Conversor de Pies a Metros",
   descripcion: "Transformá pies a metros al instante con nuestra calculadora de alta precisión. Ideal para ingeniería, aviación y arquitectura.",
-  link: "/unidades/pies-a-metros",
+  link: "/unidades/pies-to-metros",
   categoria: "unidades",
   icon: "📏",
   color: "blue-500",
   keywords: "pies a metros, ft a m, convertir pies, calculadora de longitud, sistema imperial, metros a pies"
 },
+{
+  titulo: "Conversor de m² a ft²",
+  descripcion: "Calculadora de superficie para convertir metros cuadrados a pies cuadrados con precisión decimal. Vital para real estate.",
+  link: "/unidades/m2-a-ft2",
+  categoria: "unidades",
+  icon: "🏠",
+  color: "orange-500",
+  keywords: "metros cuadrados a pies cuadrados, m2 a ft2, convertir superficie, sq ft to m2, calculadora inmobiliaria"
+}
 ];

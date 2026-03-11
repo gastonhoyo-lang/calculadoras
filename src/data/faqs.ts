@@ -4178,5 +4178,35 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Millas a Kilómetros", "link": "/unidades/millas-a-kilometros" },
       { "nombre": "Pulgadas a Centímetros", "link": "/unidades/pulgadas-a-centimetros" }
     ]
-  }
+  },
+
+  "m2-a-ft2": {
+    "faqs": [
+      {
+        "q": "¿Cuántos pies cuadrados tiene un metro cuadrado?",
+        "a": "Un metro cuadrado equivale exactamente a 10.7639104 pies cuadrados. Para cálculos rápidos se suele utilizar 10.76."
+      },
+      {
+        "q": "¿Cómo convertir metros cuadrados a pies cuadrados manualmente?",
+        "a": "Debes multiplicar la cantidad de metros cuadrados por el factor 10.7639. Si buscas una estimación rápida, multiplica por 11."
+      },
+      {
+        "q": "¿Por qué no se multiplica por 3.28 para convertir áreas?",
+        "a": "3.28 es el factor para unidades lineales. Para áreas (2D), el factor debe elevarse al cuadrado (3.2808²), resultando en el factor 10.76."
+      },
+      {
+        "q": "¿Cuál es la medida estándar de una habitación en pies cuadrados?",
+        "a": "Una habitación promedio de 12 m² equivale a unos 129 ft². En Estados Unidos, los dormitorios suelen rondar los 120-150 sq ft."
+      },
+      {
+        "q": "¿Qué significa sq ft en los planos de casas?",
+        "a": "'Sq ft' es la abreviatura de 'square feet', que en español significa pies cuadrados, la unidad de superficie del sistema imperial."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Conversor de Pies a Metros", "link": "/unidades/pies-a-metros" },
+      { "nombre": "Calculadora de Metros Cúbicos", "link": "/unidades/metros-cubicos" },
+      { "nombre": "Conversor de Hectáreas a Acres", "link": "/unidades/hectareas-a-acres" }
+    ]
+},
 };
