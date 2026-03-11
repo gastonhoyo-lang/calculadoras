@@ -1380,4 +1380,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "indigo-600",
   keywords: "contador de letras, contador de palabras, contar caracteres, herramienta redaccion, seo copy, tiempo de lectura"
 },
+{
+  titulo: "Contador de Palabras Únicas",
+  descripcion: "Analiza la riqueza léxica de tus textos midiendo la diversidad de vocabulario y el Type-Token Ratio.",
+  link: "/utiles/contador-de-palabras-unicas",
+  categoria: "utilidades",
+  icon: "🧠",
+  color: "emerald-600",
+  keywords: "palabras únicas, diversidad léxica, TTR, riqueza de vocabulario, contador de palabras, análisis de texto"
+},
 ];

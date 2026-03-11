@@ -4498,5 +4498,35 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de Regla de Tres", "link": "/matematicas/regla-de-tres" },
       { "nombre": "Generador de Contraseñas", "link": "/utiles/generador-contrasenas" }
     ]
-  }
+  },
+  "contador-de-vocales": {
+    "faqs": [
+      {
+        "q": "¿El contador incluye vocales con tildes?",
+        "a": "Sí, nuestro sistema está configurado para detectar vocales con acentos (á, é, í, ó, ú) y diéresis (ü) de forma automática."
+      },
+      {
+        "q": "¿Qué es una palabra panvocálica?",
+        "a": "Es una palabra que contiene las cinco vocales (a, e, i, o, u) al menos una vez, como por ejemplo 'murciélago' o 'educación'."
+      },
+      {
+        "q": "¿Para qué sirve contar las vocales en un texto?",
+        "a": "Es útil para análisis lingüísticos, ejercicios educativos, resolución de acertijos y estudios sobre la frecuencia fonética del lenguaje."
+      },
+      {
+        "q": "¿Es gratis este contador de vocales?",
+        "a": "Sí, es una herramienta gratuita y de código abierto para que cualquier usuario pueda analizar sus textos sin límites."
+      },
+      {
+        "q": "¿El análisis de vocales afecta al SEO?",
+        "a": "No directamente, pero un análisis de sonoridad ayuda a crear contenidos con mejor ritmo y legibilidad, lo cual mejora indirectamente la retención del usuario."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Contador de Letras", "link": "/utiles/contador-de-letras" },
+      { "nombre": "Generador de Contraseñas", "link": "/utiles/generador-contrasenas" },
+      { "nombre": "Conversor de Velocidad", "link": "/unidades/conversor-velocidad" }
+    ]
+  },
+
 };
