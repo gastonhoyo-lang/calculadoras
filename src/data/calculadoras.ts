@@ -1275,7 +1275,7 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
 {
   titulo: "Conversor de Pies a Metros",
   descripcion: "Transformá pies a metros al instante con nuestra calculadora de alta precisión. Ideal para ingeniería, aviación y arquitectura.",
-  link: "/unidades/pies-to-metros",
+  link: "/unidades/pies-a-metros",
   categoria: "unidades",
   icon: "📏",
   color: "blue-500",
