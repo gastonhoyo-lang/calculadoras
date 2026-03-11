@@ -4527,7 +4527,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Generador de Contraseñas", "link": "/utiles/generador-contrasenas" },
       { "nombre": "Conversor de Velocidad", "link": "/unidades/conversor-velocidad" }
     ]
-  },
+    },
   "contador-de-palabras-unicas": {
     "faqs": [
       {
