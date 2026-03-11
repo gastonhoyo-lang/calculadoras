@@ -307,36 +307,35 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
       { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" }
     ]
-  },
-
-  "interes-simple": {
-    faqs: [
-      { 
-        q: "¿Cuándo se utiliza el interés simple en la vida real?", 
-        a: "Se utiliza principalmente en préstamos personales a corto plazo, en el cálculo de intereses por mora (como facturas vencidas), en descuentos de documentos comerciales y en algunos bonos estatales que pagan cupones de interés fijo sobre el valor nominal." 
-      },
-      { 
-        q: "¿Cuál es la diferencia entre la tasa nominal y el interés generado?", 
-        a: "La tasa nominal (TNA) es el porcentaje anual pactado, mientras que el interés generado es el monto en dinero que obtenés al aplicar esa tasa sobre tu capital inicial durante un tiempo determinado." 
-      },
-      { 
-        q: "¿Qué pasa si el tiempo de mi inversión es en meses y no en años?", 
-        a: "Para que la fórmula funcione, la tasa y el tiempo deben estar en la misma unidad. Si tenés una tasa anual y el tiempo en meses, debés dividir los meses por 12. Por ejemplo, 6 meses serían 0.5 años." 
-      },
-      { 
-        q: "¿Es mejor el interés simple o el compuesto para un ahorrista?", 
-        a: "Generalmente es mejor el interés compuesto, ya que permite que los intereses ganados vuelvan a trabajar para vos. El interés simple es útil cuando necesitás retirar tus ganancias mes a mes para cubrir gastos, manteniendo el capital original intacto." 
-      },
-      { 
-        q: "¿Cómo afecta la inflación al interés simple?", 
-        a: "En contextos inflacionarios, el interés simple suele ser desventajoso, ya que el capital inicial pierde valor real con el tiempo y los intereses generados (al ser fijos y no reinvertirse) no alcanzan a compensar la subida de precios." 
-      }
-    ],
-    relacionados: [
-      { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
-      { nombre: "Interés por Mora", link: "/finanzas/interes-mora" },
-      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" }
-    ]
+     },
+ "interes-simple": {
+  "faqs": [
+    {
+      "q": "¿Cuál es la fórmula del interés simple?",
+      "a": "La fórmula es I = C * i * t, donde I es el interés, C el capital, i la tasa de interés anual y t el tiempo en años."
+    },
+    {
+      "q": "¿Qué diferencia hay entre interés simple y compuesto?",
+      "a": "En el interés simple los beneficios no se reinvierten, mientras que en el compuesto los intereses se suman al capital para generar nuevos intereses."
+    },
+    {
+      "q": "¿Qué unidades se deben usar para el tiempo?",
+      "a": "Generalmente se usan años. Si tienes meses, divide el número por 12 para obtener la fracción de año correspondiente."
+    },
+    {
+      "q": "¿El interés simple es mejor para ahorrar?",
+      "a": "Para el ahorro a largo plazo suele ser mejor el interés compuesto, ya que aprovecha el crecimiento exponencial de reinvertir las ganancias."
+    },
+    {
+      "q": "¿Dónde se aplica comúnmente el interés simple?",
+      "a": "Se utiliza en préstamos personales rápidos, descuentos comerciales de facturas y cupones de bonos fijos."
+    }
+  ],
+  "relacionados": [
+    { "nombre": "Interés Compuesto", "link": "/finanzas/interes-compuesto" },
+    { "nombre": "Calculadora de Inflación", "link": "/finanzas/inflacion" },
+    { "nombre": "IVA y Tasas", "link": "/finanzas/calculadora-iva" }
+  ]
   },
 
   "iva": {
@@ -4088,9 +4087,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     }
   ],
   "relacionados": [
-    { "nombre": "Galones a Litros", "link": "/unidades/galones-to-litros" },
+    { "nombre": "Galones a Litros", "link": "/unidades/gal-to-l" },
     { "nombre": "Mililitros a Onzas Líquidas", "link": "/unidades/ml-to-oz" },
-    { "nombre": "Consumo de Combustible", "link": "/transporte/consumo" }
+    { "nombre": "Consumo de Combustible", "link": "/utilidades/combustible" }
   ]
 },
 "gal-to-l": {

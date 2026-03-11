@@ -137,8 +137,7 @@ export const calculadoras = [
     link: "/finanzas/interes-simple",
     icon: "📉",
     color: "blue",
-    keywords: "capital, tasa, tiempo, finanzas, interes"
-  
+keywords: "interes simple, calculadora de intereses, formula interes simple, calcular ganancia prestamo, interes lineal"  
   },
   {
     titulo: "Calculadora de Asado",
