@@ -4064,7 +4064,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { "nombre": "Calculadora de Calorías", "link": "/salud/calorias" }
   ]
 },
-"l-to-gal": {
+"litro-to-gal": {
   "faqs": [
     {
       "q": "¿Cuántos litros hay en un galón estadounidense?",

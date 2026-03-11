@@ -1249,7 +1249,7 @@ export const calculadoras = [
 {
   titulo: "Litros a Galones",
   descripcion: "Convertí litros a galones (l a gal) fácilmente. Ideal para calcular combustible, capacidad de acuarios y volúmenes de pintura.",
-  link: "/unidades/L-to-gal",
+  link: "/unidades/litro-to-gal",
   categoria: "unidades",
   icon: "🛢️",
   color: "indigo",
