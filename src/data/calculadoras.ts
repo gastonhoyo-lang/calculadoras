@@ -1255,4 +1255,13 @@ export const calculadoras = [
   color: "indigo",
   keywords: "litros a galones, l a gal, convertir litros, galones estadounidenses a litros, calculadora de volumen"
 },
+{
+  titulo: "Galones a Litros",
+  descripcion: "Convertí galones estadounidenses a litros (gal a l) al instante. Útil para motores, envases de bebidas y mantenimiento de piscinas.",
+  link: "/unidades/gal-to-l",
+  categoria: "unidades",
+  icon: "💧",
+  color: "indigo",
+  keywords: "galones a litros, convertir galones, gal a l, calculadora de galones, volumen estadounidense"
+},
 ];

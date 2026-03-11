@@ -4092,5 +4092,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { "nombre": "Mililitros a Onzas Líquidas", "link": "/unidades/ml-to-oz" },
     { "nombre": "Consumo de Combustible", "link": "/transporte/consumo" }
   ]
+},
+"gal-to-l": {
+  "faqs": [
+    {
+      "q": "¿Cuántos litros hay en un galón?",
+      "a": "Un galón líquido de los Estados Unidos equivale exactamente a 3,78541178 litros. En contextos prácticos, se suele redondear a 3,78 litros."
+    },
+    {
+      "q": "¿Es lo mismo un galón en todo el mundo?",
+      "a": "No. El galón estadounidense (3,78 l) es diferente al galón imperial británico (4,54 l). Esta herramienta utiliza el galón de EE.UU., que es el estándar más usado en comercio."
+    },
+    {
+      "q": "¿Cómo convierto galones a litros mentalmente?",
+      "a": "Una técnica rápida es multiplicar por 4 y restar un poquito (cerca del 5%). Por ejemplo, 10 galones x 4 = 40; restás un poco y llegás a los 37,85 l reales."
+    },
+    {
+      "q": "¿Qué capacidad tiene un bidón de 5 galones?",
+      "a": "Un bidón o balde de 5 galones, muy común en pinturas y aceites, tiene una capacidad aproximada de 18,93 litros."
+    },
+    {
+      "q": "¿Cuántos litros hay en medio galón?",
+      "a": "Medio galón estadounidense equivale a 1,892 litros, una medida muy frecuente en envases de leche y jugos importados."
+    }
+  ],
+  "relacionados": [
+    { "nombre": "Litros a Galones", "link": "/unidades/litros-to-galones" },
+    { "nombre": "Onzas Líquidas a Mililitros", "link": "/unidades/oz-to-ml" },
+    { "nombre": "Consumo de Combustible", "link": "/transporte/consumo" }
+  ]
 }
 };
