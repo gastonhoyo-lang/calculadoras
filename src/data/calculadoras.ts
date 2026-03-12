@@ -979,12 +979,12 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
 },
 {
   titulo: "Calculadora de Percentil",
-  descripcion: "Calculá la posición relativa de un dato en un conjunto. Vital para benchmarks de Core Web Vitals y educación.",
-  link: "/matematica/calculadora-percentil",
-  categoria: "matematica",
+  descripcion: "Calcula el percentil de una serie de datos y entiende la posición relativa de cualquier valor en una distribución estadística.",
+  link: "/utiles/calculadora-de-percentil",
+  categoria: "utiles",
   icon: "📊",
-  color: "violet",
-  keywords: "percentil online, calcular percentiles, posicion relativa, estadistica descriptiva, core web vitals p75"
+  color: "violet-600",
+  keywords: "percentil, calcular percentil online, estadística, rango percentil, cuartiles, mediana, posicion relativa datos"
 },
 {
   titulo: "Desviación Media",

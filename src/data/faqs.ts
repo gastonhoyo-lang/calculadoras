@@ -97,7 +97,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Calculadora de Préstamos", link: "/finanzas/prestamo" },
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
-      { nombre: "Tasas TNA y TEA", link: "/finanzas/tea-tna" }
+      { nombre: "Tasas TNA y TEA", link: "/finanzas/tasas-tea-tna" }
     ]
     },
 
@@ -127,7 +127,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Gastos Compartidos", link: "/utiles/gastos-compartidos" },
       { nombre: "Simulador de Préstamos", link: "/finanzas/prestamo" },
-      { nombre: "Comprar o Alquilar Casa", link: "/utiles/comprar-vs-alquilar" }
+      { nombre: "Comprar o Alquilar Casa", link: "/finanzas/comprar-vs-alquilar" }
     ]
   },
 
@@ -155,7 +155,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Tasas TNA y TEA", link: "/finanzas/tea-tna" },
+      { nombre: "Tasas TNA y TEA", link: "/finanzas/tasas-tea-tna" },
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
       { nombre: "Calculadora de IVA", link: "/finanzas/porcentaje" }
     ]
@@ -334,7 +334,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   "relacionados": [
     { "nombre": "Interés Compuesto", "link": "/finanzas/interes-compuesto" },
     { "nombre": "Calculadora de Inflación", "link": "/finanzas/inflacion" },
-    { "nombre": "IVA y Tasas", "link": "/finanzas/calculadora-iva" }
+    { "nombre": "IVA y Tasas", "link": "/finanzas/iva" }
   ]
   },
 
@@ -602,7 +602,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de IVA", link: "/finanzas/calculadora-iva" },
+      { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
       { nombre: "Presupuesto 50/30/20", link: "/finanzas/regla-50-30-20" },
       { nombre: "Calculadora de Porcentajes", link: "/matematica/porcentaje" }
     ]
@@ -662,7 +662,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Consumo Eléctrico", link: "/finanzas/consumo-electrico" },
+      { nombre: "Consumo Eléctrico", link: "/hogar/consumo-electrico" },
       { nombre: "Presupuesto 50/30/20", link: "/finanzas/regla-50-30-20" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
@@ -3081,7 +3081,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     }
   ],
   relacionados: [
-    { nombre: "Calculadora de IVA", link: "/finanzas/calculadora-iva" },
+    { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
     { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
     { nombre: "Ratio Texto-HTML", link: "/seo/ratio-texto-html" }
   ]
@@ -3232,27 +3232,35 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Incremento Porcentual", link: "/matematica/incremento-porcentual" },
     { nombre: "Calculadora de Potencia", link: "/matematica/calculadora-potencia" }
   ]
-},
-"calculadora-percentil": {
-  faqs: [
-    {
-      q: "¿Qué significa estar en el percentil 75?",
-      a: "Significa que tu valor es igual o superior al 75% de los datos del grupo analizado."
-    },
-    {
-      q: "¿Cómo se relaciona el percentil con la mediana?",
-      a: "El percentil 50 es exactamente igual a la mediana, ya que divide el conjunto de datos ordenado en dos partes iguales."
-    },
-    {
-      q: "¿Por qué se usa el P75 en Google Search Console?",
-      a: "Google considera el percentil 75 para asegurar que la experiencia de usuario sea buena para la gran mayoría de las visitas, no solo para el promedio."
-    }
-  ],
-  relacionados: [
-    { nombre: "Media Ponderada", link: "/matematica/media-ponderada" },
-    { nombre: "Incremento Porcentual", link: "/matematica/incremento-porcentual" },
-    { nombre: "Calculadora de Proporción", link: "/matematica/calculadora-proporcion" }
-  ]
+  },
+  "calculadora-percentil": {
+    "faqs": [
+      {
+        "q": "¿Qué significa estar en el percentil 50?",
+        "a": "El percentil 50 es equivalente a la mediana. Significa que el 50% de los datos son iguales o menores a ese valor, situándolo justo en el centro de la muestra."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre percentil y cuartil?",
+        "a": "Los cuartiles son percentiles específicos. El Q1 es el percentil 25, el Q2 es el percentil 50 y el Q3 es el percentil 75. Dividen los datos en cuatro partes iguales."
+      },
+      {
+        "q": "¿Cómo se interpreta el percentil en el crecimiento infantil?",
+        "a": "Si un niño está en el percentil 75 de altura, significa que es más alto que el 75% de los niños de su misma edad y sexo, y más bajo que el 25% restante."
+      },
+      {
+        "q": "¿Qué indica un percentil muy alto o muy bajo?",
+        "a": "Un percentil alto (ej: 95) indica que el valor es superior a casi toda la muestra. Un percentil bajo (ej: 5) indica que el valor está en el extremo inferior de la distribución."
+      },
+      {
+        "q": "¿Es mejor tener un percentil alto?",
+        "a": "Depende del contexto. En un examen, un percentil alto es deseable. En niveles de colesterol o presión arterial, se prefiere estar en percentiles bajos o medios."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de IMC", "link": "/salud/imc" },
+      { "nombre": "Desviación Estándar", "link": "/utiles/desviacion-estandar" },
+      { "nombre": "Calculadora de Mediana", "link": "/utiles/mediana" }
+    ]
 },
 "desviacion-media": {
   faqs: [
