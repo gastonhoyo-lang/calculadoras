@@ -604,7 +604,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Calculadora de IVA", link: "/finanzas/calculadora-iva" },
       { nombre: "Presupuesto 50/30/20", link: "/finanzas/regla-50-30-20" },
-      { nombre: "Calculadora de Porcentajes", link: "/matematicas/porcentajes" }
+      { nombre: "Calculadora de Porcentajes", link: "/matematica/porcentaje" }
     ]
   },
 
@@ -4408,7 +4408,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     "relacionados": [
       { "nombre": "Conversor de Unidades", "link": "/unidades/conversor-longitud" },
-      { "nombre": "Calculadora Científica", "link": "/matematicas/calculadora-cientifica" },
+      { "nombre": "Calculadora Científica", "link": "/matematica/calculadora-cientifica" },
       { "nombre": "Conversor de Pesos", "link": "/unidades/conversor-masa" }
     ]
   },
@@ -4438,7 +4438,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     "relacionados": [
       { "nombre": "Conversor de Temperatura", "link": "/unidades/conversor-temperatura" },
       { "nombre": "Conversor de Horas a Días", "link": "/unidades/horas-a-dias" },
-      { "nombre": "Calculadora de Regla de Tres", "link": "/matematicas/regla-de-tres" }
+      { "nombre": "Calculadora de Regla de Tres", "link": "/matematica/regla-de-tres" }
     ]
   },
   "generador-contrasenas": {
@@ -4466,7 +4466,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     "relacionados": [
       { "nombre": "Calculadora de Interés Compuesto", "link": "/finanzas/interes-compuesto" },
-      { "nombre": "Calculadora de Regla de Tres", "link": "/matematicas/regla-de-tres" },
+      { "nombre": "Calculadora de Regla de Tres", "link": "/matematica/regla-de-tres" },
       { "nombre": "Conversor de Unidades", "link": "/unidades/conversor-velocidad" }
     ]
   },
@@ -4495,7 +4495,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     "relacionados": [
       { "nombre": "Conversor de Velocidad", "link": "/unidades/conversor-velocidad" },
-      { "nombre": "Calculadora de Regla de Tres", "link": "/matematicas/regla-de-tres" },
+      { "nombre": "Calculadora de Regla de Tres", "link": "/matematica/regla-de-tres" },
       { "nombre": "Generador de Contraseñas", "link": "/utiles/generador-contrasenas" }
     ]
   },
@@ -4583,7 +4583,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     "relacionados": [
       { "nombre": "Semanas a Meses", "link": "/unidades/semanas-a-meses" },
       { "nombre": "Horas a Días", "link": "/unidades/horas-a-dias" },
-      { "nombre": "Contador de Días", "link": "/utiles/contador-dias" }
+      { "nombre": "Contador de Días", "link": "/utiles/dias-habiles" }
     ]
   },
   "calculadora-fecha-pasada": {
@@ -4611,7 +4611,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     "relacionados": [
       { "nombre": "Calculadora de Fecha Futura", "link": "/utiles/calculadora-fecha-futura" },
-      { "nombre": "Contador de Días", "link": "/utiles/contador-dias" },
+      { "nombre": "Contador de Días", "link": "/utiles/dias-habiles" },
       { "nombre": "Horas a Minutos", "link": "/unidades/horas-a-minutos" }
     ]
   },
@@ -4670,7 +4670,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     "relacionados": [
       { "nombre": "Calculadora de Fecha Futura", "link": "/utiles/calculadora-fecha-futura" },
       { "nombre": "Contador de Días para Navidad", "link": "/utiles/contador-dias-navidad" },
-      { "nombre": "Calculadora de Edad Exacta", "link": "/utiles/calculadora-edad-exacta" }
+      { "nombre": "Calculadora de Edad Exacta", "link": "/varios/edad" }
     ]
   }
 };
