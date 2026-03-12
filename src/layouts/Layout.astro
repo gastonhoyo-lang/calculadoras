@@ -23,8 +23,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="canonical" href={canonicalURL} />
-
+    <link rel="canonical" href={`https://chieffin.com${Astro.url.pathname}`} />
     <title>{title} | Chieffin</title>
     <meta name="title" content={`${title} | Chieffin`} />
     <meta name="description" content={description} />
