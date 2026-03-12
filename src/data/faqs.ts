@@ -723,7 +723,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Calculadora de Frigorías", link: "/hogar/frigorias" },
-      { nombre: "Cálculo de Ladrillos", link: "/construccion/ladrillos" },
+      { nombre: "Cálculo de Ladrillos", link: "/hogar/ladrillos" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
@@ -752,8 +752,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Cálculo de Ladrillos", link: "/construccion/ladrillos" },
-      { nombre: "Cálculo de Hormigón", link: "/construccion/hormigon" },
+      { nombre: "Cálculo de Ladrillos", link: "/hogar/ladrillos" },
+      { nombre: "Cálculo de Hormigón", link: "/hogar/hormigon" },
       { nombre: "Consumo Eléctrico", link: "/hogar/consumo-electrico" }
     ]
   },
@@ -783,7 +783,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Metros Cuadrados", link: "/hogar/metros-cuadrados" },
-      { nombre: "Cálculo de Ladrillos", link: "/construccion/ladrillos" },
+      { nombre: "Cálculo de Ladrillos", link: "/hogar/ladrillos" },
       { nombre: "Consumo Eléctrico", link: "/hogar/consumo-electrico" }
     ]
   },
