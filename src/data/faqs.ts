@@ -5149,4 +5149,62 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de Interés Compuesto", "link": "/finanzas/interes-compuesto" }
     ]
   },
+  "calculadora-inventario-ideal": {
+    "faqs": [
+      {
+        "q": "¿Qué pasa si mi stock actual es mayor al inventario ideal?",
+        "a": "Esto indica que tienes sobrestock. Deberías reducir tus pedidos futuros o realizar promociones para liberar capital inmovilizado y mejorar el flujo de caja."
+      },
+      {
+        "q": "¿Cómo se calcula la demanda diaria si mis ventas varían mucho?",
+        "a": "Lo ideal es tomar el promedio de los últimos 3 a 6 meses. Para productos estacionales, compara el promedio del mismo mes en el año anterior."
+      },
+      {
+        "q": "¿Qué es el punto de reorden y cómo se relaciona?",
+        "a": "El punto de reorden es el nivel de stock en el que debes realizar un nuevo pedido para que llegue justo antes de agotar tu stock de seguridad."
+      },
+      {
+        "q": "¿Es malo tener un stock de seguridad muy alto?",
+        "a": "Sí, porque aunque evita roturas de stock, incrementa significativamente los costos de almacenamiento y el riesgo de que el producto caduque o se vuelva obsoleto."
+      },
+      {
+        "q": "¿Qué factores afectan el lead time o tiempo de entrega?",
+        "a": "La ubicación del proveedor, la eficiencia de la aduana (si es internacional), los días festivos y la capacidad logística de la empresa de transporte."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" },
+      { "nombre": "Calculadora de Costos fijos y variables", "link": "/utiles/calculadora-costos-fijos-variables" }
+    ]
+  },
+  "calculadora-crecimiento-ventas": {
+    "faqs": [
+      {
+        "q": "¿Qué se considera una buena tasa de crecimiento de ventas?",
+        "a": "Depende del sector. En retail tradicional, un 10% anual es sólido. En tecnología o SaaS, se buscan tasas del 50% al 100% anual (crecimiento exponencial)."
+      },
+      {
+        "q": "¿Cómo afecta la inflación al cálculo del crecimiento?",
+        "a": "Si la inflación es alta, tus ventas pueden 'crecer' en dinero pero no en unidades. Para un análisis real, debes descontar el efecto inflacionario de los ingresos brutos."
+      },
+      {
+        "q": "¿Por qué mi crecimiento es negativo si vendí lo mismo que el mes pasado?",
+        "a": "Matemáticamente, si vendiste lo mismo, el crecimiento es del 0%. Un número negativo solo aparece si los ingresos actuales son menores a los del periodo anterior."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre crecimiento orgánico e inorgánico?",
+        "a": "El orgánico proviene de la optimización del negocio actual, mientras que el inorgánico resulta de adquisiciones de otras empresas o fusiones."
+      },
+      {
+        "q": "¿Es mejor medir el crecimiento mensual o anual?",
+        "a": "Ambos son necesarios. El mensual (MoM) detecta tendencias inmediatas y el anual (YoY) elimina el ruido de la estacionalidad (como las ventas de Navidad)."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" },
+      { "nombre": "Calculadora de Interés Compuesto", "link": "/finanzas/interes-compuesto" }
+    ]
+  },
 };

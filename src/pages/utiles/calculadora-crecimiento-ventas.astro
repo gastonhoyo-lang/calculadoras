@@ -1,0 +1,388 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+// Definimos los textos largos aquí para que Astro no intente parsear nada raro en el HTML
+const tFormulaSimple =
+  "$$ Tasa\\ de\\ Crecimiento = \\left( \\frac{V_{actual} - V_{anterior}}{V_{anterior}} \\right) \\times 100 $$";
+const tFormulaCAGR =
+  "$$ CAGR = \\left[ \\left( \\frac{V_{final}}{V_{inicial}} \\right)^{\\frac{1}{n}} - 1 \\right] \\times 100 $$";
+---
+
+<Layout
+  title="Calculadora de Crecimiento de Ventas | Análisis de Ingresos"
+  description="Calcula el porcentaje de crecimiento de tus ventas. Guía completa de 1000 palabras sobre KPIs y estrategias de escalado empresarial."
+>
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight"
+      >
+        Calculadora de <span class="text-indigo-600">Crecimiento de Ventas</span
+        > 📈
+      </h1>
+      <p class="text-slate-500 text-lg font-medium max-w-2xl mx-auto">
+        Mide la tracción real de tu negocio con precisión matemática.
+      </p>
+    </header>
+
+    <section
+      class="bg-white p-6 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl max-w-4xl mx-auto mb-20"
+    >
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="space-y-4">
+          <label
+            for="valAnt"
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
+            >Ventas Periodo Anterior</label
+          >
+          <input
+            type="number"
+            id="valAnt"
+            placeholder="Ej: 10000"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-indigo-500 outline-none transition-all shadow-inner font-bold"
+          />
+        </div>
+        <div class="space-y-4">
+          <label
+            for="valAct"
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
+            >Ventas Periodo Actual</label
+          >
+          <input
+            type="number"
+            id="valAct"
+            placeholder="Ej: 15000"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-indigo-500 outline-none transition-all shadow-inner font-bold"
+          />
+        </div>
+      </div>
+
+      <button
+        id="ejecutarCalc"
+        class="w-full bg-slate-900 text-white p-6 rounded-[2rem] font-bold hover:bg-indigo-600 transition-all shadow-lg active:scale-95 text-xl"
+      >
+        Calcular Porcentaje
+      </button>
+
+      <div
+        id="panelResultados"
+        class="hidden mt-10 space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500"
+      >
+        <div
+          class="bg-indigo-50 p-10 rounded-[2.5rem] border border-indigo-100 text-center"
+        >
+          <span
+            class="block text-xs font-bold text-indigo-400 uppercase mb-2 tracking-widest"
+            >Crecimiento Porcentual</span
+          >
+          <span
+            id="displayPct"
+            class="block text-6xl font-black text-indigo-700">0%</span
+          >
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-slate-50 p-6 rounded-3xl text-center">
+            <span id="displayDif" class="block text-xl font-bold text-slate-800"
+              >$0</span
+            >
+            <span
+              class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+              >Variación Neta</span
+            >
+          </div>
+          <div class="bg-slate-50 p-6 rounded-3xl text-center">
+            <span id="displayMsg" class="block text-xl font-bold text-slate-800"
+              >-</span
+            >
+            <span
+              class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+              >Tendencia</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700 font-light leading-relaxed"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
+        Crecimiento de Ventas: El KPI Maestro de la Supervivencia Empresarial
+      </h2>
+
+      <p class="mb-6">
+        En el complejo mundo de las finanzas corporativas y el marketing
+        digital, el crecimiento de ventas se erige como la métrica de tracción
+        por excelencia. Representa la capacidad de una organización para
+        expandir sus ingresos brutos en un intervalo de tiempo específico. Sin
+        embargo, para un <strong>experto en SEO técnico</strong> o un desarrollador
+        de herramientas, el crecimiento de ventas es el resultado final de una cadena
+        de optimizaciones que comienza en la visibilidad y termina en la conversión.
+      </p>
+
+      <p class="mb-6">
+        No se trata simplemente de vender más, sino de entender la velocidad a
+        la que el mercado acepta tu producto. El análisis del crecimiento
+        permite identificar si una empresa está en fase de "Blitzscaling"
+        (crecimiento relámpago), si ha alcanzado una meseta de madurez o si está
+        perdiendo relevancia frente a nuevos competidores. A continuación,
+        desglosamos cada faceta de este cálculo vital.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        ¿Por qué es fundamental medir el Crecimiento de Ingresos?
+      </h3>
+      <p class="mb-6">
+        Monitorizar esta cifra de forma mensual, trimestral y anual es
+        obligatorio para cualquier negocio serio. Las razones principales
+        incluyen:
+      </p>
+      <ul class="list-disc pl-6 mb-8 space-y-4">
+        <li>
+          <strong>Validación del Product-Market Fit:</strong> Si las ventas crecen
+          de forma orgánica mes a mes, es la señal más clara de que el mercado desea
+          lo que ofreces.
+        </li>
+        <li>
+          <strong>Optimización de la Inversión:</strong> Permite saber qué canales
+          de adquisición (SEO, SEM, Referidos) están impulsando realmente el crecimiento.
+        </li>
+        <li>
+          <strong>Proyecciones de Flujo de Caja:</strong> Sin una tasa de crecimiento
+          clara, es imposible predecir cuánto dinero habrá en el banco en seis meses
+          para pagar nóminas o proveedores.
+        </li>
+        <li>
+          <strong>Benchmarking Competitivo:</strong> Permite comparar tu velocidad
+          de crucero con la media de tu industria.
+        </li>
+      </ul>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        La Fórmula del Crecimiento Simple
+      </h3>
+      <p class="mb-6">
+        La matemática del crecimiento se basa en la variación porcentual. Es el
+        cálculo estándar para informes de rendimiento comercial rápido:
+      </p>
+
+      <div
+        class="bg-slate-50 p-8 rounded-3xl mb-10 border border-slate-100 text-center font-serif text-xl"
+      >
+        {tFormulaSimple}
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        El Concepto de CAGR (Tasa de Crecimiento Anual Compuesta)
+      </h3>
+      <p class="mb-6">
+        Para inversores y análisis a largo plazo, el crecimiento simple de un
+        año puede ser engañoso debido a picos puntuales. El CAGR proporciona una
+        tasa de crecimiento constante imaginaria que explica cómo el negocio
+        llegó desde el punto inicial al final:
+      </p>
+
+      <div
+        class="bg-slate-50 p-8 rounded-3xl mb-10 border border-slate-100 text-center font-serif text-xl"
+      >
+        {tFormulaCAGR}
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Diferenciando Crecimiento de Rentabilidad
+      </h3>
+      <p class="mb-6">
+        Es un error común de los emprendedores novatos obsesionarse con el
+        crecimiento de ventas olvidando los márgenes. Puedes crecer un 200% en
+        ventas, pero si para lograrlo tuviste que gastar un 300% más en
+        publicidad, estás destruyendo valor. El crecimiento ideal es aquel que
+        se logra con un <strong>CAC (Costo de Adquisición de Cliente)</strong> controlado
+        y un <strong>LTV (Lifetime Value)</strong> alto.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Estacionalidad: La Trampa de los Datos
+      </h3>
+      <p class="mb-6">
+        Muchos negocios sufren de estacionalidad. Un ecommerce de trajes de baño
+        tendrá un crecimiento del 500% en junio comparado con enero, pero eso no
+        significa que el negocio esté "mejorando", sino que la demanda es
+        cíclica. Por ello, la métrica reina es el <strong
+          >YoY (Year over Year)</strong
+        >: comparar el mismo mes de este año con el anterior.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Estrategias de Escalado según la Tasa de Crecimiento
+      </h3>
+      <p class="mb-6">
+        Dependiendo de los resultados que obtengas con nuestra calculadora, tu
+        estrategia debería variar:
+      </p>
+      <ol class="list-decimal pl-6 mb-8 space-y-4">
+        <li>
+          <strong>Crecimiento Negativo:</strong> Auditoría de producto inmediata.
+          ¿Ha bajado la calidad? ¿Hay nuevos competidores? ¿Problemas técnicos en
+          la web?
+        </li>
+        <li>
+          <strong>Crecimiento del 0-10%:</strong> Fase de mantenimiento. Es necesario
+          buscar nuevas fuentes de tráfico o lanzar nuevos productos.
+        </li>
+        <li>
+          <strong>Crecimiento del 10-30%:</strong> Crecimiento saludable para empresas
+          establecidas. Foco en la retención de clientes.
+        </li>
+        <li>
+          <strong>Crecimiento >50%:</strong> Fase de escalado. Riesgo de problemas
+          operativos si los procesos no están automatizados.
+        </li>
+      </ol>
+
+      <h2 class="text-3xl font-black text-slate-900 mb-8">
+        Ejemplos Prácticos de Aplicación
+      </h2>
+
+      <div class="space-y-12 mb-20">
+        <div
+          class="p-8 bg-indigo-50 rounded-[2.5rem] border border-indigo-100 shadow-sm"
+        >
+          <h3 class="text-xl font-bold text-indigo-900 mb-4">
+            Ejemplo 1: Empresa de Servicios SaaS
+          </h3>
+          <p class="mb-4">
+            Ingresos mes anterior: 5000 USD. Ingresos mes actual: 6500 USD.
+          </p>
+          <div class="bg-white p-6 rounded-2xl mb-4">
+            <ul class="text-sm space-y-3">
+              <li><strong>Datos:</strong> Anterior = 5000 | Actual = 6500</li>
+              <li><strong>Paso 1:</strong> 6500 - 5000 = 1500 (Diferencia)</li>
+              <li><strong>Paso 2:</strong> 1500 / 5000 = 0.3</li>
+              <li><strong>Resultado:</strong> 0.3 * 100 = 30%</li>
+              <li>
+                <strong>Conclusión:</strong> El SaaS creció un 30% en facturación
+                bruta mensual.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 shadow-sm"
+        >
+          <h3 class="text-xl font-bold text-slate-900 mb-4">
+            Ejemplo 2: Análisis de Tienda Local
+          </h3>
+          <p class="mb-4">
+            Ventas anuales 2024: 120000 USD. Ventas anuales 2025: 114000 USD.
+          </p>
+          <div class="bg-white p-6 rounded-2xl mb-4">
+            <ul class="text-sm space-y-3">
+              <li>
+                <strong>Datos:</strong> Anterior = 120000 | Actual = 114000
+              </li>
+              <li>
+                <strong>Cálculo:</strong> ((114000 - 120000) / 120000) * 100 = -5%
+              </li>
+              <li>
+                <strong>Conclusión:</strong> El negocio sufrió una contracción del
+                5% anual.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="p-8 bg-emerald-50 rounded-[2.5rem] border border-emerald-100 shadow-sm"
+        >
+          <h3 class="text-xl font-bold text-emerald-900 mb-4">
+            Ejemplo 3: Impacto de Campaña SEO
+          </h3>
+          <p class="mb-4">
+            Ventas antes de optimización: 2000. Ventas tras optimización: 8000.
+          </p>
+          <div class="bg-white p-6 rounded-2xl mb-4">
+            <ul class="text-sm space-y-3">
+              <li>
+                <strong>Cálculo:</strong> ((8000 - 2000) / 2000) * 100 = 300%
+              </li>
+              <li>
+                <strong>Conclusión:</strong> Las ventas se cuadruplicaron, logrando
+                un crecimiento del 300%.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-800 mb-4">
+        Resumen y Consejos Finales
+      </h2>
+      <p class="mb-6">
+        Medir el crecimiento de ventas no es una tarea de una sola vez, es un
+        hábito. Para obtener los mejores resultados de esta calculadora:
+      </p>
+      <ul class="list-disc pl-6 mb-12 space-y-4">
+        <li>
+          <strong>Sé Honesto con los Datos:</strong> Usa facturación neta (descontando
+          devoluciones) para un análisis real.
+        </li>
+        <li>
+          <strong>Contextualiza:</strong> Un 5% de crecimiento con un 10% de inflación
+          es, en realidad, una pérdida de poder adquisitivo.
+        </li>
+        <li>
+          <strong>Foco en el Cliente:</strong> Es más fácil crecer vendiendo más a
+          los que ya te conocen que buscando nuevos.
+        </li>
+      </ul>
+
+      <footer
+        class="bg-slate-900 text-white p-12 rounded-[3rem] text-center italic mt-12 shadow-2xl"
+      >
+        <p class="text-indigo-400 font-bold mb-2">Reflexión Final:</p>
+        <p class="text-sm text-slate-400">
+          "Los ingresos son vanidad, el beneficio es sanidad, pero el efectivo
+          es el rey. Mide tu crecimiento para asegurar tu trono."
+        </p>
+      </footer>
+    </article>
+  </main>
+
+  <script is:inline>
+    // Usamos is:inline para asegurar que Astro no procese el JS como módulo si hay conflictos
+    (function () {
+      const btn = document.querySelector("#ejecutarCalc");
+      const inputA = document.querySelector("#valAnt");
+      const inputB = document.querySelector("#valAct");
+
+      const panel = document.querySelector("#panelResultados");
+      const outPct = document.querySelector("#displayPct");
+      const outDif = document.querySelector("#displayDif");
+      const outMsg = document.querySelector("#displayMsg");
+
+      btn.addEventListener("click", function () {
+        const valA = parseFloat(inputA.value) || 0;
+        const valB = parseFloat(inputB.value) || 0;
+
+        if (valA <= 0) {
+          alert("El valor anterior debe ser mayor que cero.");
+          return;
+        }
+
+        const diferencia = valB - valA;
+        const crecimiento = (diferencia / valA) * 100;
+
+        outPct.textContent = crecimiento.toFixed(2) + "%";
+        outDif.textContent = "$" + diferencia.toLocaleString();
+
+        if (crecimiento > 0) outMsg.textContent = "📈 Positiva";
+        else if (crecimiento < 0) outMsg.textContent = "📉 Negativa";
+        else outMsg.textContent = "⚖️ Estable";
+
+        panel.classList.remove("hidden");
+      });
+    })();
+  </script>
+</Layout>

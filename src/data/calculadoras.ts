@@ -1551,5 +1551,23 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   icon: "⚖️",
   color: "blue-600",
   keywords: "calculadora de impuestos, calcular IVA, sales tax, precio neto a bruto, desglose de impuestos, calculadora fiscal consumo"
+},
+{
+  titulo: "Calculadora de Inventario Ideal",
+  descripcion: "Determina el nivel óptimo de existencias para evitar roturas de stock y optimizar tu capital de trabajo.",
+  link: "/utiles/calculadora-inventario-ideal",
+  categoria: "utiles",
+  icon: "📦",
+  color: "emerald-600",
+  keywords: "inventario ideal, stock optimo, gestion de stock, logística ecommerce, flujo de caja, punto de reorden, stock de seguridad"
+},
+{
+  titulo: "Calculadora de Crecimiento de Ventas",
+  descripcion: "Mide el porcentaje de incremento o caída de tus ingresos entre dos periodos para evaluar el rendimiento comercial.",
+  link: "/utiles/calculadora-crecimiento-ventas",
+  categoria: "utiles",
+  icon: "📈",
+  color: "indigo-600",
+  keywords: "crecimiento de ventas, tasa de crecimiento, KPI ventas, calcular incremento ingresos, facturación anual, crecimiento MoM YoY"
 }
 ];
