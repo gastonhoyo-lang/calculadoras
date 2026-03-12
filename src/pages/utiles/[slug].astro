@@ -1,0 +1,67 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import unidades from "../../data/unidades.json";
+
+// truco: getStaticPaths genera las páginas en el build
+export async function getStaticPaths() {
+  return unidades.map((u) => ({
+    params: { slug: u.slug },
+    props: { info: u },
+  }));
+}
+
+const { info } = Astro.props;
+---
+
+<Layout
+  title={info.titulo}
+  description={`Calculadora de ${info.titulo}. Convierte fácilmente ${info.h1} con nuestra herramienta gratuita.`}
+>
+  <main class="max-w-4xl mx-auto py-20 px-4">
+    <h1 class="text-5xl font-black mb-8">
+      Conversor de <span class="text-blue-600">{info.h1}</span>
+    </h1>
+
+    <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100">
+      <div class="grid grid-cols-2 gap-6">
+        <input
+          type="number"
+          id="input1"
+          placeholder={info.unidad_origen}
+          class="p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold"
+        />
+        <input
+          type="number"
+          id="input2"
+          placeholder={info.unidad_destino}
+          class="p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold"
+        />
+      </div>
+      <p class="mt-6 text-slate-400 text-center">
+        Fórmula: 1 {info.unidad_origen} = {info.valor}
+        {info.unidad_destino}
+      </p>
+    </div>
+
+    <article class="prose mt-20 max-w-none">
+      <h2>¿Cómo pasar de {info.unidad_origen} a {info.unidad_destino}?</h2>
+      <p>
+        Para convertir {info.h1}, simplemente multiplica el valor en {
+          info.unidad_origen
+        } por {info.valor}. Esta herramienta es ideal para temas de {info.tipo}.
+      </p>
+    </article>
+  </main>
+
+  <script is:inline define:vars={{ factor: info.valor }}>
+    const i1 = document.getElementById("input1");
+    const i2 = document.getElementById("input2");
+
+    i1.addEventListener("input", () => {
+      i2.value = (parseFloat(i1.value) * factor).toFixed(2);
+    });
+    i2.addEventListener("input", () => {
+      i1.value = (parseFloat(i2.value) / factor).toFixed(2);
+    });
+  </script>
+</Layout>

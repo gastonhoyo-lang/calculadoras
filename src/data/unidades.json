@@ -1,0 +1,31 @@
+[
+  {
+    "slug": "millas-a-km",
+    "titulo": "Conversor de Millas a Kilómetros",
+    "h1": "Millas a KM",
+    "valor": 1.609344,
+    "tipo": "distancia",
+    "unidad_origen": "mi",
+    "unidad_destino": "km"
+  },
+  {
+    "slug": "millas-nauticas-a-km",
+    "titulo": "Conversor de Millas Náuticas a Kilómetros",
+    "h1": "Millas Náuticas a KM",
+    "valor": 1.852,
+    "tipo": "navegacion",
+    "unidad_origen": "nm",
+    "unidad_destino": "km"
+  },
+  {
+    "slug": "pulgadas-a-cm",
+    "titulo": "Conversor de Pulgadas a Centímetros",
+    "h1": "Pulgadas a CM",
+    "valor": 2.54,
+    "tipo": "medida",
+    "unidad_origen": "in",
+    "unidad_destino": "cm",
+    "contexto": "carpintería y pantallas de TV",
+    "dato_curioso": "El sistema imperial se basa en medidas del cuerpo humano; una pulgada era originalmente el ancho del pulgar de un rey."
+  }
+]

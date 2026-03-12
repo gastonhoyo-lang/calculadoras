@@ -1588,4 +1588,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "indigo-600",
   keywords: "beneficio por unidad, margen unitario, escandallo de costes, rentabilidad producto, calcular margen ventas, markup vs margen"
 },
+{
+  titulo: "Conversor de Millas a Kilómetros",
+  descripcion: "Convierte distancias de millas terrestres a km con alta precisión. Incluye tablas de referencia y fórmulas.",
+  link: "/utiles/millas-a-km",
+  categoria: "utiles",
+  icon: "🚗",
+  color: "blue-600",
+  keywords: "millas a km, conversor millas, mi a km, distancia millas, millas terrestres a km, formula millas a kilometros"
+},
 ];

@@ -1,0 +1,51 @@
+---
+const { info } = Astro.props;
+
+// Generador de variaciones para evitar duplicados
+const intros = [
+  `¿Necesitas saber cuánto es ${info.h1}? Has llegado al lugar indicado.`,
+  `Convertir de ${info.unidad_origen} a ${info.unidad_destino} es una tarea común en el mundo de ${info.contexto}.`,
+  `Si estás trabajando en un proyecto que requiere precisión en ${info.tipo}, entender la relación entre ${info.unidad_origen} y ${info.unidad_destino} es fundamental.`,
+];
+
+const introAleatoria = intros[Math.floor(Math.random() * intros.length)];
+---
+
+<article class="prose prose-slate max-w-none pt-16 border-t border-slate-200">
+  <h2 class="text-3xl font-black text-slate-900">{introAleatoria}</h2>
+
+  <p>
+    La relación técnica es sencilla: <strong
+      >1 {info.unidad_origen} equivale exactamente a {info.valor}
+      {info.unidad_destino}</strong
+    >. Esta equivalencia es el estándar internacional utilizado en industrias
+    que van desde la {info.tipo} hasta el diseño industrial.
+  </p>
+
+  <div class="bg-blue-50 p-8 rounded-3xl my-10 border border-blue-100 italic">
+    <strong>¿Sabías que?</strong>
+    {info.dato_curioso}
+  </div>
+
+  <h3 class="text-2xl font-bold">Cómo realizar el cálculo manualmente</h3>
+  <p>
+    Para obtener el resultado sin usar nuestra calculadora, simplemente debes
+    aplicar la siguiente operación matemática:
+  </p>
+  <div
+    class="bg-slate-900 text-white p-6 rounded-2xl text-center text-xl font-mono"
+  >
+    {info.unidad_destino} = {info.unidad_origen} × {info.valor}
+  </div>
+
+  <h3 class="text-2xl font-bold mt-10">
+    Aplicaciones prácticas en {info.contexto}
+  </h3>
+  <p>
+    En el día a día, nos encontramos con esta necesidad de conversión
+    frecuentemente. Por ejemplo, si estás midiendo {info.contexto}, es muy
+    probable que las herramientas utilicen el sistema métrico mientras que los
+    planos sigan el sistema imperial. Nuestra herramienta dinámica permite que
+    no pierdas tiempo con la calculadora manual.
+  </p>
+</article>
