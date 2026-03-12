@@ -4917,4 +4917,92 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de IVA", "link": "/finanzas/iva" }
     ]
   },
+  "calculadora-margen-bruto": {
+    "faqs": [
+      {
+        "q": "¿Qué es el margen bruto?",
+        "a": "Es el porcentaje de ingresos que queda tras descontar los costos directos de producción o adquisición de un producto."
+      },
+      {
+        "q": "¿Cómo se diferencia del margen neto?",
+        "a": "El margen bruto solo resta los costos directos (materiales, mano de obra), mientras que el neto resta todos los gastos (impuestos, luz, alquiler, etc.)."
+      },
+      {
+        "q": "¿Por qué es importante tener un margen bruto alto?",
+        "a": "Porque un margen alto permite absorber con mayor facilidad los gastos fijos del negocio y protege a la empresa ante subidas inesperadas de costos de proveedores."
+      },
+      {
+        "q": "¿Qué costos se incluyen en el COGS?",
+        "a": "Se incluyen materias primas, fletes de entrada, empaques directos y mano de obra que trabaje directamente en el producto."
+      },
+      {
+        "q": "¿Puede un margen bruto ser negativo?",
+        "a": "Sí, ocurre cuando el costo de fabricar o comprar un producto es mayor al precio al que se vende. Es una situación insostenible que requiere cambios urgentes."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Markup", "link": "/utiles/calculadora-de-markup" },
+      { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" }
+    ]
+  },
+  "calculadora-margen-neto": {
+    "faqs": [
+      {
+        "q": "¿Qué es un buen margen neto para una pequeña empresa?",
+        "a": "Generalmente, un margen neto del 10% se considera promedio, un 20% es muy bueno y un 5% es ajustado. Sin embargo, varía drásticamente según la industria."
+      },
+      {
+        "q": "¿Cómo se diferencia el margen neto del margen bruto?",
+        "a": "El margen bruto solo resta los costos de producción. El margen neto resta absolutamente todos los costos, incluyendo administración, marketing, intereses e impuestos."
+      },
+      {
+        "q": "¿Qué pasa si mi margen neto es negativo?",
+        "a": "Significa que la empresa está operando con pérdidas. Los ingresos no son suficientes para cubrir la estructura de costos y la empresa está consumiendo su capital."
+      },
+      {
+        "q": "¿Por qué el margen neto es importante para los inversores?",
+        "a": "Porque muestra la capacidad real de la empresa para generar dividendos y su eficiencia para gestionar los gastos por encima del crecimiento de las ventas."
+      },
+      {
+        "q": "¿Cómo puedo aumentar mi margen neto?",
+        "a": "Puedes aumentar los precios, reducir los costos de ventas, recortar gastos operativos innecesarios o mejorar la eficiencia fiscal del negocio."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen Bruto", "link": "/utiles/calculadora-margen-bruto" },
+      { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" },
+      { "nombre": "Calculadora de Rentabilidad de Negocio", "link": "/utiles/calculadora-rentabilidad-negocio" }
+    ]
+  },
+  "calculadora-costos-fijos-variables": {
+    "faqs": [
+      {
+        "q": "¿Qué pasa si mis costos fijos son muy altos?",
+        "a": "Tendrás un punto de equilibrio elevado, lo que significa que necesitas vender mucho solo para no perder dinero. Es una estructura riesgosa para negocios nuevos."
+      },
+      {
+        "q": "¿Los salarios son siempre costos fijos?",
+        "a": "No. El personal administrativo suele ser costo fijo, pero el personal contratado por horas de producción o por comisión de ventas se considera costo variable."
+      },
+      {
+        "q": "¿Cómo puedo reducir el costo unitario de mi producto?",
+        "a": "Aumentando el volumen de producción. Al producir más, los costos fijos (como el alquiler) se dividen entre más unidades, bajando el costo promedio por unidad."
+      },
+      {
+        "q": "¿Qué es un costo semi-variable?",
+        "a": "Es un gasto que tiene una base fija pero aumenta según el consumo, como la factura de luz en una fábrica o el mantenimiento de vehículos."
+      },
+      {
+        "q": "¿Por qué es importante separar estos costos para poner precios?",
+        "a": "Porque te permite saber cuál es el precio mínimo (piso) que debes cobrar para cubrir los materiales y cuánto debes añadir para pagar la estructura del negocio."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" },
+      { "nombre": "Calculadora de Margen Bruto", "link": "/utiles/margen-bruto" },
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" }
+    ]
+  },
+
 };

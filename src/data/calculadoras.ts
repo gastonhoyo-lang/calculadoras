@@ -1489,4 +1489,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "orange-600",
   keywords: "markup, calculadora de precios, rentabilidad, retail, costo de producto, margen de ganancia, fijacion de precios"
 },
+{
+  titulo: "Calculadora de Margen Bruto",
+  descripcion: "Descubre la rentabilidad directa de tus productos o servicios analizando la relación entre ventas y costos de producción.",
+  link: "/utiles/calculadora-margen-bruto",
+  categoria: "utiles",
+  icon: "📊",
+  color: "cyan-600",
+  keywords: "margen bruto, utilidad bruta, rentabilidad comercial, calcular margen, COGS, costos de ventas, finanzas retail"
+},
 ];
