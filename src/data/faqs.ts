@@ -4672,5 +4672,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Contador de Días para Navidad", "link": "/utiles/contador-dias-navidad" },
       { "nombre": "Calculadora de Edad Exacta", "link": "/varios/edad" }
     ]
-  }
+  },
+  "contador-de-caracteres": {
+    "faqs": [
+      {
+        "q": "¿Cómo cuenta los caracteres esta herramienta?",
+        "a": "La herramienta cuenta absolutamente todos los caracteres, incluyendo espacios, signos de puntuación y saltos de línea de manera instantánea mientras escribes."
+      },
+      {
+        "q": "¿Cuál es el límite de palabras para un artículo SEO?",
+        "a": "No hay un límite estricto, pero se recomienda que los artículos informativos tengan al menos entre 800 y 1200 palabras para cubrir el tema en profundidad."
+      },
+      {
+        "q": "¿Los espacios cuentan como caracteres?",
+        "a": "Sí, en la mayoría de las plataformas (X, Google, Meta) los espacios se contabilizan como un carácter más dentro del límite permitido."
+      },
+      {
+        "q": "¿Cómo puedo reducir el conteo de palabras sin perder calidad?",
+        "a": "Elimina adjetivos innecesarios, evita la voz pasiva y busca redundancias. Un texto conciso suele ser mucho más potente y legible."
+      },
+      {
+        "q": "¿Cuántos caracteres permite una meta descripción?",
+        "a": "Para que no se corte en los resultados de Google, lo ideal es que tu meta descripción tenga entre 150 y 160 caracteres."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Contador de Frases", "link": "/seo/contador-frases" },
+      { "nombre": "Contador de Palabras Únicas", "link": "/utiles/contador-de-palabras-unicas" },
+      { "nombre": "Generador de Contraseñas", "link": "/utiles/generador-contrasenas" }
+    ]
+  },
 };

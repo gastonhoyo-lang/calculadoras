@@ -1409,4 +1409,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "purple-600",
   keywords: "dias para mi cumple, cuanto falta para mi cumpleaños, contador de cumpleaños, cuenta regresiva cumpleaños, proxima edad"
 },
+{
+  titulo: "Contador de Caracteres y Palabras",
+  descripcion: "Analizá la extensión de tu texto en tiempo real. Obtené conteo de caracteres, palabras, párrafos y tiempo estimado de lectura.",
+  link: "/utiles/contador-de-caracteres",
+  categoria: "utiles",
+  icon: "✍️",
+  color: "violet-600",
+  keywords: "contador de caracteres, contador de palabras, contar caracteres online, herramienta de redaccion, limites redes sociales, tiempo de lectura"
+}
 ];
