@@ -1427,4 +1427,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "blue-600",
   keywords: "diferencia entre fechas, contar dias entre fechas, tiempo transcurrido, calculadora de tiempo, años meses y dias, antiguedad laboral"
 },
+{
+  titulo: "Calculadora de Desviación Estándar",
+  descripcion: "Calcula la desviación estándar poblacional y muestral, varianza y media de cualquier conjunto de datos de forma rápida.",
+  link: "/utiles/calculadora-desviacion-estandar",
+  categoria: "utiles",
+  icon: "📉",
+  color: "indigo-600",
+  keywords: "desviacion estandar, calcular varianza, dispersion estadistica, desviacion muestral, desviacion poblacional, estadistica descriptiva"
+},
 ];

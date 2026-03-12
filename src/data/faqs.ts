@@ -3259,7 +3259,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     "relacionados": [
       { "nombre": "Calculadora de IMC", "link": "/salud/imc" },
       { "nombre": "Desviación Estándar", "link": "/utiles/desviacion-estandar" },
-      { "nombre": "Calculadora de Mediana", "link": "/utiles/mediana" }
+      { "nombre": "Calculadora de Mediana", "link": "/matematica/promedio-mediana-moda" }
     ]
 },
 "desviacion-media": {
@@ -4721,5 +4721,35 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Contador de Días", "link": "/utiles/contador-de-dias" },
       { "nombre": "Calculadora de Aguinaldo", "link": "/finanzas/aguinaldo" }
     ]
-  }
+  },
+  "calculadora-desviacion-estandar": {
+    "faqs": [
+      {
+        "q": "¿Qué indica una desviación estándar de cero?",
+        "a": "Indica que todos los valores del conjunto de datos son idénticos. No hay ninguna dispersión ni variabilidad respecto a la media."
+      },
+      {
+        "q": "¿Cuándo usar la desviación estándar muestral en lugar de la poblacional?",
+        "a": "Usa la muestral cuando tus datos representan solo una parte de un grupo mayor. Si tienes los datos de todo el universo de estudio, usa la poblacional."
+      },
+      {
+        "q": "¿Cómo afecta un valor atípico (outlier) a la desviación?",
+        "a": "Los valores atípicos incrementan significativamente la desviación estándar, ya que al elevar al cuadrado las diferencias respecto a la media, los valores lejanos tienen mucho peso."
+      },
+      {
+        "q": "¿Qué relación tiene con la varianza?",
+        "a": "La desviación estándar es simplemente la raíz cuadrada de la varianza. La varianza se expresa en unidades al cuadrado, mientras que la desviación vuelve a la unidad original."
+      },
+      {
+        "q": "¿Qué es la regla 68-95-99.7?",
+        "a": "En una distribución normal, indica que el 68% de los datos caen dentro de 1 desviación estándar de la media, el 95% dentro de 2, y el 99.7% dentro de 3."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Percentil", "link": "/utiles/calculadora-de-percentil" },
+      { "nombre": "Calculadora de Mediana", "link": "/utiles/mediana" },
+      { "nombre": "Calculadora de Probabilidades", "link": "/utiles/probabilidad" }
+    ]
+  },
+
 };
