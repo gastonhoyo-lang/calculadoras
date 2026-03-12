@@ -2111,23 +2111,36 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Logaritmos", link: "/matematica/logaritmos" },
       { nombre: "MCM y MCD", link: "/matematica/mcm-mcd" }
     ]
-  },
+    },
   "calculadora-binomial": {
-    faqs: [
+    "faqs": [
       {
-        q: "¿Qué es la distribución binomial?",
-        a: "Es una distribución de probabilidad que describe el número de éxitos al realizar n experimentos independientes entre sí, con una probabilidad fija de éxito p."
+        "q": "¿Qué es un experimento binomial?",
+        "a": "Es un proceso estadístico que consiste en n ensayos independientes, donde cada uno tiene solo dos resultados posibles (éxito o fracaso) y la probabilidad de éxito es constante."
       },
       {
-        q: "¿Cuáles son los requisitos para usarla?",
-        a: "Solo debe haber dos resultados posibles (éxito/fracaso), los experimentos deben ser independientes y la probabilidad de éxito debe ser constante en cada prueba."
+        "q": "¿Cómo se calcula la probabilidad binomial exacta?",
+        "a": "Se utiliza la fórmula P(X=k) = C(n,k) * p^k * (1-p)^(n-k), donde C(n,k) es el número de combinaciones de n en k."
+      },
+      {
+        "q": "¿Cuándo se usa la distribución binomial?",
+        "a": "Se usa cuando quieres saber la probabilidad de que ocurra un evento un número específico de veces dentro de un total de intentos, como el número de productos defectuosos en un lote."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre distribución binomial y de Poisson?",
+        "a": "La binomial cuenta éxitos en ensayos fijos con probabilidad constante. La de Poisson mide el número de eventos en un intervalo continuo de tiempo o espacio."
+      },
+      {
+        "q": "¿Qué representa el valor esperado en una distribución binomial?",
+        "a": "Representa el promedio de éxitos que esperarías obtener si repitieras el experimento muchas veces. Se calcula simplemente multiplicando n por p."
       }
     ],
-    relacionados: [
-      { nombre: "Varianza y Desviación", link: "/matematica/varianza-desviacion-estandar" },
-      { nombre: "Promedio, Mediana y Moda", link: "/matematica/promedio-mediana-moda" }
+    "relacionados": [
+      { "nombre": "Calculadora de Desviación Estándar", "link": "/utiles/calculadora-desviacion-estandar" },
+      { "nombre": "Calculadora de Proporciones", "link": "/utiles/calculadora-de-proporciones" },
+      { "nombre": "Calculadora de Percentil", "link": "/utiles/calculadora-de-percentil" }
     ]
-  },
+},
   "combinaciones-permutaciones": {
     faqs: [
       {

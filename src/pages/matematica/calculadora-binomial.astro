@@ -2,195 +2,341 @@
 import Layout from "../../layouts/Layout.astro";
 import InputField from "/src/components/InputField.astro";
 import ResultBox from "../../components/ResultBox.astro";
+// Blindaje de símbolos para evitar errores de compilación en Astro {n is not defined}
+const sN = "n";
+const sK = "k";
+const sP = "p";
+const sQ = "q";
+const sX = "X";
+
+// Fórmulas LaTeX
+const fFormulaBinomial = "$$ P(X = k) = \\binom{n}{k} p^k q^{n-k} $$";
+const fCombinaciones = "$$ \\binom{n}{k} = \\frac{n!}{k!(n-k)!} $$";
 ---
 
-<Layout title="Calculadora de Probabilidad Binomial | Paso a Paso">
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <div class="text-center mb-10">
-      <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
-        Calculadora de Probabilidad Binomial
+<Layout
+  title="Calculadora de Probabilidad Binomial Online | Paso a Paso"
+  description="Calcula la probabilidad binomial de un evento. Halla la probabilidad exacta de obtener k éxitos en n ensayos con nuestra herramienta estadística."
+>
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight"
+      >
+        Probabilidad <span class="text-rose-600">Binomial</span> 🎲
       </h1>
-      <p class="text-slate-600 max-w-2xl mx-auto">
-        Calculá la probabilidad de obtener un número exacto de éxitos en una
-        serie de experimentos independientes con solo dos resultados posibles.
+      <p
+        class="text-slate-500 text-lg font-medium max-w-2xl mx-auto text-balance"
+      >
+        Calculá la probabilidad exacta de éxito en experimentos de múltiples
+        ensayos independientes.
       </p>
-    </div>
+    </header>
 
-    <div
-      class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 max-w-md mx-auto mb-16"
+    <section
+      class="bg-white p-6 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl max-w-4xl mx-auto mb-20"
     >
-      <div class="space-y-4 mb-6">
-        <div>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="space-y-3">
           <label
-            class="block text-xs font-bold uppercase text-slate-500 mb-1 ml-1"
-            >Ensayos (n)</label
+            for="inputNBin"
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
+            >Ensayos ({sN})</label
           >
           <input
             type="number"
-            id="n"
-            class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+            id="inputNBin"
             placeholder="Ej: 10"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-rose-500 outline-none transition-all shadow-inner font-bold"
           />
         </div>
-        <div>
+        <div class="space-y-3">
           <label
-            class="block text-xs font-bold uppercase text-slate-500 mb-1 ml-1"
-            >Éxitos (k)</label
+            for="inputKBin"
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
+            >Éxitos ({sK})</label
           >
           <input
             type="number"
-            id="k"
-            class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+            id="inputKBin"
             placeholder="Ej: 3"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-rose-500 outline-none transition-all shadow-inner font-bold"
           />
         </div>
-        <div>
+        <div class="space-y-3">
           <label
-            class="block text-xs font-bold uppercase text-slate-500 mb-1 ml-1"
-            >Probabilidad de éxito (p)</label
+            for="inputPBin"
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
+            >Probabilidad ({sP})</label
           >
           <input
             type="number"
             step="0.01"
-            id="p"
-            class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+            id="inputPBin"
             placeholder="Ej: 0.5"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-rose-500 outline-none transition-all shadow-inner font-bold"
           />
         </div>
       </div>
 
       <button
-        id="go"
-        class="w-full py-4 bg-blue-600 text-white font-black rounded-2xl hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95 uppercase tracking-wider"
+        id="btnCalcularBinomial"
+        class="w-full bg-slate-900 text-white p-6 rounded-[2rem] font-bold hover:bg-rose-600 transition-all shadow-lg active:scale-95 text-xl"
       >
-        Calcular ahora
+        Calcular Probabilidad
       </button>
 
       <div
-        id="out"
-        class="mt-8 text-center hidden animate-in fade-in zoom-in duration-300"
+        id="boxResultadoBinomial"
+        class="hidden mt-10 space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500"
       >
-        <span class="text-xs font-bold text-blue-400 uppercase tracking-widest"
-          >Resultado</span
+        <div
+          class="bg-rose-50 p-10 rounded-[2.5rem] border border-rose-100 text-center"
         >
-        <div id="res-val" class="text-5xl font-black text-blue-700 mt-1"></div>
-      </div>
-    </div>
-
-    <section
-      class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        <div>
-          <h2 class="text-2xl font-black text-slate-900 mb-4 italic">
-            ¿Qué es la distribución binomial?
-          </h2>
-          <p class="mb-4">
-            Es una distribución de probabilidad que cuenta el número de éxitos
-            en una secuencia de <strong>n</strong> ensayos independientes entre sí,
-            con una probabilidad fija <strong>p</strong> de ocurrencia del éxito.
-          </p>
-          <p
-            class="text-sm bg-blue-50 p-4 rounded-xl border border-blue-100 text-blue-800"
+          <span
+            class="block text-xs font-bold text-rose-400 uppercase mb-2 tracking-widest"
+            >P({sX} = {sK})</span
           >
-            <strong>Dato:</strong> Solo se puede aplicar cuando existen dos resultados
-            únicos (éxito/fracaso, cara/seca, pasa/no pasa).
-          </p>
-        </div>
-
-        <div class="bg-slate-50 p-6 rounded-[2rem] border border-slate-200">
-          <h2 class="text-xl font-black text-slate-900 mb-4">La Fórmula</h2>
-
-          [Image of binomial probability distribution formula]
-
-          <div class="text-center py-4">
-            <p class="text-lg font-serif italic text-slate-800">
-              P(X = k) = (n! / (k!(n-k)!)) * p<sup>k</sup> * (1-p)<sup>n-k</sup>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="text-2xl font-black text-slate-900 mt-16 mb-6">
-        Ejemplos Prácticos
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-          <div
-            class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold mb-4 text-xl"
+          <span
+            id="resValorBinomial"
+            class="block text-6xl font-black text-rose-700">0%</span
           >
-            1
-          </div>
-          <h3 class="text-lg font-bold mb-2">Lanzamiento de Monedas</h3>
-          <p class="text-sm">
-            Si lanzamos una moneda <strong>10 veces</strong>, ¿qué probabilidad
-            hay de sacar exactamente <strong>5 caras</strong>?
-          </p>
-          <p class="text-xs mt-3 text-slate-500 font-mono">
-            n=10, k=5, p=0.5 → Resultado: 24.61%
-          </p>
         </div>
-
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-          <div
-            class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold mb-4 text-xl"
-          >
-            2
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-slate-50 p-6 rounded-3xl text-center">
+            <span
+              id="resCombinaciones"
+              class="block text-xl font-bold text-slate-800">0</span
+            >
+            <span
+              class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+              >Combinaciones</span
+            >
           </div>
-          <h3 class="text-lg font-bold mb-2">Control de Calidad</h3>
-          <p class="text-sm">
-            En una fábrica el <strong>2%</strong> de las piezas son defectuosas. Si
-            tomamos <strong>50 piezas</strong>, ¿cuál es la probabilidad de que <strong
-              >2</strong
-            > sean falladas?
-          </p>
-          <p class="text-xs mt-3 text-slate-500 font-mono">
-            n=50, k=2, p=0.02 → Resultado: 18.58%
-          </p>
+          <div class="bg-slate-50 p-6 rounded-3xl text-center">
+            <span
+              id="resMediaBin"
+              class="block text-xl font-bold text-slate-800">0</span
+            >
+            <span
+              class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+              >Valor Esperado</span
+            >
+          </div>
         </div>
       </div>
     </section>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700 font-light leading-relaxed"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
+        ¿Qué es la Probabilidad Binomial?
+      </h2>
+
+      <p class="mb-6">
+        La <strong>distribución de probabilidad binomial</strong> es un modelo estadístico
+        que describe el número de éxitos al realizar una serie de experimentos independientes
+        entre sí, donde cada experimento tiene exactamente dos resultados posibles:
+        éxito o fracaso.
+      </p>
+
+      <p class="mb-6">
+        Este concepto es fundamental en campos tan diversos como el control de
+        calidad industrial, la genética, el marketing digital (tests A/B) y las
+        finanzas. Para que un fenómeno pueda ser analizado mediante una
+        calculadora binomial, debe cumplir con cuatro condiciones: el número de
+        ensayos es fijo, cada ensayo es independiente, solo hay dos resultados
+        posibles y la probabilidad de éxito es constante en cada ensayo.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        La Fórmula Matemática
+      </h3>
+      <p class="mb-6">
+        Para hallar la probabilidad de obtener exactamente {sK} éxitos en {sN} intentos,
+        utilizamos la siguiente expresión:
+      </p>
+
+      <div
+        class="bg-slate-50 p-8 rounded-3xl mb-10 border border-slate-100 text-center"
+      >
+        {fFormulaBinomial}
+      </div>
+
+      <p class="mb-6">Donde las variables se definen como:</p>
+      <ul class="list-disc pl-6 mb-8 space-y-2">
+        <li><strong>{sN}:</strong> Número total de ensayos o experimentos.</li>
+        <li><strong>{sK}:</strong> Número de éxitos deseados.</li>
+        <li>
+          <strong>{sP}:</strong> Probabilidad de éxito en un solo ensayo (expresada
+          de 0 a 1).
+        </li>
+        <li>
+          <strong>{sQ}:</strong> Probabilidad de fracaso, calculada como 1 - {
+            sP
+          }.
+        </li>
+      </ul>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        El Coeficiente Binomial
+      </h3>
+      <p class="mb-6">
+        La parte inicial de la fórmula representa las combinaciones posibles de {
+          sN
+        } elementos tomados de {sK} en {sK}. Esto nos dice de cuántas formas
+        distintas pueden ocurrir esos éxitos dentro de la secuencia de ensayos:
+      </p>
+
+      <div
+        class="bg-slate-50 p-8 rounded-3xl mb-10 border border-slate-100 text-center"
+      >
+        {fCombinaciones}
+      </div>
+
+      <h2 class="text-3xl font-black text-slate-900 mb-8">
+        Ejemplos Prácticos Paso a Paso
+      </h2>
+
+      <div class="space-y-8 mb-16">
+        <div
+          class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 shadow-sm"
+        >
+          <h4 class="text-xl font-bold text-rose-700 mb-4">
+            Ejemplo 1: Lanzamiento de Monedas
+          </h4>
+          <p class="mb-4 text-sm">
+            Si lanzas una moneda equilibrada ({sP} = 0.5) 10 veces, ¿cuál es la probabilidad
+            de obtener exactamente 5 caras?
+          </p>
+          <p
+            class="font-mono text-sm bg-white p-4 rounded-xl border border-slate-200"
+          >
+            {sN} = 10, {sK} = 5, {sP} = 0.5 <br />
+            Resultado: ~24.61%.
+          </p>
+        </div>
+
+        <div
+          class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 shadow-sm"
+        >
+          <h4 class="text-xl font-bold text-rose-700 mb-4">
+            Ejemplo 2: Control de Calidad
+          </h4>
+          <p class="mb-4 text-sm">
+            Una fábrica produce componentes con un 2% de defectos ({sP} = 0.02). En
+            un lote de 50 componentes, ¿qué probabilidad hay de encontrar exactamente
+            1 defectuoso?
+          </p>
+          <p
+            class="font-mono text-sm bg-white p-4 rounded-xl border border-slate-200"
+          >
+            {sN} = 50, {sK} = 1, {sP} = 0.02 <br />
+            Resultado: ~37.16%.
+          </p>
+        </div>
+
+        <div
+          class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 shadow-sm"
+        >
+          <h4 class="text-xl font-bold text-rose-700 mb-4">
+            Ejemplo 3: Baloncesto
+          </h4>
+          <p class="mb-4 text-sm">
+            Un jugador tiene una efectividad del 80% en tiros libres. Si tira 5
+            veces, ¿cuál es la probabilidad de que enceste los 5?
+          </p>
+          <p
+            class="font-mono text-sm bg-white p-4 rounded-xl border border-slate-200"
+          >
+            {sN} = 5, {sK} = 5, {sP} = 0.8 <br />
+            Resultado: ~32.77%.
+          </p>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Diferencia entre Probabilidad Exacta y Acumulada
+      </h3>
+      <p class="mb-6">
+        Es importante distinguir entre la probabilidad de obtener <strong
+          >exactamente</strong
+        >
+        {sK} éxitos y la probabilidad de obtener <strong>al menos</strong>
+        {sK} éxitos. Esta calculadora se enfoca en el valor puntual. La probabilidad
+        acumulada requiere sumar los resultados binomiales para todos los valores
+        desde 0 hasta {sK}, o desde {sK} hasta {sN}.
+      </p>
+
+      <footer
+        class="bg-slate-900 text-white p-12 rounded-[3rem] text-center italic mt-12 shadow-2xl"
+      >
+        <p class="text-rose-400 font-bold mb-2">Consejo Estadístico:</p>
+        <p class="text-sm text-slate-400">
+          Cuando el número de ensayos ({sN}) es muy grande y la probabilidad ({
+            sP
+          }) es muy pequeña, la distribución binomial se puede aproximar a una
+          distribución de Poisson para facilitar los cálculos manuales.
+        </p>
+      </footer>
+    </article>
   </main>
+
+  <script>
+    const setupBinomial = () => {
+      const inputN = document.getElementById("inputNBin") as HTMLInputElement;
+      const inputK = document.getElementById("inputKBin") as HTMLInputElement;
+      const inputP = document.getElementById("inputPBin") as HTMLInputElement;
+      const btn = document.getElementById("btnCalcularBinomial");
+      const box = document.getElementById("boxResultadoBinomial");
+
+      const resVal = document.getElementById("resValorBinomial");
+      const resComb = document.getElementById("resCombinaciones");
+      const resMed = document.getElementById("resMediaBin");
+
+      const factorial = (num: number): number => {
+        if (num < 0) return 0;
+        if (num === 0) return 1;
+        let res = 1;
+        for (let i = 1; i <= num; i++) res *= i;
+        return res;
+      };
+
+      const combinaciones = (n: number, k: number): number => {
+        if (k < 0 || k > n) return 0;
+        return factorial(n) / (factorial(k) * factorial(n - k));
+      };
+
+      btn?.addEventListener("click", () => {
+        const n = parseInt(inputN.value);
+        const k = parseInt(inputK.value);
+        const p = parseFloat(inputP.value);
+
+        if (
+          isNaN(n) ||
+          isNaN(k) ||
+          isNaN(p) ||
+          p < 0 ||
+          p > 1 ||
+          k > n ||
+          k < 0
+        ) {
+          alert("Por favor verifica los datos: 0 ≤ p ≤ 1 y 0 ≤ k ≤ n.");
+          return;
+        }
+
+        const comb = combinaciones(n, k);
+        const prob = comb * Math.pow(p, k) * Math.pow(1 - p, n - k);
+        const media = n * p;
+
+        if (resVal) resVal.innerText = (prob * 100).toFixed(4) + "%";
+        if (resComb) resComb.innerText = comb.toLocaleString();
+        if (resMed) resMed.innerText = media.toFixed(2);
+
+        box?.classList.remove("hidden");
+      });
+    };
+    setupBinomial();
+  </script>
 </Layout>
-
-<script>
-  // CÓDIGO LOCAL ENCAPSULADO
-  const f = (n: number): number => (n <= 1 ? 1 : n * f(n - 1));
-
-  const btn = document.getElementById("go");
-  const outDiv = document.getElementById("out");
-  const resVal = document.getElementById("res-val");
-
-  btn?.addEventListener("click", () => {
-    const n = Number((document.getElementById("n") as HTMLInputElement).value);
-    const k = Number((document.getElementById("k") as HTMLInputElement).value);
-    const p = Number((document.getElementById("p") as HTMLInputElement).value);
-
-    // Validaciones
-    if (!n || isNaN(k) || isNaN(p)) {
-      alert("Por favor completá todos los campos.");
-      return;
-    }
-    if (k > n) {
-      alert("El número de éxitos (k) no puede ser mayor que los ensayos (n).");
-      return;
-    }
-    if (p < 0 || p > 1) {
-      alert("La probabilidad (p) debe estar entre 0 y 1 (ej: 0.5).");
-      return;
-    }
-
-    // Cálculo nCr * p^k * (1-p)^(n-k)
-    const nCr = f(n) / (f(k) * f(n - k));
-    const res = nCr * Math.pow(p, k) * Math.pow(1 - p, n - k);
-
-    if (outDiv && resVal) {
-      outDiv.classList.remove("hidden");
-      resVal.innerText = `${(res * 100).toFixed(2)}%`;
-
-      // Scroll suave al resultado en móviles
-      window.scrollTo({ top: outDiv.offsetTop + 200, behavior: "smooth" });
-    }
-  });
-</script>

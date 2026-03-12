@@ -597,8 +597,7 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   categoria: "matematica",
   icon: "🎲",
   color: "blue",
-  keywords: "probabilidad, binomial, estadistica, exito, fracaso, ncr"
-},
+  keywords: "probabilidad binomial, calculadora estadistica, distribucion binomial, formula binomial, exitos y fracasos, estadistica paso a paso"},
 {
     titulo: "Combinaciones y Permutaciones",
     descripcion: "Calculá nCr y nPr para conjuntos de elementos. Aprendé la diferencia cuando el orden importa.",
