@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import unidades from "../../data/unidades.json";
 
 export async function getStaticPaths() {
+  console.log(`🚀 Intentando generar ${unidades.length} páginas...`);
   return unidades.map((u) => ({
     params: { slug: u.slug },
     props: { info: u },

@@ -3901,35 +3901,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Regla de 3 Simple", link: "/matematica/regla-de-tres" }
   ]
 },
-"millas-a-km": {
-  "faqs": [
-    {
-      "q": "¿A cuántos kilómetros equivale exactamente una milla?",
-      "a": "Una milla terrestre equivale a exactamente 1,609344 kilómetros. Para cálculos rápidos, se suele redondear a 1,61 km."
-    },
-    {
-      "q": "¿Cómo convertir millas a km mentalmente?",
-      "a": "Una forma fácil es multiplicar por 1.6. Si quieres más precisión, sumá la mitad del valor original más un 10% adicional (Ej: 10mi -> 5 + 1 = 16km)."
-    },
-    {
-      "q": "¿Qué países siguen utilizando las millas para la distancia?",
-      "a": "Principalmente Estados Unidos, el Reino Unido, Liberia y Myanmar. En el resto del mundo predomina el sistema métrico (kilómetros)."
-    },
-    {
-      "q": "¿Cuál es la diferencia entre milla terrestre y náutica?",
-      "a": "La milla terrestre mide 1.609 metros, mientras que la milla náutica (usada en navegación y aviación) es más larga, midiendo exactamente 1.852 metros."
-    },
-    {
-      "q": "¿A cuánto equivalen 60 mph en kilómetros por hora?",
-      "a": "60 millas por hora equivalen aproximadamente a 96,56 km/h, un límite de velocidad estándar en muchas autopistas estadounidenses."
-    }
-  ],
-  "relacionados": [
-    { "nombre": "Kilómetros a Millas", "link": "/unidades/km-a-millas" },
-    { "nombre": "Pies a Metros", "link": "/unidades/pies-a-metros" },
-    { "nombre": "Consumo de Combustible", "link": "/transporte/consumo-combustible" }
-  ]
-},
 "miles-to-km": {
   "faqs": [
     {
@@ -5265,4 +5236,33 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de Retorno Publicitario (ROAS)", "link": "/utiles/calculadora-roas" }
     ]
   },
+  "millas-a-km": {
+    "faqs": [
+      {
+        "q": "¿Cuántos kilómetros hay en una milla?",
+        "a": "Exactamente hay 1.609344 kilómetros en una milla terrestre internacional."
+      },
+      {
+        "q": "¿Cómo pasar de millas a km rápidamente?",
+        "a": "Para un cálculo mental rápido, multiplica las millas por 1.6. Por ejemplo, 10 millas son aproximadamente 16 km."
+      },
+      {
+        "q": "¿Es lo mismo una milla que una milla náutica?",
+        "a": "No. La milla terrestre mide 1.609 km, mientras que la milla náutica mide 1.852 km."
+      },
+      {
+        "q": "¿Qué significa mph?",
+        "a": "Significa 'miles per hour' (millas por hora), y es la unidad de medida de velocidad usada en países como Estados Unidos y Reino Unido."
+      },
+      {
+        "q": "¿Cuántas millas tiene un maratón?",
+        "a": "Un maratón oficial de 42.195 km equivale aproximadamente a 26.2 millas."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Conversor de Pulgadas a CM", "link": "/utiles/pulgadas-a-cm" },
+      { "nombre": "Calculadora de Velocidad Media", "link": "/utiles/velocidad-media" },
+      { "nombre": "Conversor de Libras a Kilos", "link": "/utiles/libras-a-kilos" }
+    ]
+},
 };
