@@ -1569,5 +1569,23 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   icon: "📈",
   color: "indigo-600",
   keywords: "crecimiento de ventas, tasa de crecimiento, KPI ventas, calcular incremento ingresos, facturación anual, crecimiento MoM YoY"
-}
+},
+{
+  titulo: "Calculadora de ROAS",
+  descripcion: "Mide la eficacia de tus campañas publicitarias calculando el retorno por cada dólar invertido en anuncios.",
+  link: "/utiles/calculadora-roas",
+  categoria: "utiles",
+  icon: "🎯",
+  color: "indigo-600",
+  keywords: "ROAS, retorno inversión publicitaria, marketing digital kpis, calcular rendimiento anuncios, facebook ads roas, google ads kpi"
+},
+{
+  titulo: "Calculadora de Beneficio por Unidad",
+  descripcion: "Calcula la ganancia neta y el margen porcentual que obtienes por cada producto vendido tras descontar costes variables.",
+  link: "/utiles/calculadora-beneficio-unidad",
+  categoria: "utiles",
+  icon: "📦",
+  color: "indigo-600",
+  keywords: "beneficio por unidad, margen unitario, escandallo de costes, rentabilidad producto, calcular margen ventas, markup vs margen"
+},
 ];

@@ -5207,4 +5207,62 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de Interés Compuesto", "link": "/finanzas/interes-compuesto" }
     ]
   },
+  "calculadora-roas": {
+    "faqs": [
+      {
+        "q": "¿Qué es un buen ROAS en publicidad digital?",
+        "a": "Generalmente, un ROAS de 4:1 (4€ por cada 1€ invertido) se considera el estándar de éxito. Sin embargo, si tus márgenes son altos, un 2:1 podría ser rentable, mientras que con márgenes bajos podrías necesitar un 10:1."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre ROAS y ROI?",
+        "a": "El ROAS mide solo los ingresos brutos frente al gasto publicitario directo. El ROI descuenta todos los costes del negocio (producto, salarios, impuestos) para mostrar el beneficio neto real."
+      },
+      {
+        "q": "¿Cómo puedo mejorar mi ROAS sin gastar más dinero?",
+        "a": "Debes enfocarte en la tasa de conversión de tu web, optimizar la calidad de tus anuncios para bajar el CPC y realizar campañas de retargeting para usuarios con alta intención de compra."
+      },
+      {
+        "q": "¿Qué significa un ROAS de 1?",
+        "a": "Significa que estás recuperando exactamente lo que inviertes en anuncios. A nivel operativo esto suele ser una pérdida, ya que no estás cubriendo el coste del producto vendido ni otros gastos operativos."
+      },
+      {
+        "q": "¿Influye la ventana de atribución en el cálculo del ROAS?",
+        "a": "Sí, plataformas como Meta Ads pueden atribuir ventas hasta 7 días después de un clic. Si calculas el ROAS el mismo día del anuncio, verás una cifra menor a la realidad."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Tasa de Conversión", "link": "/seo/tasa-conversion" },
+      { "nombre": "Calculadora de Valor de Vida del Cliente (LTV)", "link": "/utiles/calcualdora-ltv" }
+    ]
+  },
+  "calculadora-beneficio-unidad": {
+    "faqs": [
+      {
+        "q": "¿Qué costes debo incluir en el coste variable unitario?",
+        "a": "Debes incluir el precio de compra, embalaje, comisiones de pago, costes de envío y mano de obra directa necesaria para producir o preparar esa unidad específica."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre margen y beneficio por unidad?",
+        "a": "El beneficio es la cantidad absoluta en dinero (ej. 5€), mientras que el margen es la relación porcentual entre ese beneficio y el precio de venta (ej. 20%)."
+      },
+      {
+        "q": "¿Qué se considera un buen margen de beneficio por producto?",
+        "a": "Depende del sector. En retail se suele buscar un 30-50%, en electrónica un 10-20% y en productos digitales o SaaS es común superar el 80%."
+      },
+      {
+        "q": "¿Cómo afecta el IVA al cálculo del beneficio unitario?",
+        "a": "El IVA es un impuesto neutro para la empresa. Debes realizar todos los cálculos utilizando precios netos (sin IVA) tanto para la venta como para los costes."
+      },
+      {
+        "q": "¿Por qué mi beneficio por unidad es alto pero mi empresa no gana dinero?",
+        "a": "Probablemente porque el volumen de ventas no es suficiente para cubrir los costes fijos (alquiler, salarios, seguros) a pesar de tener un buen margen individual."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" },
+      { "nombre": "Calculadora de Retorno Publicitario (ROAS)", "link": "/utiles/calculadora-roas" }
+    ]
+  },
 };
