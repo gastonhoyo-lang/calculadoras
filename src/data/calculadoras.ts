@@ -1453,4 +1453,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "emerald-600",
   keywords: "calculadora de escalas, escala 1:50, escala 1:100, pasar de plano a realidad, medidas de mapas, escalimetro online"
 },
+{
+  titulo: "Calculadora de Flujo de Caja",
+  descripcion: "Analiza la liquidez de tu negocio calculando la diferencia entre ingresos y egresos reales de efectivo.",
+  link: "/utiles/calculadora-flujo-de-caja",
+  categoria: "utiles",
+  icon: "💸",
+  color: "blue-600",
+  keywords: "flujo de caja, cash flow, calculadora financiera, liquidez negocio, ingresos y egresos, finanzas pymes"
+},
 ];

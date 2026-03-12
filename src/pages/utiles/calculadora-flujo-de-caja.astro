@@ -1,0 +1,356 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+// Evitamos errores de compilación definiendo constantes para símbolos
+const sIngresos = "Ingresos Totales";
+const sEgresos = "Egresos Totales";
+const sFlujoNeto = "Flujo de Caja Neto";
+
+// Fórmulas en LaTeX para el artículo
+const fFlujoCaja =
+  "$$ Flujo\\ de\\ Caja\\ Neto = Ingresos\\ Totales - Egresos\\ Totales $$";
+const fFlujoOperativo =
+  "$$ FCO = Utilidad\\ Neta + Depreciación - Cambio\\ en\\ Capital\\ de\\ Trabajo $$";
+---
+
+<Layout
+  title="Calculadora de Flujo de Caja Online | Control Financiero de Negocios"
+  description="Calcula el flujo de caja de tu empresa de forma gratuita. Aprende a gestionar tus ingresos y egresos con ejemplos prácticos y fórmulas financieras."
+>
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight"
+      >
+        Calculadora de <span class="text-blue-600">Flujo de Caja</span> 💸
+      </h1>
+      <p
+        class="text-slate-500 text-lg font-medium max-w-2xl mx-auto text-balance"
+      >
+        Monitorea la salud financiera de tu proyecto analizando la entrada y
+        salida real de dinero.
+      </p>
+    </header>
+
+    <section
+      class="bg-white p-6 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl max-w-4xl mx-auto mb-20"
+    >
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="space-y-6">
+          <h3 class="text-sm font-bold text-blue-600 uppercase tracking-widest">
+            Entradas (Ingresos)
+          </h3>
+          <div>
+            <label
+              for="inputIngresosCash"
+              class="block text-[10px] font-bold text-slate-400 uppercase mb-2 ml-2"
+              >Ventas y cobros en efectivo</label
+            >
+            <input
+              type="number"
+              id="inputIngresosCash"
+              placeholder="0.00"
+              class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none transition-all shadow-inner font-bold"
+            />
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="text-sm font-bold text-red-500 uppercase tracking-widest">
+            Salidas (Egresos)
+          </h3>
+          <div>
+            <label
+              for="inputEgresosCash"
+              class="block text-[10px] font-bold text-slate-400 uppercase mb-2 ml-2"
+              >Pagos, compras y gastos</label
+            >
+            <input
+              type="number"
+              id="inputEgresosCash"
+              placeholder="0.00"
+              class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-red-500 outline-none transition-all shadow-inner font-bold"
+            />
+          </div>
+        </div>
+      </div>
+
+      <button
+        id="btnCalcularCashflow"
+        class="w-full bg-slate-900 text-white p-6 rounded-[2rem] font-bold hover:bg-blue-600 transition-all shadow-lg active:scale-95 text-xl"
+      >
+        Calcular Balance Neto
+      </button>
+
+      <div
+        id="boxResultadoCashflow"
+        class="hidden mt-10 space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500"
+      >
+        <div id="statusBg" class="p-10 rounded-[2.5rem] border text-center">
+          <span
+            class="block text-xs font-bold opacity-60 uppercase mb-2 tracking-widest"
+            >Flujo de Caja Neto</span
+          >
+          <span id="resValorCashflow" class="block text-6xl font-black">0</span>
+          <span
+            id="resStatusText"
+            class="block mt-4 font-bold uppercase text-sm tracking-tighter"
+          ></span>
+        </div>
+      </div>
+    </section>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700 font-light leading-relaxed"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
+        Guía Definitiva sobre el Flujo de Caja (Cash Flow)
+      </h2>
+
+      <p class="mb-6">
+        El <strong>flujo de caja</strong>, también conocido como cash flow, es
+        el informe financiero que detalla los ingresos y egresos de efectivo que
+        tiene una empresa o persona en un período determinado. A diferencia del
+        estado de resultados (que puede incluir ventas a crédito no cobradas),
+        el flujo de caja se centra exclusivamente en el <strong
+          >dinero real</strong
+        > que entra y sale de la cuenta bancaria o la caja chica.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        ¿Por qué es vital para tu supervivencia financiera?
+      </h3>
+      <p class="mb-6">
+        Muchos negocios fracasan no por falta de ventas, sino por falta de
+        liquidez. Puedes tener un contrato de un millón de dólares, pero si el
+        cliente te paga en 120 días y tú tienes que pagar salarios mañana, tu
+        flujo de caja es negativo. Comprender este concepto te permite anticipar
+        momentos de escasez y planificar inversiones con excedentes de capital.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        La Fórmula del Flujo de Caja
+      </h3>
+      <p class="mb-6">
+        La expresión más básica para entender el movimiento de dinero es la
+        diferencia entre lo que percibes y lo que gastas:
+      </p>
+
+      <div
+        class="bg-slate-50 p-8 rounded-3xl mb-10 border border-slate-100 text-center font-serif text-xl"
+      >
+        {fFlujoCaja}
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Componentes del Flujo de Caja
+      </h3>
+      <p class="mb-6">
+        Para un análisis profesional, el flujo de caja se divide en tres
+        categorías principales:
+      </p>
+      <ul class="list-disc pl-6 mb-8 space-y-4">
+        <li>
+          <strong>Flujo de caja operativo (FCO):</strong> Es el dinero generado o
+          gastado por las actividades principales del negocio (ventas de productos,
+          pago a proveedores, salarios).
+        </li>
+        <li>
+          <strong>Flujo de caja de inversión:</strong> Refleja las compras o ventas
+          de activos a largo plazo, como maquinaria, inmuebles o inversiones financieras.
+        </li>
+        <li>
+          <strong>Flujo de caja de financiación:</strong> Incluye los movimientos
+          de dinero provenientes de préstamos, pago de dividendos o aportes de capital
+          de los socios.
+        </li>
+      </ul>
+
+      <p class="mb-6">
+        Un flujo de caja positivo indica que los activos corrientes de la
+        empresa están aumentando, lo que le permite liquidar deudas, reinvertir
+        en su negocio, devolver dinero a los accionistas y pagar los gastos
+        operativos. Por el contrario, un flujo de caja negativo indica que los
+        activos corrientes de la empresa están disminuyendo.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Diferencia entre Beneficio y Flujo de Caja
+      </h3>
+      <p class="mb-6">
+        Es un error común confundir la "utilidad" con el "flujo de caja". La
+        utilidad neta es un concepto contable que incluye partidas que no son
+        efectivo, como la depreciación de equipos. El flujo de caja es puramente
+        transaccional. Un negocio puede ser rentable en papel pero estar
+        quebrado por falta de efectivo disponible para operar.
+      </p>
+
+      <h2 class="text-3xl font-black text-slate-900 mb-8">
+        Ejemplos Prácticos Desarrollados
+      </h2>
+
+      <div id="ejemplos-seccion" class="space-y-12 mb-20">
+        <div class="p-8 bg-blue-50 rounded-[2.5rem] border border-blue-100">
+          <h3 class="text-xl font-bold text-blue-900 mb-4">
+            Ejemplo 1: Un pequeño comercio minorista
+          </h3>
+          <p class="mb-4">
+            Un negocio de ropa vende durante el mes de marzo un total de $5,000.
+            De esos, $4,000 fueron en efectivo y $1,000 a crédito (se cobrarán
+            en abril). Sus gastos (alquiler, luz y mercadería) sumaron $3,200
+            pagados al contado.
+          </p>
+          <div class="bg-white p-6 rounded-2xl mb-4">
+            <ul class="text-sm space-y-2">
+              <li><strong>Ingresos Reales:</strong> $4,000</li>
+              <li><strong>Egresos Reales:</strong> $3,200</li>
+              <li><strong>Cálculo:</strong> $$ 4,000 - 3,200 = 800 $$</li>
+            </ul>
+          </div>
+          <p class="text-sm font-medium text-blue-800 italic">
+            Resultado: El flujo de caja es positivo ($800). El negocio tiene
+            liquidez aunque su utilidad contable sea mayor.
+          </p>
+        </div>
+
+        <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">
+            Ejemplo 2: Empresa de Servicios (Freelance)
+          </h3>
+          <p class="mb-4">
+            Un desarrollador freelance recibe pagos por proyectos terminados por
+            $2,500. Sin embargo, decide comprar una nueva computadora por $3,000
+            para mejorar su productividad.
+          </p>
+          <div class="bg-white p-6 rounded-2xl mb-4">
+            <ul class="text-sm space-y-2">
+              <li><strong>Ingresos Totales:</strong> $2,500</li>
+              <li><strong>Egresos Totales:</strong> $3,000</li>
+              <li><strong>Cálculo:</strong> $$ 2,500 - 3,000 = -500 $$</li>
+            </ul>
+          </div>
+          <p class="text-sm font-medium text-red-700 italic">
+            Resultado: Flujo de caja negativo (-$500). El profesional tuvo que
+            recurrir a ahorros para cubrir la inversión del mes.
+          </p>
+        </div>
+
+        <div
+          class="p-8 bg-emerald-50 rounded-[2.5rem] border border-emerald-100"
+        >
+          <h3 class="text-xl font-bold text-emerald-900 mb-4">
+            Ejemplo 3: Startup con Inversión
+          </h3>
+          <p class="mb-4">
+            Una startup tecnológica gasta $10,000 mensuales en servidores y
+            salarios (quemado de caja), pero recibe una ronda de inversión de
+            $50,000.
+          </p>
+          <div class="bg-white p-6 rounded-2xl mb-4">
+            <ul class="text-sm space-y-2">
+              <li><strong>Ingresos (Inversión):</strong> $50,000</li>
+              <li><strong>Egresos (Operativos):</strong> $10,000</li>
+              <li><strong>Cálculo:</strong> $$ 50,000 - 10,000 = 40,000 $$</li>
+            </ul>
+          </div>
+          <p class="text-sm font-medium text-emerald-800 italic">
+            Resultado: Flujo de caja neto positivo ($40,000). A pesar de no
+            tener ventas operativas, la financiación le otorga "pista" (runway)
+            para operar.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-800 mb-4">
+        Consejos para mejorar tu Cash Flow
+      </h2>
+      <ol class="list-decimal pl-6 mb-12 space-y-4">
+        <li>
+          <strong>Reduce los plazos de cobro:</strong> Ofrece descuentos por pronto
+          pago a tus clientes.
+        </li>
+        <li>
+          <strong>Negocia plazos con proveedores:</strong> Intenta pagar tus facturas
+          a 30 o 60 días sin intereses.
+        </li>
+        <li>
+          <strong>Mantén un fondo de emergencia:</strong> Idealmente, deberías tener
+          entre 3 y 6 meses de gastos operativos en efectivo.
+        </li>
+        <li>
+          <strong>Monitorea semanalmente:</strong> No esperes a fin de mes para ver
+          si tienes dinero. El flujo de caja es una métrica de gestión diaria.
+        </li>
+      </ol>
+
+      <footer
+        class="bg-slate-900 text-white p-12 rounded-[3rem] text-center italic mt-12 shadow-2xl"
+      >
+        <p class="text-blue-400 font-bold mb-2">Reflexión Final:</p>
+        <p class="text-sm text-slate-400">
+          "El beneficio es una opinión, el flujo de caja es un hecho". Mantén
+          siempre un ojo en tu liquidez antes de planear cualquier expansión.
+        </p>
+      </footer>
+    </article>
+  </main>
+
+  <script>
+    const setupCashflow = () => {
+      const inputIngresos = document.getElementById(
+        "inputIngresosCash",
+      ) as HTMLInputElement;
+      const inputEgresos = document.getElementById(
+        "inputEgresosCash",
+      ) as HTMLInputElement;
+      const btn = document.getElementById("btnCalcularCashflow");
+      const box = document.getElementById("boxResultadoCashflow");
+      const resVal = document.getElementById("resValorCashflow");
+      const resStatus = document.getElementById("resStatusText");
+      const statusBg = document.getElementById("statusBg");
+
+      btn?.addEventListener("click", () => {
+        const ing = parseFloat(inputIngresos.value) || 0;
+        const egr = parseFloat(inputEgresos.value) || 0;
+
+        if (ing < 0 || egr < 0) {
+          alert("Por favor ingresa valores positivos.");
+          return;
+        }
+
+        const neto = ing - egr;
+
+        if (resVal)
+          resVal.innerText =
+            "$" + neto.toLocaleString("es-AR", { minimumFractionDigits: 2 });
+
+        if (neto > 0) {
+          resStatus!.innerText =
+            "Flujo Positivo: Tu negocio genera excedentes.";
+          statusBg?.setAttribute(
+            "class",
+            "p-10 rounded-[2.5rem] border text-center bg-emerald-50 border-emerald-100 text-emerald-700",
+          );
+        } else if (neto < 0) {
+          resStatus!.innerText =
+            "Flujo Negativo: Estás gastando más de lo que ingresa.";
+          statusBg?.setAttribute(
+            "class",
+            "p-10 rounded-[2.5rem] border text-center bg-red-50 border-red-100 text-red-700",
+          );
+        } else {
+          resStatus!.innerText =
+            "Punto de Equilibrio: Los ingresos igualan a los gastos.";
+          statusBg?.setAttribute(
+            "class",
+            "p-10 rounded-[2.5rem] border text-center bg-slate-50 border-slate-100 text-slate-600",
+          );
+        }
+
+        box?.classList.remove("hidden");
+      });
+    };
+    setupCashflow();
+  </script>
+</Layout>

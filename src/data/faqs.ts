@@ -2138,7 +2138,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     "relacionados": [
       { "nombre": "Calculadora de Desviación Estándar", "link": "/utiles/calculadora-desviacion-estandar" },
       { "nombre": "Calculadora de Proporciones", "link": "/utiles/calculadora-de-proporciones" },
-      { "nombre": "Calculadora de Percentil", "link": "/utiles/calculadora-de-percentil" }
+      { "nombre": "Calculadora de Percentil", "link": "/utiles/calculadora-percentil" }
     ]
 },
   "combinaciones-permutaciones": {
@@ -4769,7 +4769,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     "relacionados": [
       { "nombre": "Regla de Tres Simple", "link": "/matematica/regla-de-tres" },
       { "nombre": "Calculadora de Porcentajes", "link": "/finanzas/porcentaje" },
-      { "nombre": "Calculadora de Escalas", "link": "/utiles/escalas" }
+      { "nombre": "Calculadora de Escalas", "link": "/utiles/calculadora-de-escalas" }
     ]
   },
   "calculadora-de-escalas": {
@@ -4797,8 +4797,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     "relacionados": [
       { "nombre": "Calculadora de Proporciones", "link": "/utiles/calculadora-de-proporciones" },
-      { "nombre": "Conversor de Unidades", "link": "/utiles/conversor-unidades" },
-      { "nombre": "Regla de Tres Simple", "link": "/utiles/regla-de-tres-simple" }
+      { "nombre": "Conversor de Unidades", "link": "/unidades/pies-cuadrados-a-metros-cuadrados" },
+      { "nombre": "Regla de Tres Simple", "link": "/matematica/regla-de-tres" }
     ]
   },
 };
