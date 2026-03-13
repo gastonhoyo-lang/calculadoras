@@ -2,13 +2,13 @@
   "name": "seo-tools",
   "type": "module",
   "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
+"scripts": {
+  "dev": "astro dev",
+  "start": "astro dev",
+  "build": "astro build && find dist -name 'wrangler.json' -delete",
+  "preview": "astro preview",
+  "astro": "astro"
+},
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.1",
     "@astrojs/sitemap": "^3.7.1",
