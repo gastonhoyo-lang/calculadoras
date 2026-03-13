@@ -5,16 +5,13 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   output: 'server',
   adapter: cloudflare({
-    mode: 'advanced',
-    // Forzamos un nombre de binding que NO sea 'ASSETS'
-    platformProxy: {
-      enabled: true,
-    },
-    // Esto debería sobrescribir el valor por defecto que causa el error
-    assets: {
-      binding: 'CF_PAGES_ASSETS' 
-    },
-    imageService: 'passthrough',
+    // 'directory' es el modo recomendado para Pages porque separa 
+    // automáticamente lo que es servidor de lo que es estático (CSS/JS)
+    mode: 'directory', 
   }),
   integrations: [tailwind()],
+  // Forzamos a que las rutas de los assets sean relativas a la raíz
+  build: {
+    assets: '_astro'
+  }
 });
