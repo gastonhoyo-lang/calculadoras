@@ -1,16 +1,12 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import cloudflare from '@astrojs/cloudflare';
+import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://chieffin.com',
-  // En las versiones nuevas, Astro detecta el modo según el adaptador.
-  // No pongas 'output' por ahora para que use el default compatible.
-  adapter: cloudflare(),
+  output: 'server', // Mantenemos el modo servidor
+  adapter: cloudflare({
+    platformProxy: { enabled: true },
+    mode: 'advanced', // Modo estándar
+  }),
   integrations: [tailwind()],
-  
-  // Optimizamos para que el build sea ligero
-  build: {
-    format: 'directory'
-  }
 });

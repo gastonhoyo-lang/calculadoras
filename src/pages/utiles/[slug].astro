@@ -1,17 +1,30 @@
 ---
+export const prerender = false; // SSR activado para manejar las 60k variantes
+
 import Layout from "../../layouts/Layout.astro";
-import unidades from "../../data/unidades.json";
-export async function getStaticPaths() {
-  export const prerender = false;
-  return unidades.map((u) => ({
-    params: { slug: u.slug },
-    props: { info: u },
-  }));
+
+// 1. Obtenemos el slug de la URL
+const { slug } = Astro.params;
+
+// 2. Leemos el JSON vía fetch (Compatible con Cloudflare Workers)
+let info = null;
+try {
+  // Usamos Astro.url.origin para que funcione tanto en local como en producción
+  const response = await fetch(`${Astro.url.origin}/unidades.json`);
+  if (response.ok) {
+    const unidades = await response.json();
+    // 3. Buscamos la calculadora específica
+    info = unidades.find((u) => u.slug === slug);
+  }
+} catch (error) {
+  console.error("Error al recuperar datos para el slug:", slug, error);
 }
 
-const { info } = Astro.props;
+// 4. Si no existe la herramienta, mandamos al 404
+if (!info) {
+  return Astro.redirect("/404");
+}
 
-// Metadescripción dinámica para SEO
 const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, precisa y fácil de usar en Chieffin.`;
 ---
 
@@ -39,7 +52,7 @@ const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, pr
         <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a
         >
         <span class="mx-2">/</span>
-        <span class="text-slate-900 truncate">{info.h1}</span>
+        <span class="text-slate-900 truncate">{info.h1 || info.titulo}</span>
       </nav>
 
       <div
@@ -55,7 +68,7 @@ const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, pr
             <h1
               class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight"
             >
-              {info.h1}
+              {info.h1 || info.titulo}
             </h1>
           </header>
 
@@ -131,53 +144,41 @@ const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, pr
           </p>
         </div>
       </div>
-
-      <article class="mt-12 prose prose-slate max-w-none">
-        <h2 class="text-2xl font-bold text-slate-900">
-          Más información sobre {info.h1}
-        </h2>
-        <p class="text-slate-600">
-          Esta herramienta gratuita de Chieffin te permite realizar el cálculo
-          de <strong>{info.h1}</strong> de forma instantánea. Nuestros algoritmos
-          utilizan los factores de conversión más actualizados para garantizar precisión
-          en cada resultado.
-        </p>
-      </article>
     </div>
   </section>
 
   <script>
     const meta = document.getElementById("calc-metadata");
-    const factor = parseFloat(meta.dataset.valor);
-    const tipo = meta.dataset.tipo;
-    const destino = meta.dataset.destino;
+    if (meta) {
+      const factor = parseFloat(meta.dataset.valor || "0");
+      const tipo = meta.dataset.tipo;
+      const destino = meta.dataset.destino || "";
 
-    const input = document.getElementById("input-main");
-    const display = document.getElementById("resultado-texto");
-    const subTexto = document.getElementById("sub-texto");
+      const input = document.getElementById("input-main") as HTMLInputElement;
+      const display = document.getElementById("resultado-texto");
+      const subTexto = document.getElementById("sub-texto");
 
-    input.addEventListener("input", (e) => {
-      const v = parseFloat(e.target.value);
+      if (input && display && subTexto) {
+        input.addEventListener("input", () => {
+          const v = parseFloat(input.value);
+          if (isNaN(v)) {
+            display.innerText = "--";
+            subTexto.innerText = "Esperando datos...";
+            return;
+          }
 
-      if (isNaN(v)) {
-        display.innerText = "--";
-        subTexto.innerText = "Esperando datos...";
-        return;
+          if (tipo === "unidades") {
+            const final = v * factor;
+            display.innerText = `${final.toLocaleString(undefined, { maximumFractionDigits: 4 })} ${destino}`;
+            subTexto.innerText = "Conversión realizada con éxito";
+          } else if (tipo === "finanzas") {
+            const ahorro = (v * factor) / 100;
+            const final = v - ahorro;
+            display.innerText = `$${final.toLocaleString()}`;
+            subTexto.innerText = `Ahorrás $${ahorro.toLocaleString()} (Descuento del ${factor}%)`;
+          }
+        });
       }
-
-      let final;
-      if (tipo === "unidades") {
-        final = v * factor;
-        display.innerText = `${final.toLocaleString(undefined, { maximumFractionDigits: 4 })} ${destino}`;
-        subTexto.innerText = "Conversión realizada con éxito";
-      } else if (tipo === "finanzas") {
-        // Asumiendo que el 'valor' en finanzas es el porcentaje (ej: 15 para 15%)
-        // Y el input del usuario es el monto base
-        const ahorro = (v * factor) / 100;
-        final = v - ahorro;
-        display.innerText = `$${final.toLocaleString()}`;
-        subTexto.innerText = `Ahorrás $${ahorro.toLocaleString()} (Descuento del ${factor}%)`;
-      }
-    });
+    }
   </script>
 </Layout>

@@ -1,12 +1,30 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import unidades from "../../data/unidades.json";
 
-// Agrupamos por la primera letra para un SEO súper limpio
+// 1. Leemos el JSON vía fetch (Compatible con Cloudflare y SSR)
+let unidades = [];
+try {
+  // Astro.url.origin detecta automáticamente si estás en localhost o en chieffin.com
+  const response = await fetch(`${Astro.url.origin}/unidades.json`);
+  if (response.ok) {
+    unidades = await response.json();
+  } else {
+    console.error("No se pudo obtener unidades.json:", response.statusText);
+  }
+} catch (error) {
+  console.error("Error al leer unidades.json:", error);
+}
+
+// 2. Agrupamos por la primera letra
 const agrupados = unidades.reduce((acc, curr) => {
+  if (!curr.titulo) return acc;
   const letra = curr.titulo[0].toUpperCase();
   if (!acc[letra]) acc[letra] = [];
-  acc[letra].push(curr);
+
+  // SEO: Solo renderizamos los primeros 20 de cada letra para evitar un HTML gigante
+  if (acc[letra].length < 20) {
+    acc[letra].push(curr);
+  }
   return acc;
 }, {});
 
@@ -15,7 +33,7 @@ const letras = Object.keys(agrupados).sort();
 
 <Layout
   title="Directorio Maestro de Herramientas | Chieffin"
-  description="Explora nuestro catálogo completo de más de 60,000 conversores y calculadoras gratuitas."
+  description="Explora nuestro catálogo completo de herramientas y conversores gratuitos."
 >
   <main class="max-w-6xl mx-auto py-20 px-4">
     <header class="mb-16">
@@ -48,25 +66,20 @@ const letras = Object.keys(agrupados).sort();
               {l}
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {agrupados[l].slice(0, 15).map(
-                (
-                  tool, // Mostramos las primeras 15 de cada letra
-                ) => (
-                  <a
-                    href={`/utiles/${tool.slug}`}
-                    class="p-4 rounded-xl hover:bg-blue-50 text-slate-600 hover:text-blue-700 font-medium transition-colors border border-transparent hover:border-blue-100"
-                  >
-                    ➔ {tool.h1}
-                  </a>
-                ),
-              )}
+              {agrupados[l].map((tool) => (
+                <a
+                  href={`/utiles/${tool.slug}`}
+                  class="p-4 rounded-xl hover:bg-blue-50 text-slate-600 hover:text-blue-700 font-medium transition-colors border border-transparent hover:border-blue-100"
+                >
+                  ➔ {tool.h1 || tool.titulo}
+                </a>
+              ))}
             </div>
-            {agrupados[l].length > 15 && (
-              <p class="mt-4 text-sm text-slate-400 italic">
-                ... y {agrupados[l].length - 15} herramientas más con la letra{" "}
-                {l}.
-              </p>
-            )}
+
+            <p class="mt-6 p-4 bg-slate-50 rounded-xl text-sm text-slate-500 border border-dashed border-slate-200 text-center">
+              Hay cientos de herramientas más con la letra <strong>{l}</strong>{" "}
+              disponibles a través del buscador principal.
+            </p>
           </section>
         ))
       }

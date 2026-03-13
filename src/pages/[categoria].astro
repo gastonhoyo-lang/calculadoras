@@ -1,9 +1,11 @@
 ---
+export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import { calculadoras } from "../data/calculadoras";
 
 // 1. Generar las rutas para cada categoría
-export async function getStaticPaths() {
+export function getStaticPaths() {
+  // <--- ESTA LÍNEA FALTABA
   const categorias = [
     {
       id: "finanzas",
@@ -37,8 +39,8 @@ export async function getStaticPaths() {
     },
     {
       id: "unidades",
-      nombre: "unidades de medida",
-      desc: "herramientas de conversion de unidades y mas.",
+      nombre: "Unidades de Medida",
+      desc: "Herramientas de conversión de unidades y más.",
     },
     {
       id: "seo",
@@ -57,9 +59,9 @@ const { categoria } = Astro.params;
 const { info } = Astro.props;
 
 // 2. Filtrar las calculadoras que pertenecen a esta categoría
-// Asumimos que el link de la calculadora empieza con /categoria/
+// Usamos una lógica más segura para comparar rutas
 const calcsFiltradas = calculadoras.filter((calc) =>
-  calc.link.startsWith(`/${categoria}/`),
+  calc.link.includes(`/${categoria}/`),
 );
 ---
 
@@ -114,25 +116,5 @@ const calcsFiltradas = calculadoras.filter((calc) =>
         ))
       }
     </div>
-
-    <article class="mt-20 prose prose-slate max-w-none border-t pt-12">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6">
-        Información sobre {info.nombre}
-      </h2>
-      <p class="text-slate-600 leading-relaxed">
-        Bienvenido a nuestra sección especializada en <strong
-          >{info.nombre.toLowerCase()}</strong
-        >. En Chieffin hemos diseñado estas herramientas para simplificar tareas
-        que suelen ser complejas o tediosas. Nuestras calculadoras de {
-          categoria
-        } son gratuitas, rápidas y están actualizadas para ofrecerte resultados precisos.
-      </p>
-      <p class="text-slate-600 leading-relaxed mt-4">
-        Ya sea que necesites resolver un problema puntual o estés planificando a
-        largo plazo, estas utilidades te permiten ahorrar tiempo y evitar
-        errores manuales. Explorá cada una de las opciones arriba listadas para
-        encontrar la que mejor se adapte a tu necesidad actual.
-      </p>
-    </article>
   </div>
 </Layout>
