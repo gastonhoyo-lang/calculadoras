@@ -5,7 +5,11 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   output: 'server',
   adapter: cloudflare({
-    mode: 'directory', // Este modo es el que mejor se lleva con los archivos estáticos
+    // Eliminamos mode: 'directory' para que Astro gestione 
+    // correctamente las rutas dinámicas en el Edge de Cloudflare.
+    platformProxy: {
+      enabled: true,
+    },
   }),
   integrations: [tailwind()],
   base: '/',
