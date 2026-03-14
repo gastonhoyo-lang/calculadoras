@@ -1,10 +1,8 @@
 ---
 export const prerender = false;
-import Layout from "../../layouts/Layout.astro";
-
 let { slug } = Astro.params;
 
-// 1. Limpieza total de la llave
+// 1. Limpieza total para que coincida con el KV
 if (slug) {
   slug = slug.replace(/^\/|\/$/g, "").toLowerCase();
 }
@@ -15,21 +13,14 @@ const { CALCULADORAS } = runtime.env;
 // 2. Intento de obtener los datos
 const rawData = await CALCULADORAS.get(slug);
 
-// 3. Si no hay datos, mostramos un mensaje de error útil
+// 3. Diagnóstico: Si falla, nos dirá qué llave buscó
 if (!rawData) {
-  return new Response(
-    `404: No se encontró la llave [${slug}] en el KV. Revisa que en el panel de Cloudflare el nombre sea idéntico.`,
-    { status: 404 },
-  );
+  return new Response(`Error: No se encontró la llave [${slug}] en el KV.`, {
+    status: 404,
+  });
 }
 
 const info = JSON.parse(rawData);
-
-// 4. DECLARACIÓN DE VARIABLES (Esto faltaba)
-const displayTitle = info.titulo || "Calculadora";
-const seoTitle = info.seo_titulo || displayTitle;
-const seoDescription = info.seo_descripcion || "";
-const jsonLd = info.json_ld || {};
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
