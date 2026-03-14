@@ -1,10 +1,47 @@
 {
-  "name": "calculadoras",
-  "compatibility_date": "2026-03-10",
-  "kv_namespaces": [
-    {
-      "binding": "CALCULADORAS",
-      "id": "0c5f7a7d37bc474d9eb73b848f1fa4c9"
-    }
-  ]
+	"name": "calculadoras",
+	"compatibility_date": "2026-03-10",
+	"kv_namespaces": [
+		{
+			"binding": "CALCULADORAS",
+			"id": "0c5f7a7d37bc474d9eb73b848f1fa4c9"
+		},
+		{
+			"id": "072cd7ec7e724039bbe14592d80f3bc5",
+			"binding": "SESSION"
+		}
+	],
+	"routes": [
+		{
+			"pattern": "www.chieffin.com/v/*",
+			"zone_name": "chieffin.com"
+		},
+		{
+			"pattern": "chieffin.com/v/*",
+			"zone_name": "chieffin.com"
+		},
+		{
+			"pattern": "chieffin.com",
+			"zone_name": "chieffin.com",
+			"custom_domain": true
+		},
+		{
+			"pattern": "www.chieffin.com",
+			"zone_name": "chieffin.com",
+			"custom_domain": true
+		}
+	],
+	"vars": {
+		"NODE_VERSION": "22",
+		"NPM_FLAGS": "--legacy-peer-deps"
+	},
+	"images": {
+		"binding": "IMAGES"
+	},
+	"observability": {
+		"enabled": true,
+		"logs": {
+			"enabled": true
+		}
+	}
 }

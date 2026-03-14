@@ -1,17 +1,13 @@
-// astro.config.mjs
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
-  output: 'server', //
+  output: 'server',
   adapter: cloudflare({
     platformProxy: { enabled: true },
-    // Esto asegura que Astro no se pierda buscando archivos físicos
-    runtime: { mode: 'complete', type: 'cloudflare-worker' } 
+    // Esto es vital para que Astro gestione las rutas dinámicas en Workers
+    runtime: { mode: 'complete', type: 'cloudflare-worker' }
   }),
-  // Evita que Astro busque /v/slug/index.html y falle
-  build: {
-    format: 'file' 
-  },
-  trailingSlash: 'ignore' //
+  // Forzamos a que no añada barras extras que rompan el match del KV
+  trailingSlash: 'ignore' 
 });
