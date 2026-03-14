@@ -1,23 +1,47 @@
 ---
 export const prerender = false;
+import Layout from "../../layouts/Layout.astro";
+
 let { slug } = Astro.params;
 
-// Limpieza para que coincida con tus llaves del KV
+// 1. Limpieza agresiva del slug
 if (slug) {
-  slug = slug.replace(/\/$/, "").toLowerCase();
+  slug = slug.replace(/^\/+|\/+$/g, "").toLowerCase();
 }
 
 const runtime = Astro.locals.runtime;
-// IMPORTANTE: 'CALCULADORAS' debe ser igual al binding en wrangler.json
-const { CALCULADORAS } = runtime.env;
 
+// 2. VERIFICACIÓN CRÍTICA DEL BINDING
+if (!runtime || !runtime.env || !runtime.env.CALCULADORAS) {
+  // Si entra aquí, es que Cloudflare no está pasando el KV al código
+  return new Response(
+    `Error de Configuración: El binding "CALCULADORAS" no está conectado. 
+     Asegúrate de haberlo agregado en el panel de Cloudflare (Settings -> Functions -> KV namespace bindings) 
+     Y de haber hecho un nuevo Deploy.`,
+    { status: 500 },
+  );
+}
+
+const { CALCULADORAS } = runtime.env;
 const rawData = await CALCULADORAS.get(slug);
 
+// 3. VERIFICACIÓN DE LA LLAVE
 if (!rawData) {
-  return Astro.redirect("/404");
+  // Si entra aquí, el KV funciona pero no existe esa palabra exacta
+  return new Response(
+    `404 - No se encontró la llave: "${slug}". 
+     Verifica en tu panel de KV que la Key sea exactamente igual a esta (sin espacios ni barras).`,
+    { status: 404 },
+  );
 }
 
 const info = JSON.parse(rawData);
+
+// Variables auxiliares para evitar errores de undefined
+const displayTitle = info.titulo || "Calculadora";
+const seoTitle = info.seo_titulo || displayTitle;
+const seoDescription = info.seo_descripcion || "";
+const jsonLd = info.json_ld || {};
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
