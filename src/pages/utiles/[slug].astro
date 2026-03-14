@@ -4,8 +4,13 @@ export const prerender = false;
 
 import Layout from "../../layouts/Layout.astro";
 
-// Ya no importamos el JSON gigante, ahora leemos de la base de datos
-const { slug } = Astro.params;
+// Obtenemos el slug de los parámetros
+let { slug } = Astro.params;
+
+// Limpieza de slug para evitar errores de coincidencia con barras laterales
+if (slug) {
+  slug = slug.replace(/\/$/, "");
+}
 
 // 2. Conexión con Cloudflare KV
 const runtime = Astro.locals.runtime;
@@ -60,8 +65,7 @@ const jsonLd = {
       >
         <a href="/" class="hover:text-blue-600 transition">Inicio</a>
         <span class="mx-2">/</span>
-        <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a
-        >
+        <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a>
         <span class="mx-2">/</span>
         <span class="text-slate-900 truncate">{displayTitle}</span>
       </nav>
