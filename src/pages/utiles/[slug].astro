@@ -1,49 +1,23 @@
 ---
-// 1. SSR activo para Cloudflare
 export const prerender = false;
-
-import Layout from "../../layouts/Layout.astro";
-
-// Obtenemos el slug
 let { slug } = Astro.params;
 
-// --- LIMPIEZA AGRESIVA DEL SLUG ---
-// Esto elimina barras al principio, al final y espacios.
+// Limpieza para que coincida con tus llaves del KV
 if (slug) {
-  slug = slug
-    .trim()
-    .replace(/^\/+|\/+$/g, "")
-    .toLowerCase();
+  slug = slug.replace(/\/$/, "").toLowerCase();
 }
 
 const runtime = Astro.locals.runtime;
+// IMPORTANTE: 'CALCULADORAS' debe ser igual al binding en wrangler.json
 const { CALCULADORAS } = runtime.env;
 
-// LOG PARA DEBUG (Lo verás en Real-time Logs)
-console.log(`Buscando en KV llave: "${slug}"`);
-
-// Consulta al KV
 const rawData = await CALCULADORAS.get(slug);
-const info = rawData ? JSON.parse(rawData) : null;
 
-// Si no hay info, redirigir
-if (!info) {
-  console.log(`No se encontró data para: "${slug}"`);
+if (!rawData) {
   return Astro.redirect("/404");
 }
 
-// Datos para la UI
-const displayTitle = info.h1 || info.titulo || "Calculadora";
-const seoTitle = info.meta_titulo || displayTitle;
-const seoDescription =
-  info.meta_descripcion || `Calculadora gratuita para ${displayTitle}`;
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: displayTitle,
-  description: seoDescription,
-};
+const info = JSON.parse(rawData);
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
