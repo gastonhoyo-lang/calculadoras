@@ -7,10 +7,8 @@ import Layout from "../../layouts/Layout.astro";
 // Obtenemos el slug
 let { slug } = Astro.params;
 
-// --- CORRECCIÓN DE ORO: Limpieza total del slug ---
+// --- CORRECCIÓN: Limpieza total del slug para coincidir con la Key del KV ---
 if (slug) {
-  // 1. Quitamos la barra final si existe
-  // 2. Pasamos a minúsculas por seguridad
   slug = slug.replace(/\/$/, "").toLowerCase();
 }
 
@@ -21,12 +19,25 @@ const { CALCULADORAS } = runtime.env;
 const rawData = await CALCULADORAS.get(slug);
 const info = rawData ? JSON.parse(rawData) : null;
 
-// Si no existe, al 404
+// Si no existe la entrada en el KV, redirigimos al 404
 if (!info) {
   return Astro.redirect("/404");
 }
 
-// ... resto de tu código igual ...
+// --- PREPARACIÓN DE DATOS PARA LA UI ---
+const displayTitle = info.h1 || info.titulo || "Calculadora";
+const seoTitle = info.meta_titulo || displayTitle;
+const seoDescription =
+  info.meta_descripcion || `Calculadora gratuita para ${displayTitle}`;
+
+// Preparación de JSON-LD para SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: displayTitle,
+  description: seoDescription,
+  applicationCategory: "Utility",
+};
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
@@ -82,13 +93,13 @@ if (!info) {
               <p
                 class="text-xs font-bold uppercase tracking-widest mb-1 opacity-80"
               >
-                Resultado Actual:
+                Resultado Base:
               </p>
               <div class="text-4xl sm:text-5xl font-black">
                 {info.resultado}
-                <span class="text-xl opacity-70 font-normal"
-                  >{info.dest || info.unidad_destino}</span
-                >
+                <span class="text-xl opacity-70 font-normal">
+                  {info.dest || info.unidad_destino}
+                </span>
               </div>
             </div>
 
@@ -159,7 +170,10 @@ if (!info) {
         <div class="bg-slate-50 border-t border-slate-100 p-8">
           <h3 class="font-bold text-slate-900 mb-2">¿Cómo se calcula?</h3>
           <p class="text-slate-600 leading-relaxed text-sm">
-            {info.faq_respuesta}
+            {
+              info.faq_respuesta ||
+                "Utiliza nuestra herramienta para obtener resultados precisos al instante."
+            }
           </p>
           <div class="mt-4 p-4 bg-white rounded-lg border border-slate-200">
             <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">
