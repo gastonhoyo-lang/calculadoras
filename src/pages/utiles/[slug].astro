@@ -1,45 +1,32 @@
 ---
-// 1. IMPORTANTE: SSR activo para que funcione el KV
+// 1. SSR activo para Cloudflare
 export const prerender = false;
 
 import Layout from "../../layouts/Layout.astro";
 
-// Obtenemos el slug de los parámetros
+// Obtenemos el slug
 let { slug } = Astro.params;
 
-// Limpieza de slug para evitar errores de coincidencia con barras laterales
+// --- CORRECCIÓN DE ORO: Limpieza total del slug ---
 if (slug) {
-  slug = slug.replace(/\/$/, "");
+  // 1. Quitamos la barra final si existe
+  // 2. Pasamos a minúsculas por seguridad
+  slug = slug.replace(/\/$/, "").toLowerCase();
 }
 
-// 2. Conexión con Cloudflare KV
 const runtime = Astro.locals.runtime;
 const { CALCULADORAS } = runtime.env;
 
-// 3. Buscamos el dato por slug en la DB
+// Buscamos en el KV con el slug limpio
 const rawData = await CALCULADORAS.get(slug);
 const info = rawData ? JSON.parse(rawData) : null;
 
-// 4. Si no existe la herramienta, mandamos al 404
+// Si no existe, al 404
 if (!info) {
   return Astro.redirect("/404");
 }
 
-// --- Títulos y Descripciones dinámicas ---
-const displayTitle = info.h1 || info.titulo;
-const seoTitle = `${displayTitle} | Resultado Exacto (2026)`;
-const seoDescription = `Calculá gratis: ${displayTitle}. El resultado es ${info.resultado}. Herramienta rápida, precisa y fácil de usar en Chieffin.`;
-
-// --- JSON-LD para Google ---
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: displayTitle,
-  description: seoDescription,
-  url: Astro.url.href,
-  applicationCategory: "EducationalApplication",
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-};
+// ... resto de tu código igual ...
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
@@ -65,7 +52,8 @@ const jsonLd = {
       >
         <a href="/" class="hover:text-blue-600 transition">Inicio</a>
         <span class="mx-2">/</span>
-        <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a>
+        <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a
+        >
         <span class="mx-2">/</span>
         <span class="text-slate-900 truncate">{displayTitle}</span>
       </nav>
