@@ -1,0 +1,120 @@
+globalThis.process ??= {};
+globalThis.process.env ??= {};
+/* empty css               */
+import { c as createComponent } from "./astro-component_Bh15OOSU.mjs";
+import { l as renderComponent, r as renderTemplate, m as maybeRenderHead } from "./worker-entry_DuFvuRPN.mjs";
+import { $ as $$Layout, r as renderScript } from "./Layout_CdraH9S2.mjs";
+const $$BytesAMb = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$props, $$slots);
+  Astro2.self = $$BytesAMb;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Conversor de Bytes a Megabytes | Calculadora de Almacenamiento B a MB", "description": "Calculadora técnica de bytes a MB. Más de 900 palabras de contenido sobre almacenamiento digital, binario vs decimal y ejemplos de SEO técnico." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="max-w-5xl mx-auto px-4 py-12"> <header class="text-center mb-16"> <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight">
+Bytes a <span class="text-blue-600">Megabytes</span> 💾
+</h1> <p class="text-slate-500 text-lg font-medium max-w-2xl mx-auto text-balance">
+Precisión quirúrgica para la conversión de datos. La herramienta
+        definitiva para webmasters y analistas de sistemas.
+</p> </header> <section class="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl max-w-2xl mx-auto mb-20"> <div class="space-y-6"> <div> <label for="inputBytesFix" class="block text-xs font-bold text-slate-400 uppercase ml-2 tracking-widest mb-2">
+Cantidad de Bytes (B)
+</label> <input type="number" id="inputBytesFix" placeholder="Ej: 5242880" step="any" class="w-full p-5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 font-bold text-xl outline-none transition-all shadow-sm"> </div> <div class="grid grid-cols-2 gap-4"> <button id="btnToMB" class="bg-slate-900 text-white p-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg active:scale-95 text-sm">
+Decimal (MB)
+</button> <button id="btnToMiB" class="bg-slate-100 text-slate-900 p-4 rounded-2xl font-bold hover:bg-slate-200 transition-all shadow-md active:scale-95 text-sm">
+Binario (MiB)
+</button> </div> </div> <div id="resBoxStorageFix" class="hidden mt-10 p-8 bg-blue-50 rounded-[2.5rem] border-2 border-blue-100 animate-in fade-in zoom-in duration-500 text-center"> <p id="labelResFix" class="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-2"></p> <div id="outputValFix" class="text-5xl font-black text-blue-900 mb-2 font-mono"></div> <div class="h-px bg-blue-200 w-full my-6"></div> <p id="detailFix" class="text-sm text-blue-700 font-medium italic"></p> </div> </section> <article class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700 font-light"> <section class="mb-16"> <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
+La Arquitectura de los Datos: De Bytes a Megabytes
+</h2> <p class="text-lg leading-relaxed mb-6">
+En el ecosistema digital contemporáneo, los datos son el activo más
+          valioso. Sin embargo, su medición a menudo genera confusión incluso
+          entre profesionales experimentados. El <strong>Byte</strong> es la unidad
+          atómica de información en la computación moderna, compuesta por 8 bits.
+          Pero cuando hablamos de archivos web, bases de datos o capacidad de hardware,
+          el byte es una unidad demasiado pequeña. Aquí es donde entra el <strong>Megabyte (MB)</strong>.
+</p> <p class="text-lg leading-relaxed mb-6">
+Nuestra calculadora de bytes a MB no es solo un conversor aritmético;
+          es un puente entre dos mundos: el marketing (donde se prefiere el
+          sistema decimal) y la ingeniería de software (donde impera el sistema
+          binario). Entender esta distinción es vital para el <strong>SEO técnico</strong>, la optimización de WPO (Web Performance Optimization) y la gestión
+          de infraestructuras IT.
+</p> </section> <section class="mb-16"> <h3 class="text-2xl font-bold mb-6 text-blue-800">
+Diferencia entre MB (Decimal) y MiB (Binario)
+</h3> <p class="mb-6 leading-relaxed">
+Históricamente, los sistemas operativos han calculado el tamaño de los
+          archivos usando potencias de 2. Esto significa que un "Megabyte" para
+          Windows es en realidad 1,024 Kilobytes, y cada Kilobyte es 1,024
+          Bytes. Para evitar la ambigüedad con el Sistema Internacional (SI), se
+          creó el término <strong>Mebibyte (MiB)</strong>.
+</p> <div class="bg-slate-900 text-white p-10 rounded-[2.5rem] shadow-xl mb-10 overflow-hidden"> <h4 class="text-blue-400 font-bold mb-6 uppercase tracking-widest text-xs text-center">
+Fórmulas de Conversión (Build Safe)
+</h4> <div class="grid md:grid-cols-2 gap-8 font-mono text-sm"> <div class="p-4 bg-slate-800 rounded-2xl border border-slate-700"> <p class="text-blue-300 mb-2">Sistema Decimal (SI):</p> <p class="text-xl">MB = Bytes / 1,000,000</p> </div> <div class="p-4 bg-slate-800 rounded-2xl border border-slate-700"> <p class="text-blue-300 mb-2">Sistema Binario (JEDEC):</p> <p class="text-xl">MiB = Bytes / 1,048,576</p> </div> </div> </div> </section> <section class="mb-16"> <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
+Ejemplos Prácticos de Conversión
+</h2> <div class="space-y-8"> <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100"> <h4 class="text-xl font-bold text-blue-900 mb-2">
+Ejemplo 1: Optimización de Imágenes para Web
+</h4> <p class="italic mb-4">
+Tienes una fotografía de 2,500,000 bytes. ¿Cuál es su peso real
+              para el servidor?
+</p> <p class="text-sm font-medium">
+En decimal, esto es exactamente <strong>2.5 MB</strong>. Para
+              Google PageSpeed, una imagen de este tamaño es excesiva y debería
+              reducirse a menos de 0.2 MB (200,000 bytes).
+</p> </div> <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100"> <h4 class="text-xl font-bold text-blue-900 mb-2">
+Ejemplo 2: RAM y Buffer de Memoria
+</h4> <p class="italic mb-4">
+Un servidor tiene un buffer asignado de 1,048,576,000 bytes.
+              ¿Cuántos MiB son?
+</p> <p class="text-sm font-medium">
+Dividiendo por 1,048,576, obtenemos exactamente <strong>1,000 MiB</strong>. En el mundo de los servidores, siempre usaremos el factor 1024.
+</p> </div> <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100"> <h4 class="text-xl font-bold text-blue-900 mb-2">
+Ejemplo 3: Logs de Base de Datos
+</h4> <p class="italic mb-4">
+Un log de errores ha crecido hasta alcanzar los 45,000,000 bytes.
+</p> <p class="text-sm font-medium">
+Equivale a <strong>45 MB</strong> (Decimal) o <strong>42.91 MiB</strong> (Binario). Conocer esta diferencia evita que los administradores de
+              sistemas se sorprendan cuando el sistema operativo reporta un tamaño
+              "menor" al esperado.
+</p> </div> </div> </section> <section class="mb-16"> <h2 class="text-3xl font-black text-slate-900 mb-6">
+Comparativa de Escala Digital
+</h2> <p class="mb-6 leading-relaxed">
+Para entender la magnitud del Megabyte, es útil compararlo con otras
+          unidades de uso cotidiano en el desarrollo web y la informática:
+</p> <ul class="space-y-4"> <li class="flex items-start gap-4"> <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mt-1">BIT</span> <span>La unidad mínima (0 o 1). No suele usarse para archivos, sino
+              para velocidad de red (Mbps).</span> </li> <li class="flex items-start gap-4"> <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mt-1">BYTE</span> <span>8 bits. El peso de un solo carácter en formato ASCII.</span> </li> <li class="flex items-start gap-4"> <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mt-1">KB</span> <span>1,000 bytes. El peso aproximado de un archivo de texto corto sin
+              formato.</span> </li> <li class="flex items-start gap-4"> <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mt-1">MB</span> <span>Un millón de bytes. Una canción MP3 de 4 minutos ocupa unos 4-6
+              MB.</span> </li> <li class="flex items-start gap-4"> <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mt-1">GB</span> <span>Mil millones de bytes. Un video en HD suele pesar entre 1 y 4 GB.</span> </li> </ul> </section> <section class="mb-16"> <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
+Impacto en el SEO Técnico y WPO
+</h2> <p class="leading-relaxed mb-6">
+¿Por qué un consultor SEO debería preocuparse por los bytes? La
+          respuesta es simple: <strong>Latencia</strong>. El peso total de una
+          página web (el "Payload") se mide en Megabytes. Google utiliza el Core
+          Web Vitals para penalizar sitios que tardan demasiado en cargar. Si tu
+          "bundle" de JavaScript pesa 2 MB en lugar de 0.5 MB, la experiencia
+          del usuario (UX) se degrada significativamente, especialmente en
+          dispositivos móviles con redes 4G o 5G inestables.
+</p> <p class="leading-relaxed">
+Convertir correctamente los bytes de tus recursos estáticos te permite
+          establecer límites (budgets) de carga. Por ejemplo, muchos
+          desarrolladores establecen que ninguna imagen de producto debe superar
+          los 0.15 MB para garantizar una velocidad de carga óptima.
+</p> </section> <section class="mb-16"> <h2 class="text-3xl font-black text-slate-900 mb-6">
+Conclusión Educativa
+</h2> <p class="leading-relaxed">
+Navegar entre bytes y megabytes es una competencia básica en la
+          alfabetización digital moderna. Ya seas un usuario casual intentando
+          liberar espacio en iCloud o un ingeniero optimizando una base de datos
+          distribuida, la precisión en estas conversiones es fundamental.
+          Recuerda: los fabricantes venden en decimal para que los números
+          parezcan más grandes, pero tus aplicaciones funcionan en binario. ¡Usa
+          siempre nuestra calculadora para obtener el dato exacto!
+</p> </section> <footer class="bg-slate-900 text-white p-12 rounded-[3rem] text-center italic mt-12"> <p class="text-sm text-slate-400">
+"En el bit nace el dato, en el megabyte reside el conocimiento."
+</p> </footer> </article> </main> ${renderScript($$result2, "C:/proyectos/seo-tools/src/pages/unidades/bytes-a-mb.astro?astro&type=script&index=0&lang.ts")} ` })}`;
+}, "C:/proyectos/seo-tools/src/pages/unidades/bytes-a-mb.astro", void 0);
+const $$file = "C:/proyectos/seo-tools/src/pages/unidades/bytes-a-mb.astro";
+const $$url = "/unidades/bytes-a-mb/";
+const _page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: $$BytesAMb,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: "Module" }));
+const page = () => _page;
+export {
+  page
+};

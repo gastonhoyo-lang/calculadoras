@@ -1,26 +1,37 @@
 ---
 export const prerender = false;
+import Layout from "../../layouts/Layout.astro";
+
 let { slug } = Astro.params;
 
-// 1. Limpieza total para que coincida con el KV
-if (slug) {
-  slug = slug.replace(/^\/|\/$/g, "").toLowerCase();
-}
+// 1. LIMPIEZA AGRESIVA:
+// Esto asegura que si el slug es "/utiles/algo" o "algo/",
+// se convierta en "algo" para coincidir con tu KV.
+const cleanSlug = slug
+  ? slug.split("/").filter(Boolean).pop().toLowerCase()
+  : "";
 
 const runtime = Astro.locals.runtime;
 const { CALCULADORAS } = runtime.env;
 
-// 2. Intento de obtener los datos
-const rawData = await CALCULADORAS.get(slug);
+// 2. BUSQUEDA
+const rawData = await CALCULADORAS.get(cleanSlug);
 
-// 3. Diagnóstico: Si falla, nos dirá qué llave buscó
+// 3. DIAGNÓSTICO (Si falla, veremos qué intentó buscar)
 if (!rawData) {
-  return new Response(`Error: No se encontró la llave [${slug}] en el KV.`, {
-    status: 404,
-  });
+  return new Response(
+    `Error de Vinculación: El código buscó la llave [${cleanSlug}] pero el KV no devolvió nada. Verifica el Binding en Cloudflare.`,
+    { status: 404 },
+  );
 }
 
 const info = JSON.parse(rawData);
+
+// Variables para el Layout
+const displayTitle = info.titulo || "Calculadora";
+const seoTitle = info.seo_titulo || displayTitle;
+const seoDescription = info.seo_descripcion || "";
+const jsonLd = info.json_ld || {};
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
