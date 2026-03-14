@@ -1,0 +1,45 @@
+globalThis.process ??= {};
+globalThis.process.env ??= {};
+/* empty css               */
+import { c as createComponent } from "./astro-component_COa7YPcz.mjs";
+import { l as renderComponent, r as renderTemplate, m as maybeRenderHead } from "./worker-entry_Gwpmd91H.mjs";
+import { $ as $$Layout, r as renderScript } from "./Layout_BJlGIyyB.mjs";
+const $$TiempoRankingSeo = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Calculadora de Tiempo de Ranking SEO | Estimación de Posicionamiento", "description": "¿Cuánto tarda en posicionar una web? Calculá el tiempo estimado para llegar a la primera página de Google según tu competencia y autoridad." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="max-w-4xl mx-auto px-4 py-12"> <div class="text-center mb-10"> <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+Tiempo Estimado de Ranking
+</h1> <p class="text-slate-600 max-w-2xl mx-auto italic">
+"El SEO es una maratón, no un sprint. Calculá tu meta."
+</p> </div> <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"> <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"> <div class="space-y-6"> <div> <label class="block text-xs font-bold uppercase text-slate-400 mb-2 ml-1">Dificultad de Keyword (0-100)</label> <input type="number" id="kdInput" class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-fuchsia-500 outline-none transition-all font-mono" placeholder="Ej: 45"> </div> <div> <label class="block text-xs font-bold uppercase text-slate-400 mb-2 ml-1">Autoridad de tu Dominio (DA/DR)</label> <input type="number" id="daInput" class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-fuchsia-500 outline-none transition-all font-mono" placeholder="Ej: 20"> </div> <div> <label class="block text-xs font-bold uppercase text-slate-400 mb-2 ml-1">Optimización de Contenido</label> <select id="contentQuality" class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-fuchsia-500 outline-none transition-all appearance-none cursor-pointer"> <option value="0.8">Excelente (SEO On-Page perfecto)</option> <option value="1" selected>Media (Contenido estándar)</option> <option value="1.5">Baja (Necesita mejoras)</option> </select> </div> </div> <div class="flex items-center justify-center"> <div class="text-center p-8 bg-fuchsia-50 rounded-[2rem] border border-fuchsia-100 w-full"> <span class="block text-[10px] font-bold uppercase text-fuchsia-400 mb-2">Tiempo Estimado</span> <div id="timeResult" class="text-6xl font-black text-fuchsia-700">
+0
+</div> <p id="timeUnit" class="text-[10px] text-fuchsia-400 mt-4 font-bold uppercase tracking-widest">
+Meses para Top 10
+</p> </div> </div> </div> </div> <section class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"> <h2 class="text-3xl font-black text-slate-900 mb-6">
+¿Por qué el SEO tarda tanto?
+</h2> <p>
+Google necesita tiempo para rastrear, indexar y, sobre todo, **confiar**
+        en tu contenido. Este proceso se acelera si tu sitio ya tiene autoridad
+        o si la competencia es baja (Long Tail Keywords).
+</p> <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"> <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200"> <h4 class="font-bold text-slate-900 mb-2">El Efecto "Sandbox"</h4> <p class="text-xs leading-relaxed">
+Los dominios nuevos suelen pasar por un periodo de prueba donde
+            Google limita su visibilidad. Podés reducir este tiempo optimizando
+            tu [Slug SEO](/seo/generador-slugs) y mejorando el
+            [Interlinking](/seo/densidad-enlaces-internos).
+</p> </div> <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200"> <h4 class="font-bold text-slate-900 mb-2">Acelerando el Proceso</h4> <p class="text-xs leading-relaxed">
+Publicar contenido de alta calidad y obtener menciones externas
+            mejora tu autoridad. Asegurate de que tu [Ratio
+            Texto-HTML](/seo/ratio-texto-html) sea óptimo para facilitar el
+            rastreo.
+</p> </div> </div> </section> </main> ` })} ${renderScript($$result, "C:/proyectos/seo-tools/src/pages/seo/tiempo-ranking-seo.astro?astro&type=script&index=0&lang.ts")}`;
+}, "C:/proyectos/seo-tools/src/pages/seo/tiempo-ranking-seo.astro", void 0);
+const $$file = "C:/proyectos/seo-tools/src/pages/seo/tiempo-ranking-seo.astro";
+const $$url = "/seo/tiempo-ranking-seo";
+const _page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: $$TiempoRankingSeo,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: "Module" }));
+const page = () => _page;
+export {
+  page
+};

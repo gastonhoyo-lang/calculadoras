@@ -1,0 +1,52 @@
+globalThis.process ??= {};
+globalThis.process.env ??= {};
+/* empty css               */
+import { c as createComponent } from "./astro-component_COa7YPcz.mjs";
+import { l as renderComponent, r as renderTemplate, m as maybeRenderHead } from "./worker-entry_Gwpmd91H.mjs";
+import { $ as $$Layout, r as renderScript } from "./Layout_BJlGIyyB.mjs";
+const $$RadioTextoHtml = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Calculadora de Ratio Texto-HTML | Auditoría de SEO Técnico", "description": "Calculá la proporción de texto frente al código HTML de tu página. Optimizá el peso de tu web y mejorá la relevancia para los buscadores." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="max-w-4xl mx-auto px-4 py-12"> <div class="text-center mb-10"> <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+Ratio Texto-HTML
+</h1> <p class="text-slate-600 max-w-2xl mx-auto italic">
+"Menos código, más contenido."
+</p> </div> <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"> <div class="space-y-6"> <div> <label class="block text-xs font-bold uppercase text-slate-400 mb-2 ml-1">Pegá el código fuente de tu página (HTML)</label> <textarea id="htmlInput" class="w-full h-64 p-6 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-yellow-500 focus:bg-white outline-none transition-all font-mono text-xs text-slate-700 resize-none" placeholder="<!DOCTYPE html><html><body>...</body></html>"></textarea> </div> <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"> <div class="space-y-4"> <div class="flex justify-between text-sm"> <span class="text-slate-500">Tamaño del Texto:</span> <span id="textSize" class="font-bold text-slate-700">0 KB</span> </div> <div class="flex justify-between text-sm"> <span class="text-slate-500">Tamaño del HTML:</span> <span id="htmlSize" class="font-bold text-slate-700">0 KB</span> </div> <div class="h-4 w-full bg-slate-100 rounded-full overflow-hidden flex"> <div id="textBar" class="h-full bg-yellow-400 transition-all duration-500" style="width: 0%"></div> <div id="htmlBar" class="h-full bg-slate-200 transition-all duration-500" style="width: 0%"></div> </div> </div> <div class="text-center p-8 bg-yellow-50 rounded-[2rem] border border-yellow-100"> <span class="block text-[10px] font-bold uppercase text-yellow-600 mb-2">Ratio Final</span> <div id="ratioResult" class="text-6xl font-black text-yellow-700">
+0%
+</div> <p id="ratioStatus" class="text-[10px] text-yellow-600 mt-4 font-bold uppercase tracking-widest">
+Esperando código
+</p> </div> </div> </div> </div> <section class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"> <h2 class="text-3xl font-black text-slate-900 mb-6">
+¿Por qué es importante el ratio Texto/HTML?
+</h2> <p>
+Un ratio alto (más texto que código) indica que tu página es rica en
+        contenido y que no está sobrecargada de scripts o estilos en línea
+        innecesarios. Google prefiere páginas donde el contenido principal es
+        fácil de encontrar y procesar.
+</p> <h3 class="text-xl font-bold text-slate-800 mt-8">
+Rangos recomendados:
+</h3> <ul class="space-y-2"> <li> <strong>Menos del 10%:</strong> Alerta. Tu código es muy pesado o el contenido
+          es muy pobre.
+</li> <li> <strong>Entre 15% y 25%:</strong> El "punto dulce" para la mayoría de blogs
+          y sitios informativos.
+</li> <li> <strong>Más del 30%:</strong> Excelente para SEO, pero asegurate de que
+          la página siga siendo visualmente atractiva.
+</li> </ul> <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"> <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200"> <h4 class="font-bold text-slate-900 mb-2">Impacto en la Velocidad</h4> <p class="text-xs leading-relaxed">
+Un código HTML inflado retrasa el renderizado. Al mejorar este
+            ratio, indirectamente estás mejorando tus Core Web Vitals y la
+            experiencia del usuario.
+</p> </div> <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200"> <h4 class="font-bold text-slate-900 mb-2">Relevancia Semántica</h4> <p class="text-xs leading-relaxed">
+Combiná esta auditoría con nuestro [Contador de
+            Keywords](/seo/contador-keywords) para asegurar que ese texto,
+            además de ser abundante, esté bien enfocado en tus palabras clave.
+</p> </div> </div> </section> </main> ` })} ${renderScript($$result, "C:/proyectos/seo-tools/src/pages/seo/radio-texto-html-.astro?astro&type=script&index=0&lang.ts")}`;
+}, "C:/proyectos/seo-tools/src/pages/seo/radio-texto-html-.astro", void 0);
+const $$file = "C:/proyectos/seo-tools/src/pages/seo/radio-texto-html-.astro";
+const $$url = "/seo/radio-texto-html-";
+const _page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: $$RadioTextoHtml,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: "Module" }));
+const page = () => _page;
+export {
+  page
+};

@@ -1,0 +1,54 @@
+globalThis.process ??= {};
+globalThis.process.env ??= {};
+/* empty css               */
+import { c as createComponent } from "./astro-component_COa7YPcz.mjs";
+import { l as renderComponent, r as renderTemplate, m as maybeRenderHead } from "./worker-entry_Gwpmd91H.mjs";
+import { $ as $$Layout, r as renderScript } from "./Layout_BJlGIyyB.mjs";
+const $$CalculadoraCpc = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Calculadora de CPC Online | Controlá tu Gasto en Publicidad", "description": "Calculá el Costo por Clic (CPC) de tus campañas de anuncios. Optimizá tu presupuesto de Google Ads y Facebook Ads con datos reales." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="max-w-4xl mx-auto px-4 py-12"> <div class="text-center mb-10"> <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+Calculadora de CPC
+</h1> <p class="text-slate-600 max-w-2xl mx-auto italic">
+"Maximizá tus clics, minimizá tu costo."
+</p> </div> <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"> <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"> <div class="space-y-4"> <div> <label class="block text-xs font-bold uppercase text-slate-400 mb-2 ml-1">Costo Total de la Campaña ($)</label> <input type="number" id="cost" class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-sky-500 outline-none transition-all font-mono" placeholder="Ej: 200"> </div> <div> <label class="block text-xs font-bold uppercase text-slate-400 mb-2 ml-1">Número de Clics obtenidos</label> <input type="number" id="clicks" class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-sky-500 outline-none transition-all font-mono" placeholder="Ej: 400"> </div> </div> <div class="flex items-center justify-center"> <div class="text-center p-8 bg-sky-50 rounded-[2rem] border border-sky-100 w-full"> <span class="block text-[10px] font-bold uppercase text-sky-400 mb-2">Costo por Clic (CPC)</span> <div id="cpcResult" class="text-6xl font-black text-sky-700">
+$0.00
+</div> <p class="text-[10px] text-sky-400 mt-4 font-bold uppercase tracking-widest">
+Costo unitario por visita
+</p> </div> </div> </div> </div> <section class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"> <h2 class="text-3xl font-black text-slate-900 mb-6">
+¿Qué es el CPC y por qué importa?
+</h2> <p>
+El **CPC** es el monto que pagas por cada clic individual en tus
+        anuncios de búsqueda o redes sociales. Es una métrica de eficiencia: un
+        CPC más bajo significa que puedes atraer a más personas con el mismo
+        presupuesto.
+</p> <h3 class="text-xl font-bold text-slate-800 mt-8">
+Ejemplo Extenso de Gestión de Presupuesto:
+</h3> <div class="bg-sky-50 p-6 rounded-2xl border-l-4 border-sky-500 my-6"> <p class="text-sm mb-4">
+Imagina que tienes un presupuesto de $100. Si tu CPC es de <strong>$1.00</strong>, obtendrás 100 visitas. Pero si optimizas tus anuncios y bajas el
+          CPC a <strong>$0.50</strong>, obtendrás 200 visitas con el mismo
+          dinero.
+</p> <p class="text-sm"> <strong>El impacto SEO:</strong> Aunque el CPC es de pago, un buen SEO ayuda
+          a bajar el CPC en Google Ads. ¿Cómo? Un contenido relevante (medido con
+          la [Densidad de Keywords](/seo/densidad-keywords)) mejora el Nivel de Calidad,
+          lo que reduce el precio que pagas por clic.
+</p> </div> <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"> <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200"> <h4 class="font-bold text-slate-900 mb-2">Relación con el CTR</h4> <p class="text-xs leading-relaxed">
+Normalmente, a mayor [CTR](/seo/calculadora-ctr), las plataformas te
+            premian bajando tu CPC, ya que consideran que tu anuncio es muy útil
+            para el usuario.
+</p> </div> <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200"> <h4 class="font-bold text-slate-900 mb-2">CPC vs CPA</h4> <p class="text-xs leading-relaxed">
+El CPC mide el tráfico, pero para medir la ganancia real debés
+            combinarlo con nuestra [Calculadora de ROI](/seo/roi-marketing). No
+            sirve un CPC barato si nadie termina comprando.
+</p> </div> </div> </section> </main> ` })} ${renderScript($$result, "C:/proyectos/seo-tools/src/pages/seo/calculadora-cpc.astro?astro&type=script&index=0&lang.ts")}`;
+}, "C:/proyectos/seo-tools/src/pages/seo/calculadora-cpc.astro", void 0);
+const $$file = "C:/proyectos/seo-tools/src/pages/seo/calculadora-cpc.astro";
+const $$url = "/seo/calculadora-cpc";
+const _page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: $$CalculadoraCpc,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: "Module" }));
+const page = () => _page;
+export {
+  page
+};
