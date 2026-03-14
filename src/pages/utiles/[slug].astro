@@ -25,16 +25,32 @@ if (!info) {
   return Astro.redirect("/404");
 }
 
-const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, precisa y fácil de usar en Chieffin.`;
+// --- MEJORA DE CTR: Títulos y Descripciones dinámicas ---
+const displayTitle = info.h1 || info.titulo;
+const seoTitle = `${displayTitle} | Resultado Exacto (2026)`;
+const seoDescription = `Calculá gratis: ${displayTitle}. El resultado es ${info.resultado}. Herramienta rápida, precisa y fácil de usar en Chieffin.`;
+
+// --- JSON-LD para Google ---
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": displayTitle,
+  "description": seoDescription,
+  "url": Astro.url.href,
+  "applicationCategory": "EducationalApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+};
 ---
 
-<Layout title={info.titulo} description={seoDescription}>
+<Layout title={seoTitle} description={seoDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
   <div
     id="calc-metadata"
     data-valor={info.valor}
     data-tipo={info.tipo}
-    data-origen={info.unidad_origen}
-    data-destino={info.unidad_destino}
+    data-origen={info.unidad_origen || info.orig}
+    data-destino={info.unidad_destino || info.dest}
     class="hidden"
   >
   </div>
@@ -49,10 +65,9 @@ const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, pr
       >
         <a href="/" class="hover:text-blue-600 transition">Inicio</a>
         <span class="mx-2">/</span>
-        <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a
-        >
+        <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a>
         <span class="mx-2">/</span>
-        <span class="text-slate-900 truncate">{info.h1 || info.titulo}</span>
+        <span class="text-slate-900 truncate">{displayTitle}</span>
       </nav>
 
       <div
@@ -68,11 +83,18 @@ const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, pr
             <h1
               class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight"
             >
-              {info.h1 || info.titulo}
+              {displayTitle}
             </h1>
           </header>
 
           <div class="grid gap-6">
+            <div class="mb-4 p-8 bg-blue-600 rounded-2xl text-center text-white shadow-lg">
+               <p class="text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Resultado Actual:</p>
+               <div class="text-4xl sm:text-5xl font-black">
+                  {info.resultado} <span class="text-xl opacity-70 font-normal">{info.dest || info.unidad_destino}</span>
+               </div>
+            </div>
+
             <div class="relative">
               <label
                 for="input-main"
@@ -85,7 +107,7 @@ const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, pr
               <input
                 type="number"
                 id="input-main"
-                placeholder="0.00"
+                placeholder={info.n ? info.n.toString() : "0.00"}
                 class="w-full p-6 bg-slate-50 border-2 border-slate-100 rounded-2xl text-3xl font-bold text-slate-900 focus:border-blue-500 focus:bg-white outline-none transition-all placeholder:text-slate-300"
               />
             </div>
@@ -121,7 +143,7 @@ const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, pr
                 <p
                   class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2"
                 >
-                  Resultado Final
+                  Nuevo Resultado
                 </p>
                 <div
                   id="resultado-texto"
@@ -142,6 +164,12 @@ const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, pr
           <p class="text-slate-600 leading-relaxed text-sm">
             {info.faq_respuesta}
           </p>
+          <div class="mt-4 p-4 bg-white rounded-lg border border-slate-200">
+             <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Fórmula:</p>
+             <code class="text-blue-600 font-mono font-bold">
+                {info.tipo === 'unidades' ? `Valor × ${info.valor}` : `(Valor × ${info.valor}) / 100`}
+             </code>
+          </div>
         </div>
       </div>
     </div>

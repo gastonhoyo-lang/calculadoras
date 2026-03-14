@@ -1,0 +1,54 @@
+globalThis.process ??= {};
+globalThis.process.env ??= {};
+/* empty css               */
+import { c as createComponent } from "./astro-component_BYNz6e7q.mjs";
+import { l as renderComponent, r as renderTemplate, m as maybeRenderHead } from "./worker-entry_D59mRXJw.mjs";
+import { $ as $$Layout, r as renderScript } from "./Layout_DZZezSix.mjs";
+const $$KgToLb = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Conversor de Kilogramos a Libras | kg a lb", "description": "Convertí kilogramos a libras de forma rápida y exacta. Herramienta ideal para peso corporal, pesas de gimnasio y recetas de cocina." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="max-w-4xl mx-auto px-4 py-12"> <div class="text-center mb-10"> <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+Kilogramos a Libras
+</h1> <p class="text-slate-600 max-w-2xl mx-auto">
+Pasá de kilogramos a libras (y viceversa) con precisión decimal
+        instantánea.
+</p> </div> <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"> <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 items-center"> <div class="space-y-2"> <label class="block text-[10px] font-bold uppercase text-slate-400 ml-1 tracking-widest text-center">
+Kilogramos (kg)
+</label> <input type="number" id="kgInput" class="w-full p-6 bg-slate-50 rounded-3xl border-2 border-transparent focus:border-emerald-500 outline-none transition-all font-mono text-3xl text-center" placeholder="1" step="any"> </div> <div class="flex justify-center"> <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold rotate-90 md:rotate-0 shadow-inner">
+⇄
+</div> </div> <div class="space-y-2"> <label class="block text-[10px] font-bold uppercase text-slate-400 ml-1 tracking-widest text-center">
+Libras (lb)
+</label> <input type="number" id="lbInput" class="w-full p-6 bg-slate-50 rounded-3xl border-2 border-transparent focus:border-emerald-500 outline-none transition-all font-mono text-3xl text-center" placeholder="2.20" step="any"> </div> </div> <div class="mt-8 p-4 bg-emerald-50 rounded-2xl text-center border border-emerald-100"> <p id="infoText" class="text-emerald-800 font-medium text-sm italic">
+1 kilogramo equivale a aproximadamente 2.20462 libras.
+</p> </div> </div> <section class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"> <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12"> <div> <h2 class="text-3xl font-black text-slate-900 mb-6 tracking-tight">
+Cómo convertir kg a lb
+</h2> <p>
+El kilogramo es la unidad base de masa en el <strong>Sistema Internacional de Unidades (SI)</strong>, mientras que la libra es la unidad de masa en los sistemas de
+            medida <strong>británicos e imperial</strong>.
+</p> <p>
+Para convertir manualmente, simplemente multiplicá el valor en
+            kilogramos por <strong>2.2046</strong>.
+</p> <div class="bg-slate-900 p-6 rounded-2xl text-center my-6 shadow-xl"> <code class="text-emerald-400 font-mono text-lg">lb = kg × 2.20462</code> </div> </div> <div> <h3 class="text-xl font-bold text-slate-900 mb-4">
+Equivalencias rápidas
+</h3> <div class="overflow-hidden rounded-2xl border border-slate-200"> <table class="w-full text-sm text-left m-0"> <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] font-bold"> <tr> <th class="px-4 py-2 border-b">Kilogramos</th> <th class="px-4 py-2 border-b">Libras (aprox)</th> </tr> </thead> <tbody class="divide-y divide-slate-100"> <tr><td class="px-4 py-2 font-mono">1 kg</td><td class="px-4 py-2">2.20 lb</td></tr> <tr><td class="px-4 py-2 font-mono">5 kg</td><td class="px-4 py-2">11.02 lb</td></tr> <tr><td class="px-4 py-2 font-mono">20 kg</td><td class="px-4 py-2">44.09 lb</td></tr> <tr><td class="px-4 py-2 font-mono">70 kg</td><td class="px-4 py-2">154.32 lb</td></tr> </tbody> </table> </div> </div> </div> <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-8 text-center">
+Ejemplos en el día a día
+</h3> <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"> <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200 text-center"> <span class="text-2xl mb-2 block">🏋️‍♂️</span> <h4 class="font-bold text-slate-900 mb-2">Gimnasio</h4> <p class="text-xs leading-relaxed text-slate-600">
+Un disco estándar de <strong>20 kg</strong> equivale a una pesa de <strong>44.1 lbs</strong>.
+</p> </div> <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200 text-center"> <span class="text-2xl mb-2 block">🍳</span> <h4 class="font-bold text-slate-900 mb-2">Cocina</h4> <p class="text-xs leading-relaxed text-slate-600">
+Si una receta pide <strong>1 lb</strong> de harina, necesitás aproximadamente
+<strong>453 gramos</strong> (0.45 kg).
+</p> </div> <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200 text-center"> <span class="text-2xl mb-2 block">🧳</span> <h4 class="font-bold text-slate-900 mb-2">Equipaje</h4> <p class="text-xs leading-relaxed text-slate-600">
+El límite de <strong>23 kg</strong> de las aerolíneas internacionales
+            es el equivalente a las <strong>50 lbs</strong> permitidas en EE.UU.
+</p> </div> </div> </section> </main> ` })} ${renderScript($$result, "C:/proyectos/seo-tools/src/pages/unidades/kg-to-lb.astro?astro&type=script&index=0&lang.ts")}`;
+}, "C:/proyectos/seo-tools/src/pages/unidades/kg-to-lb.astro", void 0);
+const $$file = "C:/proyectos/seo-tools/src/pages/unidades/kg-to-lb.astro";
+const $$url = "/unidades/kg-to-lb";
+const _page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: $$KgToLb,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: "Module" }));
+const page = () => _page;
+export {
+  page
+};
