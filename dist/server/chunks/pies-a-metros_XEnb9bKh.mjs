@@ -1,0 +1,100 @@
+globalThis.process ??= {};
+globalThis.process.env ??= {};
+import { c as createComponent } from "./astro-component_DUamNOw_.mjs";
+import { l as renderComponent, r as renderTemplate, m as maybeRenderHead } from "./worker-entry_Bk4AUdbY.mjs";
+import { $ as $$Layout, r as renderScript } from "./Layout_C1P3Y1KY.mjs";
+const $$PiesAMetros = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Conversor de Pies a Metros | ft a m - Calculadora Precisa", "description": "Convertí pies a metros de forma instantánea. Guía completa sobre el sistema imperial y métrico, fórmulas de conversión exactas y ejemplos prácticos." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="max-w-5xl mx-auto px-4 py-12"> <header class="text-center mb-16"> <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight">
+Pies a <span class="text-blue-600">Metros</span> 📏
+</h1> <p class="text-slate-500 text-lg font-medium max-w-2xl mx-auto text-balance">
+La herramienta definitiva para la conversión profesional entre unidades
+        de longitud imperiales y métricas.
+</p> </header> <div class="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl max-w-2xl mx-auto mb-20"> <div class="space-y-6"> <div> <label for="ftInput" class="block text-xs font-bold text-slate-400 uppercase ml-2 tracking-widest mb-2">
+Longitud en Pies (ft)
+</label> <input type="number" id="ftInput" placeholder="Ej: 10" step="any" class="w-full p-5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 font-bold text-xl outline-none transition-all shadow-sm"> </div> <button id="btnCalculateFt" class="w-full bg-slate-900 text-white p-5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg active:scale-95 text-lg">
+Convertir a Metros
+</button> </div> <div id="resultContainerFt" class="hidden mt-10 p-8 bg-blue-50 rounded-[2.5rem] border-2 border-blue-100 animate-in fade-in zoom-in duration-500 text-center"> <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-2">
+Resultado en Metros (m)
+</p> <div id="mOutputVal" class="text-5xl font-black text-blue-900 mb-2 font-mono"></div> <div class="h-px bg-blue-200 w-full my-6"></div> <p id="ftToMDescription" class="text-sm text-blue-700 font-medium italic"></p> </div> </div> <article class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700"> <section class="mb-16"> <h2 class="text-3xl font-black text-slate-900 mb-6">
+Introducción: El puente entre el Sistema Imperial y el Métrico
+</h2> <p class="text-lg leading-relaxed">
+En un mundo cada vez más interconectado, la necesidad de navegar entre
+          diferentes sistemas de medición es una constante para profesionales y
+          entusiastas por igual. Mientras que el <strong>Sistema Internacional de Unidades (SI)</strong> utiliza el metro como su unidad base de longitud, el sistema imperial
+          (utilizado principalmente en los Estados Unidos) se apoya en el pie. Comprender
+          cómo pasar de <strong>pies a metros</strong> es esencial para la ingeniería,
+          la navegación aérea y el comercio internacional.
+</p> </section> <div class="grid md:grid-cols-2 gap-12 items-center mb-16"> <div class="bg-slate-900 text-white p-10 rounded-[2.5rem] shadow-xl"> <h3 class="text-2xl font-bold mb-6 text-blue-400 text-center">
+La Fórmula de Conversión
+</h3> <p class="text-sm text-slate-300 mb-8 text-center">
+Para obtener una conversión precisa, aplicamos la siguiente relación
+            matemática:
+</p> <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 text-center mb-8"> <p class="text-3xl font-mono text-blue-300">
+$$m = ft \\cdot 0.3048$$
+</p> </div> <ul class="space-y-4 text-sm text-slate-400"> <li class="flex items-center gap-3"> <span class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold italic">m</span> <span>Metros: La unidad de medida en el sistema métrico.</span> </li> <li class="flex items-center gap-3"> <span class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold italic">ft</span> <span>Pies (Feet): La longitud original en el sistema imperial.</span> </li> </ul> </div> <div> <h3 class="text-2xl font-black text-slate-900 mb-4">
+¿De dónde viene el factor 0.3048?
+</h3> <p class="leading-relaxed mb-4">
+A diferencia de otras conversiones que pueden ser aproximadas, el
+            valor de <strong>0.3048</strong> es una constante exacta definida por
+            acuerdos internacionales en 1959. Antes de este acuerdo, el "pie" variaba
+            ligeramente entre el Reino Unido y los Estados Unidos.
+</p> <p class="leading-relaxed">
+Hoy en día, se acepta que un pie tiene exactamente 12 pulgadas, y
+            cada pulgada tiene exactamente 2.54 centímetros. Al realizar la
+            multiplicación ($$12 \\times 2.54$$), obtenemos 30.48 centímetros, lo
+            que equivale a 0.3048 metros. Esta precisión es lo que permite que
+            nuestra calculadora sea una herramienta confiable para cálculos
+            técnicos.
+</p> </div> </div> <section class="mb-16"> <h2 class="text-3xl font-black text-slate-900 mb-8">
+Casos de Uso en el Mundo Real
+</h2> <div class="grid md:grid-cols-2 gap-8"> <div class="p-8 bg-slate-50 rounded-[2rem] border border-slate-100"> <h4 class="font-bold text-slate-900 mb-3 text-xl italic">
+Aviación y Aeronáutica
+</h4> <p class="text-sm leading-relaxed text-slate-600 font-medium italic">
+En casi todo el mundo, la altitud de los aviones se mide en pies
+              por convención internacional. Sin embargo, para cálculos de peso,
+              balance y distancias en pista en aeropuertos que no son de EE.
+              UU., los ingenieros a menudo deben convertir estos valores a
+              metros para cumplir con las normativas locales.
+</p> </div> <div class="p-8 bg-slate-50 rounded-[2rem] border border-slate-100"> <h4 class="font-bold text-slate-900 mb-3 text-xl italic">
+Arquitectura y Construcción
+</h4> <p class="text-sm leading-relaxed text-slate-600 font-medium italic">
+Al leer planos antiguos o trabajar con proveedores de materiales
+              norteamericanos, es común encontrar medidas en pies. Un error de
+              conversión en una estructura puede comprometer la integridad del
+              edificio o causar que los materiales no encajen.
+</p> </div> </div> </section> <section class="mb-16"> <h2 class="text-3xl font-black text-slate-900 mb-8 text-center">
+Ejemplos Prácticos de Conversión
+</h2> <div class="grid md:grid-cols-3 gap-6"> <div class="bg-blue-50 p-6 rounded-3xl text-center border border-blue-100"> <p class="text-2xl mb-2">🛫</p> <p class="font-bold text-blue-900">Altitud de Crucero</p> <p class="text-xs text-blue-700">
+30,000 pies<br><strong>9,144 metros</strong> </p> </div> <div class="bg-blue-50 p-6 rounded-3xl text-center border border-blue-100"> <p class="text-2xl mb-2">🏀</p> <p class="font-bold text-blue-900">Aro de Básquet</p> <p class="text-xs text-blue-700">
+10 pies<br><strong>3.048 metros</strong> </p> </div> <div class="bg-blue-50 p-6 rounded-3xl text-center border border-blue-100"> <p class="text-2xl mb-2">🏔️</p> <p class="font-bold text-blue-900">Pico de Montaña</p> <p class="text-xs text-blue-700">
+1,000 pies<br><strong>304.8 metros</strong> </p> </div> </div> </section> <h2 class="text-3xl font-black text-slate-900 mb-8">
+Comparativa: Pie vs. Metro
+</h2> <p class="mb-8 leading-relaxed">
+Es importante notar que el metro es una unidad significativamente más
+        grande que el pie. Un metro equivale aproximadamente a 3.28 pies. Esto
+        significa que cuando conviertes de pies a metros, el valor numérico
+        siempre será menor. Si obtienes un número más grande, probablemente has
+        realizado la operación inversa.
+</p> <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 mb-16"> <h3 class="text-2xl font-bold text-slate-900 mb-4">
+¿Cómo convertir mentalmente?
+</h3> <p class="text-sm leading-relaxed">
+Para una estimación rápida sin calculadora, puedes dividir el valor en
+          pies por 3. Aunque no es exacto (te dará un margen de error del 1.6%
+          aproximadamente), es extremadamente útil para visualizaciones rápidas
+          en el día a día.
+</p> </div> <footer class="bg-slate-900 text-white p-10 rounded-[3rem] text-center italic"> <p class="text-sm text-slate-400">
+"La precisión en las unidades es la base de toda ciencia aplicada."
+</p> </footer> </article> </main> ${renderScript($$result2, "C:/proyectos/seo-tools/src/pages/unidades/pies-a-metros.astro?astro&type=script&index=0&lang.ts")} ` })}`;
+}, "C:/proyectos/seo-tools/src/pages/unidades/pies-a-metros.astro", void 0);
+const $$file = "C:/proyectos/seo-tools/src/pages/unidades/pies-a-metros.astro";
+const $$url = "/unidades/pies-a-metros";
+const _page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: $$PiesAMetros,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: "Module" }));
+const page = () => _page;
+export {
+  page
+};
