@@ -1,0 +1,45 @@
+---
+export const prerender = false;
+const { slug } = Astro.params;
+
+const runtime = Astro.locals.runtime;
+
+// 1. Verificación de seguridad del Binding
+if (!runtime?.env?.CALCULADORAS) {
+  return new Response("Error: KV 'CALCULADORAS' no detectado.", {
+    status: 500,
+  });
+}
+
+const { CALCULADORAS } = runtime.env;
+
+// 2. Limpieza del slug (quita "/" o ".html" si llegan a colarse)
+const cleanSlug = slug
+  ?.toString()
+  .replace(/\/$/, "")
+  .replace(/\.html$/, "")
+  .toLowerCase();
+
+// 3. Consulta al KV
+const rawData = await CALCULADORAS.get(cleanSlug);
+
+if (!rawData) {
+  return new Response(`404: La llave [${cleanSlug}] no existe en el KV.`, {
+    status: 404,
+  });
+}
+
+const info = JSON.parse(rawData);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{info.titulo}</title>
+  </head>
+  <body>
+    <h1>{info.titulo}</h1>
+    <div set:html={info.contenido} />
+  </body>
+</html>

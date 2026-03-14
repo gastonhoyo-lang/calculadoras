@@ -1,43 +1,36 @@
 ---
-export const prerender = false;
+export const prerender = false; // Importante para que corra en el Worker
 const { slug } = Astro.params;
-
-// 1. LIMPIEZA TOTAL: Si la URL es "algo.html", nos quedamos solo con "algo"
-const cleanSlug = slug
-  ? slug
-      .toString()
-      .replace(/\.html$/, "")
-      .replace(/\/$/, "")
-      .split("/")
-      .pop()
-      .toLowerCase()
-  : "";
 
 const runtime = Astro.locals.runtime;
 
-// 2. SEGURIDAD: Verificamos que el entorno exista
-if (!runtime || !runtime.env || !runtime.env.CALCULADORAS) {
-  return new Response(
-    "Error: No se detecta el KV 'CALCULADORAS'. Revisa los Bindings.",
-    { status: 500 },
-  );
+// Verificamos el Binding (según tu captura image_d067a0)
+if (!runtime?.env?.CALCULADORAS) {
+  return new Response("Error: KV 'CALCULADORAS' no vinculado.", {
+    status: 500,
+  });
 }
 
 const { CALCULADORAS } = runtime.env;
 
-// 3. BUSQUEDA: Usamos la llave limpia
+// Limpiamos el slug por si llega con basura o barras
+const cleanSlug = slug?.toString().replace(/\/$/, "").toLowerCase();
+
 const rawData = await CALCULADORAS.get(cleanSlug);
 
 if (!rawData) {
-  // Si falla, mostramos qué llave intentó buscar para debuguear
+  // Si no existe en el KV, enviamos un 404 informativo
   return new Response(
-    `Error 404: No existe la llave [${cleanSlug}] en el KV.`,
+    `No encontrado: La llave [${cleanSlug}] no existe en el KV.`,
     { status: 404 },
   );
 }
 
 const info = JSON.parse(rawData);
 ---
+
+<h1>{info.titulo}</h1>
+<p>Resultado: {info.resultado}</p>
 
 <html>
   <head>
